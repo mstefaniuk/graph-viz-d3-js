@@ -38,9 +38,16 @@ define(['viz', 'parser/xdot'], function (viz, parser) {
 
     function startGroup(propertyName) {
       return function(node) {
-        result.push({id: node.id, shapes: []});
+        result.push({id: node.id, shapes: [], labels: []});
         each(node[propertyName], visit);
       };
+    }
+
+    function addToSection(section){
+      return function(node) {
+        var last = result[result.length-1];
+        last[section] = last[section].concat(node.elements);
+      }
     }
 
     var visit = buildNodeVisitor({
@@ -49,10 +56,9 @@ define(['viz', 'parser/xdot'], function (viz, parser) {
       subgraph: startGroup('commands'),
       node: startGroup('attributes'),
       relation: startGroup('attributes'),
-      draw: function(node){
-        var last = result[result.length-1];
-        last.shapes = last.shapes.concat(node.shapes);
-      },
+      draw: addToSection('shapes'),
+      hdraw: addToSection('shapes'),
+      ldraw: addToSection('labels'),
       skip: nop,
     });
     visit(ast);

@@ -18,7 +18,7 @@ attribute =
 qattribute = n:("label" / "width" / "height" / "bb" / "pos" / "xdotversion" / "size") "=" nqs {return {name: n}}
 cattribute = n:("style" / "shape" / "color") "=" ncs {return {name: n}}
 
-draw = s:("_draw_=" / "_ldraw_=" / "_hdraw_=") q d:drawing+ q {return {type: "draw", subtype:s, shapes: d}}
+draw = "_" s:("draw" / "ldraw" / "hdraw") "_=" q d:drawing+ q {return {type: s, elements: d}}
 drawing = st:styling? _ sh:shapes _ {sh.style = st; return sh}
 styling = s:styles ss:(_ s:styles {return s})* {return [].concat(s).concat(ss)}
 styles = pen / font / style
@@ -29,7 +29,7 @@ polygon = p:[pP] _ l:integer c:coordinates+ {return {shape: 'polygon', points:c}
 polyline = [L] _ integer c:coordinates+ {return {shape: 'polyline', points:c}}
 bspline = [bB] _ integer c:coordinates+ {return {shape: 'path', points: c}}
 text = [T] c:coordinates _ integer
-           _ integer _ t:vardata {return {shape: 'text', p:c, text:t}}
+           _ integer _ t:vardata {return {x:c[0], y:c[1], text:t}}
 pen = p:[Cc] _ c:vardata {return p=='C' ? {key: "fill", value: c} : {key: "stroke", value: c}}
 font = f:[F] _ s:decimal _ t:vardata {return [{key:'font-name', value: t}, {key:'font-size', value:s}]}
 style = [S] _ s:vardata {return {key:'style', value: s}}
