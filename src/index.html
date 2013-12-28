@@ -9,6 +9,10 @@
       height: 500px;
       position: relative;
     }
+    path {
+      fill: red;
+      stroke: black;
+    }
 
   </style>
   <!--
@@ -77,36 +81,40 @@ digraph G {
 
         var drawer = {
           polygon: function (selection) {
-            selection.append("polygon")
-                .attr("points", function (d) {
-                  return d.points.map(function (e) {
-                    return e.join(",")
-                  }).join(" ");
-                })
-                .attr("stroke-width", 1)
-                .style("fill", "white")
-                .style("stroke", "black");
+            selection
+                .attr("d", function (d) {
+                  return [
+                    "M",
+                    d.points[0].join(','),
+                    "L",
+                    d.points.slice(1, d.points.length).map(function (e) {
+                      return e.join(",")
+                    }),
+                    "Z"
+                  ].join(" ");
+                });
           },
           ellipse: function (selection) {
-            selection.append("ellipse")
-                .attr("cx", function (d) {
-                  return d.cx
-                })
-                .attr("cy", function (d) {
-                  return d.cy
-                })
-                .attr("rx", function (d) {
-                  return d.rx
-                })
-                .attr("ry", function (d) {
-                  return d.ry
-                })
-                .attr("stroke-width", 1)
-                .style("fill", "white")
-                .style("stroke", "black");
+            selection
+                .attr("d", function(d) {
+                  return [
+                      'M',
+                      [d.cx,d.cy].join(','),
+                      'm',
+                      [-d.rx,0].join(','),
+                      'a',
+                      [d.rx,d.ry].join(','),
+                      0, "1,0",
+                      [2*d.rx,0].join(','),
+                      'a',
+                      [d.rx,d.ry].join(','),
+                      0, "1,0",
+                      [-2*d.rx,0].join(',')
+                  ].join(' ');
+                });
           },
           path: function (selection) {
-            selection.append("path")
+            selection
                 .attr("d", function (d) {
                   return line(d.points)
                 })
@@ -139,7 +147,7 @@ digraph G {
           return [d.shape,i].join('-');}
         );
 
-        shapes.enter().append("g").each(function(draw, i) {
+        shapes.enter().append("path").each(function(draw, i) {
           var shape = draw.shape;
           d3.select(this).call(drawer[shape]);
         });
