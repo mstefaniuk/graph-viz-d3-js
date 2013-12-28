@@ -10,8 +10,11 @@
       position: relative;
     }
     path {
-      fill: red;
+      fill: transparent;
       stroke: black;
+    }
+    text {
+      text-anchor: middle;
     }
 
   </style>
@@ -70,59 +73,58 @@ digraph G {
             height = 400,
             dot = document.getElementById('cluster').innerHTML;
 
-        var line = d3.svg.line()
+        var line = d3.svg
+            .line()
             .x(function (d) {
               return d[0];
             })
             .y(function (d) {
-              return d[1];
+              return -d[1];
             })
             .interpolate("bundle");
 
-        var drawer = {
-          polygon: function (selection) {
-            selection
-                .attr("d", function (d) {
-                  return [
-                    "M",
-                    d.points[0].join(','),
-                    "L",
-                    d.points.slice(1, d.points.length).map(function (e) {
-                      return e.join(",")
-                    }),
-                    "Z"
-                  ].join(" ");
-                });
+        var palette = {
+          polygon: function (d) {
+            return [
+              "M",
+              [d.points[0][0],-d.points[0][1]].join(','),
+              "L",
+              d.points.slice(1, d.points.length)
+                  .map(function (e) {
+                    return [e[0],-e[1]].join(",")
+                  }),
+              "Z"].join(" ");
           },
-          ellipse: function (selection) {
-            selection
-                .attr("d", function(d) {
-                  return [
-                      'M',
-                      [d.cx,d.cy].join(','),
-                      'm',
-                      [-d.rx,0].join(','),
-                      'a',
-                      [d.rx,d.ry].join(','),
-                      0, "1,0",
-                      [2*d.rx,0].join(','),
-                      'a',
-                      [d.rx,d.ry].join(','),
-                      0, "1,0",
-                      [-2*d.rx,0].join(',')
-                  ].join(' ');
-                });
+          ellipse: function (d) {
+            return [
+              'M', [d.cx, -d.cy].join(','),
+              'm', [-d.rx, 0].join(','),
+              'a', [d.rx, d.ry].join(','),
+              0, "1,0", [2 * d.rx, 0].join(','),
+              'a', [d.rx, d.ry].join(','),
+              0, "1,0", [-2 * d.rx, 0].join(',')].join(' ');
           },
-          path: function (selection) {
-            selection
-                .attr("d", function (d) {
-                  return line(d.points)
-                })
-                .attr("stroke-width", 1)
-                .style("fill", "transparent")
-                .style("stroke", "black");
+          circle: function (d) {
+            return this.ellipse({
+              cx: d.cx,
+              cy: -d.cy,
+              rx: d.r,
+              ry: d.r
+            });
           },
-          text: function(){},
+          rect: function (d) {
+            return this.polygon({
+              points: [
+                [d.x, -d.y],
+                [d.x + d.width, -d.y],
+                [d.x + d.width, -d.y + d.height],
+                [d.x, -d.y + d.height]
+              ]
+            });
+          },
+          path: function (d) {
+            return line(d.points)
+          },
           bspline: function(){},
           polyline: function(){}
         };
@@ -133,12 +135,12 @@ digraph G {
             .attr("width", width)
             .attr("height", height)
             .append("g")
-            .attr("transform", "translate(0," + height + ") scale(1,-1)");
+            .attr("transform", "translate(0," + height + ")");
 
         var groups = svg.selectAll("g").data(stage, function (d) {
           return d.id;
         });
-        groups.enter().append("g");
+        groups.enter().append("g").append("title").text(function(d){return d.id});
 //        groups.exit().remove();
 
         var shapes = groups.selectAll(".shape").data(function (d) {
@@ -147,10 +149,18 @@ digraph G {
           return [d.shape,i].join('-');}
         );
 
-        shapes.enter().append("path").each(function(draw, i) {
-          var shape = draw.shape;
-          d3.select(this).call(drawer[shape]);
-        });
+        shapes.enter()
+            .append("path")
+              .attr("d", function(d) {
+                var shape = d.shape;
+                return palette[shape](d);
+              })
+              .classed("shape");
+        groups.selectAll("text").data(function(d){return d.labels}).enter()
+            .append("text")
+            .attr("x", function(d){return d.x})
+            .attr("y", function(d){return -d.y})
+            .text(function(d){return d.text});
 //        shapes.exit().remove();
 
         document.body.innerHTML += "<pre>" + dump.parse(stage) + "</pre>";

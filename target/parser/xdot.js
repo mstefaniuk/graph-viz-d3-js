@@ -1126,59 +1126,87 @@ var parser = (function(){
       }
       
       function parse_draw() {
-        var result0, result1, result2, result3;
+        var result0, result1, result2, result3, result4, result5;
         var pos0, pos1;
         
         pos0 = pos;
         pos1 = pos;
-        if (input.substr(pos, 7) === "_draw_=") {
-          result0 = "_draw_=";
-          pos += 7;
+        if (input.charCodeAt(pos) === 95) {
+          result0 = "_";
+          pos++;
         } else {
           result0 = null;
           if (reportFailures === 0) {
-            matchFailed("\"_draw_=\"");
-          }
-        }
-        if (result0 === null) {
-          if (input.substr(pos, 8) === "_ldraw_=") {
-            result0 = "_ldraw_=";
-            pos += 8;
-          } else {
-            result0 = null;
-            if (reportFailures === 0) {
-              matchFailed("\"_ldraw_=\"");
-            }
-          }
-          if (result0 === null) {
-            if (input.substr(pos, 8) === "_hdraw_=") {
-              result0 = "_hdraw_=";
-              pos += 8;
-            } else {
-              result0 = null;
-              if (reportFailures === 0) {
-                matchFailed("\"_hdraw_=\"");
-              }
-            }
+            matchFailed("\"_\"");
           }
         }
         if (result0 !== null) {
-          result1 = parse_q();
-          if (result1 !== null) {
-            result3 = parse_drawing();
-            if (result3 !== null) {
-              result2 = [];
-              while (result3 !== null) {
-                result2.push(result3);
-                result3 = parse_drawing();
+          if (input.substr(pos, 4) === "draw") {
+            result1 = "draw";
+            pos += 4;
+          } else {
+            result1 = null;
+            if (reportFailures === 0) {
+              matchFailed("\"draw\"");
+            }
+          }
+          if (result1 === null) {
+            if (input.substr(pos, 5) === "ldraw") {
+              result1 = "ldraw";
+              pos += 5;
+            } else {
+              result1 = null;
+              if (reportFailures === 0) {
+                matchFailed("\"ldraw\"");
               }
+            }
+            if (result1 === null) {
+              if (input.substr(pos, 5) === "hdraw") {
+                result1 = "hdraw";
+                pos += 5;
+              } else {
+                result1 = null;
+                if (reportFailures === 0) {
+                  matchFailed("\"hdraw\"");
+                }
+              }
+            }
+          }
+          if (result1 !== null) {
+            if (input.substr(pos, 2) === "_=") {
+              result2 = "_=";
+              pos += 2;
             } else {
               result2 = null;
+              if (reportFailures === 0) {
+                matchFailed("\"_=\"");
+              }
             }
             if (result2 !== null) {
               result3 = parse_q();
               if (result3 !== null) {
-                result0 = [result0, result1, result2, result3];
+                result5 = parse_drawing();
+                if (result5 !== null) {
+                  result4 = [];
+                  while (result5 !== null) {
+                    result4.push(result5);
+                    result5 = parse_drawing();
+                  }
+                } else {
+                  result4 = null;
+                }
+                if (result4 !== null) {
+                  result5 = parse_q();
+                  if (result5 !== null) {
+                    result0 = [result0, result1, result2, result3, result4, result5];
+                  } else {
+                    result0 = null;
+                    pos = pos1;
+                  }
+                } else {
+                  result0 = null;
+                  pos = pos1;
+                }
               } else {
                 result0 = null;
                 pos = pos1;
@@ -1196,7 +1224,7 @@ var parser = (function(){
           pos = pos1;
         }
         if (result0 !== null) {
-          result0 = (function(offset, s, d) {return {type: "draw", subtype:s, shapes: d}})(pos0, result0[0], result0[2]);
+          result0 = (function(offset, s, d) {return {type: s, elements: d}})(pos0, result0[1], result0[4]);
         }
         if (result0 === null) {
           pos = pos0;
@@ -1645,7 +1673,7 @@ var parser = (function(){
           pos = pos1;
         }
         if (result0 !== null) {
-          result0 = (function(offset, c, t) {return {shape: 'text', p:c, text:t}})(pos0, result0[1], result0[7]);
+          result0 = (function(offset, c, t) {return {x:c[0], y:c[1], text:t}})(pos0, result0[1], result0[7]);
         }
         if (result0 === null) {
           pos = pos0;
