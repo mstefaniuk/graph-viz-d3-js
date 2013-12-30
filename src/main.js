@@ -3,7 +3,7 @@
  * Date: 17.12.13 12:17
  */
 
-define(['viz', 'parser/xdot'], function (viz, parser) {
+define(['viz', 'parser/xdot', 'pegast'], function (viz, parser, pegast) {
   return {
     generate: function (dot) {
       var xdot = viz(dot, "xdot");
@@ -12,17 +12,7 @@ define(['viz', 'parser/xdot'], function (viz, parser) {
     }
   }
 
-  function buildNodeVisitor(functions) {
-    return function (node) {
-      return functions[node.type].apply(null, arguments);
-    };
-  }
-
-  function nop() {
-  }
-
   function shapes(ast) {
-
     var result = [];
 
     function visitSubnodes(propertyName) {
@@ -43,7 +33,7 @@ define(['viz', 'parser/xdot'], function (viz, parser) {
       }
     }
 
-    var visit = buildNodeVisitor({
+    var visit = pegast.nodeVisitor({
       digraph: startGroup('commands'),
       graph: visitSubnodes('attributes'),
       subgraph: startGroup('commands'),
@@ -51,8 +41,7 @@ define(['viz', 'parser/xdot'], function (viz, parser) {
       relation: startGroup('attributes'),
       draw: addToSection('shapes'),
       hdraw: addToSection('shapes'),
-      ldraw: addToSection('labels'),
-      skip: nop,
+      ldraw: addToSection('labels')
     });
     visit(ast);
 
