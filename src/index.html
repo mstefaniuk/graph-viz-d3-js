@@ -9,13 +9,15 @@
       /*height: 500px;*/
       /*position: relative;*/
     }
+
     path {
       fill: transparent;
       stroke: black;
     }
+
     text {
       text-anchor: middle;
-      font-family: "Times-Roman",serif;
+      font-family: "Times-Roman", serif;
       font-size: 14;
     }
 
@@ -55,6 +57,7 @@ digraph G {
 	end [shape=Msquare];
 }
 
+
 </script>
 <script type="text/vnd.graphviz" id="cluster2">
 digraph G {
@@ -76,14 +79,12 @@ digraph G {
 	start -> a0;
 	start -> b0;
 	a1 -> b3;
-	b2 -> a3;
-	a3 -> a0;
-	a3 -> end;
 	b3 -> end;
 
 	start [shape=Mdiamond];
 	end [shape=Msquare];
 }
+
 
 </script>
 <script type="text/vnd.graphviz" id="cluster3">
@@ -99,14 +100,11 @@ digraph G {
 
 	subgraph cluster_1 {
 		node [style=filled];
-		b0 -> b1 -> b2 -> b3;
+		b0 -> b1 -> b3;
 		label = "process #2";
 		color=blue
 	}
 	start -> a0;
-	start -> b0;
-	a1 -> b3;
-	b2 -> a3;
 	a3 -> a0;
 	a3 -> end;
 	b3 -> end;
@@ -114,6 +112,7 @@ digraph G {
 	start [shape=Mdiamond];
 	end [shape=Msquare];
 }
+
 
 </script>
 
@@ -131,67 +130,108 @@ digraph G {
   });
   require(["main", "jsdump", "d3", "palette"],
       function (tool, dump, d3, palette) {
+
+        var frame = [
+          document.getElementById('cluster1').innerHTML,
+          document.getElementById('cluster2').innerHTML,
+          document.getElementById('cluster3').innerHTML];
+
+        var links = d3.select("body").selectAll("a").data(frame).enter()
+            .append("a")
+            .attr("href", "#")
+            .text(function (d, i) {
+              return "Ramka " + i
+            });
+
         var width = 218,
             height = 400;
-        var frames = [
-              document.getElementById('cluster1').innerHTML,
-              document.getElementById('cluster2').innerHTML,
-              document.getElementById('cluster3').innerHTML];
+        var svg = d3.select("body").append("svg");
 
-        var stage = tool.generate(frames[0]);
-
-        var svg = d3.select("body").append("svg")
-            .attr("width", width+"pt")
-            .attr("height", height+"pt")
-            .attr("viewbox", "0.00 0.00 224.00 408.00")
+        var main = d3.select("body").select("svg")
             .append("g")
             .attr("transform", "translate(0," + height + ")");
 
-        var groups = svg.selectAll("g").data(stage, function (d) {
-          return d.id;
-        });
-        var entering = groups.enter().append("g").attr("class", function(d){return d.class});
-        entering.append("title").text(function(d){return d.id});
-        svg.selectAll(".node")
-            .style("opacity", 0.0)
-            .transition()
-            .duration(500)
-            .style("opacity", 1.0);
-        svg.selectAll(".relation")
-            .style("opacity", 0.0)
-            .transition()
-            .delay(400)
-            .duration(500)
-            .style("opacity", 1.0);
+        links.on("click", function (d) {
+          var stage = tool.generate(d);
+          console.log(stage);
 
-//        groups.enter()
-//        groups.exit().remove();
+          var width = stage[0].shapes[0].points[2][0],
+              height = stage[0].shapes[0].points[2][1];
 
-        var shapes = groups.selectAll(".shape").data(function (d) {
-          return d.shapes;
-        }, function(d,i){
-          return [d.shape,i].join('-');}
-        );
+          d3.select("body").select("svg")
+              .attr("width", width + "pt")
+              .attr("height", height + "pt")
+//              .attr("viewbox", "0.00 0.00 224.00 408.00")
+              .select("g")
+              .attr("transform", "translate(0," + height + ")");
 
-        shapes.enter()
-            .append("path")
-              .attr("d", function(d) {
+          var groups = main.selectAll("g").data(stage, function (d) {
+            return d.id;
+          });
+          var entering = groups.enter().append("g").attr("class", function (d) {
+            return d.class
+          });
+          entering.append("title").text(function (d) {
+            return d.id
+          });
+          entering.filter(".node")
+              .style("opacity", 0.0)
+              .transition()
+              .delay(400)
+              .duration(500)
+              .style("opacity", 1.0);
+          entering.filter(".relation")
+              .style("opacity", 0.0)
+              .transition()
+              .delay(600)
+              .duration(500)
+              .style("opacity", 1.0);
+
+          groups.exit()
+              .transition()
+              .duration(200)
+              .style("opacity", 0.0)
+              .remove();
+
+          var shapes = groups.selectAll("path").data(function (d) {
+                return d.shapes;
+              }, function (d, i) {
+                return [d.shape, i].join('-');
+              }
+          );
+          shapes.enter().append("path");
+          shapes
+              .transition()
+              .duration(500)
+              .attr("d", function (d) {
                 var shape = d.shape;
                 return palette[shape](d);
               })
-              .attr("style", function(d) {return d.style.map(function(e){return [e.key,e.value].join(':')}).join(';')});
+              .attr("style", function (d) {
+                return d.style.map(function (e) {
+                  return [e.key, e.value].join(':')
+                }).join(';')
+              });
 
-        groups.selectAll("text").data(function(d){return d.labels}).enter()
-            .append("text")
-            .attr("x", function(d){return d.x})
-            .attr("y", function(d){return -d.y})
+          var labels = groups.selectAll("text").data(function (d) {
+            return d.labels
+          })
+          labels.enter().append("text");
+          labels
+              .transition()
+              .duration(500)
+              .attr("x", function (d) {
+                return d.x
+              })
+              .attr("y", function (d) {
+                return -d.y
+              })
 //            .attr("style", function(d) {return d.style.map(function(e){return [e.key,e.value].join(':')}).join(';')})
-            .text(function(d){return d.text});
+              .text(function (d) {
+                return d.text
+              });
 
-//        groups
-//        shapes.exit().remove();
-
-//        document.body.innerHTML += "<pre>" + dump.parse(stage) + "</pre>";
+        });
       }
   );
 </script>
