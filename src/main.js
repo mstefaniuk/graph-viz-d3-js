@@ -12,13 +12,6 @@ define(['viz', 'parser/xdot'], function (viz, parser) {
     }
   }
 
-  function each(array, callback) {
-    var length = array.length;
-    for (var i = 0; i < length; i++) {
-      callback(array[i], i);
-    }
-  }
-
   function buildNodeVisitor(functions) {
     return function (node) {
       return functions[node.type].apply(null, arguments);
@@ -33,13 +26,13 @@ define(['viz', 'parser/xdot'], function (viz, parser) {
     var result = [];
 
     function visitSubnodes(propertyName) {
-      return function(node) { each(node[propertyName], visit); };
+      return function(node) {node[propertyName].forEach(visit)};
     }
 
     function startGroup(propertyName) {
       return function(node) {
         result.push({id: node.id, class: node.type, shapes: [], labels: []});
-        each(node[propertyName], visit);
+        node[propertyName].forEach(visit);
       };
     }
 
