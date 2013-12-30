@@ -3,28 +3,22 @@
  * Date: 30.12.13 05:14
  */
 
-define(["d3"], function (d3) {
-  var line = d3.svg
-    .line()
-    .x(function (d) {
-      return d[0];
-    })
-    .y(function (d) {
-      return -d[1];
-    })
-    .interpolate("bundle");
+define([], function () {
+  function path(points, command, close) {
+    return [
+      "M",
+      [points[0][0], -points[0][1]].join(','),
+      command,
+      points.slice(1, points.length)
+        .map(function (e) {
+          return [e[0], -e[1]].join(",")
+        }), close===true ? "Z" : ""
+    ].join(" ");
+  };
 
   return {
     polygon: function (d) {
-      return [
-        "M",
-        [d.points[0][0], -d.points[0][1]].join(','),
-        "L",
-        d.points.slice(1, d.points.length)
-          .map(function (e) {
-            return [e[0], -e[1]].join(",")
-          }),
-        "Z"].join(" ");
+      return path(d.points, "L", true);
     },
     ellipse: function (d) {
       return [
@@ -54,7 +48,7 @@ define(["d3"], function (d3) {
       });
     },
     path: function (d) {
-      return line(d.points)
+      return path(d.points, "C");
     },
     bspline: function () {
     },
