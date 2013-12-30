@@ -9,12 +9,20 @@ module.exports = function (grunt) {
       xdot: {
         src: "src/grammar/xdot.pegjs",
         dest: "target/parser/xdot.js"
+      },
+      dot: {
+        src: "src/grammar/dot.pegjs",
+        dest: "target/parser/dot.js"
       }
     },
     file_append: {
       default_options: {
         files: {
           'target/parser/xdot.js': {
+            prepend: "define(function () {\nvar ",
+            append: "\nreturn parser;\n});"
+          },
+          'target/parser/dot.js': {
             prepend: "define(function () {\nvar ",
             append: "\nreturn parser;\n});"
           }
