@@ -4,10 +4,10 @@
   <style>
 
     body {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      width: 960px;
-      height: 500px;
-      position: relative;
+      /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+      /*width: 960px;*/
+      /*height: 500px;*/
+      /*position: relative;*/
     }
     path {
       fill: transparent;
@@ -15,6 +15,8 @@
     }
     text {
       text-anchor: middle;
+      font-family: "Times-Roman",serif;
+      font-size: 14;
     }
 
   </style>
@@ -24,7 +26,67 @@
 </head>
 <body>
 
-<script type="text/vnd.graphviz" id="cluster">
+<script type="text/vnd.graphviz" id="cluster1">
+digraph G {
+
+	subgraph cluster_0 {
+		style=filled;
+		color=lightgrey;
+		node [style=filled,color=white];
+		a0 -> a1 -> a2 -> a3;
+		label = "process #1";
+	}
+
+	subgraph cluster_1 {
+		node [style=filled];
+		b0 -> b1 -> b2 -> b3;
+		label = "process #2";
+		color=blue
+	}
+	start -> a0;
+	start -> b0;
+	a1 -> b3;
+	b2 -> a3;
+	a3 -> a0;
+	a3 -> end;
+	b3 -> end;
+
+	start [shape=Mdiamond];
+	end [shape=Msquare];
+}
+
+</script>
+<script type="text/vnd.graphviz" id="cluster2">
+digraph G {
+
+	subgraph cluster_0 {
+		style=filled;
+		color=lightgrey;
+		node [style=filled,color=white];
+		a0 -> a1 -> a2 -> a3;
+		label = "process #1";
+	}
+
+	subgraph cluster_1 {
+		node [style=filled];
+		b0 -> b1 -> b2 -> b3;
+		label = "process #2";
+		color=blue
+	}
+	start -> a0;
+	start -> b0;
+	a1 -> b3;
+	b2 -> a3;
+	a3 -> a0;
+	a3 -> end;
+	b3 -> end;
+
+	start [shape=Mdiamond];
+	end [shape=Msquare];
+}
+
+</script>
+<script type="text/vnd.graphviz" id="cluster3">
 digraph G {
 
 	subgraph cluster_0 {
@@ -67,80 +129,42 @@ digraph G {
       }
     }
   });
-  require(["main", "jsdump", "d3"],
-      function (tool, dump, d3) {
+  require(["main", "jsdump", "d3", "palette"],
+      function (tool, dump, d3, palette) {
         var width = 218,
-            height = 400,
-            dot = document.getElementById('cluster').innerHTML;
+            height = 400;
+        var frames = [
+              document.getElementById('cluster1').innerHTML,
+              document.getElementById('cluster2').innerHTML,
+              document.getElementById('cluster3').innerHTML];
 
-        var line = d3.svg
-            .line()
-            .x(function (d) {
-              return d[0];
-            })
-            .y(function (d) {
-              return -d[1];
-            })
-            .interpolate("bundle");
-
-        var palette = {
-          polygon: function (d) {
-            return [
-              "M",
-              [d.points[0][0],-d.points[0][1]].join(','),
-              "L",
-              d.points.slice(1, d.points.length)
-                  .map(function (e) {
-                    return [e[0],-e[1]].join(",")
-                  }),
-              "Z"].join(" ");
-          },
-          ellipse: function (d) {
-            return [
-              'M', [d.cx, -d.cy].join(','),
-              'm', [-d.rx, 0].join(','),
-              'a', [d.rx, d.ry].join(','),
-              0, "1,0", [2 * d.rx, 0].join(','),
-              'a', [d.rx, d.ry].join(','),
-              0, "1,0", [-2 * d.rx, 0].join(',')].join(' ');
-          },
-          circle: function (d) {
-            return this.ellipse({
-              cx: d.cx,
-              cy: -d.cy,
-              rx: d.r,
-              ry: d.r
-            });
-          },
-          rect: function (d) {
-            return this.polygon({
-              points: [
-                [d.x, -d.y],
-                [d.x + d.width, -d.y],
-                [d.x + d.width, -d.y + d.height],
-                [d.x, -d.y + d.height]
-              ]
-            });
-          },
-          path: function (d) {
-            return line(d.points)
-          },
-          bspline: function(){},
-          polyline: function(){}
-        };
-
-        var stage = tool.generate(dot);
+        var stage = tool.generate(frames[0]);
 
         var svg = d3.select("body").append("svg")
-            .attr("width", width)
-            .attr("height", height)
+            .attr("width", width+"pt")
+            .attr("height", height+"pt")
+            .attr("viewbox", "0.00 0.00 224.00 408.00")
             .append("g")
             .attr("transform", "translate(0," + height + ")");
 
         var groups = svg.selectAll("g").data(stage, function (d) {
           return d.id;
         });
-        groups.enter().append("g").append("title").text(function(d){return d.id});
+        var entering = groups.enter().append("g").attr("class", function(d){return d.class});
+        entering.append("title").text(function(d){return d.id});
+        svg.selectAll(".node")
+            .style("opacity", 0.0)
+            .transition()
+            .duration(500)
+            .style("opacity", 1.0);
+        svg.selectAll(".relation")
+            .style("opacity", 0.0)
+            .transition()
+            .delay(400)
+            .duration(500)
+            .style("opacity", 1.0);
+
+//        groups.enter()
 //        groups.exit().remove();
 
         var shapes = groups.selectAll(".shape").data(function (d) {
@@ -155,15 +179,19 @@ digraph G {
                 var shape = d.shape;
                 return palette[shape](d);
               })
-              .classed("shape");
+              .attr("style", function(d) {return d.style.map(function(e){return [e.key,e.value].join(':')}).join(';')});
+
         groups.selectAll("text").data(function(d){return d.labels}).enter()
             .append("text")
             .attr("x", function(d){return d.x})
             .attr("y", function(d){return -d.y})
+//            .attr("style", function(d) {return d.style.map(function(e){return [e.key,e.value].join(':')}).join(';')})
             .text(function(d){return d.text});
+
+//        groups
 //        shapes.exit().remove();
 
-        document.body.innerHTML += "<pre>" + dump.parse(stage) + "</pre>";
+//        document.body.innerHTML += "<pre>" + dump.parse(stage) + "</pre>";
       }
   );
 </script>

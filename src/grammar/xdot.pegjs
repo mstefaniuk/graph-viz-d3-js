@@ -20,7 +20,8 @@ cattribute = n:("style" / "shape" / "color") "=" ncs {return {name: n}}
 
 draw = "_" s:("draw" / "ldraw" / "hdraw") "_=" q d:drawing+ q {return {type: s, elements: d}}
 drawing = st:styling? _ sh:shapes _ {sh.style = st; return sh}
-styling = s:styles ss:(_ s:styles {return s})* {return [].concat(s).concat(ss)}
+styling = s:styles ss:(_ s:styles {return s})*
+    {return [].concat(s).concat(ss);}
 styles = pen / font / style
 shapes = polygon / polyline / ellipse / bspline / text
 
@@ -30,8 +31,10 @@ polyline = [L] _ integer c:coordinates+ {return {shape: 'polyline', points:c}}
 bspline = [bB] _ integer c:coordinates+ {return {shape: 'path', points: c}}
 text = [T] c:coordinates _ integer
            _ integer _ t:vardata {return {x:c[0], y:c[1], text:t}}
-pen = p:[Cc] _ c:vardata {return p=='C' ? {key: "fill", value: c} : {key: "stroke", value: c}}
-font = f:[F] _ s:decimal _ t:vardata {return [{key:'font-name', value: t}, {key:'font-size', value:s}]}
+pen = p:[Cc] _ c:vardata
+    {var color="rgba("+[parseInt(c.substr(1,2),16),parseInt(c.substr(3,2),16),parseInt(c.substr(5,2),16),parseInt(c.substr(7,2),16)/255].join(',')+")";
+    return p=='C' ? {key: "fill", value: color} : {key: "stroke", value: color}}
+font = f:[F] _ s:decimal _ t:vardata {return [{key:'font-family', value: "'"+t+"',serif"}, {key:'font-size', value:'14.00'}]}
 style = [S] _ s:vardata {return {key:'style', value: s}}
 
 vardata = s:varsize _ "-" v:varchar {counter=s; return v}

@@ -38,7 +38,7 @@ define(['viz', 'parser/xdot'], function (viz, parser) {
 
     function startGroup(propertyName) {
       return function(node) {
-        result.push({id: node.id, shapes: [], labels: []});
+        result.push({id: node.id, class: node.type, shapes: [], labels: []});
         each(node[propertyName], visit);
       };
     }
