@@ -48,10 +48,10 @@ module.exports = function (grunt) {
     requirejs: {
       compile: {
         options: {
-          name: "main",
+          name: "stage",
 //          mainConfigFile: "target/config.js",
           baseUrl: "target",
-          out: "target/main.min.js"
+          out: "target/stage.min.js"
         }
       }
     },
@@ -60,8 +60,8 @@ module.exports = function (grunt) {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       build: {
-        src: 'target/main.js',
-        dest: 'target/main.min.js'
+        src: 'target/d3dot.js',
+        dest: 'target/stage.min.js'
       }
     },
     watch: {

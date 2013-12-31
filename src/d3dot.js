@@ -3,11 +3,14 @@
  * Date: 17.12.13 12:17
  */
 
-define(['viz', 'parser/xdot', 'pegast'], function (viz, parser, pegast) {
+define(['parser/dot', 'viz', 'parser/xdot', 'pegast'], function (dotparser, viz, xdotparser, pegast) {
   return {
-    generate: function (dot) {
-      var xdot = viz(dot, "xdot");
-      var ast = parser.parse(xdot);
+    validate: function (source) {
+      dotparser.parse(source);
+    },
+    generate: function (source) {
+      var xdot = viz(source, "xdot");
+      var ast = xdotparser.parse(xdot);
       return shapes(ast);
     }
   }
@@ -16,19 +19,21 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, parser, pegast) {
     var result = [];
 
     function visitSubnodes(propertyName) {
-      return function(node) {node[propertyName].forEach(visit)};
+      return function (node) {
+        node[propertyName].forEach(visit)
+      };
     }
 
     function startGroup(propertyName) {
-      return function(node) {
+      return function (node) {
         result.push({id: node.id, class: node.type, shapes: [], labels: []});
         node[propertyName].forEach(visit);
       };
     }
 
-    function addToSection(section){
-      return function(node) {
-        var last = result[result.length-1];
+    function addToSection(section) {
+      return function (node) {
+        var last = result[result.length - 1];
         last[section] = last[section].concat(node.elements);
       }
     }
