@@ -2,7 +2,7 @@ define(["d3", "d3dot", "palette"], function (d3, d3dot, palette) {
     var svg, main;
     return {
       init: function () {
-        svg = d3.select("body").append("svg");
+        svg = d3.select("body").select("#graph").append("svg");
         main = svg.append("g");
       },
       draw: function (source) {
@@ -12,6 +12,9 @@ define(["d3", "d3dot", "palette"], function (d3, d3dot, palette) {
           height = stage[0].shapes[0].points[2][1];
 
         svg
+          .transition()
+          .delay(150)
+          .duration(500)
           .attr("width", width + "pt")
           .attr("height", height + "pt")
           .select("g")
@@ -29,19 +32,19 @@ define(["d3", "d3dot", "palette"], function (d3, d3dot, palette) {
         entering.filter(".node")
           .style("opacity", 0.0)
           .transition()
-          .delay(400)
-          .duration(500)
+          .delay(150)
+          .duration(900)
           .style("opacity", 1.0);
         entering.filter(".relation")
           .style("opacity", 0.0)
           .transition()
-          .delay(600)
-          .duration(500)
+          .delay(150)
+          .duration(900)
           .style("opacity", 1.0);
 
         groups.exit()
           .transition()
-          .duration(200)
+          .duration(100)
           .style("opacity", 0.0)
           .remove();
 
@@ -54,7 +57,8 @@ define(["d3", "d3dot", "palette"], function (d3, d3dot, palette) {
         shapes.enter().append("path");
         shapes
           .transition()
-          .duration(500)
+          .delay(150)
+          .duration(900)
           .attr("d", function (d) {
             var shape = d.shape;
             return palette[shape](d);
@@ -71,7 +75,8 @@ define(["d3", "d3dot", "palette"], function (d3, d3dot, palette) {
         labels.enter().append("text");
         labels
           .transition()
-          .duration(500)
+          .delay(150)
+          .duration(900)
           .attr("x", function (d) {
             return d.x
           })

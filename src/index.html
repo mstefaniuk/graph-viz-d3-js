@@ -10,6 +10,19 @@
       /*position: relative;*/
     }
 
+    #editor {
+      position: absolute;
+      height: 100%;
+      width: 45%;
+    }
+
+    #graph {
+      left: 50%;
+      position: relative;
+      height: 100%;
+      width: 50%;
+    }
+
     path {
       fill: transparent;
       stroke: black;
@@ -28,103 +41,44 @@
 </head>
 <body>
 
-<script type="text/vnd.graphviz" id="cluster1">
-digraph G {
+<div id="editor">digraph G {
 
-	subgraph cluster_0 {
-		style=filled;
-		color=lightgrey;
-		node [style=filled,color=white];
-		a0 -> a1 -> a2 -> a3;
-		label = "process #1";
-	}
+  subgraph cluster_0 {
+  style=filled;
+  color=lightgrey;
+  node [style=filled,color=white];
+  a0 -> a1 -> a2 -> a3;
+  label = "process #1";
+  }
 
-	subgraph cluster_1 {
-		node [style=filled];
-		b0 -> b1 -> b2 -> b3;
-		label = "process #2";
-		color=blue
-	}
-	start -> a0;
-	start -> b0;
-	a1 -> b3;
-	b2 -> a3;
-	a3 -> a0;
-	a3 -> end;
-	b3 -> end;
+  subgraph cluster_1 {
+  node [style=filled];
+  b0 -> b1 -> b2 -> b3;
+  label = "process #2";
+  color=blue
+  }
+  start -> a0;
+  start -> b0;
+  a1 -> b3;
+  b2 -> a3;
+  a3 -> a0;
+  a3 -> end;
+  b3 -> end;
 
-	start [shape=Mdiamond];
-	end [shape=Msquare];
-}
+  start [shape=Mdiamond];
+  end [shape=Msquare];
+  }
+</div>
+<div id="graph">
 
-
-
-</script>
-<script type="text/vnd.graphviz" id="cluster2">
-digraph G {
-
-	subgraph cluster_0 {
-		style=filled;
-		color=lightgrey;
-		node [style=filled,color=white];
-		a0 -> a1 -> a2 -> a3;
-		label = "process #1";
-	}
-
-	subgraph cluster_1 {
-		node [style=filled];
-		b0 -> b1 -> b2 -> b3;
-		label = "process #2";
-		color=blue
-	}
-	start -> a0;
-	start -> b0;
-	a1 -> b3;
-	b3 -> end;
-
-	start [shape=Mdiamond];
-	end [shape=Msquare];
-}
-
-
-
-</script>
-<script type="text/vnd.graphviz" id="cluster3">
-digraph G {
-
-	subgraph cluster_0 {
-		style=filled;
-		color=lightgrey;
-		node [style=filled,color=white];
-		a0 -> a1 -> a2 -> a3;
-		label = "process #1";
-	}
-
-	subgraph cluster_1 {
-		node [style=filled];
-		b0 -> b1 -> b3;
-		label = "process #2";
-		color=blue
-	}
-	start -> a0;
-	a3 -> a0;
-	a3 -> end;
-	b3 -> end;
-
-	start [shape=Mdiamond];
-	end [shape=Msquare];
-}
-
-
-
-</script>
+</div>
 
 <script src="require.js"></script>
+<script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js"></script>
 <script>
   require.config({
     paths: {
-      d3: 'http://d3js.org/d3.v3.min',
-      ace: 'http://cdnjs.cloudflare.com/ajax/libs/ace/1.1.01'
+      d3: 'http://d3js.org/d3.v3.min'
     },
     shim: {
       d3: {
@@ -135,22 +89,22 @@ digraph G {
   require(["stage", "d3"],
       function (stage, d3) {
 
-        var frame = [
-          document.getElementById('cluster1').innerHTML,
-          document.getElementById('cluster2').innerHTML,
-          document.getElementById('cluster3').innerHTML];
-
-        var links = d3.select("body").selectAll("a").data(frame).enter()
-            .append("a")
-            .attr("href", "#")
-            .text(function (d, i) {
-              return "Ramka " + i
-            });
+        var editor = ace.edit("editor");
+        editor.setTheme("ace/theme/monokai");
+        editor.getSession().setMode("ace/mode/dot");
 
         stage.init();
+        stage.draw(editor.getValue());
 
-        links.on("click", function (d) {
-          stage.draw(d);
+        var drawing = false;
+        editor.on("change", function () {
+          setTimeout(function () {
+            if (!drawing) {
+              drawing = true;
+              stage.draw(editor.getValue());
+              drawing = false;
+            }
+          }, 500);
         });
       }
   );
