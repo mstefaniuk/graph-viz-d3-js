@@ -1,8 +1,3 @@
-/**
- * Author: Marcin Stefaniuk
- * Date: 17.12.13 12:17
- */
-
 define(['parser/dot', 'viz', 'parser/xdot', 'pegast'], function (dotparser, viz, xdotparser, pegast) {
   var last = [];
   return {
