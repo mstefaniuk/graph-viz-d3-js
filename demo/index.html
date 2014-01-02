@@ -4,22 +4,31 @@
   <style>
 
     body {
-      /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-      /*width: 960px;*/
-      /*height: 500px;*/
-      /*position: relative;*/
+      font-family: monospace;
+      font-size: 0.9em;
     }
 
     #editor {
       position: absolute;
-      height: 100%;
+      top: 0;
+      bottom: 3em;
+      left: 0;
       width: 45%;
+    }
+    #editor-bar {
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 45%;
+      height: 3em;
     }
 
     #graph {
       left: 50%;
       position: relative;
-      height: 100%;
+      height: 90%;
       width: 50%;
     }
 
@@ -33,29 +42,23 @@
       font-family: "Times-Roman", serif;
       font-size: 14;
     }
-
   </style>
-  <!--
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-  -->
 </head>
 <body>
 
 <div id="editor">digraph G {
-
   subgraph cluster_0 {
-  style=filled;
-  color=lightgrey;
-  node [style=filled,color=white];
-  a0 -> a1 -> a2 -> a3;
-  label = "process #1";
+    style=filled;
+    color=lightgrey;
+    node [style=filled,color=white];
+    a0 -> a1 -> a2 -> a3;
+    label = "process #1";
   }
-
   subgraph cluster_1 {
-  node [style=filled];
-  b0 -> b1 -> b2 -> b3;
-  label = "process #2";
-  color=blue
+    node [style=filled];
+    b0 -> b1 -> b2 -> b3;
+    label = "process #2";
+    color=blue
   }
   start -> a0;
   start -> b0;
@@ -67,11 +70,9 @@
 
   start [shape=Mdiamond];
   end [shape=Msquare];
-  }
-</div>
-<div id="graph">
-
-</div>
+}</div>
+<div id="editor-bar" class="ace_status-indicator">OK</div>
+<div id="graph"></div>
 
 <script src="../lib/requirejs/require.js"></script>
 <script>
@@ -88,20 +89,26 @@
       }
     }
   });
-  require(["stage", "d3", "ace/ace"],
-      function (stage, d3, ace) {
+  require(["stage", "d3", "ace/ace", "ace/lib/lang", 'parser/dot'],
+      function (stage, d3, ace, lang, parser) {
 
         var editor = ace.edit("editor");
+        var bar = document.getElementById('editor-bar');
         editor.setTheme("ace/theme/eclipse");
         editor.getSession().setMode("ace/mode/dot");
-
         stage.init();
         stage.draw(editor.getValue());
 
-        var redraw = lang.delayedCall(function() {
-          stage.draw(editor.getValue());
+        var update = lang.delayedCall(function() {
+          try {
+            var result = parser.parse(editor.getValue());
+            bar.textContent = "OK";
+            stage.draw(editor.getValue());
+          } catch (e) {
+            bar.textContent = [e.line, ':', e.column, ' ', e.message].join('');
+          }
         })
-        editor.on("change", function () {redraw.schedule(1000)});
+        editor.on("change", function () {update.delay(1500)});
       }
   );
 </script>
