@@ -73,12 +73,14 @@
 
 </div>
 
-<script src="require.js"></script>
-<script src="http://d1n0x3qji82z53.cloudfront.net/src-min-noconflict/ace.js"></script>
+<script src="../lib/requirejs/require.js"></script>
 <script>
   require.config({
+    baseUrl: "../target",
     paths: {
-      d3: 'http://d3js.org/d3.v3.min'
+      d3: '../lib/d3/d3',
+      ace: '../lib/ace',
+      viz: '../lib/viz'
     },
     shim: {
       d3: {
@@ -86,26 +88,20 @@
       }
     }
   });
-  require(["stage", "d3"],
-      function (stage, d3) {
+  require(["stage", "d3", "ace/ace"],
+      function (stage, d3, ace) {
 
         var editor = ace.edit("editor");
-        editor.setTheme("ace/theme/monokai");
+        editor.setTheme("ace/theme/eclipse");
         editor.getSession().setMode("ace/mode/dot");
 
         stage.init();
         stage.draw(editor.getValue());
 
-        var drawing = false;
-        editor.on("change", function () {
-          setTimeout(function () {
-            if (!drawing) {
-              drawing = true;
-              stage.draw(editor.getValue());
-              drawing = false;
-            }
-          }, 500);
-        });
+        var redraw = lang.delayedCall(function() {
+          stage.draw(editor.getValue());
+        })
+        editor.on("change", function () {redraw.schedule(1000)});
       }
   );
 </script>

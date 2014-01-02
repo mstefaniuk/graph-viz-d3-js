@@ -4,14 +4,21 @@
  */
 
 define(['parser/dot', 'viz', 'parser/xdot', 'pegast'], function (dotparser, viz, xdotparser, pegast) {
+  var last = [];
   return {
     validate: function (source) {
       dotparser.parse(source);
     },
     generate: function (source) {
+      console.log("Parsing dot source!");
       var xdot = viz(source, "xdot");
-      var ast = xdotparser.parse(xdot);
-      return shapes(ast);
+      try {
+        var ast = xdotparser.parse(xdot);
+        var stage = last = shapes(ast);
+      } catch(e) {
+//        console.log(xdot);
+      }
+      return last;
     }
   }
 

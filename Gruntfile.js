@@ -3,7 +3,18 @@ module.exports = function (grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    clean: ["target"],
+    bower: {
+      install: {
+        options: {
+          layout: "byType",
+          cleanBowerDir: true
+        }
+      }
+    },
+    clean: {
+      target: ["target"],
+      bower: ["lib/ace","lib/requirejs"]
+    },
     peg: {
       options: {exportVar: "parser"},
       xdot: {
@@ -30,19 +41,11 @@ module.exports = function (grunt) {
       }
     },
     copy: {
-      full: {
-        src: ['src/*','lib/*'],
-        filter: 'isFile',
-        dest: 'target/',
-        flatten: true,
-        expand: true
-      },
-      watch: {
+      src: {
         src: ['src/*'],
-        filter: 'isFile',
         dest: 'target/',
-        flatten: true,
-        expand: true
+        expand: true,
+        flatten: true
       }
     },
     requirejs: {
@@ -67,14 +70,23 @@ module.exports = function (grunt) {
     watch: {
       page: {
         files: ['src/**'],
-        tasks: ['peg','copy:watch','file_append'],
+        tasks: ['peg', 'copy:src', 'file_append'],
       },
       options: {
         interval: 100
       }
+    },
+    nodestatic: {
+      server: {
+        options: {
+          port: 9999,
+          keepalive: true
+        }
+      }
     }
   });
 
+  grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
@@ -82,7 +94,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-file-append');
   grunt.loadNpmTasks('grunt-peg');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-nodestatic');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean', 'peg', 'copy', 'file_append']);
+  grunt.registerTask('default', ['clean:target', 'peg', 'copy:all', 'file_append']);
+  grunt.registerTask('all', ['clean', "bower:install", 'peg', 'copy', 'file_append']);
 };
