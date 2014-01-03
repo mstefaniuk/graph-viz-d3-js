@@ -8,19 +8,19 @@ define(["d3", "d3dot", "palette"], function (d3, d3dot, palette) {
       draw: function (source) {
         var stage = d3dot.generate(source);
 
-        var width = stage[0].shapes[0].points[2][0],
-          height = stage[0].shapes[0].points[2][1];
+        var width = stage.main.shapes[0].points[2][0],
+          height = stage.main.shapes[0].points[2][1];
 
         svg
           .transition()
           .delay(150)
           .duration(500)
-          .attr("width", width + "pt")
-          .attr("height", height + "pt")
+          .attr("width", width + "px")
+          .attr("height", height + "px")
           .select("g")
           .attr("transform", "translate(0," + height + ")");
 
-        var groups = main.selectAll("g").data(stage, function (d) {
+        var groups = main.selectAll("g").data(stage.groups, function (d) {
           return d.id;
         });
         var entering = groups.enter().append("g").attr("class", function (d) {
