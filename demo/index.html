@@ -26,10 +26,13 @@
     }
 
     #graph {
+      top: 0;
       left: 50%;
-      position: relative;
-      height: 90%;
+      position: absolute;
+      right: 0;
+      bottom: 3em;
       width: 50%;
+      overflow: scroll;
     }
 
     path {
@@ -102,8 +105,12 @@
         var update = lang.delayedCall(function() {
           try {
             var result = parser.parse(editor.getValue());
-            bar.textContent = "OK";
-            stage.draw(editor.getValue());
+            if (result.length==0) {
+              bar.textContent = "OK";
+              stage.draw(editor.getValue());
+            } else {
+              bar.textContent = result.join(',');
+            }
           } catch (e) {
             bar.textContent = [e.line, ':', e.column, ' ', e.message].join('');
           }

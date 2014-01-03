@@ -1,9 +1,6 @@
-define(['parser/dot', 'viz', 'parser/xdot', 'pegast'], function (dotparser, viz, xdotparser, pegast) {
+define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
   var last = [];
   return {
-    validate: function (source) {
-      dotparser.parse(source);
-    },
     generate: function (source) {
       console.log("Parsing dot source!");
       var xdot = viz(source, "xdot");
@@ -52,6 +49,9 @@ define(['parser/dot', 'viz', 'parser/xdot', 'pegast'], function (dotparser, viz,
     });
     visit(ast);
 
-    return result;
+    return {
+      main: result.shift(),
+      groups: result
+    };
   };
 })

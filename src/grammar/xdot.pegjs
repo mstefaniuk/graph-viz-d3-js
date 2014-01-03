@@ -1,4 +1,4 @@
-dot = prolog? t:"digraph" _ i:identifier _ b:body {return {type:t,id:i,commands:b}}
+dot = prolog? t:"digraph" i:(_ identifier)? _ b:body {return {type:t,id:i[1],commands:b}}
 prolog = ("#" [^\n]* CR)+ CR
 body = "{" c:statement+ "}" WS? {return c}
 statement= WS* cc:(skip /graph / node / relation / subgraph) {return cc}
