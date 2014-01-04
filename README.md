@@ -1,5 +1,5 @@
-Graphviz *dot* language in your browser
-=======================================
+Graphviz *dot* in your browser
+==============================
 Repository graph-viz-d3-js contains code editor and live preview of code.
 
 Features
