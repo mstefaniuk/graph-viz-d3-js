@@ -1,6 +1,6 @@
-target
+src
 test
 node_modules
-lib/ace
-lib/d3
-lib/requirejs
+bower.json
+Gruntfile.js
+package.json
