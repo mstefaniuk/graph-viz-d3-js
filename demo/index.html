@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <style>
+
+    body {
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+
+    #editor {
+      position: absolute;
+      top: 0;
+      bottom: 3em;
+      left: 0;
+      width: 45%;
+    }
+    #editor-bar {
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 45%;
+      height: 3em;
+    }
+
+    #graph {
+      top: 0;
+      left: 50%;
+      position: absolute;
+      right: 0;
+      bottom: 3em;
+      width: 50%;
+      overflow: scroll;
+    }
+
+    path {
+      fill: transparent;
+      stroke: black;
+    }
+
+    text {
+      text-anchor: middle;
+      font-family: "Times-Roman", serif;
+      font-size: 14;
+    }
+  </style>
+</head>
+<body>
+
+<div id="editor">digraph G {
+  subgraph cluster_0 {
+    style=filled;
+    color=lightgrey;
+    node [style=filled,color=white];
+    a0 -> a1 -> a2 -> a3;
+    label = "process #1";
+  }
+  subgraph cluster_1 {
+    node [style=filled];
+    b0 -> b1 -> b2 -> b3;
+    label = "process #2";
+    color=blue
+  }
+  start -> a0;
+  start -> b0;
+  a1 -> b3;
+  b2 -> a3;
+  a3 -> a0;
+  a3 -> end;
+  b3 -> end;
+
+  start [shape=Mdiamond];
+  end [shape=Msquare];
+}</div>
+<div id="editor-bar" class="ace_status-indicator">OK</div>
+<div id="graph"></div>
+
+<script src="../lib/requirejs/require.js"></script>
+<script>
+  require.config({
+    baseUrl: "../target",
+    paths: {
+      d3: '../lib/d3/d3',
+      ace: '../lib/ace',
+      viz: '../lib/viz'
+    },
+    shim: {
+      d3: {
+        exports: 'd3'
+      }
+    }
+  });
+  require(["stage", "d3", "ace/ace", "ace/lib/lang", 'parser/dot'],
+      function (stage, d3, ace, lang, parser) {
+
+        var editor = ace.edit("editor");
+        var bar = document.getElementById('editor-bar');
+        editor.setTheme("ace/theme/eclipse");
+        editor.getSession().setMode("ace/mode/dot");
+        stage.init();
+        stage.draw(editor.getValue());
+
+        var update = lang.delayedCall(function() {
+          try {
+            var result = parser.parse(editor.getValue(), undefined, "Krowa to ładny ptak!");
+            if (result.length==0) {
+              bar.textContent = "OK";
+              stage.draw(editor.getValue());
+            } else {
+              bar.textContent = "Errors detected!";
+              var a = result.map(function(e){
+                var c = editor.getSession().getDocument().indexToPosition(e.pos);
+                c.text = e.text;
+                c.type = "error";
+                return c;
+              });
+              editor.getSession().setAnnotations(a);
+            }
+          } catch (e) {
+            bar.textContent = [e.line, ':', e.column, ' ', e.message].join('');
+          }
+        })
+        editor.on("change", function () {update.delay(1500)});
+      }
+  );
+</script>
+</body>
