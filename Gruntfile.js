@@ -3,6 +3,15 @@ module.exports = function (grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    jshint: {
+      all: [
+        'Gruntfile.js',
+        'src/*.js'
+      ],
+      options: {
+        jshintrc: '.jshintrc'
+      }
+    },
     bower: {
       install: {
         options: {
@@ -42,7 +51,7 @@ module.exports = function (grunt) {
     },
     copy: {
       src: {
-        src: ['src/*'],
+        src: ['src/*.js'],
         dest: 'target/',
         expand: true,
         flatten: true
@@ -77,16 +86,51 @@ module.exports = function (grunt) {
       }
     },
     nodestatic: {
-      server: {
+      work: {
         options: {
           port: 9999,
           keepalive: true,
           dev: true
         }
+      },
+      test: {
+        options: {
+          port: 9999,
+          dev: true
+        }
+      }
+    },
+    jasmine: {
+      parser: {
+        options: {
+          specs: 'spec/*-spec.js',
+          helpers: 'spec/*-helper.js',
+          host: 'http://127.0.0.1:9999/',
+          keepRunner: true,
+          template: require('grunt-template-jasmine-requirejs'),
+          templateOptions: {
+            requireConfig: {
+              baseUrl: "target",
+              paths: {
+                text : "../lib/requirejs-text/text",
+                d3: '../lib/d3/d3',
+                ace: '../lib/ace',
+                viz: '../lib/viz',
+                graphs: '../spec/graphs'
+              },
+              shim: {
+                d3: {
+                  exports: 'd3'
+                }
+              }
+            }
+          }
+        }
       }
     }
   });
 
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -96,8 +140,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-peg');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-nodestatic');
+  grunt.loadNpmTasks('grunt-contrib-jasmine');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean:target', 'peg', 'copy:all', 'file_append']);
+  grunt.registerTask('default', ['clean:target', 'peg', 'copy', 'file_append']);
+  grunt.registerTask('test', ['jasmine']);
   grunt.registerTask('all', ['clean', "bower:install", 'peg', 'copy', 'file_append']);
 };

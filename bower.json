@@ -3,12 +3,16 @@
   "version": "0.0.0",
   "dependencies": {
     "requirejs": "*",
+    "requirejs-text": "*",
     "ace": "*",
     "d3": "*"
   },
   "exportsOverride": {
     "requirejs": {
       "": "require.js"
+    },
+    "requirejs-text": {
+      "": "text.js"
     },
     "ace": {
       "": "lib/ace"
@@ -23,7 +27,6 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "test",
-    "tests"
+    "spec"
   ]
 }
