@@ -1,4 +1,5 @@
 .grunt
+.idea
 target
 test
 node_modules
