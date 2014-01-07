@@ -116,7 +116,7 @@ module.exports = function (grunt) {
                 d3: '../lib/d3/d3',
                 ace: '../lib/ace',
                 viz: '../lib/viz',
-                graphs: '../spec/graphs'
+                dots: '../spec/dots'
               },
               shim: {
                 d3: {

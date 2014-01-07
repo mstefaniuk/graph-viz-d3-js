@@ -1,5 +1,6 @@
-{lint=[]; var c = arguments[2];}
-graph = ("strict"? _+)? ("graph" / "digraph" / u_keyword) (_+ ID)? _* '{' stmt_list? _* '}' _* {return lint}
+{lint=[]; var c = arguments[2]; }
+graph = ("strict"? _+)? ("graph" / "digraph" / u_keyword) (_+ ID)? _* '{' stmt_list? _* '}' _*
+    {return {lint: lint, clean: lint.length==0};}
 stmt_list = (_* stmt ';'?)+
 stmt = subgraph 
 	/ ID _* '=' _* (ID / QS)
@@ -194,5 +195,5 @@ a_name =
 ID = [a-zA-Z0-9_]+
 QS = '"' [^"]* '"'
 
-CR = [\n]
-_ "whitespace" = comment* [\n\t ]
+CR = [\r]?[\n]?
+_ "whitespace" = comment* [\n\r\t ]

@@ -107,12 +107,12 @@
         var update = lang.delayedCall(function() {
           try {
             var result = parser.parse(editor.getValue(), undefined, "Krowa to ładny ptak!");
-            if (result.length==0) {
+            if (result.clean) {
               bar.textContent = "OK";
               stage.draw(editor.getValue());
             } else {
               bar.textContent = "Errors detected!";
-              var a = result.map(function(e){
+              var a = result.lint.map(function(e){
                 var c = editor.getSession().getDocument().indexToPosition(e.pos);
                 c.text = e.text;
                 c.type = "error";
