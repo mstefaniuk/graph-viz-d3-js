@@ -1,17 +1,21 @@
 {lint=[]; var c = arguments[2]; }
 graph = ("strict"? _+)? ("graph" / "digraph" / u_keyword) (_+ ID)? _* '{' stmt_list? _* '}' _*
     {return {lint: lint, clean: lint.length==0};}
-stmt_list = (_* stmt ';'?)+
+stmt_list = (_* stmt eos?)+
 stmt = subgraph 
+	/ attr_stmt
 	/ ID _* '=' _* (QS / ID)
 	/ edge_stmt
-	/ attr_stmt
 	/ node_stmt
-attr_stmt = ("graph" / "node" / "edge") _+ attr_list
+	/ struct
+eos = _* (';' / CR)
+struct = '{' stmt_list? '}'
+attr_stmt = ("graph" / "node" / "edge") _* attr_list
 u_keyword = e:[^ ]+ {lint.push({pos: pos, text:"Unknown keyword '"+e.join('')+"'"})}
 attr_list = '[' _* a_list? _* ']' attr_list?
-a_list    = a_name _* '=' _* ID (_* ',' _* a_list)* / e:ID _* '=' _* (ID / QS) (_* ',' _* a_list)*
+a_list    = a_name _* '=' _* (ID / QS) (a_sep a_list)* / e:ID _* '=' _* (ID / QS) (a_sep a_list)*
     {lint.push({pos: pos, text: "Unknown attribute '"+e.join('')+"'"})}
+a_sep     = (',' / _) _*
 edge_stmt = (node_id / subgraph) edgeRHS _* attr_list?
 edgeRHS   = _* edgeop _* (node_id / subgraph) edgeRHS?
 node_stmt = node_id _* attr_list?
@@ -193,7 +197,7 @@ a_name =
 	/ "xlp"
 	/ "z"
 
-ID = [a-zA-Z0-9_]+
+ID = [a-zA-Z0-9_\.]+ / QS
 QS = '"' [^"]* '"'
 
 CR = [\r]?[\n]?

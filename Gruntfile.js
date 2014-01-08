@@ -79,7 +79,7 @@ module.exports = function (grunt) {
     watch: {
       page: {
         files: ['src/**'],
-        tasks: ['peg', 'copy:src', 'file_append'],
+        tasks: ['peg', 'copy:src', 'file_append', 'jasmine'],
       },
       options: {
         interval: 100
