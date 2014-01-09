@@ -94,25 +94,25 @@
       }
     }
   });
-  require(["stage", "d3", "ace/ace", "ace/lib/lang", 'parser/dot'],
-      function (stage, d3, ace, lang, parser) {
+  require(["stage", "d3", "ace/ace", "ace/lib/lang", 'pegace'],
+      function (stage, d3, ace, lang, pegace) {
 
         var editor = ace.edit("editor");
         var bar = document.getElementById('editor-bar');
         editor.setTheme("ace/theme/eclipse");
         editor.getSession().setMode("ace/mode/dot");
-        stage.init();
-        stage.draw(editor.getValue());
+//        stage.init();
+//        stage.draw(editor.getValue());
 
         var update = lang.delayedCall(function() {
           try {
-            var result = parser.parse(editor.getValue(), undefined, "Krowa to ładny ptak!");
+            var result = pegace.lint(editor.getValue());
             if (result.clean) {
               bar.textContent = "OK";
-              stage.draw(editor.getValue());
+//              stage.draw(editor.getValue());
             } else {
               bar.textContent = "Errors detected!";
-              var a = result.lint.map(function(e){
+              var a = result.errors.map(function(e){
                 var c = editor.getSession().getDocument().indexToPosition(e.pos);
                 c.text = e.text;
                 c.type = "error";

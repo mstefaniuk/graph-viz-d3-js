@@ -1,10 +1,13 @@
-define(['parser/dot', 'dots/directed'], function (dot, array) {
+define(['pegace', 'dots/directed'], function (pegace, array) {
 
-  describe('Testing parsing graphs', function () {
-    using("directed example", array, function(graph){
-      describe("ffff", function() {
-        it("Should parse without errors", function () {
-          var result = dot.parse(graph);
+  describe('DOT parser', function () {
+    using("provided gallery graphs", array, function(graph){
+      describe("parser", function() {
+        it("should not throw an exception in strict mode", function () {
+          expect(function(){pegace.parse(graph)}).not.toThrow();
+        });
+        it("should return clean result in lax mode", function () {
+          var result = pegace.lint(graph);
           expect(result.clean).toBe(true);
         });
       })
