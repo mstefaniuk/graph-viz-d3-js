@@ -7,13 +7,13 @@ dotsource = _* ("strict"? _+)? ("graph" / "digraph" / u_keyword) (_+ ID)? _* '{'
     {return {errors: errors, clean: errors.length==0};}
 stmt_list = (_* stmt eos?)+
 stmt = subgraph 
+	/ struct
 	/ attr_stmt
 	/ ID _* '=' _* (QS / ID)
 	/ edge_stmt
 	/ node_stmt
-	/ struct
 eos = _* (';' / CR)
-struct = '{' stmt_list? '}'
+struct = '{' stmt_list? _* '}'
 attr_stmt = ("graph" / "node" / "edge") _* attr_list
 u_keyword = &{return lint} e:[^ ]+ {errors.push({pos: offset, text:"Unknown keyword '"+e.join('')+"'"})}
 attr_list = '[' _* a_list? _* ']' attr_list?
@@ -205,4 +205,4 @@ ID = [a-zA-Z0-9_\.]+ / '-'? [0-9]* '.'? [0-9] / QS
 QS = '"' [^"]* '"' / "<<" ([^>] [^>]* ">")* ">"
 
 CR = [\r]?[\n]?
-_ "whitespace" = comment* [\n\r\t ]
+_ "whitespace" = comment / [\n\r\t ]

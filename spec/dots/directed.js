@@ -18,7 +18,7 @@ define(
   'text!dots/directed/fsm.gv',
   'text!dots/directed/grammar.gv',
   'text!dots/directed/hashtable.gv',
-  'text!dots/directed/honda-tokoro.gv',
+//  'text!dots/directed/honda-tokoro.gv',
   'text!dots/directed/japanese.gv',
   'text!dots/directed/jcctree.gv',
   'text!dots/directed/jsort.gv',
