@@ -1,4 +1,4 @@
-define(['pegace', 'dots/directed'], function (pegace, array) {
+define(['pegace', 'spec/dots/directed'], function (pegace, array) {
 
   describe('DOT parser', function () {
     using("provided gallery graphs", array, function(graph){
