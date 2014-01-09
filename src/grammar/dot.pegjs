@@ -15,10 +15,10 @@ stmt = subgraph
 eos = _* (';' / CR)
 struct = '{' stmt_list? _* '}'
 attr_stmt = ("graph" / "node" / "edge") _* attr_list
-u_keyword = &{return lint} e:[^ ]+ {errors.push({pos: offset, text:"Unknown keyword '"+e.join('')+"'"})}
+u_keyword = &{return lint} e:[^ ]+ {errors.push({pos: offset(), text:"Unknown keyword '"+e.join('')+"'"})}
 attr_list = '[' _* a_list? _* ']' attr_list?
 a_list    = a_name _* '=' _* (ID / QS) (a_sep a_list)*
-    / &{return lint} e:ID _* '=' _* (ID / QS) (a_sep a_list)* {errors.push({pos: offset, text: "Unknown attribute '"+e.join('')+"'"})}
+    / &{return lint} e:ID _* '=' _* (ID / QS) (a_sep a_list)* {errors.push({pos: offset(), text: "Unknown attribute '"+e.join('')+"'"})}
 a_sep     = (',' / _) _*
 edge_stmt = (node_id / subgraph) edgeRHS _* attr_list?
 edgeRHS   = _* edgeop _* (node_id / subgraph) edgeRHS?
