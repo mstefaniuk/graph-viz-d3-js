@@ -1,0 +1,93 @@
+digraph structs {
+	graph [_draw_="c 7 -#ffffff C 7 -#ffffff P 4 0 0 0 240 429 240 429 0 ",
+		bb="0,0,429,240",
+		xdotversion=1.5
+	];
+	node [label="\N",
+		shape=plaintext
+	];
+	struct1	 [_ldraw_="F 14 11 -Times-Roman c 7 -#000000 t 0 T 156 212.3 -1 7 1 -a F 14 11 -Times-Roman c 7 -#000000 t 0 T 217 212.3 -1 8 1 -b F 14 11 -\
+Times-Roman c 7 -#000000 t 0 T 247 212.3 -1 7 1 -c ",
+		height=0.66667,
+		label=<<TABLE CELLPADDING="10" BORDER="0">
+	<TR>
+	    <TD HEIGHT="30" WIDTH="90">a</TD>
+	    <TD>b</TD>
+	    <TD>c</TD>
+	</TR>
+    </TABLE>>,
+		pos="189,216",
+		width=2.3611];
+	struct2	 [_ldraw_="S 5 -solid c 7 -#000000 p 4 11 109 11 131 114 131 114 109 F 14 11 -Times-Roman c 7 -#000000 t 0 T 39.5 116.3 -1 46 9 -elefantel \
+S 5 -solid c 7 -#000000 p 4 116 67 116 131 144 131 144 67 F 14 11 -Times-Roman c 7 -#000000 t 0 T 119 73.8 -1 22 3 -two S 5 -solid \
+c 7 -#000000 p 4 11 25 11 107 60 107 60 25 S 5 -solid c 9 -#fffffe00 C 7 -#c0c0c0 P 4 14 28 14 104 57 104 57 28 S 5 -solid c 7 -#\
+000000 p 4 17 79 17 101 54 101 54 79 F 14 11 -Times-Roman c 7 -#000000 t 0 T 21.5 86.3 -1 28 4 -buca S 5 -solid c 9 -#fffffe00 C \
+7 -#ffff00 P 4 17 55 17 77 54 77 54 55 S 5 -solid c 7 -#000000 p 4 17 55 17 77 54 77 54 55 F 14 11 -Times-Roman c 7 -#000000 t 0 \
+T 32 62.3 -1 7 1 -c S 5 -solid c 7 -#000000 p 4 17 31 17 53 54 53 54 31 F 14 11 -Times-Roman c 7 -#000000 t 0 T 33 38.3 -1 5 1 -\
+f S 5 -solid c 7 -#000000 p 4 14 28 14 104 57 104 57 28 S 5 -solid c 7 -#000000 p 4 62 67 62 107 114 107 114 67 F 14 11 -Times-Roman \
+c 7 -#000000 t 0 T 65 83.3 -1 46 8 -patratos S 5 -solid c 7 -#000000 p 4 62 25 62 65 144 65 144 25 F 14 11 -Times-Roman c 7 -#000000 \
+t 0 T 134 41.3 -1 7 1 -4 S 5 -solid c 7 -#000000 p 4 7.5 22 7.5 134 146.5 134 146.5 22 ",
+		height=1.6667,
+		label=<<TABLE>
+	<TR>
+	    <TD COLSPAN="3">elefantel</TD>
+	    <TD ROWSPAN="2" VALIGN="bottom" ALIGN="right">two</TD>
+	</TR><TR>
+	    <TD COLSPAN="2" ROWSPAN="2"><TABLE BGCOLOR="grey">
+		<TR>
+		    <TD>buca</TD>
+		</TR><TR>
+		    <TD BGCOLOR="yellow">c</TD>
+		</TR><TR>
+		    <TD>f</TD>
+		</TR>
+	    </TABLE></TD>
+	    <TD>patratos</TD>
+	</TR><TR>
+	    <TD COLSPAN="2" ALIGN="right">4</TD>
+	</TR>
+	</TABLE>
+    >,
+		pos="77,78",
+		width=2.1458];
+	struct1 -> struct2	 [_draw_="c 7 -#000000 B 4 170 191.93 159.54 179.23 145.97 162.75 132.44 146.31 ",
+		_hdraw_="S 5 -solid c 7 -#000000 C 7 -#000000 P 3 134.87 143.76 125.81 138.27 129.47 148.21 ",
+		pos="e,125.81,138.27 170,191.93 159.54,179.23 145.97,162.75 132.44,146.31"];
+	struct3	 [_ldraw_="S 5 -solid c 7 -#000000 p 4 184 7 184 149 227 149 227 7 F 14 11 -Times-Roman c 7 -#000000 t 0 T 190.5 74.3 -1 30 5 -Hello S 5 -solid \
+c 7 -#000000 p 4 229 36 229 149 338 149 338 36 S 15 -setlinewidth(4) S 5 -solid c 7 -#000000 p 4 243 110 243 135 324 135 324 110 \
+F 14 11 -Times-Roman c 7 -#000000 t 0 T 279.5 118.8 -1 8 1 -b S 5 -solid c 7 -#000000 p 4 243 80 243 104 260 104 260 80 F 14 11 -\
+Times-Roman c 7 -#000000 t 0 T 248 88.3 -1 7 1 -a S 5 -solid c 7 -#000000 p 4 266 80 266 104 301 104 301 80 F 14 11 -Times-Roman \
+c 7 -#000000 t 0 T 271 88.3 -1 25 4 -dino S 5 -solid c 7 -#000000 p 4 307 80 307 104 324 104 324 80 F 14 11 -Times-Roman c 7 -#000000 \
+t 0 T 312 88.3 -1 7 1 -y S 5 -solid c 7 -#000000 p 4 243 50 243 74 324 74 324 50 F 14 11 -Times-Roman c 7 -#000000 t 0 T 269 58.3 -\
+1 29 5 -rhino S 5 -solid c 7 -#000000 p 4 237 44 237 141 330 141 330 44 S 15 -setlinewidth(1) S 5 -solid c 7 -#000000 p 4 340 36 \
+340 119 386 119 386 36 F 14 11 -Times-Roman c 7 -#000000 t 0 T 347.5 73.8 -1 31 5 -climb S 5 -solid c 7 -#000000 p 4 388 7 388 119 \
+418 119 418 7 F 14 11 -Times-Roman c 7 -#000000 t 0 T 394 59.3 -1 18 2 -Up S 5 -solid c 7 -#000000 p 4 229 7 229 34 338 34 338 7 \
+F 14 11 -Times-Roman c 7 -#000000 t 0 T 273 16.8 -1 21 3 -low S 5 -solid c 7 -#000000 p 4 181 4 181 152 421 152 421 4 ",
+		height=2.1667,
+		label=<<TABLE CELLPADDING="5">
+	<TR>
+	    <TD ROWSPAN="3">Hello</TD>
+	    <TD ROWSPAN="2" COLSPAN="3"><TABLE BORDER="4">
+		<TR>
+		    <TD COLSPAN="3">b</TD>
+		</TR><TR>
+		    <TD>a</TD>
+		    <TD>dino</TD>
+		    <TD>y</TD>
+		</TR><TR>
+		    <TD COLSPAN="3">rhino</TD>
+		</TR>
+	    </TABLE></TD>
+	</TR><TR>
+	    <TD COLSPAN="2">climb</TD>
+	    <TD ROWSPAN="2">Up</TD>
+	</TR><TR>
+	    <TD COLSPAN="3">low</TD>
+	</TR>
+    </TABLE>>,
+		pos="301,78",
+		width=3.5556];
+	struct1 -> struct3	 [_draw_="c 7 -#000000 B 4 208 191.93 214.66 183.84 222.59 174.21 230.97 164.04 ",
+		_hdraw_="S 5 -solid c 7 -#000000 C 7 -#000000 P 3 233.8 166.11 237.45 156.17 228.39 161.66 ",
+		pos="e,237.45,156.17 208,191.93 214.66,183.84 222.59,174.21 230.97,164.04"];
+}
