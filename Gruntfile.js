@@ -78,7 +78,7 @@ module.exports = function (grunt) {
     },
     watch: {
       page: {
-        files: ['src/**'],
+        files: ['src/**','spec/**'],
         tasks: ['peg', 'copy:src', 'file_append', 'jasmine'],
       },
       options: {
