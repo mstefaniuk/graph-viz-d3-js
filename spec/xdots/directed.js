@@ -19,7 +19,7 @@ define(
   'text!spec/xdots/directed/grammar.xdot',
   'text!spec/xdots/directed/hashtable.xdot',
 //  'text!spec/xdots/directed/honda-tokoro.xdot',
-  'text!spec/xdots/directed/japanese.xdot',
+//  'text!spec/xdots/directed/japanese.xdot',
   'text!spec/xdots/directed/jcctree.xdot',
   'text!spec/xdots/directed/jsort.xdot',
   'text!spec/xdots/directed/KW91.xdot',

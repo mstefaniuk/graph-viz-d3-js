@@ -1,6 +1,6 @@
-dot = prolog? t:"digraph" i:(_ identifier)? _ b:body {return {type:t,id:i[1],commands:b}}
+dot = prolog? t:"digraph" i:(_ identifier)? _ b:body {return {type:t, id: i==null ? null : i[1], commands:b}}
 prolog = ("#" [^\n]* CR)+ CR
-body = "{" c:statement+ "}" WS? {return c}
+body = "{" c:statement+ "}" WS* {return c}
 statement= WS* cc:(skip /graph / node / relation / subgraph / struct) {return cc}
 skip = n:"node" a:attributes ";" WS+ {return {type:"skip", attributes:a}}
 struct = b:body {return {type:"struct", commands:b}}
@@ -10,7 +10,7 @@ relation = f:identifier _ "->" _ t:identifier a:attributes ";" WS+
     {return {type:"relation", id: [f,t].join('-'), from:f, to:t, attributes:a}}
 node = i:identifier a:attributes? ";" WS+ {return {type:"node",id:i,attributes:a}}
 
-attributes = _+ "[" a:attribute aa:("," WS+ a:attribute {return a})* "]" {return aa!=null ? [a].concat(aa) : [a];}
+attributes = _+ "[" a:attribute aa:("," WS+ a:attribute {return a})* _* "]" {return aa!=null ? [a].concat(aa) : [a];}
 attribute =
  draw
  / a:(qattribute
@@ -21,7 +21,7 @@ qattribute = n:("label" / "width" / "height" / "bb" / "pos" / "xdotversion" / "s
 cattribute = n:("style" / "shape" / "color") "=" ncs {return {name: n}}
 anyattribute = nn:identifier "=" nqs {return {name: nn}}
 
-draw = "_" s:("draw" / "ldraw" / "hdraw") "_=" q d:drawing+ q {return {type: s, elements: d}}
+draw = "_" s:("draw" / "ldraw" / "hdraw" / "tdraw" / "hldraw" / "tldraw") "_=" q d:drawing+ q {return {type: s, elements: d}}
 drawing = st:styling? _ sh:shapes _ {sh.style = st; return sh}
 styling = s:styles ss:(_ s:styles {return s})*
     {return [].concat(s).concat(ss);}
@@ -44,10 +44,11 @@ style = [S] _ s:vardata {return {key:'style', value: s}}
 vardata = s:varsize _ "-" v:varchar {counter=s; return v}
 varsize = s:integer {counter=s}
 varchar = &{return counter==0} / a:anysign s:varchar {return a+s}
-anysign = c:. {counter--; return c}
+anysign = LC? c:. {counter--; return c}
 
 coordinates = _ p1:decimal _ p2:decimal {return [p1,p2]}
-identifier = f:[A-Za-z0-9]s:[A-Za-z0-9_]* {return f+s.join('')} / '"' s:nq '"' {return s.join('')}
+identifier = s:[A-Za-z0-9_]+ port? {return s.join('')} / '"' s:nq '"' {return s.join('')}
+port = ':' identifier
 integer = "-"? i:[0-9]+ {return parseInt(i.join(''))}
 decimal = "-"? f:[0-9]+ s:("." d:[0-9]+ {return "." + d.join('')})? {return f.join('')+s}
 
@@ -59,4 +60,5 @@ q = '"'
 
 CR = [\n\r]
 WS = [\n\t\r ]
-_ = WS ([\\] CR)? / [\\] CR [ ]
+_ = WS LC? / LC? WS
+LC = [\\] CR+
