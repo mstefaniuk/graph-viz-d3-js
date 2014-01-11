@@ -7,12 +7,6 @@ define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4'], func
           expect(function () {
             xdot.parse(graph)
           }).not.toThrow();
-          try {
-            xdot.parse(graph);
-          } catch (e) {
-            expect(e.line).toEqual(0);
-            expect(e.column).toEqual(0);
-          }
         });
       })
     });
