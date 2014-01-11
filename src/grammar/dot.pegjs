@@ -3,8 +3,9 @@
     var lint = options.pegace.mode=='lint';
 }
 
-dotsource = _* ("strict"? _+)? ("graph" / "digraph" / u_keyword) (_+ ID)? _* '{' stmt_list? _* '}' _*
+dotsource = _* ("strict"? _+)? ("graph" / "digraph" / u_keyword) (_+ ID)? _* body _*
     {return {errors: errors, clean: errors.length==0};}
+body = '{' stmt_list? _* '}' / &{return lint} b:'{' stmt_list? _* {errors.push({pos: offset(), type: "unterminated", string: b})}
 stmt_list = (_* stmt eos?)+
 stmt = subgraph 
 	/ struct
@@ -13,7 +14,7 @@ stmt = subgraph
 	/ edge_stmt
 	/ node_stmt
 eos = _* (';' / CR)
-struct = '{' stmt_list? _* '}'
+struct = body
 attr_stmt = ("graph" / "node" / "edge") _* attr_list
 u_keyword = &{return lint} e:$[^ ]+ {errors.push({pos: offset(), type: "keyword", string: e})}
 attr_list = '[' _* a_list? _* ']' attr_list?
@@ -26,7 +27,7 @@ node_stmt = node_id _* attr_list?
 node_id   = ID _* port?
 port 	  = ':' _* ID ( ':' _* compass_pt)?
 	/ 	':' _* compass_pt
-subgraph  = ("subgraph" _+ ID?)? _* '{' stmt_list _* '}'
+subgraph  = ("subgraph" _+ ID?)? _* body
 compass_pt = "n" / "ne" / "e" / "se" / "s" / "sw" / "w" / "nw" / "c"
 edgeop = "--" / "->"
 comment "comment" = lcomment / bcomment / pcomment
@@ -202,7 +203,8 @@ a_name =
 	/ "z"
 
 ID = [a-zA-Z0-9_\.]+ / '-'? [0-9]* '.'? [0-9] / QS
-QS = '"' [^"]* '"' / "<<" ([^>] [^>]* ">")* ">"
+QS = '"' [^"]* '"' / &{return lint} '"' [^"]* {errors.push({pos: offset(), type: "unterminated", string: '"'})}
+    / "<<" ([^>] [^>]* ">")* ">" / &{return lint} "<<" ([^>] [^>]* ">")* {errors.push({pos: offset(), type: "unterminated", string: '<<'})}
 
 CR = [\r]?[\n]?
 _ "whitespace" = comment / [\n\r\t ]

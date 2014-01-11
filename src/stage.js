@@ -1,5 +1,11 @@
 define(["d3", "d3dot", "palette"], function (d3, d3dot, palette) {
     var svg, main;
+    var order = {
+      digraph: 0,
+      subgraph: 1,
+      node: 2,
+      relation: 3
+    };
     return {
       init: function () {
         svg = d3.select("body").select("#graph").append("svg");
@@ -20,10 +26,12 @@ define(["d3", "d3dot", "palette"], function (d3, d3dot, palette) {
           .select("g")
           .attr("transform", "translate(0," + height + ")");
 
-        var groups = main.selectAll("g").data(stage.groups, function (d) {
+        var groups = main.selectAll("g")
+        .data(stage.groups, function (d) {
           return d.id;
         });
-        var entering = groups.enter().append("g").attr("class", function (d) {
+        var entering = groups.enter()
+        .append("g").attr("class", function (d) {
           return d.class
         });
         entering.append("title").text(function (d) {
@@ -47,6 +55,11 @@ define(["d3", "d3dot", "palette"], function (d3, d3dot, palette) {
           .duration(100)
           .style("opacity", 0.0)
           .remove();
+
+        groups.sort(function(a,b){
+          return order[a.class]- order[b.class];
+        })
+
 
         var shapes = groups.selectAll("path").data(function (d) {
             return d.shapes;

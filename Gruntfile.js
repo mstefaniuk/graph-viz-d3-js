@@ -79,7 +79,7 @@ module.exports = function (grunt) {
     watch: {
       page: {
         files: ['src/**','spec/**'],
-        tasks: ['peg', 'copy:src', 'file_append', 'jasmine'],
+        tasks: ['build', 'check'],
       },
       options: {
         interval: 100
@@ -144,7 +144,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jasmine');
 
   // Default task(s).
-  grunt.registerTask('default', ['clean:target', 'peg', 'copy', 'file_append']);
-  grunt.registerTask('test', ['jasmine']);
-  grunt.registerTask('all', ['clean', "bower:install", 'peg', 'copy', 'file_append']);
+  grunt.registerTask('default', ['build']);
+  grunt.registerTask('build', ['clean:target', 'peg', 'copy', 'file_append']);
+  grunt.registerTask('test', ['nodestatic:test', 'jasmine']);
+  grunt.registerTask('check', ['jasmine']);
+  grunt.registerTask('all', ['clean', "bower:install", 'peg', 'copy', 'file_append', 'test']);
 };
