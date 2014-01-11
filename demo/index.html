@@ -13,7 +13,7 @@
     #editor {
       position: absolute;
       top: 0;
-      bottom: 3em;
+      bottom: 1em;
       left: 0;
       width: 45%;
     }
@@ -24,7 +24,7 @@
       left: 0;
       bottom: 0;
       width: 45%;
-      height: 3em;
+      height: 1em;
     }
 
     #graph {
@@ -32,7 +32,7 @@
       left: 50%;
       position: absolute;
       right: 0;
-      bottom: 3em;
+      bottom: 2em;
       width: 50%;
       overflow: auto;
     }
@@ -76,7 +76,7 @@
   start [shape=Mdiamond];
   end [shape=Msquare];
 }</div>
-<div id="editor-bar" class="ace_status-indicator">OK</div>
+<div id="editor-bar" class="ace_status-indicator"></div>
 <div id="graph"></div>
 
 <script src="../lib/requirejs/require.js"></script>
@@ -94,34 +94,37 @@
       }
     }
   });
-  require(["stage", "d3", "ace/ace", "ace/lib/lang", 'pegace'],
-      function (stage, d3, ace, lang, pegace) {
+  require(["stage", "d3", 'pegace', "ace/ace", "ace/lib/lang", "ace/ext/statusbar"],
+      function (stage, d3, pegace, ace, lang, statusbar) {
 
         var editor = ace.edit("editor");
-        var bar = document.getElementById('editor-bar');
         editor.setTheme("ace/theme/eclipse");
         editor.getSession().setMode("ace/mode/dot");
+        var StatusBar = ace.require('ace/ext/statusbar').StatusBar;
+        var statusBar = new StatusBar(editor, document.getElementById('editor-bar'));
+
+        var messages = {
+          keyword: "Unknown keyword",
+          attribute: "Unknown attribute",
+          unterminated: "Unterminated structure starting"
+        };
+
         stage.init();
         stage.draw(editor.getValue());
 
         var update = lang.delayedCall(function() {
-          try {
-            var result = pegace.lint(editor.getValue());
-            if (result.clean) {
-              bar.textContent = "OK";
-              stage.draw(editor.getValue());
-            } else {
-              bar.textContent = "Errors detected!";
-              var a = result.errors.map(function(e){
-                var c = editor.getSession().getDocument().indexToPosition(e.pos);
-                c.text = e.text;
-                c.type = "error";
-                return c;
-              });
-              editor.getSession().setAnnotations(a);
-            }
-          } catch (e) {
-            bar.textContent = [e.line, ':', e.column, ' ', e.message].join('');
+          var result = pegace.lint(editor.getValue());
+          if (result.clean) {
+            stage.draw(editor.getValue());
+            editor.getSession().clearAnnotations();
+          } else {
+            var a = result.errors.map(function(e){
+              var c = editor.getSession().getDocument().indexToPosition(e.pos);
+              c.text = [messages[e.type], " '", e.string, "'."].join('');
+              c.type = "error";
+              return c;
+            });
+            editor.getSession().setAnnotations(a);
           }
         })
         editor.on("change", function () {update.delay(1200)});
