@@ -48,10 +48,10 @@ varchar = &{return counter==0} / a:anysign s:varchar {return a + (s||'')}
 anysign = LC? c:. {counter--; return c}
 
 coordinates = _ p1:decimal _ p2:decimal {return [p1,p2]}
-identifier = s:[A-Za-z0-9_]+ port? {return s.join('')} / '"' s:nq '"' {return s.join('')}
+identifier = s:$[A-Za-z0-9_]+ port? {return s} / '"' s:$nq '"' {return s}
 port = ':' identifier
-integer = "-"? i:[0-9]+ {return parseInt(i.join(''))}
-decimal = "-"? f:[0-9]+ s:("." d:[0-9]+ {return "." + d.join('')})? {return f.join('') + (s || '')}
+integer = "-"? i:$[0-9]+ {return parseInt(i)}
+decimal = "-"? f:$[0-9]+ s:("." d:$[0-9]+ {return "." + d})? {return f + (s||'')}
 
 ncs = [^,\]]+
 nqs = '"' nq '"' / "<<" ([^>] [^>]* ">")* ">" / ncs
