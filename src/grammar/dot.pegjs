@@ -1,15 +1,25 @@
-{lint=[]; var c = arguments[2];}
-graph = ("strict"? _+)? ("graph" / "digraph" / u_keyword) (_+ ID)? _* '{' stmt_list? _* '}' _* {return lint}
-stmt_list = (_* stmt ';'?)+
+{
+    errors=[];
+    var lint = options.pegace.mode=='lint';
+}
+
+dotsource = _* ("strict"? _+)? ("graph" / "digraph" / u_keyword) (_+ ID)? _* '{' stmt_list? _* '}' _*
+    {return {errors: errors, clean: errors.length==0};}
+stmt_list = (_* stmt eos?)+
 stmt = subgraph 
-	/ ID _* '=' _* (ID / QS)
-	/ edge_stmt
+	/ struct
 	/ attr_stmt
+	/ ID _* '=' _* (QS / ID)
+	/ edge_stmt
 	/ node_stmt
-attr_stmt = ("graph" / "node" / "edge") _+ attr_list
-u_keyword = e:[^ ]+ {lint.push({pos: pos, text:"Unknown keyword '"+e.join('')+"'"})}
+eos = _* (';' / CR)
+struct = '{' stmt_list? _* '}'
+attr_stmt = ("graph" / "node" / "edge") _* attr_list
+u_keyword = &{return lint} e:[^ ]+ {errors.push({pos: offset(), text:"Unknown keyword '"+e.join('')+"'"})}
 attr_list = '[' _* a_list? _* ']' attr_list?
-a_list    = a_name _* '=' _* ID (_* ',' _* a_list)* / e:ID _* '=' _* ID (_* ',' _* a_list)* {lint.push({pos: pos, text: "Unknown attribute '"+e.join('')+"'"})}
+a_list    = a_name _* '=' _* (ID / QS) (a_sep a_list)*
+    / &{return lint} e:ID _* '=' _* (ID / QS) (a_sep a_list)* {errors.push({pos: offset(), text: "Unknown attribute '"+e.join('')+"'"})}
+a_sep     = (',' / _) _*
 edge_stmt = (node_id / subgraph) edgeRHS _* attr_list?
 edgeRHS   = _* edgeop _* (node_id / subgraph) edgeRHS?
 node_stmt = node_id _* attr_list?
@@ -38,18 +48,18 @@ a_name =
 	/ "center"
 	/ "charset"
 	/ "clusterrank"
-	/ "color"
 	/ "colorscheme"
+	/ "color"
 	/ "comment"
 	/ "compound"
 	/ "concentrate"
 	/ "constraint"
 	/ "decorate"
 	/ "defaultdist"
-	/ "dim"
 	/ "dimen"
-	/ "dir"
+	/ "dim"
 	/ "diredgeconstraints"
+	/ "dir"
 	/ "distortion"
 	/ "dpi"
 	/ "edgeurl"
@@ -79,10 +89,9 @@ a_name =
 	/ "height"
 	/ "href"
 	/ "id"
-	/ "image"
 	/ "imagepath"
 	/ "imagescale"
-	/ "label"
+	/ "image"
 	/ "labelurl"
 	/ "label_scheme"
 	/ "labelangle"
@@ -97,11 +106,12 @@ a_name =
 	/ "labeltarget"
 	/ "labeltooltip"
 	/ "landscape"
-	/ "layer"
+	/ "label"
 	/ "layerlistsep"
-	/ "layers"
 	/ "layerselect"
 	/ "layersep"
+	/ "layers"
+	/ "layer"
 	/ "layout"
 	/ "len"
 	/ "levels"
@@ -116,8 +126,8 @@ a_name =
 	/ "mclimit"
 	/ "mindist"
 	/ "minlen"
-	/ "mode"
 	/ "model"
+	/ "mode"
 	/ "mosek"
 	/ "nodesep"
 	/ "nojustify"
@@ -141,9 +151,9 @@ a_name =
 	/ "pos"
 	/ "quadtree"
 	/ "quantum"
-	/ "rank"
 	/ "rankdir"
 	/ "ranksep"
+	/ "rank"
 	/ "ratio"
 	/ "rects"
 	/ "regular"
@@ -191,8 +201,8 @@ a_name =
 	/ "xlp"
 	/ "z"
 
-ID = [a-zA-Z0-9_]+
-QS = '"' [^"]* '"'
+ID = [a-zA-Z0-9_\.]+ / '-'? [0-9]* '.'? [0-9] / QS
+QS = '"' [^"]* '"' / "<<" ([^>] [^>]* ">")* ">"
 
-CR = [\n]
-_ "whitespace" = comment* [\n\t ]
+CR = [\r]?[\n]?
+_ "whitespace" = comment / [\n\r\t ]

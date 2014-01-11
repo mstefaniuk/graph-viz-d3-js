@@ -28,5 +28,5 @@ Roadmap
 
 License
 -------
-Currently project is available on LGPL so you can use it unmodified in open and commercial projects. If you add improvements
+Currently project is available on LGPL so you can use it unmodified in free or commercial projects. If you add improvements
 to it you must share them.

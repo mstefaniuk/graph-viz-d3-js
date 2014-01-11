@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8">
+  <title>Graphviz in your browser</title>
   <style>
 
     body {
       font-family: monospace;
       font-size: 0.9em;
+      overflow: hidden;
     }
 
     #editor {
@@ -32,7 +34,7 @@
       right: 0;
       bottom: 3em;
       width: 50%;
-      overflow: scroll;
+      overflow: auto;
     }
 
     path {
@@ -92,8 +94,8 @@
       }
     }
   });
-  require(["stage", "d3", "ace/ace", "ace/lib/lang", 'parser/dot'],
-      function (stage, d3, ace, lang, parser) {
+  require(["stage", "d3", "ace/ace", "ace/lib/lang", 'pegace'],
+      function (stage, d3, ace, lang, pegace) {
 
         var editor = ace.edit("editor");
         var bar = document.getElementById('editor-bar');
@@ -104,13 +106,13 @@
 
         var update = lang.delayedCall(function() {
           try {
-            var result = parser.parse(editor.getValue(), undefined, "Krowa to ładny ptak!");
-            if (result.length==0) {
+            var result = pegace.lint(editor.getValue());
+            if (result.clean) {
               bar.textContent = "OK";
               stage.draw(editor.getValue());
             } else {
               bar.textContent = "Errors detected!";
-              var a = result.map(function(e){
+              var a = result.errors.map(function(e){
                 var c = editor.getSession().getDocument().indexToPosition(e.pos);
                 c.text = e.text;
                 c.type = "error";
@@ -122,7 +124,7 @@
             bar.textContent = [e.line, ':', e.column, ' ', e.message].join('');
           }
         })
-        editor.on("change", function () {update.delay(1500)});
+        editor.on("change", function () {update.delay(1200)});
       }
   );
 </script>
