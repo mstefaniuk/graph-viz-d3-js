@@ -140,7 +140,7 @@ var parser = (function() {
             return p=='C' ? {key: "fill", value: color} : {key: "stroke", value: color}},
         peg$c103 = /^[F]/,
         peg$c104 = { type: "class", value: "[F]", description: "[F]" },
-        peg$c105 = function(f, s, t) {return [{key:'font-family', value: '"' + t + '",serif'}, {key:'font-size', value:'14.00'}]},
+        peg$c105 = function(f, s, t) {return [{key:'font-family', value: "'" + t + "',serif"}, {key:'font-size', value:'14.00'}]},
         peg$c106 = /^[t]/,
         peg$c107 = { type: "class", value: "[t]", description: "[t]" },
         peg$c108 = function(v) {return {key:"text-decoration", value: v}},
