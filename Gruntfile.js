@@ -105,6 +105,7 @@ module.exports = function (grunt) {
         options: {
           specs: 'spec/*-spec.js',
           helpers: 'spec/*-helper.js',
+          styles: 'spec/*-helper.css',
           host: 'http://127.0.0.1:9999/',
           keepRunner: true,
           template: require('grunt-template-jasmine-requirejs'),
