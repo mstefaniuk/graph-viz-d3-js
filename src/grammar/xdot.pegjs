@@ -35,22 +35,23 @@ bspline = [bB] _ integer c:coordinates+ {return {shape: 'path', points: c}}
 text = [T] c:coordinates _ integer
            _ integer _ t:vardata {return {x:c[0], y:c[1], text:t}}
 pen = p:[Cc] _ c:vardata
-    {var color="rgba("+[parseInt(c.substr(1,2),16),parseInt(c.substr(3,2),16),parseInt(c.substr(5,2),16),parseInt(c.substr(7,2),16)/255].join(',')+")";
+    {var colors = [parseInt(c.substr(1,2),16),parseInt(c.substr(3,2),16),parseInt(c.substr(5,2),16),c.length==8 ? parseInt(c.substr(7,2),16)/255 : '1'];
+    var color = "rgba("+colors.join(',')+")";
     return p=='C' ? {key: "fill", value: color} : {key: "stroke", value: color}}
-font = f:[F] _ s:decimal _ t:vardata {return [{key:'font-family', value: "'"+t+"',serif"}, {key:'font-size', value:'14.00'}]}
+font = f:[F] _ s:decimal _ t:vardata {return [{key:'font-family', value: "'" + t + "',serif"}, {key:'font-size', value:'14.00'}]}
 fontdecoration = [t] _ v:integer {return {key:"text-decoration", value: v}}
 style = [S] _ s:vardata {return {key:'style', value: s}}
 
 vardata = s:varsize _ "-" v:varchar {counter=s; return v}
 varsize = s:integer {counter=s}
-varchar = &{return counter==0} / a:anysign s:varchar {return a+s}
+varchar = &{return counter==0} / a:anysign s:varchar {return a + (s||'')}
 anysign = LC? c:. {counter--; return c}
 
 coordinates = _ p1:decimal _ p2:decimal {return [p1,p2]}
 identifier = s:[A-Za-z0-9_]+ port? {return s.join('')} / '"' s:nq '"' {return s.join('')}
 port = ':' identifier
 integer = "-"? i:[0-9]+ {return parseInt(i.join(''))}
-decimal = "-"? f:[0-9]+ s:("." d:[0-9]+ {return "." + d.join('')})? {return f.join('')+s}
+decimal = "-"? f:[0-9]+ s:("." d:[0-9]+ {return "." + d.join('')})? {return f.join('') + (s || '')}
 
 ncs = [^,\]]+
 nqs = '"' nq '"' / "<<" ([^>] [^>]* ">")* ">" / ncs

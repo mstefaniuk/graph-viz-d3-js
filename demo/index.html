@@ -101,15 +101,15 @@
         var bar = document.getElementById('editor-bar');
         editor.setTheme("ace/theme/eclipse");
         editor.getSession().setMode("ace/mode/dot");
-//        stage.init();
-//        stage.draw(editor.getValue());
+        stage.init();
+        stage.draw(editor.getValue());
 
         var update = lang.delayedCall(function() {
           try {
             var result = pegace.lint(editor.getValue());
             if (result.clean) {
               bar.textContent = "OK";
-//              stage.draw(editor.getValue());
+              stage.draw(editor.getValue());
             } else {
               bar.textContent = "Errors detected!";
               var a = result.errors.map(function(e){
@@ -124,7 +124,7 @@
             bar.textContent = [e.line, ':', e.column, ' ', e.message].join('');
           }
         })
-        editor.on("change", function () {update.delay(1500)});
+        editor.on("change", function () {update.delay(1200)});
       }
   );
 </script>
