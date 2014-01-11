@@ -215,9 +215,17 @@ objectDiff.diffOwnProperties = function diffOwnProperties(a, b) {
    * @return {string}
    */
   function stringifyObjectKey(key) {
+    var seen = [];
     return /^[a-z0-9_$]*$/i.test(key) ?
       key :
-      JSON.stringify(key);
+      JSON.stringify(key, function(key, val) {
+        if (typeof val == "object") {
+          if (seen.indexOf(val) >= 0)
+            return
+          seen.push(val)
+        }
+        return val
+      });
   }
 
   /**
