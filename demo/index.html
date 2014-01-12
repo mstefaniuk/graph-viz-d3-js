@@ -9,13 +9,16 @@
       font-size: 0.9em;
       overflow: hidden;
     }
+    svg {
+      margin: 15px;
+    }
 
     #editor {
       position: absolute;
       top: 0;
-      bottom: 1em;
+      bottom: 1.5em;
       left: 0;
-      width: 45%;
+      width: 40%;
     }
     #editor-bar {
       padding: 0;
@@ -23,17 +26,17 @@
       position: absolute;
       left: 0;
       bottom: 0;
-      width: 45%;
-      height: 1em;
+      width: 40%;
+      height: 1.5em;
     }
 
     #graph {
       top: 0;
-      left: 50%;
+      left: 40%;
       position: absolute;
       right: 0;
-      bottom: 2em;
-      width: 50%;
+      bottom: 1.5em;
+      width: 60%;
       overflow: auto;
     }
 
@@ -127,7 +130,7 @@
             editor.getSession().setAnnotations(a);
           }
         })
-        editor.on("change", function () {update.delay(1200)});
+        editor.on("change", function () {update.delay(600)});
       }
   );
 </script>

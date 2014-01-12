@@ -15,7 +15,7 @@ define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4'], func
   describe('XDOT parser', function () {
     it("should return backward compatible AST", function () {
       var actual = xdot.parse(array[10][0]);
-      expect(actual).toEqual(clust4);
+      expect(actual).toEqualProperties(clust4);
     });
   });
 });

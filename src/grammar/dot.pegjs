@@ -1,5 +1,6 @@
 {
-    errors=[];
+    var errors=[];
+    var nodes = [];
     var lint = options.pegace.mode=='lint';
 }
 
@@ -23,7 +24,7 @@ a_list    = a_name _* '=' _* (ID / QS) (a_sep a_list)*
 a_sep     = (',' / _) _*
 edge_stmt = (node_id / subgraph) edgeRHS _* attr_list?
 edgeRHS   = _* edgeop _* (node_id / subgraph) edgeRHS?
-node_stmt = node_id _* attr_list?
+node_stmt = i:node_id _* attr_list? {nodes.push({id: i, pos: offset(), text: text})}
 node_id   = ID _* port?
 port 	  = ':' _* ID ( ':' _* compass_pt)?
 	/ 	':' _* compass_pt

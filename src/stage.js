@@ -14,8 +14,11 @@ define(["d3", "d3dot", "palette"], function (d3, d3dot, palette) {
       draw: function (source) {
         var stage = d3dot.generate(source);
 
-        var width = stage.main.shapes[0].points[2][0],
-          height = stage.main.shapes[0].points[2][1];
+        var margin = 2,
+          width = stage.main.shapes[0].points[2][0] + margin*2,
+          height = stage.main.shapes[0].points[2][1] + margin*2,
+          htranslate = stage.main.shapes[0].points[2][1] + margin,
+          vtranslate = margin;
 
         svg
           .transition()
@@ -24,7 +27,7 @@ define(["d3", "d3dot", "palette"], function (d3, d3dot, palette) {
           .attr("width", width + "px")
           .attr("height", height + "px")
           .select("g")
-          .attr("transform", "translate(0," + height + ")");
+          .attr("transform", "translate(" + vtranslate + "," + htranslate + ")");
 
         var groups = main.selectAll("g")
         .data(stage.groups, function (d) {

@@ -251,6 +251,7 @@ objectDiff.diffOwnProperties = function diffOwnProperties(a, b) {
      * @return {string}
      */
     function _inspect(accumulator, obj) {
+      var seen = [];
       switch(typeof obj) {
         case 'object':
           if (!obj) {
@@ -275,7 +276,14 @@ objectDiff.diffOwnProperties = function diffOwnProperties(a, b) {
           break;
 
         case 'string':
-          accumulator += JSON.stringify(escapeHTML(obj));
+          accumulator += JSON.stringify(escapeHTML(obj), function(key, val) {
+            if (typeof val == "object") {
+              if (seen.indexOf(val) >= 0)
+                return
+              seen.push(val)
+            }
+            return val
+          });
           break;
 
         case 'undefined':
