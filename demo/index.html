@@ -97,8 +97,8 @@
       }
     }
   });
-  require(["stage", "d3", 'pegace', "ace/ace", "ace/lib/lang", "ace/ext/statusbar"],
-      function (stage, d3, pegace, ace, lang, statusbar) {
+  require(["stage", "d3", "d3dot", 'pegace', "ace/ace", "ace/lib/lang", "ace/ext/statusbar"],
+      function (stage, d3, d3dot, pegace, ace, lang, statusbar) {
 
         var editor = ace.edit("editor");
         editor.setTheme("ace/theme/eclipse");
@@ -106,19 +106,30 @@
         var StatusBar = ace.require('ace/ext/statusbar').StatusBar;
         var statusBar = new StatusBar(editor, document.getElementById('editor-bar'));
 
+        stage.init();
+
+        var worker = Worker("../target/d3dot-worker.js");
+        worker.onmessage = function(event) {
+          switch (event.data.type){
+            case "ready":
+              worker.postMessage(editor.getValue());
+              break;
+            case "stage":
+              stage.draw(event.data.body);
+              break;
+          }
+        };
+
         var messages = {
           keyword: "Unknown keyword",
           attribute: "Unknown attribute",
           unterminated: "Unterminated structure starting"
         };
 
-        stage.init();
-        stage.draw(editor.getValue());
-
         var update = lang.delayedCall(function() {
           var result = pegace.lint(editor.getValue());
           if (result.clean) {
-            stage.draw(editor.getValue());
+            worker.postMessage(editor.getValue());
             editor.getSession().clearAnnotations();
           } else {
             var a = result.errors.map(function(e){
