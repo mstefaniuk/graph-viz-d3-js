@@ -28,7 +28,7 @@ styling = s:styles ss:(_ s:styles {return s})*
 styles = pen / font / style / fontdecoration
 shapes = polygon / polyline / ellipse / bspline / text
 
-ellipse = [eE] c:coordinates _ rx:decimal _ ry:decimal {return {shape: 'ellipse', cx: c[0], cy:c[1], rx:rx, ry:ry}}
+ellipse = [eE] c:coordinates _ rx:integer _ ry:integer {return {shape: 'ellipse', cx: c[0], cy:c[1], rx:rx, ry:ry}}
 polygon = p:[pP] _ l:integer c:coordinates+ {return {shape: 'polygon', points:c}}
 polyline = [L] _ integer c:coordinates+ {return {shape: 'polyline', points:c}}
 bspline = [bB] _ integer c:coordinates+ {return {shape: 'path', points: c}}
@@ -47,7 +47,7 @@ varsize = s:integer {counter=s}
 varchar = &{return counter==0} / a:anysign s:varchar {return a + (s||'')}
 anysign = LC? c:. {counter--; return c}
 
-coordinates = _ p1:decimal _ p2:decimal {return [p1,p2]}
+coordinates = _ p1:integer _ p2:integer {return [p1,p2]}
 identifier = s:$[A-Za-z0-9_]+ port? {return s} / '"' s:$nq '"' {return s}
 port = ':' identifier
 integer = "-"? i:$[0-9]+ {return parseInt(i)}
