@@ -9,13 +9,16 @@
       font-size: 0.9em;
       overflow: hidden;
     }
+    svg {
+      margin: 15px;
+    }
 
     #editor {
       position: absolute;
       top: 0;
-      bottom: 1em;
+      bottom: 1.5em;
       left: 0;
-      width: 45%;
+      width: 40%;
     }
     #editor-bar {
       padding: 0;
@@ -23,17 +26,17 @@
       position: absolute;
       left: 0;
       bottom: 0;
-      width: 45%;
-      height: 1em;
+      width: 40%;
+      height: 1.5em;
     }
 
     #graph {
       top: 0;
-      left: 50%;
+      left: 40%;
       position: absolute;
       right: 0;
-      bottom: 2em;
-      width: 50%;
+      bottom: 1.5em;
+      width: 60%;
       overflow: auto;
     }
 
@@ -94,8 +97,8 @@
       }
     }
   });
-  require(["stage", "d3", 'pegace', "ace/ace", "ace/lib/lang", "ace/ext/statusbar"],
-      function (stage, d3, pegace, ace, lang, statusbar) {
+  require(["stage", 'pegace', "ace/ace", "ace/lib/lang", "ace/ext/statusbar"],
+      function (stage, pegace, ace, lang, statusbar) {
 
         var editor = ace.edit("editor");
         editor.setTheme("ace/theme/eclipse");
@@ -103,19 +106,31 @@
         var StatusBar = ace.require('ace/ext/statusbar').StatusBar;
         var statusBar = new StatusBar(editor, document.getElementById('editor-bar'));
 
+        stage.init();
+
+        var worker = Worker("../target/d3dot-worker.js");
+        worker.onmessage = function(event) {
+          switch (event.data.type){
+            case "ready":
+              worker.postMessage(editor.getValue());
+              break;
+            case "stage":
+              stage.draw(event.data.body);
+              break;
+          }
+        };
+
         var messages = {
+          syntax: "Syntax error near",
           keyword: "Unknown keyword",
           attribute: "Unknown attribute",
           unterminated: "Unterminated structure starting"
         };
 
-        stage.init();
-        stage.draw(editor.getValue());
-
         var update = lang.delayedCall(function() {
           var result = pegace.lint(editor.getValue());
           if (result.clean) {
-            stage.draw(editor.getValue());
+            worker.postMessage(editor.getValue());
             editor.getSession().clearAnnotations();
           } else {
             var a = result.errors.map(function(e){
@@ -127,7 +142,7 @@
             editor.getSession().setAnnotations(a);
           }
         })
-        editor.on("change", function () {update.delay(1200)});
+        editor.on("change", function () {update.delay(600)});
       }
   );
 </script>

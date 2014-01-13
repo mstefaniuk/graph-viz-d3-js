@@ -2,7 +2,7 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
   var last = [];
   return {
     generate: function (source) {
-      console.log("Parsing dot source!");
+//      console.log("Parsing dot source!");
       var xdot = viz(source, "xdot");
       try {
         var ast = xdotparser.parse(xdot);

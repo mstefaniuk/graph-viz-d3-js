@@ -1,5 +1,6 @@
 {
-    errors=[];
+    var errors=[];
+    var nodes = [];
     var lint = options.pegace.mode=='lint';
 }
 
@@ -18,12 +19,13 @@ struct = body
 attr_stmt = ("graph" / "node" / "edge") _* attr_list
 u_keyword = &{return lint} e:$[^ ]+ {errors.push({pos: offset(), type: "keyword", string: e})}
 attr_list = '[' _* a_list? _* ']' attr_list?
+    / &{return lint} '[' _* a_list? _* {errors.push({pos: offset(), type: "unterminated", string: "["})}
 a_list    = a_name _* '=' _* (ID / QS) (a_sep a_list)*
     / &{return lint} e:$ID _* '=' _* (ID / QS) (a_sep a_list)* {errors.push({pos: offset(), type: "attribute", string: e})}
 a_sep     = (',' / _) _*
 edge_stmt = (node_id / subgraph) edgeRHS _* attr_list?
 edgeRHS   = _* edgeop _* (node_id / subgraph) edgeRHS?
-node_stmt = node_id _* attr_list?
+node_stmt = i:node_id _* attr_list? {nodes.push({id: i, pos: offset(), text: text})}
 node_id   = ID _* port?
 port 	  = ':' _* ID ( ':' _* compass_pt)?
 	/ 	':' _* compass_pt
@@ -202,7 +204,8 @@ a_name =
 	/ "xlp"
 	/ "z"
 
-ID = [a-zA-Z0-9_\.]+ / '-'? [0-9]* '.'? [0-9] / QS
+ID = CHAR+ / '-'? [0-9]* '.'? [0-9] / QS
+CHAR = [a-zA-Z0-9_\.\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD]
 QS = '"' [^"]* '"' / &{return lint} '"' [^"]* {errors.push({pos: offset(), type: "unterminated", string: '"'})}
     / "<<" ([^>] [^>]* ">")* ">" / &{return lint} "<<" ([^>] [^>]* ">")* {errors.push({pos: offset(), type: "unterminated", string: '<<'})}
 
