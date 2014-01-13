@@ -19,6 +19,7 @@ struct = body
 attr_stmt = ("graph" / "node" / "edge") _* attr_list
 u_keyword = &{return lint} e:$[^ ]+ {errors.push({pos: offset(), type: "keyword", string: e})}
 attr_list = '[' _* a_list? _* ']' attr_list?
+    / &{return lint} '[' _* a_list? _* {errors.push({pos: offset(), type: "unterminated", string: "["})}
 a_list    = a_name _* '=' _* (ID / QS) (a_sep a_list)*
     / &{return lint} e:$ID _* '=' _* (ID / QS) (a_sep a_list)* {errors.push({pos: offset(), type: "attribute", string: e})}
 a_sep     = (',' / _) _*
