@@ -48,7 +48,7 @@ varchar = &{return counter==0} / a:anysign s:varchar {return a + (s||'')}
 anysign = LC? c:. {counter--; return c}
 
 coordinates = _ p1:integer _ p2:integer {return [p1,p2]}
-identifier = s:$[A-Za-z0-9_]+ port? {return s} / '"' s:$nq '"' {return s}
+identifier = s:$CHAR+ port? {return s} / '"' s:$nq '"' {return s}
 port = ':' identifier
 integer = "-"? i:$[0-9]+ {return parseInt(i)}
 decimal = "-"? f:$[0-9]+ s:("." d:$[0-9]+ {return "." + d})? {return parseFloat(f + (s||''))}
@@ -59,6 +59,7 @@ nq = [^"]*
 c = [,]
 q = '"'
 
+CHAR = [a-zA-Z0-9_\.\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD]
 CR = [\n\r]
 WS = [\n\t\r ]
 _ = WS LC? / LC? WS

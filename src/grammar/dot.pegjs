@@ -203,7 +203,8 @@ a_name =
 	/ "xlp"
 	/ "z"
 
-ID = [a-zA-Z0-9_\.]+ / '-'? [0-9]* '.'? [0-9] / QS
+ID = CHAR+ / '-'? [0-9]* '.'? [0-9] / QS
+CHAR = [a-zA-Z0-9_\.\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u02FF\u0370-\u037D\u037F-\u1FFF\u200C-\u200D\u2070-\u218F\u2C00-\u2FEF\u3001-\uD7FF\uF900-\uFDCF\uFDF0-\uFFFD]
 QS = '"' [^"]* '"' / &{return lint} '"' [^"]* {errors.push({pos: offset(), type: "unterminated", string: '"'})}
     / "<<" ([^>] [^>]* ">")* ">" / &{return lint} "<<" ([^>] [^>]* ">")* {errors.push({pos: offset(), type: "unterminated", string: '<<'})}
 
