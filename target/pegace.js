@@ -9,14 +9,14 @@ define(['parser/dot'], function(dot) {
           }
         });
       } catch(e) {
-        console.log(e);
         result = {
           clean: false,
           level: "fatal",
           exception: e,
           errors: [{
             pos: e.offset,
-            text: e.message
+            type: "syntax",
+            string: e.found
           }]
         }
       }
