@@ -16,7 +16,7 @@ define(['pegace', 'spec/dots/directed'], function (pegace, array) {
       var result = pegace.lint(
         "dgraph {node[sape=box]}"
       );
-      expect(result).toEqual({
+      expect(result).toEqualProperties({
         clean: false,
         errors: [
           {pos: 0, type: "keyword", string: "dgraph"},
