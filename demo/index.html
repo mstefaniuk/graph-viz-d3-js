@@ -108,7 +108,7 @@
 
         stage.init();
 
-        var worker = Worker("../target/d3dot-worker.js");
+        var worker = new Worker("../target/d3dot-worker.js");
         worker.onmessage = function(event) {
           switch (event.data.type){
             case "ready":
