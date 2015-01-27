@@ -48,7 +48,7 @@
     text {
       text-anchor: middle;
       font-family: "Times-Roman", serif;
-      font-size: 14;
+      font-size: 10pt;
     }
   </style>
 </head>
@@ -88,13 +88,7 @@
     baseUrl: "../target",
     paths: {
       d3: '../lib/d3/d3',
-      ace: '../lib/ace',
-      viz: '../lib/viz'
-    },
-    shim: {
-      d3: {
-        exports: 'd3'
-      }
+      ace: '../lib/ace'
     }
   });
   require(["stage", 'pegace', "ace/ace", "ace/lib/lang", "ace/ext/statusbar"],
@@ -133,13 +127,13 @@
             worker.postMessage(editor.getValue());
             editor.getSession().clearAnnotations();
           } else {
-            var a = result.errors.map(function(e){
+            var annotations = result.errors.map(function(e){
               var c = editor.getSession().getDocument().indexToPosition(e.pos);
               c.text = [messages[e.type], " '", e.string, "'."].join('');
               c.type = "error";
               return c;
             });
-            editor.getSession().setAnnotations(a);
+            editor.getSession().setAnnotations(annotations);
           }
         })
         editor.on("change", function () {update.delay(600)});

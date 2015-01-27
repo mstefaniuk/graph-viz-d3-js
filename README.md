@@ -19,11 +19,11 @@ Instead of using SVG directly it uses `xdot` format and parses it. Data structur
 
 Roadmap
 -------
-* Test suite using Graphviz gallery examples
+* Test suite using Graphviz gallery examples (90% done)
 * Add code completion for `dot` source editor
 * Improve animations with path tweening and concatenation of arrow heads with arrow arcs
 * Move `dot` parsing to Ace WebWorker
-* Move `viz.js` and `xdot` parsing to separate WebWorker
+* ~~Move `viz.js` and `xdot` parsing to separate WebWorker~~
 * Custom `viz.js` compile with `xdot` output only to optimize size
 
 License

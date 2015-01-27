@@ -86,14 +86,7 @@ module.exports = function (grunt) {
       }
     },
     nodestatic: {
-      work: {
-        options: {
-          port: 9999,
-          keepalive: true,
-          dev: true
-        }
-      },
-      test: {
+      serve: {
         options: {
           port: 9999,
           dev: true
@@ -145,8 +138,10 @@ module.exports = function (grunt) {
 
   // Default task(s).
   grunt.registerTask('default', ['build']);
-  grunt.registerTask('build', ['clean:target', 'peg', 'copy', 'file_append']);
-  grunt.registerTask('test', ['nodestatic:test', 'jasmine']);
+  grunt.registerTask('build', ['bower:install', 'compile']);
+  grunt.registerTask('compile', ['clean:target', 'peg', 'copy', 'file_append']);
+  grunt.registerTask('test', ['nodestatic', 'jasmine']);
+  grunt.registerTask('serve', ['compile', 'nodestatic:serve:keepalive']);
   grunt.registerTask('check', ['jasmine']);
-  grunt.registerTask('all', ['clean', "bower:install", 'peg', 'copy', 'file_append', 'test']);
+  grunt.registerTask('all', ['build', 'test']);
 };

@@ -15,5 +15,9 @@
     "grunt-nodestatic": "~0.1.2",
     "grunt-template-jasmine-requirejs": "~0.1.8",
     "grunt-contrib-jshint": "~0.8.0"
+  },
+  "scripts": {
+    "postinstall": "grunt build",
+    "test": "grunt test"
   }
 }
