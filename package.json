@@ -11,7 +11,7 @@
     "grunt-contrib-clean": "~0.5.0",
     "grunt-file-append": "0.0.2",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-bower-task": "~0.3.4",
+    "grunt-bower-task": "~0.4.0",
     "grunt-nodestatic": "~0.1.2",
     "grunt-template-jasmine-requirejs": "~0.1.8",
     "grunt-contrib-jshint": "~0.8.0"

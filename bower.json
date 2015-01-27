@@ -2,10 +2,10 @@
   "name": "d3js-dot",
   "version": "0.0.0",
   "dependencies": {
-    "requirejs": "*",
-    "requirejs-text": "*",
-    "ace": "*",
-    "d3": "*"
+    "requirejs": "2.1.15",
+    "requirejs-text": "2.0.13",
+    "ace": "1.1.8",
+    "d3": "3.5.3"
   },
   "exportsOverride": {
     "requirejs": {
