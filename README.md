@@ -3,6 +3,8 @@ Graphviz *dot* in your browser
 Repository graph-viz-d3-js contains code editor and live preview of code.
 Check out editor live [demo](http://mstefaniuk.github.io/graph-viz-d3-js/demo/index.html).
 
+[![Build Status](https://travis-ci.org/mstefaniuk/graph-viz-d3-js.svg?branch=master)](https://travis-ci.org/mstefaniuk/graph-viz-d3-js)
+
 Features
 --------
 * Code editor with syntax highlighting and error annotations
