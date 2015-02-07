@@ -7,6 +7,9 @@
     "ace": "1.1.8",
     "d3": "3.5.3"
   },
+  "devDependencies": {
+    "js-imagediff": "1.0.4"
+  },
   "exportsOverride": {
     "requirejs": {
       "": "require.js"
@@ -16,6 +19,9 @@
     },
     "ace": {
       "": "lib/ace"
+    },
+    "js-imagediff":{
+      "": "imagediff.js"
     }
   },
   "authors": [

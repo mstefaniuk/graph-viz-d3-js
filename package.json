@@ -1,20 +1,26 @@
 {
-  "name": "graphviz-parser",
+  "name": "graphviz-interactive-webeditor",
   "version": "0.2.0",
   "devDependencies": {
     "grunt": "~0.4.2",
-    "grunt-contrib-jasmine": "~0.5.2",
-    "grunt-peg": "~1.1.0",
-    "grunt-contrib-uglify": "~0.2.7",
-    "grunt-contrib-requirejs": "~0.4.1",
-    "grunt-contrib-copy": "~0.4.1",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-file-append": "0.0.2",
-    "grunt-contrib-watch": "~0.5.3",
     "grunt-bower-task": "~0.4.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-jasmine": "~0.5.2",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-requirejs": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-file-append": "0.0.2",
+    "grunt-karma": "^0.10.1",
     "grunt-nodestatic": "~0.1.2",
-    "grunt-template-jasmine-requirejs": "~0.1.8",
-    "grunt-contrib-jshint": "~0.8.0"
+    "grunt-peg": "~1.1.0",
+    "karma": "^0.12.31",
+    "karma-coverage": "^0.2.7",
+    "karma-jasmine": "~0.1.0",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-requirejs": "^0.2.2",
+    "requirejs": "^2.1.15"
   },
   "scripts": {
     "test": "grunt test"

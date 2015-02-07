@@ -16,13 +16,16 @@ module.exports = function (grunt) {
       install: {
         options: {
           layout: "byType",
-          cleanBowerDir: true
+          cleanBowerDir: true,
+          bowerOptions: {
+            production: false
+          }
         }
       }
     },
     clean: {
       target: ["target"],
-      bower: ["lib/ace","lib/requirejs"]
+      bower: ["lib/ace", "lib/requirejs"]
     },
     peg: {
       options: {exportVar: "parser"},
@@ -78,7 +81,7 @@ module.exports = function (grunt) {
     },
     watch: {
       page: {
-        files: ['src/**','spec/**'],
+        files: ['src/**', 'spec/**'],
         tasks: ['build', 'check']
       },
       options: {
@@ -93,33 +96,9 @@ module.exports = function (grunt) {
         }
       }
     },
-    jasmine: {
-      parser: {
-        options: {
-          specs: 'spec/*-spec.js',
-          helpers: 'spec/*-helper.js',
-          styles: 'spec/*-helper.css',
-          host: 'http://127.0.0.1:9999/',
-          keepRunner: true,
-          template: require('grunt-template-jasmine-requirejs'),
-          templateOptions: {
-            requireConfig: {
-              baseUrl: "target",
-              paths: {
-                text : "../lib/requirejs-text/text",
-                d3: '../lib/d3/d3',
-                ace: '../lib/ace',
-                viz: '../lib/viz',
-                spec: '../spec'
-              },
-              shim: {
-                d3: {
-                  exports: 'd3'
-                }
-              }
-            }
-          }
-        }
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js'
       }
     }
   });
@@ -134,14 +113,13 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-peg');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-nodestatic');
-  grunt.loadNpmTasks('grunt-contrib-jasmine');
+  grunt.loadNpmTasks('grunt-karma');
 
   // Default task(s).
   grunt.registerTask('default', ['build']);
   grunt.registerTask('build', ['bower:install', 'compile']);
   grunt.registerTask('compile', ['clean:target', 'peg', 'copy', 'file_append']);
-  grunt.registerTask('test', ['nodestatic', 'jasmine']);
+  grunt.registerTask('test', ['karma']);
   grunt.registerTask('serve', ['compile', 'nodestatic:serve:keepalive']);
-  grunt.registerTask('check', ['jasmine']);
   grunt.registerTask('all', ['build', 'test']);
 };
