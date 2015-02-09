@@ -21,9 +21,10 @@ define(["d3", "palette"], function (d3, palette) {
         svg
           .transition()
           .delay(150)
-          .duration(500)
-          .attr("width", width + "px")
-          .attr("height", height + "px")
+          .duration(700)
+          .attr("width", width + "pt")
+          .attr("height", height + "pt")
+          .attr("viewBox", [0, 0, width, height].join(' '))
           .select("g")
           .attr("transform", "translate(" + vtranslate + "," + htranslate + ")");
 
