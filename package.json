@@ -11,6 +11,7 @@
     "grunt-contrib-requirejs": "~0.4.1",
     "grunt-contrib-uglify": "~0.2.7",
     "grunt-contrib-watch": "~0.5.3",
+    "grunt-coveralls": "^1.0.0",
     "grunt-file-append": "0.0.2",
     "grunt-karma": "^0.10.1",
     "grunt-nodestatic": "~0.1.2",

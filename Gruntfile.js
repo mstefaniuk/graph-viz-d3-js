@@ -100,6 +100,14 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'karma.conf.js'
       }
+    },
+    coveralls: {
+      options: {
+        force: true
+      },
+      phantom: {
+        src: "coverage/PhantomJS*/lcov.info"
+      }
     }
   });
 
@@ -114,6 +122,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-nodestatic');
   grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-coveralls');
 
   // Default task(s).
   grunt.registerTask('default', ['build']);
