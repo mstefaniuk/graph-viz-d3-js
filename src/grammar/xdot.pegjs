@@ -13,11 +13,13 @@ node = i:identifier a:attributes? ";" WS+ {return {type:"node",id:i,attributes:a
 attributes = _+ "[" a:attribute aa:("," WS+ a:attribute {return a})* _* "]" {return aa!=null ? [a].concat(aa) : [a];}
 attribute =
  draw
+ / size
  / a:(qattribute
  / cattribute
  / anyattribute) {a.type="skip"; return a}
 
-qattribute = n:("label" / "width" / "height" / "bb" / "pos" / "xdotversion" / "size") "=" nqs {return {name: n}}
+size = "size" "=" q w:decimal "," h:decimal q {return {type: "size", value: [w,h]}}
+qattribute = n:("label" / "width" / "height" / "bb" / "pos" / "xdotversion") "=" nqs {return {name: n}}
 cattribute = n:("style" / "shape" / "color") "=" ncs {return {name: n}}
 anyattribute = nn:identifier "=" nqs {return {name: nn}}
 

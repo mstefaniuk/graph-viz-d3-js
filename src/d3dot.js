@@ -30,8 +30,8 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
 
       function addToSection(section) {
         return function (node) {
-          var last = result[result.length - 1];
-          last[section] = last[section].concat(node.elements);
+          var cursor = result[result.length - 1];
+          cursor[section] = cursor[section].concat(node.elements);
         }
       }
 
@@ -44,7 +44,13 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
         relation: startGroup('attributes'),
         draw: addToSection('shapes'),
         hdraw: addToSection('shapes'),
-        ldraw: addToSection('labels')
+        ldraw: addToSection('labels'),
+        size: function(node) {
+          var cursor = result[result.length - 1];
+          cursor.size = node.value.map(function(e) {
+            return e*72;
+          });
+        }
       });
       visit(ast);
 

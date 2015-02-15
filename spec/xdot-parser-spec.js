@@ -1,21 +1,32 @@
-define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4'], function (xdot, array, clust4) {
+define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4', 'imagediff', 'viz'],
+  function (xdot, array, clust4, imagediff, viz) {
 
-  describe('XDOT parser', function () {
-    using("provided gallery graphs", array, function (graph) {
-      describe("parser", function () {
-        it("should not throw an exception", function () {
-          expect(function () {
-            xdot.parse(graph)
-          }).not.toThrow();
+    describe('XDOT parser', function () {
+      using("provided gallery graphs", array, function (graph) {
+        describe("parser", function () {
+          it("should not throw an exception", function () {
+            expect(function () {
+              xdot.parse(graph)
+            }).not.toThrow();
+          });
+        })
+      });
+
+      it("should return backward compatible AST", function () {
+        var actual = xdot.parse(array[10][0]);
+        expect(actual).toEqualProperties(clust4);
+      });
+
+      describe("should cover language features", function () {
+        it("to extract graph size for rescaling", function () {
+          var source = 'digraph a {graph [size="6,6"]; }';
+          var ast = xdot.parse(source);
+          expect(ast).toEqualProperties({
+            "type": "digraph",
+            "id": "a",
+            "commands": [{"type": "graph", "attributes": [{"type": "size", "value": [6, 6]}]}]
+          });
         });
-      })
+      });
     });
   });
-
-  describe('XDOT parser', function () {
-    it("should return backward compatible AST", function () {
-      var actual = xdot.parse(array[10][0]);
-      expect(actual).toEqualProperties(clust4);
-    });
-  });
-});

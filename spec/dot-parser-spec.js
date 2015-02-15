@@ -1,18 +1,16 @@
 define(['pegace', 'spec/dots/directed'], function (pegace, array) {
 
   describe('Dot parser', function () {
-    using("provided gallery graphs", array, function(graph){
-      describe("parser", function() {
+    using("provided gallery graphs", array, function (graph) {
+      describe("parser", function () {
         it("should return clean result in lax mode", function () {
           var result = pegace.lint(graph);
           expect(result.clean).toBe(true);
         });
       })
     });
-  });
 
-  describe('Dot parser lax mode', function() {
-    it("should find all unknown statements", function() {
+    it("in lax mode should find all unknown statements", function () {
       var result = pegace.lint(
         "dgraph {node[sape=box]}"
       );
