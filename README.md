@@ -4,6 +4,7 @@ Repository graph-viz-d3-js contains code editor and live preview of code.
 Check out editor live [demo](http://mstefaniuk.github.io/graph-viz-d3-js/demo/index.html).
 
 [![Build Status](https://travis-ci.org/mstefaniuk/graph-viz-d3-js.svg?branch=master)](https://travis-ci.org/mstefaniuk/graph-viz-d3-js)
+[![Coverage Status](https://coveralls.io/repos/mstefaniuk/graph-viz-d3-js/badge.svg?branch=master)](https://coveralls.io/r/mstefaniuk/graph-viz-d3-js?branch=master)
 
 Features
 --------
@@ -21,7 +22,7 @@ Instead of using SVG directly it uses `xdot` format and parses it. Data structur
 
 Roadmap
 -------
-* Test suite using Graphviz gallery examples (90% done)
+* Test suite using Graphviz gallery examples (50% done)
 * Add code completion for `dot` source editor
 * Improve animations with path tweening and concatenation of arrow heads with arrow arcs
 * Move `dot` parsing to Ace WebWorker
