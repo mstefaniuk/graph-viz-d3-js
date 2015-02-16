@@ -12,7 +12,7 @@ module.exports = function (config) {
     ],
     exclude: [],
     preprocessors: {
-      'target/*.js': ['coverage']
+      'target/**/*.js': ['coverage']
     },
     reporters: ['progress', 'coverage'],
     coverageReporter: {
