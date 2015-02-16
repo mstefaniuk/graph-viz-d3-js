@@ -12,7 +12,7 @@ module.exports = function (config) {
     ],
     exclude: [],
     preprocessors: {
-      'target/**/*.js': ['coverage']
+      'target/*.js': ['coverage']
     },
     reporters: ['progress', 'coverage'],
     coverageReporter: {
@@ -24,6 +24,7 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     //autoWatch: true,
     browsers: ['PhantomJS'],
+    //browsers: ['Firefox'],
     singleRun: true
   });
 };
