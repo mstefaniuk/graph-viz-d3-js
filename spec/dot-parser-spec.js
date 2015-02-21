@@ -22,5 +22,12 @@ define(['pegace', 'spec/dots/directed'], function (pegace, array) {
         ]
       });
     });
+
+    it("should accept nodes with 'image' attribute (#2)", function () {
+      var result = pegace.lint(
+        'digraph {TitleNode [ label="FOO", image="http://placehold.it/140x100"]}'
+      );
+      expect(result.clean).toEqual(true);
+    });
   });
 });
