@@ -8,11 +8,13 @@ module.exports = function (config) {
       {pattern: 'spec/*-helper.js', included: true},
       {pattern: 'spec/*-spec.js', included: false},
       {pattern: 'spec/*/**/*.+(js|gv|xdot)', included: false},
-      {pattern: 'target/**/*.js', included: false},
+      {pattern: 'app/*/**/*.js', included: false},
+      {pattern: 'parser/*.js', included: false}
     ],
     exclude: [],
     preprocessors: {
-      'target/**/*.js': ['coverage']
+      'app/js/**/*.js': ['coverage'],
+      'parser/*.js': ['coverage']
     },
     reporters: ['progress', 'coverage'],
     coverageReporter: {

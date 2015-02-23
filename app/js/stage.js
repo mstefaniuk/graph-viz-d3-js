@@ -1,4 +1,4 @@
-define(["d3", "palette"], function (d3, palette) {
+define(["../../lib/d3/d3", "palette"], function (d3, palette) {
     var svg, main;
     var order = {
       digraph: 0,

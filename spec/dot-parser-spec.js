@@ -1,6 +1,10 @@
 define(['pegace', 'spec/dots/directed'], function (pegace, array) {
 
   describe('Dot parser', function () {
+    beforeEach(function () {
+      this.addMatchers(objectDiff.jasmine);
+    });
+
     using("provided gallery graphs", array, function (graph) {
       describe("parser", function () {
         it("should return clean result in lax mode", function () {

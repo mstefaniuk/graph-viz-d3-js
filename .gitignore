@@ -1,10 +1,4 @@
-.grunt
 .idea
-target
-test
 node_modules
-lib/ace
-lib/d3
-lib/requirejs
-lib/requirejs-text
-_SpecRunner.html
+lib/*
+parser

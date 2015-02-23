@@ -6,7 +6,7 @@ module.exports = function (grunt) {
     jshint: {
       all: [
         'Gruntfile.js',
-        'src/*.js'
+        'app/*.js'
       ],
       options: {
         jshintrc: '.jshintrc'
@@ -24,28 +24,28 @@ module.exports = function (grunt) {
       }
     },
     clean: {
-      target: ["target"],
-      bower: ["lib/ace", "lib/requirejs"]
+      target: ["dist"],
+      bower: ["lib/"]
     },
     peg: {
       options: {exportVar: "parser"},
       xdot: {
-        src: "src/grammar/xdot.pegjs",
-        dest: "target/parser/xdot.js"
+        src: "grammar/xdot.pegjs",
+        dest: "parser/xdot.js"
       },
       dot: {
-        src: "src/grammar/dot.pegjs",
-        dest: "target/parser/dot.js"
+        src: "grammar/dot.pegjs",
+        dest: "parser/dot.js"
       }
     },
     file_append: {
       default_options: {
         files: {
-          'target/parser/xdot.js': {
+          'parser/xdot.js': {
             prepend: "define(function () {\nvar ",
             append: "\nreturn parser;\n});"
           },
-          'target/parser/dot.js': {
+          'parser/dot.js': {
             prepend: "define(function () {\nvar ",
             append: "\nreturn parser;\n});"
           }
@@ -53,11 +53,11 @@ module.exports = function (grunt) {
       }
     },
     copy: {
-      src: {
-        src: ['src/*.js'],
-        dest: 'target/',
-        expand: true,
-        flatten: true
+      target: {
+        files: [
+          {cwd: 'app', src: ['index.html', 'js/**/*.js', 'lib/*.js'], dest: 'dist', expand: true},
+          {cwd: 'lib', src: ['**/*.js'], dest: 'dist/lib', expand: true}
+        ]
       }
     },
     requirejs: {
@@ -127,8 +127,9 @@ module.exports = function (grunt) {
   // Default task(s).
   grunt.registerTask('default', ['build']);
   grunt.registerTask('build', ['bower:install', 'compile']);
-  grunt.registerTask('compile', ['clean:target', 'peg', 'copy', 'file_append']);
+  grunt.registerTask('compile', ['peg', 'file_append']);
   grunt.registerTask('test', ['karma']);
   grunt.registerTask('serve', ['compile', 'nodestatic:serve:keepalive']);
+  grunt.registerTask('dist', ['copy']);
   grunt.registerTask('all', ['build', 'test']);
 };

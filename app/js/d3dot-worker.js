@@ -1,9 +1,10 @@
-importScripts('../lib/requirejs/require.js');
+importScripts('../../lib/requirejs/require.js');
 
 require({
     baseUrl: "./",
     paths: {
-      viz: '../lib/viz'
+      viz: '../lib/viz',
+      parser: '../../parser'
     }
   },
   ["require", "d3dot"],

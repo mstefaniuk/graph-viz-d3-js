@@ -6,14 +6,15 @@ for (var file in window.__karma__.files) {
 }
 
 requirejs.config({
-  baseUrl: '/base/target',
+  baseUrl: '/base/app/js',
 
   paths: {
-    text: '../lib/requirejs-text/text',
-    d3: '../lib/d3/d3',
-    ace: '../lib/ace',
+    text: '../../lib/requirejs-text/text',
+    d3: '../../lib/d3/d3',
+    ace: '../../lib/ace',
     viz: '../lib/viz',
-    spec: '../spec'
+    spec: '../../spec',
+    parser: '../../parser'
   },
 
   shim: {
