@@ -1,14 +1,14 @@
-define(['parser/dot'], function(dot) {
+define(['parser/dot'], function (dot) {
   return {
-    lint: function(source) {
+    lint: function (source) {
       var result;
       try {
         result = dot.parse(source, {
-          pegace:{
+          pegace: {
             mode: 'lint'
           }
         });
-      } catch(e) {
+      } catch (e) {
         result = {
           clean: false,
           level: "fatal",
@@ -22,7 +22,7 @@ define(['parser/dot'], function(dot) {
       }
       return result;
     },
-    parse: function(source) {
+    parse: function (source) {
       return dot.parse(source, {
         pegace: {
           mode: 'strict'
