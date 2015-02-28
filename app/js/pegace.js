@@ -18,7 +18,7 @@ define(['parser/dot'], function(dot) {
             type: "syntax",
             string: e.found
           }]
-        }
+        };
       }
       return result;
     },
