@@ -1,7 +1,7 @@
 {
     var errors=[];
     var nodes = [];
-    var lint = options.pegace.mode=='lint';
+    var lint = options.pegace ? options.pegace.mode == 'lint' : false;
 }
 
 dotsource = _* ("strict"? _+)? ("graph" / "digraph" / u_keyword) (_+ ID)? _* body _*
