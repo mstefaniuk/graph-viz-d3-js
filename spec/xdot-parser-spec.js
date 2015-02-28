@@ -8,12 +8,16 @@ define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4'],
 
       using("provided gallery graphs", array, function (graph) {
         describe("parser", function () {
-          it("should not throw an exception", function () {
-            expect(function () {
-              xdot.parse(graph)
-            }).not.toThrow();
+          it("should parse page into ast with commands and at least one graph", function () {
+            var ast = xdot.parse(graph);
+            expect(ast).toBeDefined();
+            expect(ast.commands.length).toBeGreaterThan(0);
+            expect(ast.commands.filter(function(e){
+              return e.type === 'graph';
+            }).length).toEqual(1);
+            expect(ast.type).toBeDefined();
           });
-        })
+        });
       });
 
       it("should return backward compatible AST", function () {
