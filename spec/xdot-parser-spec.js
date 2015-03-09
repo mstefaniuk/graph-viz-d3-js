@@ -2,10 +2,6 @@ define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4'],
   function (xdot, array, clust4) {
 
     describe('XDOT parser', function () {
-      beforeEach(function () {
-        this.addMatchers(objectDiff.jasmine);
-      });
-
       using("provided gallery graphs", array, function (graph) {
         describe("parser", function () {
           it("should parse page into ast with commands and at least one graph", function () {
