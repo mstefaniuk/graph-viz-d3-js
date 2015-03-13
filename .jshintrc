@@ -12,5 +12,9 @@
   "node": true,
   "jasmine": true,
   "require": true,
-  "define": true
+  "globals": {
+    "define": false,
+    "require": false,
+    "using": false
+  }
 }

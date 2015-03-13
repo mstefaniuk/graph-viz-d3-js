@@ -2,7 +2,7 @@ define(['d3dot', 'spec/asts/directed/clust4', 'spec/shapes/directed/clust4'], fu
 
   describe("Shapes visitor for xdot parser", function () {
     it("returns cluster shapes", function () {
-      var shapes = d3dot.shapeast(ast_clust4)
+      var shapes = d3dot.shapeast(ast_clust4);
       expect(shape_clust4).toEqual(shapes);
     });
 
