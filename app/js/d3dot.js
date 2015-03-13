@@ -6,7 +6,7 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
       var xdot = viz(source, "xdot");
       try {
         var ast = xdotparser.parse(xdot);
-        var stage = last = this.shapeast(ast);
+        last = this.shapeast(ast);
       } catch(e) {
 //        console.log(xdot);
       }
@@ -17,7 +17,7 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
 
       function visitSubnodes(propertyName) {
         return function (node) {
-          node[propertyName].forEach(visit)
+          node[propertyName].forEach(visit);
         };
       }
 
@@ -32,7 +32,7 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
         return function (node) {
           var cursor = result[result.length - 1];
           cursor[section] = cursor[section].concat(node.elements);
-        }
+        };
       }
 
       var visit = pegast.nodeVisitor({
@@ -59,5 +59,5 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
         groups: result
       };
     }
-  }
-})
+  };
+});
