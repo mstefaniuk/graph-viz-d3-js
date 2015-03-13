@@ -9,5 +9,8 @@
   "undef": true,
   "boss": true,
   "eqnull": true,
-  "node": true
+  "node": true,
+  "jasmine": true,
+  "require": true,
+  "define": true
 }
