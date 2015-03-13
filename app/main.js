@@ -1,8 +1,8 @@
 require.config({
   baseUrl: "js",
   paths: {
-    parser: '../parser',
+    parser: '../../parser',
     d3: '../lib/d3/d3',
-    ace: '../lib/ace'
+    ace: '../../lib/ace'
   }
 });

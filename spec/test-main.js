@@ -14,7 +14,8 @@ requirejs.config({
     ace: '../../lib/ace',
     viz: '../lib/viz',
     spec: '../../spec',
-    parser: '../../parser'
+    parser: '../../parser',
+    rfactory: '../../lib/rfactory/rfactory'
   },
 
   shim: {
@@ -23,7 +24,7 @@ requirejs.config({
     }
   },
 
-  deps: tests,
+  deps: ["rfactory"].concat(tests),
 
   callback: window.__karma__.start
 });

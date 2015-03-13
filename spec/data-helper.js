@@ -3,7 +3,10 @@ function using(name, values, func){
     if (Object.prototype.toString.call(values[i]) !== '[object Array]') {
       values[i] = [values[i]];
     }
-    func.apply(this, values[i]);
-    jasmine.currentEnv_.currentSpec.description += ' (with "' + name + '" using ' + values[i].join(', ') + ')';
+    if (values[i][0].substring) {
+      func.apply(this, values[i]);
+      var message = values[i][0].substring(0,30);
+      jasmine.currentEnv_.currentSpec.description += ' (with "' + name + '" using ' + message + ')';
+    }
   }
 }

@@ -3,8 +3,8 @@ define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4'],
 
     describe('XDOT parser', function () {
       using("provided gallery graphs", array, function (graph) {
-        describe("parser", function () {
-          it("should parse page into ast with commands and at least one graph", function () {
+        describe("should parse", function () {
+          it("xdot source into tree with commands and at least one graph", function () {
             var ast = xdot.parse(graph);
             expect(ast).toBeDefined();
             expect(ast.commands.length).toBeGreaterThan(0);
