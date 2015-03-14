@@ -1,8 +1,3 @@
-/**
- * Author: Marcin Stefaniuk
- * Date: 30.12.13 05:14
- */
-
 define([], function () {
   function path(points, command, close) {
     return [
@@ -11,10 +6,10 @@ define([], function () {
       command,
       points.slice(1, points.length)
         .map(function (e) {
-          return [e[0], -e[1]].join(",")
+          return [e[0], -e[1]].join(",");
         }), close===true ? "Z" : ""
     ].join(" ");
-  };
+  }
 
   return {
     polygon: function (d) {
