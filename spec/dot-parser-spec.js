@@ -20,5 +20,33 @@ define(['parser/dot', 'spec/dots/directed'], function (dot, array) {
         });
       });
     });
+
+    describe("during lax parsing£", function() {
+
+      it("should report unclosed curly brackets", function() {
+        var result = dot.parse("digraph {unclosed", lint);
+        expect(result.errors).toEqual([ { pos : 8, type : 'unterminated', string : '{' } ]);
+      });
+
+      it("should report unclosed square brackets", function() {
+        var result = dot.parse("digraph {unclosed[}", lint);
+        expect(result.errors).toEqual([ { pos : 17, type : 'unterminated', string : '[' } ]);
+      });
+
+      it("should report unclosed double angular brackets", function() {
+        var result = dot.parse("digraph {uncl[url=<<]}", lint);
+        expect(result.errors).toEqual([ { pos : 18, type : 'unterminated', string : '<<' } ]);
+      });
+
+      it("should report unknown keyword", function() {
+        var result = dot.parse("digrh {}", lint);
+        expect(result.errors).toEqual([ { pos : 0, type : 'keyword', string : 'digrh' } ]);
+      });
+
+      it("should report unknown attribute for node", function() {
+        var result = dot.parse('graph {b->l[u="eee"]}', lint);
+        expect(result.errors).toEqual([ { pos : 12, type : 'attribute', string : 'u' } ]);
+      });
+    });
   });
 });
