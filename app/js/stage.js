@@ -41,10 +41,10 @@ define(["../../lib/d3/d3", "palette"], function (d3, palette) {
         });
         var entering = groups.enter()
         .append("g").attr("class", function (d) {
-          return d.class
+          return d.class;
         });
         entering.append("title").text(function (d) {
-          return d.id
+          return d.id;
         });
         entering.filter(".node")
           .style("opacity", 0.0)
@@ -86,23 +86,23 @@ define(["../../lib/d3/d3", "palette"], function (d3, palette) {
           })
           .attr("style", function (d) {
             return d.style.map(function (e) {
-              return [e.key, e.value].join(':')
-            }).join(';')
+              return [e.key, e.value].join(':');
+            }).join(';');
           });
 
         var labels = groups.selectAll("text").data(function (d) {
-          return d.labels
-        })
+          return d.labels;
+        });
         labels.enter().append("text");
         labels
           .transition()
           .delay(150)
           .duration(900)
           .attr("x", function (d) {
-            return d.x
+            return d.x;
           })
           .attr("y", function (d) {
-            return -d.y
+            return -d.y;
           })
           //.attr("text-anchor","middle")
           //.attr("style", function(d) {
@@ -112,9 +112,9 @@ define(["../../lib/d3/d3", "palette"], function (d3, palette) {
           //    }).join(';');
           //})
           .text(function (d) {
-            return d.text
+            return d.text;
           });
       }
-    }
+    };
   }
 );

@@ -21,7 +21,7 @@ define(['parser/dot', 'spec/dots/directed'], function (dot, array) {
       });
     });
 
-    describe("during lax parsing£", function() {
+    describe("during lax parsing", function() {
 
       it("should report unclosed curly brackets", function() {
         var result = dot.parse("digraph {unclosed", lint);
