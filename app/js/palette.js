@@ -1,4 +1,4 @@
-define([], function () {
+define(['d3'], function (d3) {
   function path(points, command, close) {
     return [
       "M",
@@ -8,8 +8,13 @@ define([], function () {
         .map(function (e) {
           return [e[0], -e[1]].join(",");
         }), close===true ? "Z" : ""
-    ].join(" ");
+    ].join(" ").trim();
   }
+
+  var bspline = d3.svg.line()
+    .x(function(d) { return d[0]; })
+    .y(function(d) { return d[1]; })
+    .interpolate("basis");
 
   return {
     polygon: function (d) {
@@ -45,9 +50,11 @@ define([], function () {
     path: function (d) {
       return path(d.points, "C");
     },
-    bspline: function () {
+    bspline: function (d) {
+      return bspline(d.points);
     },
-    polyline: function () {
+    polyline: function (d) {
+      return path(d.points, "L");
     }
   };
 });

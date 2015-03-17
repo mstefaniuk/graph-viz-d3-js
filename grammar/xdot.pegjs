@@ -35,7 +35,7 @@ shapes = polygon / polyline / ellipse / bspline / text
 ellipse = [eE] c:coordinates _ rx:integer _ ry:integer {return {shape: 'ellipse', cx: c[0], cy:c[1], rx:rx, ry:ry}}
 polygon = p:[pP] _ l:integer c:coordinates+ {return {shape: 'polygon', points:c}}
 polyline = [L] _ integer c:coordinates+ {return {shape: 'polyline', points:c}}
-bspline = [bB] _ integer c:coordinates+ {return {shape: 'path', points: c}}
+bspline = [bB] _ integer c:coordinates+ {return {shape: 'bspline', points: c}}
 text = [T] c:coordinates _ integer
            _ integer _ t:vardata {return {x:c[0], y:c[1], text:t}}
 pen = p:[Cc] _ c:vardata
