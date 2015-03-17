@@ -76,7 +76,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
     ] }
   ] },
   { id: 'a0-a1', class: 'relation', shapes: [
-    { shape: 'path', points: [
+    { shape: 'bspline', points: [
       [ 63, 288 ],
       [ 63, 280 ],
       [ 63, 271 ],
@@ -95,7 +95,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
     ] }
   ], labels: [  ] },
   { id: 'a1-a2', class: 'relation', shapes: [
-    { shape: 'path', points: [
+    { shape: 'bspline', points: [
       [ 63, 216 ],
       [ 63, 208 ],
       [ 63, 199 ],
@@ -114,7 +114,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
     ] }
   ], labels: [  ] },
   { id: 'a2-a3', class: 'relation', shapes: [
-    { shape: 'path', points: [
+    { shape: 'bspline', points: [
       [ 63, 144 ],
       [ 63, 136 ],
       [ 63, 127 ],
@@ -133,7 +133,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
     ] }
   ], labels: [  ] },
   { id: 'a3-a0', class: 'relation', shapes: [
-    { shape: 'path', points: [
+    { shape: 'bspline', points: [
       [ 49, 106 ],
       [ 41, 116 ],
       [ 31, 130 ],
@@ -222,7 +222,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
     ] }
   ] },
   { id: 'b0-b1', class: 'relation', shapes: [
-    { shape: 'path', points: [
+    { shape: 'bspline', points: [
       [ 170, 288 ],
       [ 170, 280 ],
       [ 170, 271 ],
@@ -242,7 +242,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
     ] }
   ], labels: [  ] },
   { id: 'b1-b2', class: 'relation', shapes: [
-    { shape: 'path', points: [
+    { shape: 'bspline', points: [
       [ 171, 216 ],
       [ 172, 208 ],
       [ 172, 199 ],
@@ -261,7 +261,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
     ] }
   ], labels: [  ] },
   { id: 'b2-b3', class: 'relation', shapes: [
-    { shape: 'path', points: [
+    { shape: 'bspline', points: [
       [ 172, 144 ],
       [ 171, 136 ],
       [ 171, 127 ],
@@ -360,7 +360,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
     ] }
   ] },
   { id: 'start-a0', class: 'relation', shapes: [
-    { shape: 'path', points: [
+    { shape: 'bspline', points: [
       [ 107, 368 ],
       [ 99, 358 ],
       [ 89, 343 ],
@@ -381,7 +381,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
   ], labels: [  ] },
   { id: 'start-b0',
     class: 'relation', shapes: [
-    { shape: 'path', points: [
+    { shape: 'bspline', points: [
       [ 125, 368 ],
       [ 133, 358 ],
       [ 144, 343 ],
@@ -400,7 +400,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
     ] }
   ], labels: [  ] },
   { id: 'a1-b3', class: 'relation', shapes: [
-    { shape: 'path', points: [
+    { shape: 'bspline', points: [
       [ 74, 218
       ],
       [ 93, 193 ],
@@ -421,7 +421,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
     ] }
   ], labels: [  ] },
   { id: 'b2-a3', class: 'relation', shapes: [
-    { shape: 'path', points: [
+    { shape: 'bspline', points: [
       [ 154, 149 ],
       [ 136, 138 ],
       [ 110, 121 ],
@@ -440,7 +440,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
     ] }
   ], labels: [  ] },
   { id: 'a3-end', class: 'relation', shapes: [
-    { shape: 'path', points: [
+    { shape: 'bspline', points: [
       [ 75, 73 ],
       [ 81, 65 ],
       [ 89, 54 ],
@@ -460,7 +460,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
     }
   ], labels: [  ] },
   { id: 'b3-end', class: 'relation', shapes: [
-    { shape: 'path', points: [
+    { shape: 'bspline', points: [
       [ 156, 73 ],
       [ 150, 65 ],
       [ 142, 54 ],
