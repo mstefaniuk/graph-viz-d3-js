@@ -24,6 +24,18 @@
     "requirejs": "^2.1.15"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "start": "hoodie --www=app start"
+  },
+  "dependencies": {
+    "hoodie-plugin-appconfig": "^2.0.1",
+    "hoodie-plugin-users": "^2.2.2",
+    "hoodie-server": "^3.1.1"
+  },
+  "hoodie": {
+    "plugins": [
+      "hoodie-plugin-users",
+      "hoodie-plugin-appconfig"
+    ]
   }
 }

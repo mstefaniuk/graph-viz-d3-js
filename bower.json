@@ -4,11 +4,11 @@
     "requirejs": "2.1.15",
     "requirejs-text": "2.0.13",
     "ace": "1.1.8",
-    "d3": "3.5.3",
-    "rfactory": "1.1.0"
+    "d3": "3.5.3"
   },
   "devDependencies": {
-    "js-imagediff": "1.0.4"
+    "js-imagediff": "1.0.4",
+    "rfactory": "1.1.0"
   },
   "exportsOverride": {
     "requirejs": {
