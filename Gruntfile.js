@@ -13,7 +13,7 @@ module.exports = function (grunt) {
       }
     },
     bower: {
-      install: {
+      unit: {
         options: {
           layout: "byType",
           cleanBowerDir: true,
@@ -21,9 +21,20 @@ module.exports = function (grunt) {
             production: false
           }
         }
+      },
+      app: {
+        options: {
+          targetDir: './app/lib',
+          layout: "byType",
+          cleanBowerDir: true,
+          bowerOptions: {
+            production: true
+          }
+        }
       }
     },
     clean: {
+      app: ["app/lib/*", "!app/lib/viz.js", "app/js/parser"],
       target: ["dist"],
       bower: ["lib/"]
     },
@@ -53,6 +64,7 @@ module.exports = function (grunt) {
       }
     },
     copy: {
+      app: {src: "parser/*", dest: "app/js/"},
       target: {
         files: [
           {cwd: 'app', src: ['index.html', 'js/**/*.js', 'lib/*.js'], dest: 'dist', expand: true},
@@ -126,10 +138,9 @@ module.exports = function (grunt) {
 
   // Default task(s).
   grunt.registerTask('default', ['build']);
-  grunt.registerTask('build', ['bower:install', 'compile']);
+  grunt.registerTask('build', ['clean:app', 'bower:app', 'compile', 'copy:app']);
   grunt.registerTask('compile', ['peg', 'file_append']);
-  grunt.registerTask('test', ['karma']);
-  grunt.registerTask('serve', ['compile', 'nodestatic:serve:keepalive']);
-  grunt.registerTask('dist', ['copy']);
+  grunt.registerTask('test', ['bower:unit', 'karma']);
+  grunt.registerTask('serve', ['build', 'nodestatic:serve:keepalive']);
   grunt.registerTask('all', ['build', 'test']);
 };
