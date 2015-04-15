@@ -11,6 +11,7 @@
     "grunt-contrib-uglify": "~0.2.7",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-coveralls": "^1.0.0",
+    "grunt-cucumberjs": "^0.5.2",
     "grunt-file-append": "0.0.2",
     "grunt-karma": "^0.10.1",
     "grunt-nodestatic": "~0.1.2",
@@ -25,7 +26,7 @@
   },
   "scripts": {
     "test": "grunt test",
-    "start": "hoodie --www=app start"
+    "start": "hoodie --www=app -n start"
   },
   "dependencies": {
     "hoodie-plugin-appconfig": "^2.0.1",

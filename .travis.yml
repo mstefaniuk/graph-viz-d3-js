@@ -8,5 +8,6 @@ before_script:
   - npm install -g grunt-cli
   - npm install -g bower
   - grunt build
+  - npm start &
 after_success:
   - grunt coveralls
