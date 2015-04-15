@@ -1,4 +1,4 @@
-define(['d3'], function (d3) {
+define(function () {
   function path(points, command, close) {
     return [
       "M",
@@ -10,11 +10,6 @@ define(['d3'], function (d3) {
         }), close===true ? "Z" : ""
     ].join(" ").trim();
   }
-
-  var bspline = d3.svg.line()
-    .x(function(d) { return d[0]; })
-    .y(function(d) { return d[1]; })
-    .interpolate("basis");
 
   return {
     polygon: function (d) {
@@ -51,7 +46,7 @@ define(['d3'], function (d3) {
       return path(d.points, "C");
     },
     bspline: function (d) {
-      return bspline(d.points);
+      return path(d.points, "C");
     },
     polyline: function (d) {
       return path(d.points, "L");
