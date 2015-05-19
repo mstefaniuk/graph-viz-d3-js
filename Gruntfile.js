@@ -104,7 +104,8 @@ module.exports = function (grunt) {
       serve: {
         options: {
           port: 9999,
-          dev: true
+          dev: true,
+          base: 'app'
         }
       }
     },
