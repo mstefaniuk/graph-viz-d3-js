@@ -15,7 +15,8 @@ requirejs.config({
     viz: '../lib/viz',
     spec: '../../spec',
     parser: '../../parser',
-    rfactory: '../../lib/rfactory/rfactory'
+    rfactory: '../../lib/rfactory/rfactory',
+    worker: '../../lib/requirejs-web-workers/worker'
   },
 
   shim: {

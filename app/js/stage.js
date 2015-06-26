@@ -7,8 +7,8 @@ define(["d3", "palette"], function (d3, palette) {
       relation: 3
     };
     return {
-      init: function () {
-        svg = d3.select("body").select("#graph").append("svg");
+      init: function (element) {
+        svg = d3.select(element).append("svg");
         main = svg.append("g");
       },
       draw: function (stage) {

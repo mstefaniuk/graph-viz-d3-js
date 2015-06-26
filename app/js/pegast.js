@@ -5,5 +5,5 @@ define([], function () {
         return functions[node.type]!==undefined ? functions[node.type].apply(null, arguments) : function () {};
       };
     }
-  }
+  };
 });
