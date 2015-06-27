@@ -82,6 +82,13 @@ define(["d3", "palette"], function (d3, palette) {
         svg = d3.select(element).append("svg");
         main = svg.append("g");
       },
+      transitions: function(custom) {
+        if (custom) {
+          transitions = custom;
+        } else {
+          return transitions;
+        }
+      },
       draw: function (stage) {
         var margin = 2,
           boundingWidth = stage.main.shapes[0].points[2][0] + margin*2,
