@@ -1,4 +1,4 @@
-define(["rfactory!stage"], function (stageFactory) {
+define(["rfactory!stage", 'spec/shapes/directed/clust4'], function (stageFactory, shapes) {
 
   describe("Stage", function () {
 
@@ -35,6 +35,32 @@ define(["rfactory!stage"], function (stageFactory) {
       expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
       expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
     });
+
+    it("should draw svg and delegate transitions", function() {
+      var transitionsSpy = jasmine.createSpyObj('transitions', ['stage', 'nodes', 'relations', 'shapes', 'exits', 'labels']);
+
+      stage.transitions(transitionsSpy);
+      stage.init("root");
+      stage.draw(shapes);
+
+      var svg = d3Spy.root.svg;
+      expect(transitionsSpy.stage).toHaveBeenCalledWith(svg, 221, 404, 1, 1, 2, 402);
+      expect(svg.g.all$g.data.mostRecentCall.args[0]).toEqual(shapes.groups);
+
+      var groups = svg.g.all$g;
+      expect(groups.enter).toHaveBeenCalled();
+      expect(groups.g['filtered$.node']).toBeDefined();
+      expect(transitionsSpy.nodes).toHaveBeenCalledWith(groups.g['filtered$.node']);
+      expect(groups.g['filtered$.relation']).toBeDefined();
+      expect(transitionsSpy.relations).toHaveBeenCalledWith(groups.g['filtered$.relation']);
+      expect(groups.exit).toHaveBeenCalled();
+      expect(transitionsSpy.exits).toHaveBeenCalledWith(groups);
+
+      expect(groups.sort).toHaveBeenCalled();
+      expect(groups.all$path.data).toHaveBeenCalled();
+      expect(groups.all$path.append).toHaveBeenCalled();
+      expect(transitionsSpy.shapes).toHaveBeenCalledWith(groups.all$path, paletteSpy);
+    });
   });
 
   function d3SpyFactory() {
@@ -46,14 +72,22 @@ define(["rfactory!stage"], function (stageFactory) {
       return parent[name];
     }
 
-    var spy = jasmine.createSpyObj(name, ['append', 'select', 'attr', 'enter', 'text', 'data']);
+    var selectors = ['append', 'select', 'selectAll', 'filter'];
+    var operators = ['attr', 'enter', 'text', 'data', 'exit', 'sort'];
+    var spy = jasmine.createSpyObj(name, selectors.concat(operators));
 
-    spy.attr.andReturn(spy);
-    spy.enter.andReturn(spy);
-    spy.data.andReturn(spy);
+    operators.map(function(key){
+      spy[key].andReturn(spy);
+    });
 
     spy.select.andCallFake(function(tag) {
       return d3SelectionSpyGenerator(this, tag);
+    });
+    spy.selectAll.andCallFake(function(tag) {
+      return d3SelectionSpyGenerator(this, "all$" + tag);
+    });
+    spy.filter.andCallFake(function(filter) {
+      return d3SelectionSpyGenerator(this, "filtered$" + filter);
     });
     spy.append.andCallFake(function (tag) {
       return d3SelectionSpyGenerator(this, tag);
