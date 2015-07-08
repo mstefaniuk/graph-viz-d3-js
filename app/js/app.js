@@ -1,13 +1,3 @@
-require.config({
-  baseUrl: "js",
-  paths: {
-    parser: 'parser',
-    d3: '../lib/d3/d3',
-    ace: '../lib/ace',
-    worker: '../lib/requirejs-web-workers/worker'
-  }
-});
-
 require(["renderer", 'pegace', "ace/ace", "ace/lib/lang", "ace/ext/statusbar"],
   function (renderer, pegace, ace, lang, statusbar) {
 
@@ -47,4 +37,3 @@ require(["renderer", 'pegace', "ace/ace", "ace/lib/lang", "ace/ext/statusbar"],
     });
   }
 );
-
