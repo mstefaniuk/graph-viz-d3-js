@@ -73,12 +73,27 @@ module.exports = function (grunt) {
       }
     },
     requirejs: {
-      compile: {
+      options: {
+        mainConfigFile: "app/main.js",
+        baseUrl: "app/js",
+        skipDirOptimize: false,
+        paths: {
+          d3: "empty:",
+          "requirejs-web-workers": "empty:",
+          viz: "empty:",
+          ace: "empty:"
+        }
+      },
+      renderer: {
         options: {
-          name: "stage",
-//          mainConfigFile: "target/config.js",
-          baseUrl: "target",
-          out: "target/stage.min.js"
+          name: "renderer",
+          out: "dist/renderer.js"
+        }
+      },
+      worker: {
+        options: {
+          name: "d3dot-worker",
+          out: "dist/d3dot-worker.js"
         }
       }
     },
