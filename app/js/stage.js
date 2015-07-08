@@ -1,4 +1,4 @@
-define(["d3", "palette", "transitions-default"], function (d3, palette, defaults) {
+define(["d3", "palette", "transitions/default"], function (d3, palette, defaults) {
     var svg, main;
     var order = {
       digraph: 0,
