@@ -7,7 +7,7 @@ require({
       parser: '../../parser'
     }
   },
-  ["require", "d3dot"],
+  ["require", "transformer"],
   function(require, d3dot) {
 
     onmessage = function(event) {

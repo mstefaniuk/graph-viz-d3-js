@@ -1,4 +1,4 @@
-define(['rfactory!d3dot', 'spec/asts/directed/clust4', 'spec/shapes/directed/clust4', 'text!spec/xdots/directed/clust4.xdot'],
+define(['rfactory!transformer', 'spec/asts/directed/clust4', 'spec/shapes/directed/clust4', 'text!spec/xdots/directed/clust4.xdot'],
   function (d3dotFactory, ast_clust4, shape_clust4, xdot_clust4) {
 
   describe("Shapes visitor for xdot parser", function () {

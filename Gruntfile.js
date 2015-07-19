@@ -79,8 +79,20 @@ module.exports = function (grunt) {
       },
       worker: {
         options: {
-          name: "d3dot-worker",
-          out: "dist/d3dot-worker.js"
+          name: "layout-worker",
+          out: "dist/layout-worker.js"
+        }
+      },
+      mode: {
+        options: {
+          name: "editor/mode/pegjs",
+          out: "dist/ace-mode.js"
+        }
+      },
+      annotator: {
+        options: {
+          name: "pegace",
+          out: "dist/pegace.js"
         }
       }
     },

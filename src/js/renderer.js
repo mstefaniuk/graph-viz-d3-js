@@ -1,4 +1,4 @@
-define(["stage", "worker!d3dot-worker.js"], function(stage, worker) {
+define(["stage", "worker!layout-worker.js"], function(stage, worker) {
 
   var initialized = false, pending;
 

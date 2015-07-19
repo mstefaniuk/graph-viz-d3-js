@@ -8,7 +8,7 @@ define(["rfactory!renderer"], function(rendererFactory) {
       workerSpy = jasmine.createSpyObj('worker', ['postMessage']);
       renderer = rendererFactory({
         'stage': stageSpy,
-        "worker!d3dot-worker.js": workerSpy
+        "worker!layout-worker.js": workerSpy
       });
     });
 
