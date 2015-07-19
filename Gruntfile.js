@@ -91,8 +91,8 @@ module.exports = function (grunt) {
       },
       annotator: {
         options: {
-          name: "pegace",
-          out: "dist/pegace.js"
+          name: "dot-checker",
+          out: "dist/dot-checker.js"
         }
       }
     },

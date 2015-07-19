@@ -1,10 +1,10 @@
-define(['rfactory!pegace', 'parser/dot'], function (pegaceFactory, dot) {
+define(['rfactory!dot-checker', 'parser/dot'], function (dotCheckerFactory, dot) {
 
   describe('Bridge between ACE and PEG', function () {
-    var parserSpy, pegace;
+    var parserSpy, dotChecker;
     beforeEach(function () {
       parserSpy = jasmine.createSpyObj('parserMock', ['parse']);
-      pegace = pegaceFactory({
+      dotChecker = dotCheckerFactory({
         'parser/dot': parserSpy
       });
     });
@@ -20,7 +20,7 @@ define(['rfactory!pegace', 'parser/dot'], function (pegaceFactory, dot) {
       parserSpy.parse.andCallFake(function () {
         return expectation;
       });
-      var result = pegace.lint(
+      var result = dotChecker.lint(
         "dgraph {node[sape=box]}"
       );
       expect(result).toEqual(expectation);
@@ -34,7 +34,7 @@ define(['rfactory!pegace', 'parser/dot'], function (pegaceFactory, dot) {
         throw new Error();
       });
       expect(function () {
-        pegace.parse(
+        dotChecker.parse(
           "dgraph {node[sape=box]}"
         );
       }).toThrow();
@@ -57,7 +57,7 @@ define(['rfactory!pegace', 'parser/dot'], function (pegaceFactory, dot) {
       parserSpy.parse.andCallFake(function (source, options) {
         throw provided;
       });
-      var result = pegace.lint(
+      var result = dotChecker.lint(
         ""
       );
       expect(result.clean).toEqual(false);
