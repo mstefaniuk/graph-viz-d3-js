@@ -1,5 +1,5 @@
 {
-  "name": "graphviz-interactive-webeditor",
+  "name": "graphviz-d3-renderer",
   "version": "0.2.0",
   "devDependencies": {
     "grunt": "~0.4.2",
@@ -11,10 +11,8 @@
     "grunt-contrib-uglify": "~0.2.7",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-coveralls": "^1.0.0",
-    "grunt-cucumberjs": "^0.5.2",
     "grunt-file-append": "0.0.2",
     "grunt-karma": "^0.10.1",
-    "grunt-nodestatic": "~0.1.2",
     "grunt-peg": "~1.1.0",
     "karma": "^0.12.31",
     "karma-chrome-launcher": "^0.1.7",
@@ -25,18 +23,6 @@
     "requirejs": "^2.1.15"
   },
   "scripts": {
-    "test": "grunt test",
-    "start": "hoodie --www=app start -n"
-  },
-  "dependencies": {
-    "hoodie-plugin-appconfig": "^2.0.1",
-    "hoodie-plugin-users": "^2.2.2",
-    "hoodie-server": "^3.1.1"
-  },
-  "hoodie": {
-    "plugins": [
-      "hoodie-plugin-users",
-      "hoodie-plugin-appconfig"
-    ]
+    "test": "grunt test"
   }
 }

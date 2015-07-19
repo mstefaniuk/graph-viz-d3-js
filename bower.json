@@ -1,8 +1,7 @@
 {
-  "name": "d3js-dot",
+  "name": "graphviz-d3-renderer",
   "dependencies": {
     "requirejs": "2.1.15",
-    "ace": "1.1.8",
     "d3": "3.5.3",
     "requirejs-web-workers": "~1.0.1"
   },
@@ -18,9 +17,6 @@
     "requirejs-text": {
       "": "text.js"
     },
-    "ace": {
-      "": "lib/ace"
-    },
     "js-imagediff": {
       "": "imagediff.js"
     },
@@ -32,7 +28,7 @@
     "Marcin Stefaniuk <marcin@stefaniuk.info>"
   ],
   "license": "GPL",
-  "private": true,
+  "private": false,
   "ignore": [
     "**/.*",
     "node_modules",

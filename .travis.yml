@@ -1,14 +1,9 @@
 language: node_js
-sudo: required
 node_js:
   - "0.10"
-services:
-  - couchdb
 before_script:
   - npm install -g grunt-cli
   - npm install -g bower
-  - npm install -g hoodie-cli
   - grunt build
-  - npm start &
 after_success:
   - grunt coveralls

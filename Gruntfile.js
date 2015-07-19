@@ -6,7 +6,7 @@ module.exports = function (grunt) {
     jshint: {
       all: [
         'Gruntfile.js',
-        'app/*.js'
+        'src/*.js'
       ],
       options: {
         jshintrc: '.jshintrc'
@@ -21,31 +21,20 @@ module.exports = function (grunt) {
             production: false
           }
         }
-      },
-      app: {
-        options: {
-          targetDir: './app/lib',
-          layout: "byType",
-          cleanBowerDir: true,
-          bowerOptions: {
-            production: true
-          }
-        }
       }
     },
     clean: {
-      app: ["app/lib/*", "!app/lib/viz.js", "app/js/parser"],
-      target: ["dist"],
+      dist: ["dist"],
       bower: ["lib/"]
     },
     peg: {
       options: {exportVar: "parser"},
       xdot: {
-        src: "grammar/xdot.pegjs",
+        src: "src/grammar/xdot.pegjs",
         dest: "parser/xdot.js"
       },
       dot: {
-        src: "grammar/dot.pegjs",
+        src: "src/grammar/dot.pegjs",
         dest: "parser/dot.js"
       }
     },
@@ -64,18 +53,16 @@ module.exports = function (grunt) {
       }
     },
     copy: {
-      app: {src: "parser/*", dest: "app/js/"},
-      target: {
+      dist: {
         files: [
-          {cwd: 'app', src: ['index.html', 'js/**/*.js', 'lib/*.js'], dest: 'dist', expand: true},
-          {cwd: 'lib', src: ['**/*.js'], dest: 'dist/lib', expand: true}
+          {cwd: 'src/lib', src: 'viz.js', dest: 'dist', expand: true}
         ]
       }
     },
     requirejs: {
       options: {
-        mainConfigFile: "app/main.js",
-        baseUrl: "app/js",
+        mainConfigFile: "src/main.js",
+        baseUrl: "src/js",
         skipDirOptimize: false,
         paths: {
           d3: "empty:",
@@ -97,15 +84,6 @@ module.exports = function (grunt) {
         }
       }
     },
-    uglify: {
-      options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
-      },
-      build: {
-        src: 'target/d3dot.js',
-        dest: 'target/stage.min.js'
-      }
-    },
     watch: {
       page: {
         files: ['src/**', 'spec/**'],
@@ -113,15 +91,6 @@ module.exports = function (grunt) {
       },
       options: {
         interval: 100
-      }
-    },
-    nodestatic: {
-      serve: {
-        options: {
-          port: 9999,
-          dev: true,
-          base: 'app'
-        }
       }
     },
     karma: {
@@ -148,15 +117,14 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-file-append');
   grunt.loadNpmTasks('grunt-peg');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-nodestatic');
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-coveralls');
 
-  // Default task(s).
+  // Macro tasks
   grunt.registerTask('default', ['build']);
-  grunt.registerTask('build', ['clean:app', 'bower:app', 'compile', 'copy:app']);
+  grunt.registerTask('build', ['clean:dist', 'compile']);
   grunt.registerTask('compile', ['peg', 'file_append']);
   grunt.registerTask('test', ['bower:unit', 'karma']);
-  grunt.registerTask('serve', ['build', 'nodestatic:serve:keepalive']);
-  grunt.registerTask('all', ['build', 'test']);
+  grunt.registerTask('dist', ['requirejs', 'copy:dist']);
+  grunt.registerTask('all', ['build', 'test', 'dist']);
 };

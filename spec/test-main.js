@@ -6,7 +6,7 @@ for (var file in window.__karma__.files) {
 }
 
 requirejs.config({
-  baseUrl: '/base/app/js',
+  baseUrl: '/base/src/js',
 
   paths: {
     text: '../../lib/requirejs-text/text',
