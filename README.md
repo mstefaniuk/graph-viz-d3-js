@@ -16,7 +16,7 @@ Contents
 
 Design
 ------
-DOT parser written in [PEG.js](https://github.com/dmajda/pegjs) has lax mode to parse source to the end with all errors. [Graphviz](http://graphviz.org) is embedded in browser using [viz.js](https://github.com/mdaines/viz.js).
+DOT parser is written in [PEG.js](https://github.com/dmajda/pegjs) has lax mode to parse source to the end with all errors. [Graphviz](http://graphviz.org) is embedded in browser using [viz.js](https://github.com/mdaines/viz.js).
 Instead of using SVG directly it uses `xdot` format and parses it. Data structure of the output is drawn using
 [d3.js](https://github.com/mbostock/d3) with animations during rendering.
 
