@@ -9,10 +9,10 @@ Bower component `graphviz-d3-renderer` renders [Graphviz](http://graphviz.org) s
 
 Contents
 --------
-* DOT parser with lax mode to verify input
-* DOT mode for ACE editor
-* WebWorker with DOT renderer, XDOT parser and AST transformer to stage data structure
-* stage data renderer with d3.js
+* `dot` parser with lax mode to verify input
+* `dot` mode for ACE editor
+* WebWorker with `dot` renderer, `xdot` parser and AST transformer to data structure of stage
+* stage data renderer with `d3.js`
 
 Design
 ------

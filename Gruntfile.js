@@ -65,6 +65,7 @@ module.exports = function (grunt) {
         baseUrl: "src/js",
         skipDirOptimize: false,
         paths: {
+          requireLib: "../../lib/requirejs/require",
           d3: "empty:",
           "requirejs-web-workers": "empty:",
           viz: "empty:",
@@ -80,7 +81,11 @@ module.exports = function (grunt) {
       worker: {
         options: {
           name: "layout-worker",
-          out: "dist/layout-worker.js"
+          out: "dist/layout-worker.js",
+          onBuildRead: function (moduleName, path, contents) {
+            return contents.replace(/importScripts\([^)]+\)/gi, '');
+          },
+          include: ['requireLib']
         }
       },
       mode: {
