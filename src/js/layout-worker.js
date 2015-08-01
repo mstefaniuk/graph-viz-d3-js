@@ -1,19 +1,16 @@
 importScripts('../../lib/requirejs/require.js');
+importScripts('../main.js');
 
 require({
-    baseUrl: "./",
-    paths: {
-      viz: '../lib/viz',
-      parser: '../../parser'
-    }
+    baseUrl: "."
   },
-  ["require", "transformer"],
-  function(require, d3dot) {
+  ["transformer"],
+  function(transformer) {
 
     onmessage = function(event) {
       var data = {
         type: "stage",
-        body: d3dot.generate(event.data)
+        body: transformer.generate(event.data)
       };
       postMessage(data);
     };
