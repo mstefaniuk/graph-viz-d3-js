@@ -22,6 +22,9 @@ requirejs.config({
   shim: {
     d3: {
       exports: 'd3'
+    },
+    viz: {
+      exports: "Viz"
     }
   },
 

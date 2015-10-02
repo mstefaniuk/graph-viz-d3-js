@@ -64,11 +64,16 @@ module.exports = function (grunt) {
         mainConfigFile: "src/main.js",
         baseUrl: "src/js",
         skipDirOptimize: false,
+        optimize: "none",
+        shim: {
+          viz: {
+            exports: "Viz"
+          }
+        },
         paths: {
           requireLib: "../../lib/requirejs/require",
           d3: "empty:",
           "requirejs-web-workers": "empty:",
-          viz: "empty:",
           ace: "empty:"
         }
       },
@@ -120,7 +125,7 @@ module.exports = function (grunt) {
         force: true
       },
       phantom: {
-        src: "coverage/PhantomJS*/lcov.info"
+        src: "coverage/Firefox*/lcov.info"
       }
     }
   });
@@ -141,7 +146,7 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['build']);
   grunt.registerTask('build', ['clean:dist', 'compile']);
   grunt.registerTask('compile', ['peg', 'file_append']);
-  grunt.registerTask('test', ['bower:unit', 'karma']);
+  grunt.registerTask('test', ['bower:unit', 'karma:unit']);
   grunt.registerTask('dist', ['requirejs', 'copy:dist']);
   grunt.registerTask('all', ['build', 'test', 'dist']);
 };

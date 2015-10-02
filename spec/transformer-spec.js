@@ -1,13 +1,13 @@
 define(['rfactory!transformer', 'spec/asts/directed/clust4', 'spec/shapes/directed/clust4', 'text!spec/xdots/directed/clust4.xdot'],
-  function (d3dotFactory, ast_clust4, shape_clust4, xdot_clust4) {
+  function (transformerFactory, ast_clust4, shape_clust4, xdot_clust4) {
 
   describe("Shapes visitor for xdot parser", function () {
 
-    var vizSpy, xdotSpy, d3dot;
+    var vizSpy, xdotSpy, transformer;
     beforeEach(function () {
       vizSpy = jasmine.createSpy('viz');
       xdotSpy = jasmine.createSpyObj('xdotSpy', ['parse']);
-      d3dot = d3dotFactory({
+      transformer = transformerFactory({
         'viz': vizSpy,
         'parser/xdot': xdotSpy
       });
@@ -19,7 +19,7 @@ define(['rfactory!transformer', 'spec/asts/directed/clust4', 'spec/shapes/direct
         "id": "a",
         "commands": [{"type": "graph", "attributes": [{"type": "size", "value": [6, 7]}]}]
       };
-      var stage = d3dot.shapeast(source);
+      var stage = transformer.shapeast(source);
       expect(stage.main.size).toEqual([6*72, 7*72]);
     });
 
@@ -27,13 +27,13 @@ define(['rfactory!transformer', 'spec/asts/directed/clust4', 'spec/shapes/direct
       vizSpy.andReturn(xdot_clust4);
       xdotSpy.parse.andReturn(ast_clust4);
 
-      var result = d3dot.generate('source');
+      var result = transformer.generate('source');
       expect(result).toEqual(shape_clust4);
     });
 
     it("should return previous result when viz.js generation failed", function() {
-      vizSpy.andCallFake(function(source){
-        if (source==="valid") {
+      vizSpy.andCallFake(function(source, options){
+        if (source==="valid" && options.format==="xdot") {
           return xdot_clust4;
         } else {
           throw new Error();
@@ -41,15 +41,15 @@ define(['rfactory!transformer', 'spec/asts/directed/clust4', 'spec/shapes/direct
       });
       xdotSpy.parse.andReturn(ast_clust4);
 
-      var result = d3dot.generate('valid');
+      var result = transformer.generate('valid');
       expect(result).toEqual(shape_clust4);
-      result = d3dot.generate('invalid');
+      result = transformer.generate('invalid');
       expect(result).toEqual(shape_clust4);
     });
 
     it("should return previous result when xdot source parsing failed", function() {
-      vizSpy.andCallFake(function(source){
-        if (source==="valid") {
+      vizSpy.andCallFake(function(source, options){
+        if (source==="valid" && options.format==="xdot") {
           return xdot_clust4;
         } else {
           return {invalid: true};
@@ -63,9 +63,9 @@ define(['rfactory!transformer', 'spec/asts/directed/clust4', 'spec/shapes/direct
         }
       });
 
-      var result = d3dot.generate('valid');
+      var result = transformer.generate('valid');
       expect(result).toEqual(shape_clust4);
-      result = d3dot.generate('invalid');
+      result = transformer.generate('invalid');
       expect(result).toEqual(shape_clust4);
     });
   });
