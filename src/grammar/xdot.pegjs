@@ -51,11 +51,11 @@ varsize = s:integer {counter=s}
 varchar = &{return counter==0} / a:anysign s:varchar {return a + (s||'')}
 anysign = LC? c:. {counter--; return c}
 
-coordinates = _ p1:integer _ p2:integer {return [p1,p2]}
+coordinates = _ p1:decimal _ p2:decimal {return [p1,p2]}
 identifier = s:$CHAR+ port? {return s} / '"' s:$nq '"' {return s}
 port = ':' identifier
-integer = "-"? i:$[0-9]+ {return parseInt(i)}
-decimal = "-"? f:$[0-9]+ s:("." d:$[0-9]+ {return "." + d})? {return parseFloat(f + (s||''))}
+integer = s:"-"? i:$[0-9]+ {return parseInt((s||'') + i)}
+decimal = s:"-"? f:$[0-9]+ r:("." d:$[0-9]+ {return "." + d})? {return parseFloat((s||'') + f + (r||''))}
 
 ncs = [^,\]]+
 nqs = '"' nq '"' / "<<" ([^>] [^>]* ">")* ">" / ncs

@@ -16,7 +16,7 @@ define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4'],
         });
       });
 
-      it("should return backward compatible AST", function () {
+      xit("should return backward compatible AST", function () {
         var actual = xdot.parse(array[10][0]);
         expect(actual).toEqual(clust4);
       });
