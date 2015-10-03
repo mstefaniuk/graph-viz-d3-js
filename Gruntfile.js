@@ -52,13 +52,6 @@ module.exports = function (grunt) {
         }
       }
     },
-    copy: {
-      dist: {
-        files: [
-          {cwd: 'src/lib', src: 'viz.js', dest: 'dist', expand: true}
-        ]
-      }
-    },
     requirejs: {
       options: {
         mainConfigFile: "src/main.js",
@@ -124,7 +117,7 @@ module.exports = function (grunt) {
       options: {
         force: true
       },
-      phantom: {
+      firefox: {
         src: "coverage/Firefox*/lcov.info"
       }
     }
