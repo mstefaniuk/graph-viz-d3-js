@@ -7,6 +7,7 @@ for (var file in window.__karma__.files) {
 
 requirejs.config({
   baseUrl: '/base/src/js',
+  waitSeconds: 20,
 
   paths: {
     text: '../../lib/requirejs-text/text',
