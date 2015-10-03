@@ -36,8 +36,8 @@ ellipse = [eE] c:coordinates _ rx:integer _ ry:integer {return {shape: 'ellipse'
 polygon = p:[pP] _ l:integer c:coordinates+ {return {shape: 'polygon', points:c}}
 polyline = [L] _ integer c:coordinates+ {return {shape: 'polyline', points:c}}
 bspline = [bB] _ integer c:coordinates+ {return {shape: 'bspline', points: c}}
-text = [T] c:coordinates _ integer
-           _ integer _ t:vardata {return {x:c[0], y:c[1], text:t}}
+text = [T] c:coordinates _ decimal
+           _ decimal _ t:vardata {return {x:c[0], y:c[1], text:t}}
 pen = p:[Cc] _ c:vardata
     {var colors = [parseInt(c.substr(1,2),16),parseInt(c.substr(3,2),16),parseInt(c.substr(5,2),16),c.length==8 ? parseInt(c.substr(7,2),16)/255 : '1'];
     var color = "rgba("+colors.join(',')+")";
