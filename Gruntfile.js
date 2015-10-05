@@ -140,6 +140,6 @@ module.exports = function (grunt) {
   grunt.registerTask('build', ['clean:dist', 'compile']);
   grunt.registerTask('compile', ['peg', 'file_append']);
   grunt.registerTask('test', ['bower:unit', 'karma:unit']);
-  grunt.registerTask('dist', ['requirejs', 'copy:dist']);
+  grunt.registerTask('dist', ['requirejs']);
   grunt.registerTask('all', ['build', 'test', 'dist']);
 };
