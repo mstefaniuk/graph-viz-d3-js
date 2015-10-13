@@ -1,6 +1,6 @@
 {
   "name": "graphviz-d3-renderer",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-bower-task": "~0.4.0",
