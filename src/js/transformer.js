@@ -1,13 +1,30 @@
 define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
-  var last = [];
+  var empty = {stage:{}};
+  var last = empty;
   return {
-    generate: function (source) {
-      var xdot;
+    generate: function (source, strict) {
+      var xdot, error;
+      last = strict ? empty : last;
+
+      var oldLog = console.log;
+      console.log = function (message) {
+        error = message.indexOf("Error:")===0 && error===undefined ? message : error;
+      };
+
       try {
         xdot = viz(source, { format: "xdot" });
         var ast = xdotparser.parse(xdot);
         last = this.shapeast(ast);
-      } catch(e) {}
+      } catch(e) {
+        error = error || "Parsing of xdot output failed";
+        return {
+          ok: false,
+          error: error,
+          stage: last.stage
+        };
+      } finally {
+        console.log = oldLog;
+      }
       return last;
     },
     shapeast: function(ast) {
@@ -53,8 +70,11 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
       visit(ast);
 
       return {
-        main: result.shift(),
-        groups: result
+        stage : {
+          main: result.shift(),
+          groups: result
+        },
+        ok: true
       };
     }
   };
