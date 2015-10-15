@@ -2,10 +2,11 @@ define(["rfactory!renderer"], function(rendererFactory) {
 
   describe("Dot source renderer", function() {
 
-    var stageSpy, workerSpy, renderer;
+    var stageSpy, workerSpy, callbackSpy, renderer;
     beforeEach(function () {
       stageSpy = jasmine.createSpyObj('stage', ["init", "draw"]);
       workerSpy = jasmine.createSpyObj('worker', ['postMessage']);
+      callbackSpy = jasmine.createSpy("callback");
       renderer = rendererFactory({
         'stage': stageSpy,
         "worker!layout-worker.js": workerSpy
@@ -49,6 +50,26 @@ define(["rfactory!renderer"], function(rendererFactory) {
         }
       });
       expect(stageSpy.draw).toHaveBeenCalledWith(output);
+    });
+
+    it("should return error when rendering failed", function() {
+      var output = "output", source = "source";
+      renderer.errorHandler(callbackSpy);
+      workerSpy.onmessage({
+        data: {
+          type: "ready"
+        }
+      });
+      renderer.render(source);
+      workerSpy.onmessage({
+        data: {
+          type: "error",
+          body: output
+        }
+      });
+      expect(workerSpy.postMessage).toHaveBeenCalledWith(source);
+      expect(stageSpy.draw).not.toHaveBeenCalled();
+      expect(callbackSpy).toHaveBeenCalledWith(output);
     });
 
   });
