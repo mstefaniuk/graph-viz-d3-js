@@ -226,7 +226,7 @@ define('worker',[],function () {
 
 define('renderer',["stage", "worker!layout-worker.js"], function(stage, worker) {
 
-  var initialized = false, pending;
+  var initialized = false, pending, callback;
 
   worker.onmessage = function (event) {
     switch (event.data.type) {
@@ -239,6 +239,10 @@ define('renderer',["stage", "worker!layout-worker.js"], function(stage, worker) 
       case "stage":
         stage.draw(event.data.body);
         break;
+      case "error":
+        if (callback) {
+          callback(event.data.body);
+        }
     }
   };
 
@@ -252,6 +256,9 @@ define('renderer',["stage", "worker!layout-worker.js"], function(stage, worker) 
       } else {
         pending = source;
       }
+    },
+    errorHandler: function(handler) {
+      callback = handler;
     }
   };
 

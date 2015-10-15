@@ -14,10 +14,7 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
         result = this.shapeast(ast);
       } catch(e) {
         error = error || "Parsing of xdot output failed";
-        return {
-          ok: false,
-          error: error
-        };
+        throw error;
       } finally {
         console.log = oldLog;
       }
@@ -66,11 +63,8 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
       visit(ast);
 
       return {
-        stage : {
-          main: result.shift(),
-          groups: result
-        },
-        ok: true
+        main: result.shift(),
+        groups: result
       };
     }
   };

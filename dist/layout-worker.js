@@ -5100,12 +5100,9 @@ define('pegast',[], function () {
   };
 });
 define('transformer',['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
-  var empty = {stage:{}};
-  var last = empty;
   return {
-    generate: function (source, strict) {
-      var xdot, error;
-      last = strict ? empty : last;
+    generate: function (source) {
+      var xdot, error, result;
 
       var oldLog = console.log;
       console.log = function (message) {
@@ -5115,18 +5112,17 @@ define('transformer',['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser
       try {
         xdot = viz(source, { format: "xdot" });
         var ast = xdotparser.parse(xdot);
-        last = this.shapeast(ast);
+        result = this.shapeast(ast);
       } catch(e) {
         error = error || "Parsing of xdot output failed";
         return {
           ok: false,
-          error: error,
-          stage: last.stage
+          error: error
         };
       } finally {
         console.log = oldLog;
       }
-      return last;
+      return result;
     },
     shapeast: function(ast) {
       var result = [];

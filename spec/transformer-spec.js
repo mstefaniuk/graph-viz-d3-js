@@ -20,7 +20,7 @@ define(['rfactory!transformer', 'spec/asts/directed/clust4', 'spec/shapes/direct
         "commands": [{"type": "graph", "attributes": [{"type": "size", "value": [6, 7]}]}]
       };
       var result = transformer.shapeast(source);
-      expect(result.stage.main.size).toEqual([6*72, 7*72]);
+      expect(result.main.size).toEqual([6*72, 7*72]);
     });
 
     it("should call viz.js with xdot option and call xdot parser with AST", function() {
@@ -28,8 +28,7 @@ define(['rfactory!transformer', 'spec/asts/directed/clust4', 'spec/shapes/direct
       xdotSpy.parse.andReturn(ast_clust4);
 
       var result = transformer.generate('source');
-      expect(result.stage).toEqual(shape_clust4);
-      expect(result.ok).toEqual(true);
+      expect(result).toEqual(shape_clust4);
     });
 
     it("should return previous result with ok=false when viz.js generation failed", function() {
@@ -39,11 +38,11 @@ define(['rfactory!transformer', 'spec/asts/directed/clust4', 'spec/shapes/direct
         throw new Error();
       });
 
-      var result = transformer.generate('invalid');
-      expect(result).toEqual({
-        ok: false,
-        error: error
-      });
+      try {
+        transformer.generate('invalid');
+      } catch (e) {
+        expect(e).toEqual(error);
+      }
     });
 
     it("should return error when xdot source parsing failed", function() {
@@ -53,11 +52,11 @@ define(['rfactory!transformer', 'spec/asts/directed/clust4', 'spec/shapes/direct
         throw new Error();
       });
 
-      var result = transformer.generate('invalid');
-      expect(result).toEqual({
-        ok: false,
-        error: error
-      });
+      try {
+        transformer.generate('invalid');
+      } catch (e) {
+        expect(e).toEqual(error);
+      }
     });
   });
 });

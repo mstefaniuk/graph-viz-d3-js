@@ -30,7 +30,7 @@ define(["rfactory!renderer"], function(rendererFactory) {
       expect(workerSpy.postMessage).toHaveBeenCalledWith(source);
     });
 
-    it("should send source directly wheh worker is already initialized", function() {
+    it("should send source directly when worker is already initialized", function() {
       var source = "source";
       workerSpy.onmessage({
         data: {
@@ -42,14 +42,13 @@ define(["rfactory!renderer"], function(rendererFactory) {
     });
 
     it("should draw stage with output of worker", function() {
-      var output = "output";
       workerSpy.onmessage({
         data: {
           type: "stage",
-          body: output
+          body: {}
         }
       });
-      expect(stageSpy.draw).toHaveBeenCalledWith(output);
+      expect(stageSpy.draw).toHaveBeenCalledWith({});
     });
 
     it("should return error when rendering failed", function() {

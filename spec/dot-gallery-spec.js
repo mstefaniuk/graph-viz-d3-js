@@ -6,10 +6,9 @@ define(['transformer', 'spec/dots/directed'], function (transformer, array) {
         var result = transformer.generate(graph);
 
         it("should have shapes to draw canvas and shapes with diagram itself", function () {
-          expect(result.ok).toEqual(true);
-          expect(result.stage.main.shapes.length).toBeGreaterThan(0);
-          expect(result.stage.main.shapes[0].points.length).toEqual(4);
-          expect(result.stage.groups.length).toBeGreaterThan(0);
+          expect(result.main.shapes.length).toBeGreaterThan(0);
+          expect(result.main.shapes[0].points.length).toEqual(4);
+          expect(result.groups.length).toBeGreaterThan(0);
         });
       });
     });
