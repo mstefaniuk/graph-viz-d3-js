@@ -34,49 +34,30 @@ define(['rfactory!transformer', 'spec/asts/directed/clust4', 'spec/shapes/direct
 
     it("should return previous result with ok=false when viz.js generation failed", function() {
       var error = "Error: Syntax error from viz.js";
-      vizSpy.andCallFake(function(source, options){
-        if (source==="valid" && options.format==="xdot") {
-          return xdot_clust4;
-        } else {
-          console.log(error);
-          throw new Error();
-        }
+      vizSpy.andCallFake(function(){
+        console.log(error);
+        throw new Error();
       });
-      xdotSpy.parse.andReturn(ast_clust4);
 
-      var result = transformer.generate('valid');
-      expect(result.stage).toEqual(shape_clust4);
-      expect(result.ok).toEqual(true);
-      result = transformer.generate('invalid');
-      expect(result.stage).toEqual(shape_clust4);
-      expect(result.ok).toEqual(false);
-      expect(result.error).toEqual(error);
+      var result = transformer.generate('invalid');
+      expect(result).toEqual({
+        ok: false,
+        error: error
+      });
     });
 
-    it("should return previous result when xdot source parsing failed", function() {
+    it("should return error when xdot source parsing failed", function() {
       var error = "Parsing of xdot output failed";
-      vizSpy.andCallFake(function(source, options){
-        if (source==="valid" && options.format==="xdot") {
-          return xdot_clust4;
-        } else {
-          return {invalid: true};
-        }
-      });
-      xdotSpy.parse.andCallFake(function(source){
-        if (source.invalid && source.invalid===true) {
-          throw new Error();
-        } else {
-          return ast_clust4;
-        }
+      vizSpy.andReturn({invalid: true});
+      xdotSpy.parse.andCallFake(function() {
+        throw new Error();
       });
 
-      var result = transformer.generate('valid');
-      expect(result.stage).toEqual(shape_clust4);
-      expect(result.ok).toEqual(true);
-      result = transformer.generate('invalid');
-      expect(result.stage).toEqual(shape_clust4);
-      expect(result.ok).toEqual(false);
-      expect(result.error).toEqual(error);
+      var result = transformer.generate('invalid');
+      expect(result).toEqual({
+        ok: false,
+        error: error
+      });
     });
   });
 });
