@@ -8,19 +8,18 @@ require({
   function(transformer) {
 
     onmessage = function(event) {
-      var result;
       try {
-        result = transformer.generate(event.data);
+        var result = transformer.generate(event.data);
+        postMessage({
+          type: "stage",
+          body: result
+        });
       } catch (e) {
         postMessage({
           type: "error",
           body: e
         });
       }
-      postMessage({
-        type: "stage",
-        body: result
-      });
     };
 
     postMessage({

@@ -5115,10 +5115,7 @@ define('transformer',['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser
         result = this.shapeast(ast);
       } catch(e) {
         error = error || "Parsing of xdot output failed";
-        return {
-          ok: false,
-          error: error
-        };
+        throw error;
       } finally {
         console.log = oldLog;
       }
@@ -5167,11 +5164,8 @@ define('transformer',['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser
       visit(ast);
 
       return {
-        stage : {
-          main: result.shift(),
-          groups: result
-        },
-        ok: true
+        main: result.shift(),
+        groups: result
       };
     }
   };
@@ -5186,11 +5180,18 @@ require({
   function(transformer) {
 
     onmessage = function(event) {
-      var data = {
-        type: "stage",
-        body: transformer.generate(event.data)
-      };
-      postMessage(data);
+      try {
+        var result = transformer.generate(event.data);
+        postMessage({
+          type: "stage",
+          body: result
+        });
+      } catch (e) {
+        postMessage({
+          type: "error",
+          body: e
+        });
+      }
     };
 
     postMessage({
