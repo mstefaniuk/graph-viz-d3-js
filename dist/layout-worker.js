@@ -3844,11 +3844,11 @@ var parser = (function() {
         if (s2 !== peg$FAILED) {
           s3 = peg$parse_();
           if (s3 !== peg$FAILED) {
-            s4 = peg$parseinteger();
+            s4 = peg$parsedecimal();
             if (s4 !== peg$FAILED) {
               s5 = peg$parse_();
               if (s5 !== peg$FAILED) {
-                s6 = peg$parseinteger();
+                s6 = peg$parsedecimal();
                 if (s6 !== peg$FAILED) {
                   peg$reportedPos = s0;
                   s1 = peg$c91(s2, s4, s6);
