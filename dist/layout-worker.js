@@ -2299,7 +2299,7 @@ var parser = (function() {
         peg$c121 = void 0,
         peg$c122 = function(a, s) {return a + (s||'')},
         peg$c123 = { type: "any", description: "any character" },
-        peg$c124 = function(c) {counter--; return c},
+        peg$c124 = function(c) {counter -= lengthInUtf8Bytes(c); return c},
         peg$c125 = function(p1, p2) {return [p1,p2]},
         peg$c126 = "\"",
         peg$c127 = { type: "literal", value: "\"", description: "\"\\\"\"" },
@@ -5069,6 +5069,19 @@ var parser = (function() {
 
       return s0;
     }
+
+
+        function lengthInUtf8Bytes(str) {
+            var c = str.charCodeAt(0);
+            if (c < 128) {
+              return 1;
+            } else if (c < 2048) {
+              return 2;
+            } else {
+              return 3;
+            }
+        }
+
 
     peg$result = peg$startRuleFunction();
 

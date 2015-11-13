@@ -1,3 +1,16 @@
+{
+    function lengthInUtf8Bytes(str) {
+        var c = str.charCodeAt(0);
+        if (c < 128) {
+          return 1;
+        } else if (c < 2048) {
+          return 2;
+        } else {
+          return 3;
+        }
+    }
+}
+
 dot = prolog? t:"digraph" i:(_ identifier)? _ b:body {return {type:t, id: i==null ? null : i[1], commands:b}}
 prolog = ("#" [^\n]* CR)+ CR
 body = "{" c:statement+ "}" WS* {return c}
@@ -49,7 +62,7 @@ style = [S] _ s:vardata {return {key:'style', value: s}}
 vardata = s:varsize _ "-" v:varchar {counter=s; return v}
 varsize = s:integer {counter=s}
 varchar = &{return counter==0} / a:anysign s:varchar {return a + (s||'')}
-anysign = LC? c:. {counter--; return c}
+anysign = LC? c:. {counter -= lengthInUtf8Bytes(c); return c}
 
 coordinates = _ p1:decimal _ p2:decimal {return [p1,p2]}
 identifier = s:$CHAR+ port? {return s} / '"' s:$nq '"' {return s}

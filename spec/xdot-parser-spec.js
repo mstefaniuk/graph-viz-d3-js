@@ -69,6 +69,204 @@ define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4'],
             }]
           });
         });
+
+        it("to support Unicode labels", function() {
+          var ast = xdot.parse(
+            'digraph G {' +
+            ' graph [_draw_="c 9 -#fffffe00 C 7 -#ffffff P 4 0 0 0 36 404.19 36 404.19 0 ", bb="0,0,404.19,36", xdotversion=1.7 ];' +
+            ' node [label="\n"]; installed [_draw_="c 7 -#000000 e 61.44 18 61.38 18 ", _ldraw_="F 14 11 -Times-Roman c 7 -#000000 T 61.44 13.8 0 73.07 15 -已安装状态 ", height=0.5, label=已安装状态, pos="61.442,18", width=1.7067];' +
+            ' Контрагенты [_draw_="c 7 -#000000 e 272.44 18 132 18 ", _ldraw_="F 14 11 -Times-Roman c 7 -#000000 T 272.44 13.8 0 175 22 -Контрагенты ", height=0.5, pos="272.44,18", width=3.6597];' +
+            ' }'
+          );
+          expect(ast).toEqual({
+            type: 'digraph',
+            id: 'G',
+            commands: [
+              {
+                type: 'graph',
+                attributes: [
+                  {
+                    type: 'draw',
+                    elements: [
+                      {
+                        shape: 'polygon',
+                        points: [
+                          [
+                            0,
+                            0
+                          ],
+                          [
+                            0,
+                            36
+                          ],
+                          [
+                            404.19,
+                            36
+                          ],
+                          [
+                            404.19,
+                            0
+                          ]
+                        ],
+                        style: [
+                          {
+                            key: 'stroke',
+                            value: 'rgba(255,255,254,1)'
+                          },
+                          {
+                            key: 'fill',
+                            value: 'rgba(255,255,255,1)'
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    name: 'bb',
+                    type: 'skip'
+                  },
+                  {
+                    name: 'xdotversion',
+                    type: 'skip'
+                  }
+                ]
+              },
+              {
+                type: 'skip',
+                attributes: [
+                  {
+                    name: 'label',
+                    type: 'skip'
+                  }
+                ]
+              },
+              {
+                type: 'node',
+                id: 'installed',
+                attributes: [
+                  {
+                    type: 'draw',
+                    elements: [
+                      {
+                        shape: 'ellipse',
+                        cx: 61.44,
+                        cy: 18,
+                        rx: 61.38,
+                        ry: 18,
+                        style: [
+                          {
+                            key: 'stroke',
+                            value: 'rgba(0,0,0,1)'
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    type: 'ldraw',
+                    elements: [
+                      {
+                        x: 61.44,
+                        y: 13.8,
+                        text: '已安装状态',
+                        style: [
+                          {
+                            key: 'font-family',
+                            value: "'Times-Roman',serif"
+                          },
+                          {
+                            key: 'font-size',
+                            value: 14
+                          },
+                          {
+                            key: 'stroke',
+                            value: 'rgba(0,0,0,1)'
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    name: 'height',
+                    type: 'skip'
+                  },
+                  {
+                    name: 'label',
+                    type: 'skip'
+                  },
+                  {
+                    name: 'pos',
+                    type: 'skip'
+                  },
+                  {
+                    name: 'width',
+                    type: 'skip'
+                  }
+                ]
+              },
+              {
+                type: 'node',
+                id: 'Контрагенты',
+                attributes: [
+                  {
+                    type: 'draw',
+                    elements: [
+                      {
+                        shape: 'ellipse',
+                        cx: 272.44,
+                        cy: 18,
+                        rx: 132,
+                        ry: 18,
+                        style: [
+                          {
+                            key: 'stroke',
+                            value: 'rgba(0,0,0,1)'
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    type: 'ldraw',
+                    elements: [
+                      {
+                        x: 272.44,
+                        y: 13.8,
+                        text: 'Контрагенты',
+                        style: [
+                          {
+                            key: 'font-family',
+                            value: "'Times-Roman',serif"
+                          },
+                          {
+                            key: 'font-size',
+                            value: 14
+                          },
+                          {
+                            key: 'stroke',
+                            value: 'rgba(0,0,0,1)'
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    name: 'height',
+                    type: 'skip'
+                  },
+                  {
+                    name: 'pos',
+                    type: 'skip'
+                  },
+                  {
+                    name: 'width',
+                    type: 'skip'
+                  }
+                ]
+              }
+            ]
+          });
+        });
       });
     });
   });
