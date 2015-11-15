@@ -31,7 +31,6 @@
   "license": "GPL",
   "private": false,
   "main": [
-    "dist/viz.js",
     "dist/renderer.js",
     "dist/layout-worker.js",
     "dist/ace-mode.js",
