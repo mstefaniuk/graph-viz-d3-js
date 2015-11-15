@@ -1,4 +1,6 @@
-define(['transformer', 'spec/shapes/longer-labels'], function (transformer, longerLabels) {
+define(['transformer', 'spec/shapes/longer-labels',
+    'text!spec/dots/directed/switch.gv', 'spec/shapes/directed/switch'],
+  function (transformer, longerLabels, switchSource, switchShape) {
   describe('Transformer', function() {
     xit('should extract viz.js error from console', function() {
       var stage = transformer.generate("digraph g {\n{a b} -> {c d}\n");
@@ -11,6 +13,11 @@ define(['transformer', 'spec/shapes/longer-labels'], function (transformer, long
     it("should extract node shapes correctly when labels are longer than 4 chars", function() {
       var stage = transformer.generate("digraph { longer -> labels -> ok}");
       expect(stage).toEqual(longerLabels);
+    });
+
+    it("should parse gradient edges", function() {
+      var stage = transformer.generate(switchSource);
+      expect(stage).toEqual(switchShape);
     });
   });
 });
