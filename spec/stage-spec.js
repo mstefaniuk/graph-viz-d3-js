@@ -1,4 +1,4 @@
-define(["rfactory!stage", 'spec/shapes/directed/clust4'], function (stageFactory, shapes) {
+define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory, shapes) {
 
   describe("Stage", function () {
 
@@ -44,7 +44,7 @@ define(["rfactory!stage", 'spec/shapes/directed/clust4'], function (stageFactory
       stage.draw(shapes);
 
       var svg = d3Spy.root.svg;
-      expect(transitionsSpy.stage).toHaveBeenCalledWith(svg, 221, 404, 1, 1, 2, 402);
+      expect(transitionsSpy.stage).toHaveBeenCalledWith(svg, 420, 246, 1, 1, 2, 244);
       expect(svg.g.all$g.data.mostRecentCall.args[0]).toEqual(shapes.groups);
 
       var groups = svg.g.all$g;
