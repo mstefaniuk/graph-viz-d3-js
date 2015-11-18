@@ -2293,7 +2293,7 @@ var parser = (function() {
         peg$c115 = function(s) {return {key:'style', value: s}},
         peg$c116 = "-",
         peg$c117 = { type: "literal", value: "-", description: "\"-\"" },
-        peg$c118 = function(s, v) {counter=s; return v},
+        peg$c118 = function(s, v) {return v},
         peg$c119 = function(s) {counter=s},
         peg$c120 = function() {return counter==0},
         peg$c121 = void 0,
@@ -5082,6 +5082,8 @@ var parser = (function() {
             }
         }
 
+        var counter;
+
 
     peg$result = peg$startRuleFunction();
 
@@ -5146,7 +5148,7 @@ define('transformer',['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser
       function startGroup(propertyName) {
         return function (node) {
           result.push({id: node.id, class: node.type, shapes: [], labels: []});
-          node[propertyName].forEach(visit);
+          node[propertyName]==null || node[propertyName].forEach(visit);
         };
       }
 
@@ -5157,6 +5159,16 @@ define('transformer',['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser
         };
       }
 
+      function addElements(node) {
+        var cursor = result[result.length - 1];
+        cursor.shapes = cursor.shapes.concat(node.elements.filter(function(e){
+          return e.shape;
+        }));
+        cursor.labels = cursor.labels.concat(node.elements.filter(function(e){
+          return e.text;
+        }));
+      }
+
       var visit = pegast.nodeVisitor({
         digraph: startGroup('commands'),
         graph: visitSubnodes('attributes'),
@@ -5164,9 +5176,9 @@ define('transformer',['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser
         struct: visitSubnodes('commands'),
         node: startGroup('attributes'),
         relation: startGroup('attributes'),
-        draw: addToSection('shapes'),
-        hdraw: addToSection('shapes'),
-        ldraw: addToSection('labels'),
+        draw: addElements,
+        hdraw: addElements,
+        ldraw: addElements,
         size: function(node) {
           var cursor = result[result.length - 1];
           cursor.size = node.value.map(function(e) {
