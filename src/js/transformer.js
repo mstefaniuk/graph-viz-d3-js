@@ -43,6 +43,16 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
         };
       }
 
+      function addElements(node) {
+        var cursor = result[result.length - 1];
+        cursor.shapes = cursor.shapes.concat(node.elements.filter(function(e){
+          return e.shape;
+        }));
+        cursor.labels = cursor.labels.concat(node.elements.filter(function(e){
+          return e.text;
+        }));
+      }
+
       var visit = pegast.nodeVisitor({
         digraph: startGroup('commands'),
         graph: visitSubnodes('attributes'),
@@ -50,9 +60,9 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
         struct: visitSubnodes('commands'),
         node: startGroup('attributes'),
         relation: startGroup('attributes'),
-        draw: addToSection('shapes'),
-        hdraw: addToSection('shapes'),
-        ldraw: addToSection('labels'),
+        draw: addElements,
+        hdraw: addElements,
+        ldraw: addElements,
         size: function(node) {
           var cursor = result[result.length - 1];
           cursor.size = node.value.map(function(e) {

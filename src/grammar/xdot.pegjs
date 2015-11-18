@@ -9,6 +9,8 @@
           return 3;
         }
     }
+
+    var counter;
 }
 
 dot = prolog? t:"digraph" i:(_ identifier)? _ b:body {return {type:t, id: i==null ? null : i[1], commands:b}}
@@ -60,7 +62,7 @@ fontdecoration = [t] _ v:integer {return {key:"text-decoration", value: v}}
 style = [S] _ s:vardata {return {key:'style', value: s}}
 
 vardata = s:varsize _ "-" v:varchar {counter=s; return v}
-varsize = s:integer {counter=s}
+varsize = s:integer {return s}
 varchar = &{return counter==0} / a:anysign s:varchar {return a + (s||'')}
 anysign = LC? c:. {counter -= lengthInUtf8Bytes(c); return c}
 

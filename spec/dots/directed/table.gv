@@ -27,8 +27,7 @@ digraph structs {
 	</TR><TR>
 	    <TD COLSPAN="2" ALIGN="right">4</TD>
 	</TR>
-	</TABLE>
-    >];
+	</TABLE>>];
 
     struct3 [label=<<TABLE CELLPADDING="5">
 	<TR>
