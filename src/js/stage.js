@@ -11,6 +11,7 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
     return {
       init: function (element) {
         svg = d3.select(element).append("svg");
+        svg.append("polygon").attr("stroke", "none");
         main = svg.append("g");
       },
       transitions: function(custom) {
@@ -21,20 +22,8 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         }
       },
       draw: function (stage) {
-        var margin = 2,
-          boundingWidth = stage.main.shapes[0].points[2][0] + margin*2,
-          boundingHeight = stage.main.shapes[0].points[2][1] + margin*2,
-          htranslate = stage.main.shapes[0].points[2][1] + margin,
-          vtranslate = margin,
-          size = stage.main.size || [boundingWidth, boundingHeight];
-        var oversized = boundingWidth > size[0] || boundingHeight > size[1];
-        var scaleWidth = oversized ? size[0] / boundingWidth : 1;
-        var scaleHeight = oversized ? size[1] / boundingHeight : 1;
-        var ratio = scaleHeight > scaleWidth ? scaleHeight = scaleWidth : scaleWidth = scaleHeight;
-        var height = boundingHeight * ratio;
-        var width = boundingWidth * ratio;
 
-        transitions.stage(svg, width, height, scaleWidth, scaleHeight, vtranslate, htranslate);
+        transitions.stage(svg, stage.main);
 
         var groups = main.selectAll("g")
         .data(stage.groups, function (d) {

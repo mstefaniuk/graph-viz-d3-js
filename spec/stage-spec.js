@@ -33,6 +33,7 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
       stage.init(element);
       expect(d3Spy.select).toHaveBeenCalledWith(element);
       expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
+      expect(d3Spy.element.svg.append).toHaveBeenCalledWith("polygon");
       expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
     });
 
@@ -44,7 +45,7 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
       stage.draw(shapes);
 
       var svg = d3Spy.root.svg;
-      expect(transitionsSpy.stage).toHaveBeenCalledWith(svg, 420, 246, 1, 1, 2, 244);
+      expect(transitionsSpy.stage).toHaveBeenCalledWith(svg, shapes.main);
       expect(svg.g.all$g.data.mostRecentCall.args[0]).toEqual(shapes.groups);
 
       var groups = svg.g.all$g;
