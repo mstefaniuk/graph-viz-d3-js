@@ -1,5 +1,7 @@
 Graphviz *dot* in your browser
 ==============================
+
+[![Join the chat at https://gitter.im/mstefaniuk/graph-viz-d3-js](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mstefaniuk/graph-viz-d3-js?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Bower component `graphviz-d3-renderer` renders [Graphviz](http://graphviz.org) source in the browser with [d3.js](https://github.com/mbostock/d3). Check it out on [Graphviz fiddling website](http://graphviz.it/).
 
 [![Build Status](https://travis-ci.org/mstefaniuk/graph-viz-d3-js.svg?branch=master)](https://travis-ci.org/mstefaniuk/graph-viz-d3-js)
