@@ -10,9 +10,14 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
 
     return {
       init: function (element) {
-        svg = d3.select(element).append("svg");
+        svg = d3.select(element).append("svg")
+          .attr("version", 1.1)
+          .attr("xmlns", "http://www.w3.org/2000/svg");
         svg.append("polygon").attr("stroke", "none");
         main = svg.append("g");
+      },
+      svg: function() {
+        return svg.parentNode.innerHTML;
       },
       transitions: function(custom) {
         if (custom) {

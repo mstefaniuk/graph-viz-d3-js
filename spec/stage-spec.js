@@ -37,7 +37,19 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
       expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
     });
 
-    it("should draw svg and delegate transitions", function() {
+    it("should return contents of parent when svg source is requested", function () {
+      var element = "element";
+      var source = "svg-source";
+      stage.init(element);
+      d3Spy.element.svg.parentNode = {
+        innerHTML: source
+      };
+
+      var result = stage.svg();
+      expect(result).toEqual(source);
+    });
+
+    it("should draw svg and delegate transitions", function () {
       var transitionsSpy = jasmine.createSpyObj('transitions', ['stage', 'nodes', 'relations', 'shapes', 'exits', 'labels']);
 
       stage.transitions(transitionsSpy);
@@ -77,17 +89,17 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
     var operators = ['attr', 'enter', 'text', 'data', 'exit', 'sort'];
     var spy = jasmine.createSpyObj(name, selectors.concat(operators));
 
-    operators.map(function(key){
+    operators.map(function (key) {
       spy[key].andReturn(spy);
     });
 
-    spy.select.andCallFake(function(tag) {
+    spy.select.andCallFake(function (tag) {
       return d3SelectionSpyGenerator(this, tag);
     });
-    spy.selectAll.andCallFake(function(tag) {
+    spy.selectAll.andCallFake(function (tag) {
       return d3SelectionSpyGenerator(this, "all$" + tag);
     });
-    spy.filter.andCallFake(function(filter) {
+    spy.filter.andCallFake(function (filter) {
       return d3SelectionSpyGenerator(this, "filtered$" + filter);
     });
     spy.append.andCallFake(function (tag) {

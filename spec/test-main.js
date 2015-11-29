@@ -13,7 +13,7 @@ requirejs.config({
     text: '../../lib/requirejs-text/text',
     d3: '../../lib/d3/d3',
     ace: '../../lib/ace',
-    viz: '../lib/viz',
+    viz: '../../lib/viz.js/viz',
     spec: '../../spec',
     parser: '../../parser',
     rfactory: '../../lib/rfactory/rfactory',

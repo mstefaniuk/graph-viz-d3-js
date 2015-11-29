@@ -1,7 +1,7 @@
 define(['rfactory!transformer', 'spec/asts/directed/clust4', 'spec/shapes/directed/clust4', 'text!spec/xdots/directed/clust4.xdot'],
   function (transformerFactory, ast_clust4, shape_clust4, xdot_clust4) {
 
-  describe("Shapes visitor for xdot parser", function () {
+  describe("Transformer of xdot format", function () {
 
     var vizSpy, xdotSpy, transformer;
     beforeEach(function () {
@@ -31,11 +31,10 @@ define(['rfactory!transformer', 'spec/asts/directed/clust4', 'spec/shapes/direct
       expect(result).toEqual(shape_clust4);
     });
 
-    it("should return previous result with ok=false when viz.js generation failed", function() {
+    it("should pass error from viz.js", function() {
       var error = "Error: Syntax error from viz.js";
       vizSpy.andCallFake(function(){
-        console.log(error);
-        throw new Error();
+        throw error;
       });
 
       try {

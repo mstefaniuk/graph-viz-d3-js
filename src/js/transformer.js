@@ -3,20 +3,13 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
     generate: function (source) {
       var xdot, error, result;
 
-      var oldLog = console.log;
-      console.log = function (message) {
-        error = message.indexOf("Error:")===0 && error===undefined ? message : error;
-      };
+      xdot = viz(source, { format: "xdot" });
 
       try {
-        xdot = viz(source, { format: "xdot" });
         var ast = xdotparser.parse(xdot);
         result = this.shapeast(ast);
       } catch(e) {
-        error = error || "Parsing of xdot output failed";
-        throw error;
-      } finally {
-        console.log = oldLog;
+        throw "Parsing of xdot output failed";
       }
       return result;
     },
