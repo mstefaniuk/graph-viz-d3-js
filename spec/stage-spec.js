@@ -41,9 +41,13 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
       var element = "element";
       var source = "svg-source";
       stage.init(element);
-      d3Spy.element.svg.parentNode = {
-        innerHTML: source
-      };
+      d3Spy.element.svg.node = function() {
+        return {
+          parentNode: {
+            innerHTML: source
+          }
+        }
+      }
 
       var result = stage.svg();
       expect(result).toEqual(source);

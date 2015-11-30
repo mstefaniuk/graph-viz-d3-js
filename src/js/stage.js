@@ -17,7 +17,7 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         main = svg.append("g");
       },
       svg: function() {
-        return svg.parentNode.innerHTML;
+        return svg.node().parentNode.innerHTML;
       },
       transitions: function(custom) {
         if (custom) {
