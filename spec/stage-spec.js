@@ -46,8 +46,8 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
           parentNode: {
             innerHTML: source
           }
-        }
-      }
+        };
+      };
 
       var result = stage.svg();
       expect(result).toEqual(source);
