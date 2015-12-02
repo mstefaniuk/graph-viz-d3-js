@@ -13,6 +13,9 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         svg = d3.select(element).append("svg")
           .attr("version", 1.1)
           .attr("xmlns", "http://www.w3.org/2000/svg");
+        svg.append("style")
+          .attr("type", "text/css")
+          .text('path {fill: transparent} text {text-anchor: middle; font-family:"Times-Roman",serif; font-size: 10pt}');
         svg.append("polygon").attr("stroke", "none");
         main = svg.append("g");
       },
