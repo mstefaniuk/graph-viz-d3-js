@@ -29,13 +29,6 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
         };
       }
 
-      function addToSection(section) {
-        return function (node) {
-          var cursor = result[result.length - 1];
-          cursor[section] = cursor[section].concat(node.elements);
-        };
-      }
-
       function addElements(node) {
         var cursor = result[result.length - 1];
         cursor.shapes = cursor.shapes.concat(node.elements.filter(function(e){
