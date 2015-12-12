@@ -41,7 +41,7 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
       var element = "element";
       var source = "svg-source";
       stage.init(element);
-      d3Spy.element.svg.node = function() {
+      d3Spy.element.svg.node = function () {
         return {
           parentNode: {
             innerHTML: source
@@ -61,7 +61,15 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
       stage.draw(shapes);
 
       var svg = d3Spy.root.svg;
-      expect(transitionsSpy.stage).toHaveBeenCalledWith(svg, shapes.main);
+      expect(transitionsSpy.stage).toHaveBeenCalledWith(svg, {
+        width: 424,
+        height: 250,
+        htranslate: 246,
+        vtranslate: 4,
+        scaleWidth: 1,
+        scaleHeight: 1,
+        style: [{key: 'stroke', value: 'rgba(255,255,254,1)'}, {key: 'fill', value: 'rgba(255,255,255,1)'}]
+      });
       expect(svg.g.all$g.data.mostRecentCall.args[0]).toEqual(shapes.groups);
 
       var groups = svg.g.all$g;

@@ -1,29 +1,18 @@
 define([], function() {
   return {
     stage: function (svg, canvas) {
-      var margin = 4,
-        boundingWidth = canvas.shapes[0].points[2][0] + margin*2,
-        boundingHeight = canvas.shapes[0].points[2][1] + margin*2,
-        htranslate = canvas.shapes[0].points[2][1] + margin,
-        vtranslate = margin,
-        size = canvas.size || [boundingWidth, boundingHeight];
-      var oversized = boundingWidth > size[0] || boundingHeight > size[1];
-      var scaleWidth = oversized ? size[0] / boundingWidth : 1;
-      var scaleHeight = oversized ? size[1] / boundingHeight : 1;
-      var ratio = scaleHeight > scaleWidth ? scaleHeight = scaleWidth : scaleWidth = scaleHeight;
-      var height = boundingHeight * ratio;
-      var width = boundingWidth * ratio;
-      var area = [0, 0, width, height];
+      var area = [0, 0, canvas.width, canvas.height];
 
       svg
         .transition()
         .delay(150)
         .duration(700)
-        .attr("width", width + "pt")
-        .attr("height", height + "pt")
+        .attr("width", canvas.width + "pt")
+        .attr("height", canvas.height + "pt")
         .attr("viewBox", area.join(' '))
         .select("g")
-        .attr("transform", "scale(" + scaleWidth + " " + scaleHeight + ")" + " " + "translate(" + vtranslate + "," + htranslate + ")");
+        .attr("transform", "scale(" + canvas.scaleWidth + " " + canvas.scaleHeight + ")" +
+          " " + "translate(" + canvas.vtranslate + "," + canvas.htranslate + ")");
 
       var polygon = svg.select("polygon");
       polygon
@@ -31,12 +20,12 @@ define([], function() {
         .delay(150)
         .duration(900)
         .attr("points", function () {
-          return [[0,0],[0,height],[width,height],[width,0]]
+          return [[0,0],[0,canvas.height],[canvas.width,canvas.height],[canvas.width,0]]
             .map(function (e) {
               return e.join(",");
             }).join(" ");
         });
-      canvas.shapes[0].style.forEach(function(e) {
+      canvas.style.forEach(function(e) {
         polygon.style(e.key, e.value);
       });
     },
