@@ -68,7 +68,7 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
         vtranslate: 4,
         scaleWidth: 1,
         scaleHeight: 1,
-        style: [{key: 'stroke', value: 'rgba(255,255,254,1)'}, {key: 'fill', value: 'rgba(255,255,255,1)'}]
+        style: shapes.main.shapes[0].style
       });
       expect(svg.g.all$g.data.mostRecentCall.args[0]).toEqual(shapes.groups);
 
