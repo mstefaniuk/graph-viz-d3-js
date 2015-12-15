@@ -14,7 +14,8 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
 
     it("should provide current transitions", function () {
       var result = stage.transitions();
-      expect(typeof result.stage).toBe("function");
+      expect(typeof result.document).toBe("function");
+      expect(typeof result.canvas).toBe("function");
       expect(typeof result.nodes).toBe("function");
       expect(typeof result.relations).toBe("function");
       expect(typeof result.shapes).toBe("function");
@@ -54,14 +55,14 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
     });
 
     it("should draw svg and delegate transitions", function () {
-      var transitionsSpy = jasmine.createSpyObj('transitions', ['stage', 'nodes', 'relations', 'shapes', 'exits', 'labels']);
+      var transitionsSpy = jasmine.createSpyObj('transitions', ['document', 'canvas', 'nodes', 'relations', 'shapes', 'exits', 'labels']);
 
       stage.transitions(transitionsSpy);
       stage.init("root");
       stage.draw(shapes);
 
       var svg = d3Spy.root.svg;
-      expect(transitionsSpy.stage).toHaveBeenCalledWith(svg, {
+      var sizes = {
         width: 424,
         height: 250,
         htranslate: 246,
@@ -69,7 +70,9 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
         scaleWidth: 1,
         scaleHeight: 1,
         style: shapes.main.shapes[0].style
-      });
+      };
+      expect(transitionsSpy.document).toHaveBeenCalledWith(svg, sizes);
+      expect(transitionsSpy.canvas).toHaveBeenCalledWith(svg, sizes);
       expect(svg.g.all$g.data.mostRecentCall.args[0]).toEqual(shapes.groups);
 
       var groups = svg.g.all$g;

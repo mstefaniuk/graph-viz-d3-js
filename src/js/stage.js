@@ -8,7 +8,7 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
     };
     var transitions = defaults;
 
-    function calculateCanvas(main) {
+    function calculateSizes(main) {
       var margin = 4,
         boundingWidth = main.shapes[0].points[2][0] + margin*2,
         boundingHeight = main.shapes[0].points[2][1] + margin*2,
@@ -55,9 +55,10 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         }
       },
       draw: function (stage) {
+        var sizes = calculateSizes(stage.main);
 
-        var canvas = calculateCanvas(stage.main);
-        transitions.stage(svg, canvas);
+        transitions.document(svg, sizes);
+        transitions.canvas(svg, sizes);
 
         var label = svg.selectAll("text")
           .data(stage.main.labels);

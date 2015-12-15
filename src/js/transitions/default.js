@@ -1,8 +1,7 @@
 define([], function() {
   return {
-    stage: function (svg, canvas) {
+    document: function(svg, canvas) {
       var area = [0, 0, canvas.width, canvas.height];
-
       svg
         .transition()
         .delay(150)
@@ -13,7 +12,8 @@ define([], function() {
         .select("g")
         .attr("transform", "scale(" + canvas.scaleWidth + " " + canvas.scaleHeight + ")" +
           " " + "translate(" + canvas.vtranslate + "," + canvas.htranslate + ")");
-
+    },
+    canvas: function (svg, canvas) {
       var polygon = svg.select("polygon");
       polygon
         .transition()
