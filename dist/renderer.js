@@ -55,102 +55,123 @@ define('palette',[],function () {
 });
 define('transitions/default',[], function() {
   return {
-    stage: function (svg, canvas) {
-      var margin = 4,
-        boundingWidth = canvas.shapes[0].points[2][0] + margin*2,
-        boundingHeight = canvas.shapes[0].points[2][1] + margin*2,
-        htranslate = canvas.shapes[0].points[2][1] + margin,
-        vtranslate = margin,
-        size = canvas.size || [boundingWidth, boundingHeight];
-      var oversized = boundingWidth > size[0] || boundingHeight > size[1];
-      var scaleWidth = oversized ? size[0] / boundingWidth : 1;
-      var scaleHeight = oversized ? size[1] / boundingHeight : 1;
-      var ratio = scaleHeight > scaleWidth ? scaleHeight = scaleWidth : scaleWidth = scaleHeight;
-      var height = boundingHeight * ratio;
-      var width = boundingWidth * ratio;
-      var area = [0, 0, width, height];
-
-      svg
+    document: function(selection, canvas) {
+      var area = [0, 0, canvas.width, canvas.height];
+      var attributer = function() {
+        this
+          .attr("width", canvas.width + "pt")
+          .attr("height", canvas.height + "pt")
+          .attr("viewBox", area.join(' '))
+          .select("g")
+          .attr("transform", "scale(" + canvas.scaleWidth + " " + canvas.scaleHeight + ")" +
+            " " + "translate(" + canvas.vtranslate + "," + canvas.htranslate + ")");
+      };
+      selection
         .transition()
         .delay(150)
         .duration(700)
-        .attr("width", width + "pt")
-        .attr("height", height + "pt")
-        .attr("viewBox", area.join(' '))
-        .select("g")
-        .attr("transform", "scale(" + scaleWidth + " " + scaleHeight + ")" + " " + "translate(" + vtranslate + "," + htranslate + ")");
-
+        .call(attributer);
+    },
+    canvas: function (svg, canvas) {
       var polygon = svg.select("polygon");
+      var attributer = function() {
+        this
+          .attr("points", function () {
+            return [[0,0],[0,canvas.height],[canvas.width,canvas.height],[canvas.width,0]]
+              .map(function (e) {
+                return e.join(",");
+              }).join(" ");
+          });
+        var self = this;
+        canvas.style.forEach(function(e) {
+          self.style(e.key, e.value);
+        });
+      };
       polygon
         .transition()
         .delay(150)
         .duration(900)
-        .attr("points", function () {
-          return [[0,0],[0,height],[width,height],[width,0]]
-            .map(function (e) {
-              return e.join(",");
-            }).join(" ");
-        });
-      canvas.shapes[0].style.forEach(function(e) {
-        polygon.style(e.key, e.value);
-      });
+        .call(attributer);
     },
-    nodes: function (nodes) {
-      nodes.style("opacity", 0.0)
-        .transition()
-        .delay(150)
-        .duration(900)
-        .style("opacity", 1.0);
-    },
-    relations: function (relations) {
-      relations.style("opacity", 0.0)
-        .transition()
-        .delay(150)
-        .duration(900)
-        .style("opacity", 1.0);
-    },
-    exits: function (exits) {
-      exits.transition()
-        .duration(100)
+    nodes: function (selection) {
+      var attributer = function() {
+        this
+          .style("opacity", 1.0);
+      };
+      selection
         .style("opacity", 0.0)
-        .remove();
+        .transition()
+        .delay(150)
+        .duration(900)
+        .call(attributer);
+    },
+    relations: function (selection) {
+      var attributer = function() {
+        this
+          .style("opacity", 1.0);
+      };
+      selection
+        .style("opacity", 0.0)
+        .transition()
+        .delay(150)
+        .duration(900)
+        .call(attributer);
+    },
+    exits: function (selection) {
+      var attributer = function() {
+        this
+          .style("opacity", 0.0)
+          .remove();
+      };
+      selection
+        .transition()
+        .duration(100)
+        .call(attributer);
     },
     shapes: function (shapes, palette) {
+      var attributer = function() {
+        this
+          .attr("d", function (d) {
+            var shape = d.shape;
+            return palette[shape](d);
+          })
+          .attr("style", function (d) {
+            return d.style.map(function (e) {
+              return [e.key, e.value].join(':');
+            }).join(';');
+          });
+      };
       shapes
         .transition()
         .delay(150)
         .duration(900)
-        .attr("d", function (d) {
-          var shape = d.shape;
-          return palette[shape](d);
-        })
-        .attr("style", function (d) {
-          return d.style.map(function (e) {
-            return [e.key, e.value].join(':');
-          }).join(';');
-        });
+        .call(attributer);
     },
     labels: function (labels) {
+      var attributer = function() {
+        this
+          .attr("x", function (d) {
+            return d.x;
+          })
+          .attr("y", function (d) {
+            return -d.y;
+          })
+          //.attr("text-anchor","middle")
+          //.attr("style", function(d) {
+          //  return d.style.map(
+          //    function(e){
+          //      return [e.key,e.value].join(':');
+          //    }).join(';');
+          //})
+          .text(function (d) {
+            return d.text;
+          });
+      };
       labels
         .transition()
         .delay(150)
         .duration(900)
-        .attr("x", function (d) {
-          return d.x;
-        })
-        .attr("y", function (d) {
-          return -d.y;
-        })
-        //.attr("text-anchor","middle")
-        //.attr("style", function(d) {
-        //  return d.style.map(
-        //    function(e){
-        //      return [e.key,e.value].join(':');
-        //    }).join(';');
-        //})
-        .text(function (d) {
-          return d.text;
-        });
+        .call(attributer);
     }
   };
 });
@@ -164,6 +185,31 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
     };
     var transitions = defaults;
 
+    function calculateSizes(main) {
+      var margin = 4,
+        boundingWidth = main.shapes[0].points[2][0] + margin*2,
+        boundingHeight = main.shapes[0].points[2][1] + margin*2,
+        htranslate = main.shapes[0].points[2][1] + margin,
+        vtranslate = margin,
+        size = main.size || [boundingWidth, boundingHeight];
+      var oversized = boundingWidth > size[0] || boundingHeight > size[1];
+      var scaleWidth = oversized ? size[0] / boundingWidth : 1;
+      var scaleHeight = oversized ? size[1] / boundingHeight : 1;
+      var ratio = scaleHeight > scaleWidth ? scaleHeight = scaleWidth : scaleWidth = scaleHeight;
+      var height = boundingHeight * ratio;
+      var width = boundingWidth * ratio;
+
+      return {
+        width: width,
+        height: height,
+        htranslate: htranslate,
+        vtranslate: vtranslate,
+        scaleWidth: scaleWidth,
+        scaleHeight: scaleHeight,
+        style: main.shapes[0].style
+      };
+    }
+
     return {
       init: function (element) {
         svg = d3.select(element).append("svg")
@@ -175,10 +221,10 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
         svg.append("polygon").attr("stroke", "none");
         main = svg.append("g");
       },
-      svg: function() {
+      svg: function () {
         return svg.node().parentNode.innerHTML;
       },
-      transitions: function(custom) {
+      transitions: function (custom) {
         if (custom) {
           transitions = custom;
         } else {
@@ -186,17 +232,24 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
         }
       },
       draw: function (stage) {
+        var sizes = calculateSizes(stage.main);
 
-        transitions.stage(svg, stage.main);
+        transitions.document(svg, sizes);
+        transitions.canvas(svg, sizes);
+
+        var label = svg.selectAll("text")
+          .data(stage.main.labels);
+        label.enter().append("text");
+        transitions.labels(label);
 
         var groups = main.selectAll("g")
-        .data(stage.groups, function (d) {
-          return d.id;
-        });
+          .data(stage.groups, function (d) {
+            return d.id;
+          });
         var entering = groups.enter()
-        .append("g").attr("class", function (d) {
-          return d.class;
-        });
+          .append("g").attr("class", function (d) {
+            return d.class;
+          });
         entering.append("title").text(function (d) {
           return d.id;
         });
@@ -205,8 +258,8 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
         transitions.relations(entering.filter(".relation"));
         transitions.exits(groups.exit());
 
-        groups.sort(function(a,b){
-          return order[a.class]- order[b.class];
+        groups.sort(function (a, b) {
+          return order[a.class] - order[b.class];
         });
 
         var shapes = groups.selectAll("path").data(function (d) {
