@@ -196,7 +196,7 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
         var label = svg.selectAll("text")
           .data(stage.main.labels);
         label.enter().append("text");
-        transitions.labels(label);
+        transitions.labels(label, function(){});
 
         var groups = main.selectAll("g")
           .data(stage.groups, function (d) {
