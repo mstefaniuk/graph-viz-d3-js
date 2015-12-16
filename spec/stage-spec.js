@@ -55,7 +55,8 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
     });
 
     it("should draw svg and delegate transitions", function () {
-      var transitionsSpy = jasmine.createSpyObj('transitions', ['document', 'canvas', 'nodes', 'relations', 'shapes', 'exits', 'labels']);
+      var transitionsSpy = jasmine.createSpyObj('transitions',
+              ['document', 'canvas', 'nodes', 'relations', 'shapes', 'exits', 'labels']);
 
       stage.transitions(transitionsSpy);
       stage.init("root");
@@ -71,23 +72,23 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
         scaleHeight: 1,
         style: shapes.main.shapes[0].style
       };
-      expect(transitionsSpy.document).toHaveBeenCalledWith(svg, sizes);
-      expect(transitionsSpy.canvas).toHaveBeenCalledWith(svg, sizes);
+      expect(transitionsSpy.document).toHaveBeenCalledWith(svg, jasmine.any(Function));
+      expect(transitionsSpy.canvas).toHaveBeenCalledWith(svg.polygon, jasmine.any(Function));
       expect(svg.g.all$g.data.mostRecentCall.args[0]).toEqual(shapes.groups);
 
       var groups = svg.g.all$g;
       expect(groups.enter).toHaveBeenCalled();
       expect(groups.g['filtered$.node']).toBeDefined();
-      expect(transitionsSpy.nodes).toHaveBeenCalledWith(groups.g['filtered$.node']);
+      expect(transitionsSpy.nodes).toHaveBeenCalledWith(groups.g['filtered$.node'], jasmine.any(Function));
       expect(groups.g['filtered$.relation']).toBeDefined();
-      expect(transitionsSpy.relations).toHaveBeenCalledWith(groups.g['filtered$.relation']);
+      expect(transitionsSpy.relations).toHaveBeenCalledWith(groups.g['filtered$.relation'], jasmine.any(Function));
       expect(groups.exit).toHaveBeenCalled();
-      expect(transitionsSpy.exits).toHaveBeenCalledWith(groups);
+      expect(transitionsSpy.exits).toHaveBeenCalledWith(groups, jasmine.any(Function));
 
       expect(groups.sort).toHaveBeenCalled();
       expect(groups.all$path.data).toHaveBeenCalled();
       expect(groups.all$path.append).toHaveBeenCalled();
-      expect(transitionsSpy.shapes).toHaveBeenCalledWith(groups.all$path, paletteSpy);
+      expect(transitionsSpy.shapes).toHaveBeenCalledWith(groups.all$path, jasmine.any(Function));
     });
   });
 
