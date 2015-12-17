@@ -34,7 +34,7 @@ define(["stage", 'spec/shapes/graph-label'], function (stage, graphLabel) {
       stage.init("#graph");
       stage.draw(graphLabel);
 
-      expect(document.querySelector("#graph svg > text").textContent).toEqual("Graph");
+      expect(document.querySelector("#graph svg > g > text").textContent).toEqual("Graph");
     });
   });
 });

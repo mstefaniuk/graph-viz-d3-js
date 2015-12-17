@@ -213,7 +213,7 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
           });
         });
 
-        var label = svg.selectAll("text")
+        var label = main.selectAll("text")
           .data(stage.main.labels);
         label.enter().append("text");
         transitions.labels(label, labelAttributer);
