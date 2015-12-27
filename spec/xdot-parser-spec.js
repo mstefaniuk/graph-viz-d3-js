@@ -1,6 +1,6 @@
 define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4', 'spec/shapes/unicode-labels',
-    'spec/shapes/image'],
-  function (xdot, array, clust4, unicodeLabels, image) {
+    'spec/shapes/image', 'text!spec/xdots/class-diagram.xdot', 'spec/asts/class-diagram'],
+  function (xdot, array, clust4, unicodeLabels, image, classDiagramSource, classDiagramAst) {
 
     describe('XDOT parser', function () {
       using("provided gallery graphs", array, function (graph) {
@@ -52,6 +52,11 @@ define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4', 'spec
             ' }'
           );
           expect(ast).toEqual(unicodeLabels);
+        });
+
+        it("to parse class diagram", function() {
+          var ast = xdot.parse(classDiagramSource);
+          expect(ast).toEqual(classDiagramAst);
         });
       });
     });

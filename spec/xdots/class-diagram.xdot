@@ -1,0 +1,163 @@
+digraph ClassDiagram {
+	graph [_draw_="c 9 -#fffffe00 C 7 -#ffffdd P 4 0 0 0 442.6 330 442.6 330 0 ",
+		_ldraw_="F 14 11 -Times-Roman c 7 -#000000 T 165 426 0 53.26 8 -Example  F 14 11 -Times-Roman c 7 -#000000 T 165 409.2 0 86.31 14 - Class \
+Diagram ",
+		bb="0,0,330,442.6",
+		bgcolor="#FFFFDD",
+		fillcolor="#FFFFFF",
+		label="Example \n Class Diagram",
+		labelloc=t,
+		lheight=0.47,
+		lp="165,421.8",
+		lwidth=1.20,
+		nodesep=0.40,
+		rankdir=BT,
+		ranksep=0.65,
+		style="dotted, filled",
+		xdotversion=1.7
+	];
+	node [colorscheme=pastel13,
+		fillcolor=3,
+		label="\N",
+		labeljust=l,
+		shape=record,
+		style=filled
+	];
+	edge [arrowhead=none];
+	{
+		edge [arrowhead=empty,
+			style=dashed
+		];
+		ExampleInterface		 [_draw_="c 7 -#000000 C 7 -#fbb4ae P 4 109.25 293.3 109.25 384.5 224.75 384.5 224.75 293.3 c 7 -#000000 L 2 109.25 342.9 224.75 342.9 c 7 \
+-#000000 L 2 109.25 318.1 224.75 318.1 ",
+			_ldraw_="F 14 11 -Times-Roman c 7 -#000000 T 167 367.9 0 60.62 11 -interface» F 14 11 -Times-Roman c 7 -#000000 T 167 351.1 0 99.49 16 -ExampleInterface \
+F 14 11 -Times-Roman c 7 -#000000 T 167 326.3 0 55.98 10 -properties F 14 11 -Times-Roman c 7 -#000000 T 167 301.5 0 47.44 7 -methods ",
+			fillcolor=1,
+			height=1.2806,
+			label="{«interface»\nExampleInterface|properties|methods}",
+			pos="167,338.9",
+			rects="109.25,342.9,224.75,384.5 109.25,318.1,224.75,342.9 109.25,293.3,224.75,318.1",
+			width=1.6041];
+		AbstractExample		 [_draw_="c 7 -#000000 C 7 -#b3cde3 P 4 110.41 209.3 110.41 245.3 223.59 245.3 223.59 209.3 ",
+			_ldraw_="F 14 11 -Times-Roman c 7 -#000000 T 167 223.1 0 97.19 15 -AbstractExample ",
+			fillcolor=2,
+			height=0.51389,
+			pos="167,227.3",
+			rects="110.41,209.3,223.59,245.3",
+			width=1.572];
+		AbstractExample -> ExampleInterface		 [_draw_="S 6 -dashed c 7 -#000000 B 4 167 245.43 167 255.6 167 269.12 167 282.68 ",
+			_hdraw_="S 5 -solid c 7 -#000000 p 3 163.5 283.01 167 293.01 170.5 283.01 ",
+			arrowhead=empty,
+			pos="e,167,293.01 167,245.43 167,255.6 167,269.12 167,282.68",
+			style=dashed];
+		ExampleFoo		 [_draw_="c 7 -#000000 C 7 -#ccebc5 P 4 109.23 125.3 109.23 161.3 196.77 161.3 196.77 125.3 ",
+			_ldraw_="F 14 11 -Times-Roman c 7 -#000000 T 153 139.1 0 71.55 10 -ExampleFoo ",
+			height=0.51389,
+			pos="153,143.3",
+			rects="109.23,125.3,196.77,161.3",
+			width=1.2159];
+		ExampleFoo -> AbstractExample		 [_draw_="S 6 -dashed c 7 -#000000 B 4 155.97 161.69 157.82 172.53 160.24 186.7 162.34 199.01 ",
+			_hdraw_="S 5 -solid c 7 -#000000 p 3 158.95 199.95 164.08 209.22 165.85 198.77 ",
+			arrowhead=empty,
+			pos="e,164.08,209.22 155.97,161.69 157.82,172.53 160.24,186.7 162.34,199.01",
+			style=dashed];
+	}
+	{
+		edge [arrowhead=empty];
+		ExampleFoo;
+		ExampleBar		 [_draw_="c 7 -#000000 C 7 -#ccebc5 P 4 168.01 41.3 168.01 77.3 253.99 77.3 253.99 41.3 ",
+			_ldraw_="F 14 11 -Times-Roman c 7 -#000000 T 211 55.1 0 69.97 10 -ExampleBar ",
+			height=0.51389,
+			pos="211,59.3",
+			rects="168.01,41.3,253.99,77.3",
+			width=1.1941];
+		ExampleBar -> ExampleFoo		 [_draw_="c 7 -#000000 B 4 198.7 77.69 190.65 89.07 179.99 104.14 170.99 116.86 ",
+			_hdraw_="S 5 -solid c 7 -#000000 p 3 168 115.03 165.08 125.22 173.72 119.07 ",
+			arrowhead=empty,
+			pos="e,165.08,125.22 198.7,77.69 190.65,89.073 179.99,104.14 170.99,116.86"];
+	}
+	{
+		edge [arrowhead=none,
+			arrowtail=diamond
+		];
+		ExampleBar;
+		ExampleBaz		 [_draw_="c 7 -#000000 C 7 -#ccebc5 P 4 226.24 125.3 226.24 161.3 313.76 161.3 313.76 125.3 ",
+			_ldraw_="F 14 11 -Times-Roman c 7 -#000000 T 270 139.1 0 71.53 10 -ExampleBaz ",
+			height=0.51389,
+			pos="270,143.3",
+			rects="226.24,125.3,313.76,161.3",
+			width=1.2157];
+		ExampleBar -> ExampleBaz		 [_draw_="c 7 -#000000 B 4 223.51 77.69 233.59 91.7 247.69 111.29 257.71 125.22 ",
+			arrowtail=diamond,
+			pos="223.51,77.69 233.59,91.7 247.69,111.29 257.71,125.22"];
+	}
+	subgraph cluster_legend {
+		graph [_draw_="S 5 -solid c 7 -#000000 C 7 -#ffffdd P 4 8 32.8 8 278.6 90 278.6 90 32.8 ",
+			_ldraw_="F 14 11 -Times-Roman c 7 -#000000 T 49 262 0 41.98 6 -Legend ",
+			bb="8,32.8,90,278.6",
+			label=Legend,
+			labelloc=b,
+			len=0,
+			lheight=0.23,
+			lp="49,266.2",
+			lwidth=0.58,
+			nodesep=0.01,
+			ranksep=0.05,
+			style=solid
+		];
+		class		 [_draw_="c 7 -#000000 C 7 -#ccebc5 P 4 22 41.3 22 77.3 76 77.3 76 41.3 ",
+			_ldraw_="F 14 11 -Times-Roman c 7 -#000000 T 48.67 55.1 0 30.33 5 -Class ",
+			height=0.51389,
+			label=Class,
+			pos="49,59.3",
+			rects="22,41.3,75.331,77.3",
+			width=0.75];
+		abstract		 [_draw_="c 7 -#000000 C 7 -#b3cde3 P 4 17.29 125.3 17.29 161.3 80.71 161.3 80.71 125.3 ",
+			_ldraw_="F 14 11 -Times-Roman c 7 -#000000 T 49 139.1 0 47.42 8 -Abstract ",
+			fillcolor=2,
+			height=0.51389,
+			label=Abstract,
+			pos="49,143.3",
+			rects="17.289,125.3,80.711,161.3",
+			width=0.88086];
+		class -> abstract		 [pos="49,77.69 49,91.7 49,111.29 49,125.22",
+			style=invis];
+		interface		 [_draw_="c 7 -#000000 C 7 -#fbb4ae P 4 16.13 209.3 16.13 245.3 81.87 245.3 81.87 209.3 ",
+			_ldraw_="F 14 11 -Times-Roman c 7 -#000000 T 49 223.1 0 49.73 9 -Interface ",
+			fillcolor=1,
+			height=0.51389,
+			label=Interface,
+			pos="49,227.3",
+			rects="16.135,209.3,81.865,245.3",
+			width=0.91293];
+		abstract -> interface		 [pos="49,161.69 49,175.7 49,195.29 49,209.22",
+			style=invis];
+	}
+	subgraph cluster_ExampleModule {
+		graph [_draw_="S 6 -dotted c 7 -#000000 C 7 -#ffffff P 4 101 8 101 393 322 393 322 8 ",
+			_ldraw_="F 14 11 -Times-Roman c 7 -#000000 T 211.5 16.2 0 96.81 14 -Example Module ",
+			bb="101,8,322,393",
+			label="Example Module",
+			lheight=0.23,
+			lp="211.5,20.4",
+			lwidth=1.34
+		];
+		{
+			node [fillcolor=1,
+				style=filled
+			];
+			ExampleInterface;
+		}
+		{
+			node [fillcolor=2];
+			AbstractExample;
+		}
+		AbstractExample -> ExampleInterface;
+		ExampleFoo;
+		ExampleFoo -> AbstractExample;
+		ExampleBar;
+		ExampleBar -> ExampleFoo;
+		ExampleBaz;
+		ExampleBar -> ExampleBaz;
+	}
+}
