@@ -46,7 +46,7 @@ define(["stage", 'spec/shapes/graph-label', 'spec/shapes/courier-fonts'
       expect(document.querySelector('#graph svg text[style*="Courier-BoldOblique"]').textContent).toEqual("Courier-BoldOblique");
       expect(document.querySelectorAll('#graph svg text[style*="stroke:"]').length).toEqual(0);
       expect(document.querySelectorAll('#graph svg text[style*="color:"]').length).toEqual(4);
-      expect(document.querySelectorAll('#graph svg text[style*="font-size: 14pt"]').length).toEqual(4);
+      expect(document.querySelectorAll('#graph svg text[style*="font-size: 14px"]').length).toEqual(4);
     });
   });
 });

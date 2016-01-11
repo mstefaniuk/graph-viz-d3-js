@@ -162,7 +162,7 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
             case "stroke":
               return {key: "color", value: e.value};
             case "font-size":
-              return {key: e.key, value: e.value + "pt"};
+              return {key: e.key, value: e.value + "px"};
             default:
               return e;
           }
