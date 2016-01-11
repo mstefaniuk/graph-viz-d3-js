@@ -151,16 +151,16 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
         .attr("y", function (d) {
           return -d.y;
         })
-        //.attr("text-anchor","middle")
-        //.attr("style", function(d) {
-        //  return d.style.map(
-        //    function(e){
-        //      return [e.key,e.value].join(':');
-        //    }).join(';');
-        //})
         .text(function (d) {
           return d.text;
         });
+
+      this.each(function(d) {
+        var self = d3.select(this);
+        d.style.forEach(function(e) {
+          self.style(e.key, e.value);
+        });
+      });
     };
 
     return {
