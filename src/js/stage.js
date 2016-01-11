@@ -48,7 +48,14 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
       this.each(function(d) {
         var self = d3.select(this);
         d.style.map(function(e) {
-          return e.key==="stroke" ? {key: "color", value: e.value} : e;
+          switch (e.key) {
+            case "stroke":
+              return {key: "color", value: e.value};
+            case "font-size":
+              return {key: e.key, value: e.value + "pt"};
+            default:
+              return e;
+          }
         }).forEach(function(e) {
           self.style(e.key, e.value);
         });

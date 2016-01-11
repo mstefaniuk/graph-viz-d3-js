@@ -53,7 +53,7 @@ pen = p:[Cc] _ c:vardata
     {var colors = [parseInt(c.substr(1,2),16),parseInt(c.substr(3,2),16),parseInt(c.substr(5,2),16),c.length==8 ? parseInt(c.substr(7,2),16)/255 : '1'];
     var color = "rgba("+colors.join(',')+")";
     return p=='C' ? {key: "fill", value: color} : {key: "stroke", value: color}}
-font = f:[F] _ s:decimal _ t:vardata {return [{key:'font-family', value: "'" + t + "',serif"}, {key:'font-size', value: "" + s + "pt"}]}
+font = f:[F] _ s:decimal _ t:vardata {return [{key:'font-family', value: "'" + t + "',serif"}, {key:'font-size', value: s}]}
 fontdecoration = [t] _ v:integer {return {key:"text-decoration", value: v}}
 style = [S] _ s:vardata {return {key:'style', value: s}}
 
