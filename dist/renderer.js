@@ -157,7 +157,16 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
 
       this.each(function(d) {
         var self = d3.select(this);
-        d.style.forEach(function(e) {
+        d.style.map(function(e) {
+          switch (e.key) {
+            case "stroke":
+              return {key: "color", value: e.value};
+            case "font-size":
+              return {key: e.key, value: e.value + "pt"};
+            default:
+              return e;
+          }
+        }).forEach(function(e) {
           self.style(e.key, e.value);
         });
       });
