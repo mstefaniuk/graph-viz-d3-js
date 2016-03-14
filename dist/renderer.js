@@ -181,7 +181,7 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
           .attr("type", "text/css")
           .text('path {fill: transparent} text {text-anchor: middle; font-family:"Times-Roman",serif; font-size: 10pt}');
         svg.append("polygon").attr("stroke", "none");
-        main = svg.append("g");
+        main = svg.append("g").append("g");
       },
       svg: function () {
         return svg.node().parentNode.innerHTML;
