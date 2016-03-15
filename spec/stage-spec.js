@@ -65,9 +65,9 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
       var svg = d3Spy.root.svg;
       expect(transitionsSpy.document).toHaveBeenCalledWith(svg, jasmine.any(Function));
       expect(transitionsSpy.canvas).toHaveBeenCalledWith(svg.polygon, jasmine.any(Function));
-      expect(svg.g.all$g.data.mostRecentCall.args[0]).toEqual(shapes.groups);
+      expect(svg.g.g.all$g.data.mostRecentCall.args[0]).toEqual(shapes.groups);
 
-      var groups = svg.g.all$g;
+      var groups = svg.g.g.all$g;
       expect(groups.enter).toHaveBeenCalled();
       expect(groups.g['filtered$.node']).toBeDefined();
       expect(transitionsSpy.nodes).toHaveBeenCalledWith(groups.g['filtered$.node'], jasmine.any(Function));
