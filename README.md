@@ -27,27 +27,56 @@ bower install graphviz-d3-renderer --save
 ```
 Note that it needs `require.js` to work. Before loading proper paths should be defined for renderer and its dependecies (`d3.js` and `worker` for `require.js` plugin):
 ```javascript
-  paths: {
-    d3: '/bower_components/d3/d3',
-    "dot-checker": '/bower_components/graphviz-d3-renderer/dist/dot-checker',
-    "layout-worker": '/bower_components/graphviz-d3-renderer/dist/layout-worker',
-    worker: '/bower_components/requirejs-web-workers/src/worker'
-  }
+  requirejs.config({
+			//By default load any module IDs from js/lib
+			baseUrl: 'js',
+			//except, if the module ID starts with "app",
+			//load it from the js/app directory. paths
+			//config is relative to the baseUrl, and
+			//never includes a ".js" extension since
+			//the paths config could be for a directory.
+			paths: {
+				d3: '/bower_components/d3/d3',
+				"dot-checker": '/bower_components/graphviz-d3-renderer/dist/dot-checker',
+				"layout-worker": '/bower_components/graphviz-d3-renderer/dist/layout-worker',
+				worker: '/bower_components/requirejs-web-workers/src/worker',
+				renderer: '/bower_components/graphviz-d3-renderer/dist/renderer'
+			  }
+		});
 ```
 Then you can inject it into you app:
 ```javascript
 require(["renderer"],
   function (renderer) {
 
-  ...
+  dotSource = 'digraph xyz ...';
   // initialize svg stage
   renderer.init("#graph");
 
   // update stage with new dot source
   renderer.render(dotSource);
-);
+});
 ```
-
+Now you can even zoom / drag your graph
+```javascript
+require(["renderer"],
+  function (renderer) {
+    var data = some_data;
+    renderer.init("#graph");
+    renderer.render(data);
+    var svg = d3.select("div#graph").select('svg').select('g')
+        .call(d3.behavior.zoom().scaleExtent([0.1, 10.0]).on('zoom', zoom));
+    svg.select('g').append('rect')
+        .attr('class', 'overlay')
+        .attr('width', 3000)
+        .attr('height', 1000)
+        .attr('x', 0)
+        .attr('y', -800);
+    function zoom() {
+        svg.select('g').attr('transform', 'translate(' + d3.event.translate + ')scale(' + d3.event.scale + ')');
+    }
+});
+```
 Roadmap
 -------
 * Test suite using Graphviz gallery examples (50% done)
