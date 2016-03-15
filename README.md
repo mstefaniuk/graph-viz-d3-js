@@ -27,22 +27,22 @@ bower install graphviz-d3-renderer --save
 ```
 Note that it needs `require.js` to work. Before loading proper paths should be defined for renderer and its dependecies (`d3.js` and `worker` for `require.js` plugin):
 ```javascript
-  requirejs.config({
-			//By default load any module IDs from js/lib
-			baseUrl: 'js',
-			//except, if the module ID starts with "app",
-			//load it from the js/app directory. paths
-			//config is relative to the baseUrl, and
-			//never includes a ".js" extension since
-			//the paths config could be for a directory.
-			paths: {
-				d3: '/bower_components/d3/d3',
-				"dot-checker": '/bower_components/graphviz-d3-renderer/dist/dot-checker',
-				"layout-worker": '/bower_components/graphviz-d3-renderer/dist/layout-worker',
-				worker: '/bower_components/requirejs-web-workers/src/worker',
-				renderer: '/bower_components/graphviz-d3-renderer/dist/renderer'
-			  }
-		});
+requirejs.config({
+	//By default load any module IDs from js/lib
+	baseUrl: 'js',
+	//except, if the module ID starts with "app",
+	//load it from the js/app directory. paths
+	//config is relative to the baseUrl, and
+	//never includes a ".js" extension since
+	//the paths config could be for a directory.
+	paths: {
+		d3: '/bower_components/d3/d3',
+		"dot-checker": '/bower_components/graphviz-d3-renderer/dist/dot-checker',
+		"layout-worker": '/bower_components/graphviz-d3-renderer/dist/layout-worker',
+		worker: '/bower_components/requirejs-web-workers/src/worker',
+		renderer: '/bower_components/graphviz-d3-renderer/dist/renderer'
+	}
+});
 ```
 Then you can inject it into you app:
 ```javascript
@@ -58,6 +58,15 @@ require(["renderer"],
 });
 ```
 Now you can even zoom / drag your graph
+```css
+<style>
+  .overlay {
+  	fill: none;
+  	pointer-events: all;
+  }
+</style>
+```
+...
 ```javascript
 require(["renderer"],
   function (renderer) {
