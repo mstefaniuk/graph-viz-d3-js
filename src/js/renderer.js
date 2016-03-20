@@ -22,7 +22,7 @@ define(["stage", "worker!layout-worker.js"], function(stage, worker) {
 
   return {
     init: function(element) {
-      stage.init(element);
+      return stage.init(element);
     },
     render: function(source) {
       if (initialized) {
@@ -31,8 +31,11 @@ define(["stage", "worker!layout-worker.js"], function(stage, worker) {
         pending = source;
       }
     },
-    getImage: function() {
-      var svgXml = stage.svg();
+    getImage: function(obj) {
+      if (!obj){
+      	var obj = {zoom: 0};
+      }
+      var svgXml = stage.svg(obj);
       var scaleFactor = 1;
 
       if ("devicePixelRatio" in window) {

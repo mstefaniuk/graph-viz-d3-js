@@ -64,16 +64,48 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
 
     return {
       init: function (element) {
-        svg = d3.select(element).append("svg")
-          .attr("version", 1.1)
-          .attr("xmlns", "http://www.w3.org/2000/svg");
-        svg.append("style")
-          .attr("type", "text/css")
-          .text('path {fill: transparent} text {text-anchor: middle; font-family:"Times-Roman",serif; font-size: 10pt}');
-        svg.append("polygon").attr("stroke", "none");
-        main = svg.append("g").append("g");
+      	if (typeof(element) == 'string'){
+			svg = d3.select(element).append("svg")
+			  .attr("version", 1.1)
+			  .attr("xmlns", "http://www.w3.org/2000/svg");
+			svg.append("style")
+			  .attr("type", "text/css")
+			  .text('path {fill: transparent} text {text-anchor: middle; font-family:"Times-Roman",serif; font-size: 10pt}');
+			svg.append("polygon").attr("stroke", "none");
+			main = svg.append("g").append("g");
+        } else if (typeof(element) == 'object'){
+        	var zoom = d3.behavior.zoom()
+				.scaleExtent(element.extent)
+				.on("zoom", zoomed);
+        	svg = d3.select(element.element).append("svg")
+        	  .attr("version", 1.1)
+			  .attr("xmlns", "http://www.w3.org/2000/svg");
+			svg.append("style")
+			  .attr("type", "text/css")
+			  .text('path {fill: transparent} text {text-anchor: middle; font-family:"Times-Roman",serif; font-size: 10pt} .overlay {fill: none; pointer-events: all;}');
+        	svg.append("polygon").attr("stroke", "none");
+			main = svg.append("g").append("g");
+			
+			main.append("rect")
+			  .attr("class", "overlay");
+			element.extent = element.extent || [0.1, 10]
+			svg.select("g")
+			  .call(zoom);
+			function zoomed(){
+				main.attr('transform', 'translate(' + d3.event.translate + ')scale(' + d3.event.scale + ')');
+			}
+			return zoom;
+        }
       },
-      svg: function () {
+      svg: function (obj) {
+      	if (typeof(obj) == 'object' && obj.reset) {
+      		var g = svg.select("g").select("g");
+      		if (g[0]){
+      		  obj.zoomFunc.scale(1);
+        	  obj.zoomFunc.translate([0, 0]);
+      		  g.attr("transform", "translate(0,0)scale(1)");
+      		}
+      	}
         return svg.node().parentNode.innerHTML;
       },
       transitions: function (custom) {
@@ -111,7 +143,16 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
             self.style(e.key, e.value);
           });
         });
-
+		
+		var overlay = svg.select("rect.overlay");
+		if (overlay[0]){
+			transitions.canvas(overlay, function(){
+			  this
+				.attr('width', sizes.width / sizes.scaleWidth)
+				.attr('height', sizes.height / sizes.scaleHeight)
+				.attr('y', - sizes.height / sizes.scaleHeight);
+			});
+		}
         var label = main.selectAll("text")
           .data(stage.main.labels);
         label.enter().append("text");
