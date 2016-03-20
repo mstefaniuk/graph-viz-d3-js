@@ -58,33 +58,28 @@ require(["renderer"],
 });
 ```
 Now you can even zoom / drag your graph
-```css
-<style>
-  .overlay {
-  	fill: none;
-  	pointer-events: all;
-  }
-</style>
-```
-...
+
 ```javascript
 require(["renderer"],
-  function (renderer) {
-    var data = some_data;
-    renderer.init("#graph");
-    renderer.render(data);
-    var svg = d3.select("div#graph").select('svg').select('g')
-        .call(d3.behavior.zoom().scaleExtent([0.1, 10.0]).on('zoom', zoom));
-    svg.select('g').append('rect')
-        .attr('class', 'overlay')
-        .attr('width', 3000)
-        .attr('height', 1000)
-        .attr('x', 0)
-        .attr('y', -800);
-    function zoom() {
-        svg.select('g').attr('transform', 'translate(' + d3.event.translate + ')scale(' + d3.event.scale + ')');
-    }
-});
+	function (renderer) {
+		dotSource = 'digraph xyz ...';
+		// initialize svg stage. Have to get a return value from renderer.init 
+		//   to properly reset the image.
+	    zoomFunc = renderer.init({element:"#graph", extend:[0.1, 10]});
+
+	    // update stage with new dot source
+	    renderer.render(dotSource);
+	    
+	    // for saving the image, 
+	    $('#copy-button').on('click', function(){
+		    $('#copy-div').html(renderer.getImage({reset:true, zoomFunc:zoomFunc}));
+	    });	  
+	    
+	    // if do not need to reset the image before saving the image
+	    $('#copy-button').on('click', function(){
+		    $('#copy-div').html(renderer.getImage());
+	    });	
+});  
 ```
 Roadmap
 -------
