@@ -6,7 +6,7 @@ define( 'ace/mode/pegjs', [
 
 ], function ( oop, textHighlightRules, javascriptHighlightRules ) {
 
-  
+  'use strict';
 
   var TextHighlightRules = textHighlightRules.TextHighlightRules;
   var JavaScriptHighlightRules = javascriptHighlightRules.JavaScriptHighlightRules;

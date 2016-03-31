@@ -29,27 +29,60 @@ bower install graphviz-d3-renderer --save
 ```
 Note that it needs `require.js` to work. Before loading proper paths should be defined for renderer and its dependecies (`d3.js` and `worker` for `require.js` plugin):
 ```javascript
-  paths: {
-    d3: '/bower_components/d3/d3',
-    "dot-checker": '/bower_components/graphviz-d3-renderer/dist/dot-checker',
-    "layout-worker": '/bower_components/graphviz-d3-renderer/dist/layout-worker',
-    worker: '/bower_components/requirejs-web-workers/src/worker'
-  }
+requirejs.config({
+	//By default load any module IDs from js/lib
+	baseUrl: 'js',
+	//except, if the module ID starts with "app",
+	//load it from the js/app directory. paths
+	//config is relative to the baseUrl, and
+	//never includes a ".js" extension since
+	//the paths config could be for a directory.
+	paths: {
+		d3: '/bower_components/d3/d3',
+		"dot-checker": '/bower_components/graphviz-d3-renderer/dist/dot-checker',
+		"layout-worker": '/bower_components/graphviz-d3-renderer/dist/layout-worker',
+		worker: '/bower_components/requirejs-web-workers/src/worker',
+		renderer: '/bower_components/graphviz-d3-renderer/dist/renderer'
+	}
+});
 ```
 Then you can inject it into you app:
 ```javascript
 require(["renderer"],
   function (renderer) {
 
-  ...
+  dotSource = 'digraph xyz ...';
   // initialize svg stage
   renderer.init("#graph");
 
   // update stage with new dot source
   renderer.render(dotSource);
-);
+});
 ```
+Now you can even zoom / drag your graph
 
+```javascript
+require(["renderer"],
+	function (renderer) {
+		dotSource = 'digraph xyz ...';
+		// initialize svg stage. Have to get a return value from renderer.init 
+		//   to properly reset the image.
+	    zoomFunc = renderer.init({element:"#graph", extend:[0.1, 10]});
+
+	    // update stage with new dot source
+	    renderer.render(dotSource);
+	    
+	    // for saving the image, 
+	    $('#copy-button').on('click', function(){
+		    $('#copy-div').html(renderer.getImage({reset:true, zoomFunc:zoomFunc}));
+	    });	  
+	    
+	    // if do not need to reset the image before saving the image
+	    $('#copy-button').on('click', function(){
+		    $('#copy-div').html(renderer.getImage());
+	    });	
+});  
+```
 Roadmap
 -------
 * Test suite using Graphviz gallery examples (50% done)

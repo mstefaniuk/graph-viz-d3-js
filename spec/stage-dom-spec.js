@@ -35,7 +35,7 @@ define(["stage", 'spec/shapes/graph-label', 'spec/shapes/courier-fonts'
     it("should contain label", function() {
       stage.draw(graphLabelShapes);
 
-      expect(document.querySelector("#graph svg > g > text").textContent).toEqual("Graph");
+      expect(document.querySelector("#graph svg > g > g > text").textContent).toEqual("Graph");
     });
 
     it("should render non default fonts properly", function() {
