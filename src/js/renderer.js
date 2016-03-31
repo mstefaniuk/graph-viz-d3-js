@@ -33,7 +33,7 @@ define(["stage", "worker!layout-worker.js"], function(stage, worker) {
     },
     getImage: function(obj) {
       if (!obj){
-      	var obj = {zoom: 0};
+      	var obj = {reset: false};
       }
       var svgXml = stage.svg(obj);
       var scaleFactor = 1;
