@@ -31,11 +31,9 @@ define(["stage", "worker!layout-worker.js"], function(stage, worker) {
         pending = source;
       }
     },
-    getImage: function(obj) {
-      if (!obj){
-      	var obj = {reset: false};
-      }
-      var svgXml = stage.svg(obj);
+    getImage: function(reset) {
+      reset = reset===undefined ? true : reset;
+      var svgXml = stage.svg(reset);
       var scaleFactor = 1;
 
       if ("devicePixelRatio" in window) {

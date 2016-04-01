@@ -1,5 +1,5 @@
 define(["d3", "palette", "transitions/default"], function (d3, palette, defaults) {
-    var svg, main;
+    var svg, main, zoom;
     var order = {
       digraph: 0,
       subgraph: 1,
@@ -10,8 +10,8 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
 
     function calculateSizes(main) {
       var margin = 4,
-        boundingWidth = main.shapes[0].points[2][0] + margin*2,
-        boundingHeight = main.shapes[0].points[2][1] + margin*2,
+        boundingWidth = main.shapes[0].points[2][0] + margin * 2,
+        boundingHeight = main.shapes[0].points[2][1] + margin * 2,
         htranslate = main.shapes[0].points[2][1] + margin,
         vtranslate = margin,
         size = main.size || [boundingWidth, boundingHeight];
@@ -33,7 +33,7 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
       };
     }
 
-    var labelAttributer = function() {
+    var labelAttributer = function () {
       this
         .attr("x", function (d) {
           return d.x;
@@ -45,9 +45,9 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
           return d.text;
         });
 
-      this.each(function(d) {
+      this.each(function (d) {
         var self = d3.select(this);
-        d.style.map(function(e) {
+        d.style.map(function (e) {
           switch (e.key) {
             case "stroke":
               return {key: "color", value: e.value};
@@ -56,56 +56,55 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
             default:
               return e;
           }
-        }).forEach(function(e) {
+        }).forEach(function (e) {
           self.style(e.key, e.value);
         });
       });
     };
 
+    function zoomed() {
+      main.attr('transform', 'translate(' + d3.event.translate + ') scale(' + d3.event.scale + ')');
+    }
+
+    var zoomFactory = function (extent) {
+      return d3.behavior.zoom()
+        .scaleExtent(extent)
+        .on("zoom", zoomed);
+    };
+
     return {
-      init: function (element) {
-      	if (typeof(element) == 'string'){
-			svg = d3.select(element).append("svg")
-			  .attr("version", 1.1)
-			  .attr("xmlns", "http://www.w3.org/2000/svg");
-			svg.append("style")
-			  .attr("type", "text/css")
-			  .text('path {fill: transparent} text {text-anchor: middle; font-family:"Times-Roman",serif; font-size: 10pt}');
-			svg.append("polygon").attr("stroke", "none");
-			main = svg.append("g").append("g");
-        } else if (typeof(element) == 'object'){
-        	var zoom = d3.behavior.zoom()
-				.scaleExtent(element.extent)
-				.on("zoom", zoomed);
-        	svg = d3.select(element.element).append("svg")
-        	  .attr("version", 1.1)
-			  .attr("xmlns", "http://www.w3.org/2000/svg");
-			svg.append("style")
-			  .attr("type", "text/css")
-			  .text('path {fill: transparent} text {text-anchor: middle; font-family:"Times-Roman",serif; font-size: 10pt} .overlay {fill: none; pointer-events: all;}');
-        	svg.append("polygon").attr("stroke", "none");
-			main = svg.append("g").append("g");
-			
-			main.append("rect")
-			  .attr("class", "overlay");
-			element.extent = element.extent || [0.1, 10]
-			svg.select("g")
-			  .call(zoom);
-			function zoomed(){
-				main.attr('transform', 'translate(' + d3.event.translate + ')scale(' + d3.event.scale + ')');
-			}
-			return zoom;
+      init: function (definition) {
+        var element = definition.element || definition;
+        svg = d3.select(element).append("svg")
+          .attr("version", 1.1)
+          .attr("xmlns", "http://www.w3.org/2000/svg");
+        svg.append("style")
+          .attr("type", "text/css")
+          .text(['path {fill: transparent}',
+            'text {text-anchor: middle; font-family:"Times-Roman",serif; font-size: 10pt}',
+            '.overlay {fill: none; pointer-events: all}'].join(' '));
+        svg.append("polygon").attr("stroke", "none");
+        main = svg.append("g").append("g");
+
+        if (typeof(definition) === 'object') {
+          definition.extent = definition.extent || [0.1, 10];
+          zoom = zoomFactory(definition.extent);
+
+          svg.select("g")
+            .call(zoom)
+            .append("rect")
+            .attr("class", "overlay");
         }
       },
-      svg: function (obj) {
-      	if (typeof(obj) == 'object' && obj.reset) {
-      		var g = svg.select("g").select("g");
-      		if (g[0]){
-      		  obj.zoomFunc.scale(1);
-        	  obj.zoomFunc.translate([0, 0]);
-      		  g.attr("transform", "translate(0,0)scale(1)");
-      		}
-      	}
+      svg: function (reset) {
+        if (reset) {
+          var g = svg.select("g").select("g");
+          if (g[0]) {
+            zoom.scale(1);
+            zoom.translate([0, 0]);
+            g.attr("transform", "translate(0,0)scale(1)");
+          }
+        }
         return svg.node().parentNode.innerHTML;
       },
       transitions: function (custom) {
@@ -119,7 +118,7 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         var sizes = calculateSizes(stage.main);
         var area = [0, 0, sizes.width, sizes.height];
 
-        transitions.document(svg, function() {
+        transitions.document(svg, function () {
           this
             .attr("width", sizes.width + "pt")
             .attr("height", sizes.height + "pt")
@@ -130,29 +129,29 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         });
 
         var polygon = svg.select("polygon");
-        transitions.canvas(polygon, function() {
+        transitions.canvas(polygon, function () {
           this
             .attr("points", function () {
-              return [[0,0],[0,sizes.height],[sizes.width,sizes.height],[sizes.width,0]]
+              return [[0, 0], [0, sizes.height], [sizes.width, sizes.height], [sizes.width, 0]]
                 .map(function (e) {
                   return e.join(",");
                 }).join(" ");
             });
           var self = this;
-          sizes.style.forEach(function(e) {
+          sizes.style.forEach(function (e) {
             self.style(e.key, e.value);
           });
         });
-		
-		var overlay = svg.select("rect.overlay");
-		if (overlay[0]){
-			transitions.canvas(overlay, function(){
-			  this
-				.attr('width', sizes.width / sizes.scaleWidth)
-				.attr('height', sizes.height / sizes.scaleHeight)
-				.attr('y', - sizes.height / sizes.scaleHeight);
-			});
-		}
+
+        var overlay = svg.select("rect.overlay");
+        if (overlay[0]) {
+          transitions.canvas(overlay, function () {
+            this
+              .attr('width', sizes.width / sizes.scaleWidth)
+              .attr('height', sizes.height / sizes.scaleHeight)
+              .attr('y', -sizes.height / sizes.scaleHeight);
+          });
+        }
         var label = main.selectAll("text")
           .data(stage.main.labels);
         label.enter().append("text");
@@ -170,13 +169,13 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
           return d.id;
         });
 
-        transitions.nodes(entering.filter(".node"), function() {
+        transitions.nodes(entering.filter(".node"), function () {
           this.style("opacity", 1.0);
         });
-        transitions.relations(entering.filter(".relation"), function() {
+        transitions.relations(entering.filter(".relation"), function () {
           this.style("opacity", 1.0);
         });
-        transitions.exits(groups.exit(), function() {
+        transitions.exits(groups.exit(), function () {
           this.remove();
         });
 
@@ -191,7 +190,7 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
           }
         );
         shapes.enter().append("path");
-        transitions.shapes(shapes, function() {
+        transitions.shapes(shapes, function () {
           this
             .attr("d", function (d) {
               var shape = d.shape;
