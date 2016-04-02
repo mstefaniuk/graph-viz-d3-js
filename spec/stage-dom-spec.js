@@ -25,7 +25,6 @@ define(["stage", 'spec/shapes/graph-label', 'spec/shapes/courier-fonts'
         fixture);
 
       stage.transitions(immediate);
-      stage.init("#graph");
     });
 
     afterEach(function() {
@@ -33,12 +32,14 @@ define(["stage", 'spec/shapes/graph-label', 'spec/shapes/courier-fonts'
     });
 
     it("should contain label", function() {
+      stage.init("#graph");
       stage.draw(graphLabelShapes);
 
       expect(document.querySelector("#graph svg > g > g > text").textContent).toEqual("Graph");
     });
 
     it("should render non default fonts properly", function() {
+      stage.init("#graph");
       stage.draw(courierFontsShapes);
       expect(document.querySelector('#graph svg text[style*="Courier"]').textContent).toEqual("Courier");
       expect(document.querySelector('#graph svg text[style*="Courier-Bold"]').textContent).toEqual("Courier-Bold");

@@ -63,14 +63,9 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
     };
 
     function zoomed() {
-      main.attr('transform', 'translate(' + d3.event.translate + ') scale(' + d3.event.scale + ')');
+      svg.select("g")
+        .attr('transform', 'translate(' + d3.event.translate + ') scale(' + d3.event.scale + ')');
     }
-
-    var zoomFactory = function (extent) {
-      return d3.behavior.zoom()
-        .scaleExtent(extent)
-        .on("zoom", zoomed);
-    };
 
     return {
       init: function (definition) {
@@ -80,15 +75,20 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
           .attr("xmlns", "http://www.w3.org/2000/svg");
         svg.append("style")
           .attr("type", "text/css")
-          .text(['path {fill: transparent}',
+          .text([
+            'path {fill: transparent}',
             'text {text-anchor: middle; font-family:"Times-Roman",serif; font-size: 10pt}',
-            '.overlay {fill: none; pointer-events: all}'].join(' '));
+            '.overlay {fill: none; pointer-events: all}'
+          ].join(' '));
         svg.append("polygon").attr("stroke", "none");
         main = svg.append("g").append("g");
 
-        if (typeof(definition) === 'object') {
-          definition.extent = definition.extent || [0.1, 10];
-          zoom = zoomFactory(definition.extent);
+        if (definition.zoom) {
+          var extent = definition.zoom && definition.zoom.extent || [0.1, 10];
+          zoom = d3.behavior
+            .zoom()
+            .scaleExtent(extent)
+            .on("zoom", zoomed);
 
           svg.select("g")
             .call(zoom)
@@ -106,6 +106,10 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
           }
         }
         return svg.node().parentNode.innerHTML;
+      },
+      setZoom: function(zoomParams) {
+        zoomParams.scale && zoom.scale(zoomParams.scale);
+        zoomParams.translate && zoom.translate(zoomParams.translate);
       },
       transitions: function (custom) {
         if (custom) {

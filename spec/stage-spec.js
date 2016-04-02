@@ -29,13 +29,102 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
       expect(stage.transitions()).toEqual(replacement);
     });
 
-    it("should init graph with svg and g elements", function () {
+    it("should init graph when element name is provided", function () {
       var element = "element";
       stage.init(element);
       expect(d3Spy.select).toHaveBeenCalledWith(element);
       expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
       expect(d3Spy.element.svg.append).toHaveBeenCalledWith("polygon");
       expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
+      expect(d3Spy.element.svg.g.append).toHaveBeenCalledWith("g");
+    });
+
+    it("should init graph without zoom when object with element only is provided", function () {
+      var definition = {
+        element: "element"
+      };
+      stage.init(definition);
+      expect(d3Spy.select).toHaveBeenCalledWith(definition.element);
+      expect(d3Spy.behavior.zoom).not.toHaveBeenCalled();
+      expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
+      expect(d3Spy.element.svg.append).toHaveBeenCalledWith("polygon");
+      expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
+    });
+
+    it("should init graph with default zoom when object with zoom true key is provided", function () {
+      var definition = {
+        element: "element",
+        zoom: true
+      };
+      stage.init(definition);
+      expect(d3Spy.select).toHaveBeenCalledWith(definition.element);
+      expect(d3Spy.behavior.zoom.scaleExtent).toHaveBeenCalledWith([0.1, 10]);
+      expect(d3Spy.behavior.zoom.on).toHaveBeenCalledWith("zoom", jasmine.any(Function));
+      expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
+      expect(d3Spy.element.svg.append).toHaveBeenCalledWith("polygon");
+      expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
+    });
+
+    it("should init graph with defined extent when object with zoom extent key is provided", function () {
+      var expected = [0.5, 20];
+      var definition = {
+        element: "element",
+        zoom: {
+          extent: expected
+        }
+      };
+      stage.init(definition);
+      expect(d3Spy.select).toHaveBeenCalledWith(definition.element);
+      expect(d3Spy.behavior.zoom.scaleExtent).toHaveBeenCalledWith(expected);
+      expect(d3Spy.behavior.zoom.on).toHaveBeenCalledWith("zoom", jasmine.any(Function));
+      expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
+      expect(d3Spy.element.svg.append).toHaveBeenCalledWith("polygon");
+      expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
+    });
+
+    it("should set zoom scale when only scale is provided", function () {
+      var expected = 15;
+      var zoom = {
+        scale: expected
+      };
+      var definition = {
+        element: "element",
+        zoom: true
+      };
+      stage.init(definition);
+      stage.setZoom(zoom);
+      expect(d3Spy.behavior.zoom.scale).toHaveBeenCalledWith(expected);
+    });
+
+    it("should set zoom translate when only translate is provided", function () {
+      var expected = [12, 15];
+      var zoom = {
+        translate: expected
+      };
+      var definition = {
+        element: "element",
+        zoom: true
+      };
+      stage.init(definition);
+      stage.setZoom(zoom);
+      expect(d3Spy.behavior.zoom.translate).toHaveBeenCalledWith(expected);
+    });
+
+    it("should set zoom translate when only translate is provided", function () {
+      var expectedTranslate = [12, 15];
+      var expectedScale = 15;
+      var zoom = {
+        scale: expectedScale,
+        translate: expectedTranslate
+      };
+      var definition = {
+        element: "element",
+        zoom: true
+      };
+      stage.init(definition);
+      stage.setZoom(zoom);
+      expect(d3Spy.behavior.zoom.scale).toHaveBeenCalledWith(expectedScale);
+      expect(d3Spy.behavior.zoom.translate).toHaveBeenCalledWith(expectedTranslate);
     });
 
     it("should return contents of parent when svg source is requested", function () {
@@ -84,7 +173,19 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
   });
 
   function d3SpyFactory() {
-    return d3SelectionSpyGenerator(null, 'selection');
+    var  d3Spy = d3SelectionSpyGenerator(null, 'selection');
+
+    d3Spy.behavior = jasmine.createSpyObj("behavior", ["zoom"]);
+    d3Spy.behavior.zoom.andCallFake(function() {
+      var operators = ['on', 'scaleExtent', 'scale', 'translate'];
+      var zoomSpy = jasmine.createSpyObj("zoom", operators);
+      operators.map(function (key) {
+        zoomSpy[key].andReturn(zoomSpy);
+        d3Spy.behavior.zoom[key] = zoomSpy[key];
+      });
+      return zoomSpy;
+    });
+    return d3Spy;
   }
 
   function d3SelectionSpyGenerator(parent, name) {
@@ -93,7 +194,7 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
     }
 
     var selectors = ['append', 'select', 'selectAll', 'filter'];
-    var operators = ['attr', 'enter', 'text', 'data', 'exit', 'sort'];
+    var operators = ['attr', 'enter', 'text', 'data', 'exit', 'sort', 'call'];
     var spy = jasmine.createSpyObj(name, selectors.concat(operators));
 
     operators.map(function (key) {
