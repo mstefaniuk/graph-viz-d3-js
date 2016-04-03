@@ -17,7 +17,8 @@ requirejs.config({
     spec: '../../spec',
     parser: '../../parser',
     rfactory: '../../lib/rfactory/rfactory',
-    worker: '../../lib/requirejs-web-workers/worker'
+    worker: '../../lib/requirejs-web-workers/worker',
+    imagediff: '../../lib/js-imagediff/imagediff'
   },
 
   shim: {

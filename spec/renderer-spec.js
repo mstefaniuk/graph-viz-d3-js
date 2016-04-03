@@ -4,7 +4,7 @@ define(["rfactory!renderer"], function(rendererFactory) {
 
     var stageSpy, workerSpy, callbackSpy, renderer;
     beforeEach(function () {
-      stageSpy = jasmine.createSpyObj('stage', ["init", "draw", "svg"]);
+      stageSpy = jasmine.createSpyObj('stage', ["init", "draw", "svg", "getImage"]);
       workerSpy = jasmine.createSpyObj('worker', ['postMessage']);
       callbackSpy = jasmine.createSpy("callback");
       renderer = rendererFactory({
@@ -71,26 +71,9 @@ define(["rfactory!renderer"], function(rendererFactory) {
       expect(callbackSpy).toHaveBeenCalledWith(output);
     });
 
-    it("should return image/png with reset zoom as default when asked for image", function() {
-      stageSpy.svg.andReturn('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="100" width="100">' +
-        '<circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />' +
-      '</svg>');
-
-      var result = renderer.getImage();
-      expect(result instanceof Image).toEqual(true);
-      expect(result.complete).toEqual(true);
-      expect(stageSpy.svg).toHaveBeenCalledWith(true);
-    });
-
-    it("should return image/png with provided zoom reset value when asked for image", function() {
-      stageSpy.svg.andReturn('<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="100" width="100">' +
-        '<circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />' +
-        '</svg>');
-
-      var result = renderer.getImage(false);
-      expect(result instanceof Image).toEqual(true);
-      expect(result.complete).toEqual(true);
-      expect(stageSpy.svg).toHaveBeenCalledWith(false);
+    it("should return image/png when asked for image", function() {
+      renderer.getImage(true);
+      expect(stageSpy.getImage).toHaveBeenCalledWith(true);
     });
 
   });

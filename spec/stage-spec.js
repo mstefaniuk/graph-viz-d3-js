@@ -12,119 +12,116 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
       });
     });
 
-    it("should provide current transitions", function () {
-      var result = stage.transitions();
-      expect(typeof result.document).toBe("function");
-      expect(typeof result.canvas).toBe("function");
-      expect(typeof result.nodes).toBe("function");
-      expect(typeof result.relations).toBe("function");
-      expect(typeof result.shapes).toBe("function");
-      expect(typeof result.exits).toBe("function");
-      expect(typeof result.labels).toBe("function");
+    describe("object", function() {
+      it("should provide current transitions", function () {
+        var result = stage.transitions();
+        expect(typeof result.document).toBe("function");
+        expect(typeof result.canvas).toBe("function");
+        expect(typeof result.nodes).toBe("function");
+        expect(typeof result.relations).toBe("function");
+        expect(typeof result.shapes).toBe("function");
+        expect(typeof result.exits).toBe("function");
+        expect(typeof result.labels).toBe("function");
+      });
+
+      it("should allow to replace default transitions", function () {
+        var replacement = {};
+        stage.transitions(replacement);
+        expect(stage.transitions()).toEqual(replacement);
+      });
+
+      it("should init graph when element name is provided", function () {
+        var element = "element";
+        stage.init(element);
+        expect(d3Spy.select).toHaveBeenCalledWith(element);
+        expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
+        expect(d3Spy.element.svg.append).toHaveBeenCalledWith("polygon");
+        expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
+        expect(d3Spy.element.svg.g.append).toHaveBeenCalledWith("g");
+      });
+
+      it("should init graph without zoom when object with element only is provided", function () {
+        var definition = {
+          element: "element"
+        };
+        stage.init(definition);
+        expect(d3Spy.select).toHaveBeenCalledWith(definition.element);
+        expect(d3Spy.behavior.zoom).not.toHaveBeenCalled();
+        expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
+        expect(d3Spy.element.svg.append).toHaveBeenCalledWith("polygon");
+        expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
+      });
+
+      it("should init graph with default zoom when object with zoom true key is provided", function () {
+        var definition = {
+          element: "element",
+          zoom: true
+        };
+        stage.init(definition);
+        expect(d3Spy.select).toHaveBeenCalledWith(definition.element);
+        expect(d3Spy.behavior.zoom.scaleExtent).toHaveBeenCalledWith([0.1, 10]);
+        expect(d3Spy.behavior.zoom.on).toHaveBeenCalledWith("zoom", jasmine.any(Function));
+        expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
+        expect(d3Spy.element.svg.append).toHaveBeenCalledWith("polygon");
+        expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
+      });
+
+      it("should init graph with defined extent when object with zoom extent key is provided", function () {
+        var expected = [0.5, 20];
+        var definition = {
+          element: "element",
+          zoom: {
+            extent: expected
+          }
+        };
+        stage.init(definition);
+        expect(d3Spy.select).toHaveBeenCalledWith(definition.element);
+        expect(d3Spy.behavior.zoom.scaleExtent).toHaveBeenCalledWith(expected);
+        expect(d3Spy.behavior.zoom.on).toHaveBeenCalledWith("zoom", jasmine.any(Function));
+        expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
+        expect(d3Spy.element.svg.append).toHaveBeenCalledWith("polygon");
+        expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
+      });
     });
 
-    it("should allow to replace default transitions", function () {
-      var replacement = {};
-      stage.transitions(replacement);
-      expect(stage.transitions()).toEqual(replacement);
-    });
+    describe("zoom", function() {
+      beforeEach(function() {
+        var definition = {
+          element: "element",
+          zoom: true
+        };
+        stage.init(definition);
+      });
 
-    it("should init graph when element name is provided", function () {
-      var element = "element";
-      stage.init(element);
-      expect(d3Spy.select).toHaveBeenCalledWith(element);
-      expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
-      expect(d3Spy.element.svg.append).toHaveBeenCalledWith("polygon");
-      expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
-      expect(d3Spy.element.svg.g.append).toHaveBeenCalledWith("g");
-    });
+      it("should set zoom scale when only scale is provided", function () {
+        var expected = 15;
+        var zoom = {
+          scale: expected
+        };
+        stage.setZoom(zoom);
+        expect(d3Spy.behavior.zoom.scale).toHaveBeenCalledWith(expected);
+      });
 
-    it("should init graph without zoom when object with element only is provided", function () {
-      var definition = {
-        element: "element"
-      };
-      stage.init(definition);
-      expect(d3Spy.select).toHaveBeenCalledWith(definition.element);
-      expect(d3Spy.behavior.zoom).not.toHaveBeenCalled();
-      expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
-      expect(d3Spy.element.svg.append).toHaveBeenCalledWith("polygon");
-      expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
-    });
+      it("should set zoom translate when only translate is provided", function () {
+        var expected = [12, 15];
+        var zoom = {
+          translate: expected
+        };
+        stage.setZoom(zoom);
+        expect(d3Spy.behavior.zoom.translate).toHaveBeenCalledWith(expected);
+      });
 
-    it("should init graph with default zoom when object with zoom true key is provided", function () {
-      var definition = {
-        element: "element",
-        zoom: true
-      };
-      stage.init(definition);
-      expect(d3Spy.select).toHaveBeenCalledWith(definition.element);
-      expect(d3Spy.behavior.zoom.scaleExtent).toHaveBeenCalledWith([0.1, 10]);
-      expect(d3Spy.behavior.zoom.on).toHaveBeenCalledWith("zoom", jasmine.any(Function));
-      expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
-      expect(d3Spy.element.svg.append).toHaveBeenCalledWith("polygon");
-      expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
-    });
-
-    it("should init graph with defined extent when object with zoom extent key is provided", function () {
-      var expected = [0.5, 20];
-      var definition = {
-        element: "element",
-        zoom: {
-          extent: expected
-        }
-      };
-      stage.init(definition);
-      expect(d3Spy.select).toHaveBeenCalledWith(definition.element);
-      expect(d3Spy.behavior.zoom.scaleExtent).toHaveBeenCalledWith(expected);
-      expect(d3Spy.behavior.zoom.on).toHaveBeenCalledWith("zoom", jasmine.any(Function));
-      expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
-      expect(d3Spy.element.svg.append).toHaveBeenCalledWith("polygon");
-      expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
-    });
-
-    it("should set zoom scale when only scale is provided", function () {
-      var expected = 15;
-      var zoom = {
-        scale: expected
-      };
-      var definition = {
-        element: "element",
-        zoom: true
-      };
-      stage.init(definition);
-      stage.setZoom(zoom);
-      expect(d3Spy.behavior.zoom.scale).toHaveBeenCalledWith(expected);
-    });
-
-    it("should set zoom translate when only translate is provided", function () {
-      var expected = [12, 15];
-      var zoom = {
-        translate: expected
-      };
-      var definition = {
-        element: "element",
-        zoom: true
-      };
-      stage.init(definition);
-      stage.setZoom(zoom);
-      expect(d3Spy.behavior.zoom.translate).toHaveBeenCalledWith(expected);
-    });
-
-    it("should set zoom translate when only translate is provided", function () {
-      var expectedTranslate = [12, 15];
-      var expectedScale = 15;
-      var zoom = {
-        scale: expectedScale,
-        translate: expectedTranslate
-      };
-      var definition = {
-        element: "element",
-        zoom: true
-      };
-      stage.init(definition);
-      stage.setZoom(zoom);
-      expect(d3Spy.behavior.zoom.scale).toHaveBeenCalledWith(expectedScale);
-      expect(d3Spy.behavior.zoom.translate).toHaveBeenCalledWith(expectedTranslate);
+      it("should set zoom translate when only translate is provided", function () {
+        var expectedTranslate = [12, 15];
+        var expectedScale = 15;
+        var zoom = {
+          scale: expectedScale,
+          translate: expectedTranslate
+        };
+        stage.setZoom(zoom);
+        expect(d3Spy.behavior.zoom.scale).toHaveBeenCalledWith(expectedScale);
+        expect(d3Spy.behavior.zoom.translate).toHaveBeenCalledWith(expectedTranslate);
+      });
     });
 
     it("should return contents of parent when svg source is requested", function () {

@@ -31,36 +31,9 @@ define(["stage", "worker!layout-worker.js"], function(stage, worker) {
         pending = source;
       }
     },
+    // FIXME: expose stage
     getImage: function(reset) {
-      reset = reset===undefined ? true : reset;
-      var svgXml = stage.svg(reset);
-      var scaleFactor = 1;
-
-      if ("devicePixelRatio" in window) {
-        if (window.devicePixelRatio > 1) {
-          scaleFactor = window.devicePixelRatio;
-        }
-      }
-
-      var svgImage = new Image();
-      svgImage.src = "data:image/svg+xml;utf8," + svgXml;
-
-      var pngImage = new Image();
-
-      svgImage.onload = function() {
-        var canvas = document.createElement("canvas");
-        canvas.width = svgImage.width * scaleFactor;
-        canvas.height = svgImage.height * scaleFactor;
-
-        var context = canvas.getContext("2d");
-        context.drawImage(svgImage, 0, 0, canvas.width, canvas.height);
-
-        pngImage.src = canvas.toDataURL("image/png");
-        pngImage.width = svgImage.width;
-        pngImage.height = svgImage.height;
-      };
-
-      return pngImage;
+      return stage.getImage(reset);
     },
     errorHandler: function(handler) {
       callback = handler;
