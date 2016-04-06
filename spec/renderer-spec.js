@@ -70,11 +70,5 @@ define(["rfactory!renderer"], function(rendererFactory) {
       expect(stageSpy.draw).not.toHaveBeenCalled();
       expect(callbackSpy).toHaveBeenCalledWith(output);
     });
-
-    it("should return image/png when asked for image", function() {
-      renderer.getImage(true);
-      expect(stageSpy.getImage).toHaveBeenCalledWith(true);
-    });
-
   });
 });

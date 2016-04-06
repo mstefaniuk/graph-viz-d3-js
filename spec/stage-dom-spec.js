@@ -1,5 +1,5 @@
-define(["stage", 'spec/shapes/graph-label', 'spec/shapes/courier-fonts', 'imagediff',
-  ], function (stage, graphLabelShapes, courierFontsShapes, imagediff) {
+define(["stage", 'transformer', 'spec/shapes/graph-label', 'spec/shapes/courier-fonts', 'imagediff',
+  ], function (stage, transformer, graphLabelShapes, courierFontsShapes, imagediff) {
 
   function shortcircut(selection, attributes) {
     selection.call(attributes);
@@ -51,6 +51,31 @@ define(["stage", 'spec/shapes/graph-label', 'spec/shapes/courier-fonts', 'imaged
         expect(document.querySelectorAll('#graph svg text[style*="stroke:"]').length).toEqual(0);
         expect(document.querySelectorAll('#graph svg text[style*="color:"]').length).toEqual(4);
         expect(document.querySelectorAll('#graph svg text[style*="font-size: 14px"]').length).toEqual(4);
+      });
+    });
+
+    describe("export of PNG image when zoom available", function() {
+      beforeEach(function() {
+        stage.init({
+          element: "#graph",
+          zoom: true
+        });
+      });
+
+      it("should return whole diagram when", function() {
+        var shapes = transformer.generate("digraph { A -> B -> C }");
+        stage.draw(shapes);
+        var actual = stage.getImage();
+        var expected = new Image();
+        expected.src = "/base/spec/img/A-B-C.png";
+
+        waitsFor(function () {
+          return actual.complete & expected.complete;
+        }, 'image not loaded.', 2000);
+
+        runs(function () {
+          expect(actual).toImageDiffEqual(expected);
+        });
       });
     });
   });

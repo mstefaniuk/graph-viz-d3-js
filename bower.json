@@ -9,7 +9,8 @@
   },
   "devDependencies": {
     "rfactory": "1.1.0",
-    "requirejs-text": "2.0.13"
+    "requirejs-text": "2.0.13",
+    "js-imagediff": "karma"
   },
   "exportsOverride": {
     "requirejs": {

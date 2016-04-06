@@ -31,10 +31,7 @@ define(["stage", "worker!layout-worker.js"], function(stage, worker) {
         pending = source;
       }
     },
-    // FIXME: expose stage
-    getImage: function(reset) {
-      return stage.getImage(reset);
-    },
+    stage: stage,
     errorHandler: function(handler) {
       callback = handler;
     }
