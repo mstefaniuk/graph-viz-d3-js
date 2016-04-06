@@ -26,8 +26,11 @@ define(['rfactory!transformer', 'spec/asts/directed/clust4', 'spec/shapes/direct
     it("should call viz.js with xdot option and call xdot parser with AST", function() {
       vizSpy.andReturn(xdot_clust4);
       xdotSpy.parse.andReturn(ast_clust4);
+      var input = 'source';
 
-      var result = transformer.generate('source');
+      var result = transformer.generate(input);
+      expect(vizSpy).toHaveBeenCalledWith(input, { format : 'xdot' });
+      expect(xdotSpy.parse).toHaveBeenCalledWith(xdot_clust4);
       expect(result).toEqual(shape_clust4);
     });
 
