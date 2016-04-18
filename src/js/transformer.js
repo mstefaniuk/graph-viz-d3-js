@@ -1,7 +1,7 @@
 define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
   return {
     generate: function (source) {
-      var xdot, error, result;
+      var xdot, result;
 
       xdot = viz(source, { format: "xdot" });
 

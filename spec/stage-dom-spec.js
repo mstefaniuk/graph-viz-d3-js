@@ -1,5 +1,5 @@
-define(["stage", 'transformer', 'spec/shapes/graph-label', 'spec/shapes/courier-fonts', 'imagediff',
-  ], function (stage, transformer, graphLabelShapes, courierFontsShapes, imagediff) {
+define(["stage", 'transformer', 'spec/shapes/graph-label', 'spec/shapes/courier-fonts', 'spec/jasmine/image-matchers'
+  ], function (stage, transformer, graphLabelShapes, courierFontsShapes, imageMatchers) {
 
   function shortcircut(selection, attributes) {
     selection.call(attributes);
@@ -18,8 +18,6 @@ define(["stage", 'transformer', 'spec/shapes/graph-label', 'spec/shapes/courier-
   describe("Stage", function() {
 
     beforeEach(function() {
-      this.addMatchers(imagediff.jasmine);
-
       var fixture = '<div id="graph"></div>';
       document.body.insertAdjacentHTML(
         'afterbegin',
@@ -54,17 +52,37 @@ define(["stage", 'transformer', 'spec/shapes/graph-label', 'spec/shapes/courier-
       });
     });
 
-    describe("export of PNG image when zoom available", function() {
+    xdescribe("export of PNG image when zoom available", function() {
       beforeEach(function() {
-        stage.init({
-          element: "#graph",
-          zoom: true
-        });
+        //stage.init({
+        //  element: "#graph",
+        //  zoom: true
+        //});
+        stage.init("#graph");
+        jasmine.addMatchers(imageMatchers);
       });
 
-      it("should return whole diagram when", function() {
+      it("should return whole diagram when no zoom set", function(done) {
         var shapes = transformer.generate("digraph { A -> B -> C }");
         stage.draw(shapes);
+        var actual = stage.getImage(false);
+        var expected = new Image();
+        expected.src = "/base/spec/img/diagram.png";
+
+        setTimeout(function() {
+          expect(actual.complete && expected.complete).toEqual(true);
+          expect(actual).toImageDiffEqual(expected);
+          done();
+        }, 200);
+      });
+
+      xit("should return part of diagram when zoom is set", function() {
+        var shapes = transformer.generate("digraph { A -> B -> B -> C }");
+        stage.draw(shapes);
+        stage.setZoom({
+          scale: 3,
+          translate: [12, 15]
+        });
         var actual = stage.getImage();
         var expected = new Image();
         expected.src = "/base/spec/img/A-B-C.png";

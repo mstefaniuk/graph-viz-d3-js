@@ -1,5 +1,5 @@
 .idea
-node_modules
-lib
-parser
-coverage
+/node_modules
+/lib
+/parser
+/karma

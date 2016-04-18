@@ -3,9 +3,9 @@ define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4', 'spec
   function (xdot, array, clust4, unicodeLabels, image, classDiagramSource, classDiagramAst) {
 
     describe('XDOT parser', function () {
+
       using("provided gallery graphs", array, function (graph) {
-        describe("should parse", function () {
-          it("xdot source into tree with commands and at least one graph", function () {
+          it("should parse xdot source into tree with commands and at least one graph", function () {
             var ast = xdot.parse(graph);
             expect(ast).toBeDefined();
             expect(ast.commands.length).toBeGreaterThan(0);
@@ -14,11 +14,10 @@ define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4', 'spec
             }).length).toEqual(1);
             expect(ast.type).toBeDefined();
           });
-        });
       });
 
       xit("should return backward compatible AST", function () {
-        var actual = xdot.parse(array[10][0]);
+        var actual = xdot.parse(array[10]);
         expect(actual).toEqual(clust4);
       });
 

@@ -55,5 +55,5 @@ define(
   'text!spec/xdots/directed/unix2.xdot',
   'text!spec/xdots/directed/viewfile.xdot',
   'text!spec/xdots/directed/world.xdot'], function () {
-  return [].slice.call(arguments);
+  return [].slice.call(arguments,0,-1);
 });

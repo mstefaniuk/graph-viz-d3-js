@@ -238,8 +238,8 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
           context.drawImage(svgImage, 0, 0, canvas.width, canvas.height);
 
           pngImage.src = canvas.toDataURL("image/png");
-          pngImage.width = svgImage.width;
-          pngImage.height = svgImage.height;
+          pngImage.width = svgImage.width * scaleFactor;
+          pngImage.height = svgImage.height * scaleFactor;
         };
 
         return pngImage;

@@ -151,7 +151,7 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
       var svg = d3Spy.root.svg;
       expect(transitionsSpy.document).toHaveBeenCalledWith(svg, jasmine.any(Function));
       expect(transitionsSpy.canvas).toHaveBeenCalledWith(svg.polygon, jasmine.any(Function));
-      expect(svg.g.g.all$g.data.mostRecentCall.args[0]).toEqual(shapes.groups);
+      expect(svg.g.g.all$g.data.calls.mostRecent().args[0]).toEqual(shapes.groups);
 
       var groups = svg.g.g.all$g;
       expect(groups.enter).toHaveBeenCalled();
@@ -173,11 +173,11 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
     var  d3Spy = d3SelectionSpyGenerator(null, 'selection');
 
     d3Spy.behavior = jasmine.createSpyObj("behavior", ["zoom"]);
-    d3Spy.behavior.zoom.andCallFake(function() {
+    d3Spy.behavior.zoom.and.callFake(function() {
       var operators = ['on', 'scaleExtent', 'scale', 'translate'];
       var zoomSpy = jasmine.createSpyObj("zoom", operators);
       operators.map(function (key) {
-        zoomSpy[key].andReturn(zoomSpy);
+        zoomSpy[key].and.returnValue(zoomSpy);
         d3Spy.behavior.zoom[key] = zoomSpy[key];
       });
       return zoomSpy;
@@ -195,19 +195,19 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
     var spy = jasmine.createSpyObj(name, selectors.concat(operators));
 
     operators.map(function (key) {
-      spy[key].andReturn(spy);
+      spy[key].and.returnValue(spy);
     });
 
-    spy.select.andCallFake(function (tag) {
+    spy.select.and.callFake(function (tag) {
       return d3SelectionSpyGenerator(this, tag);
     });
-    spy.selectAll.andCallFake(function (tag) {
+    spy.selectAll.and.callFake(function (tag) {
       return d3SelectionSpyGenerator(this, "all$" + tag);
     });
-    spy.filter.andCallFake(function (filter) {
+    spy.filter.and.callFake(function (filter) {
       return d3SelectionSpyGenerator(this, "filtered$" + filter);
     });
-    spy.append.andCallFake(function (tag) {
+    spy.append.and.callFake(function (tag) {
       return d3SelectionSpyGenerator(this, tag);
     });
 

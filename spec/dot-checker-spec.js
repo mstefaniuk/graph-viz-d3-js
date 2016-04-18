@@ -17,20 +17,20 @@ define(['rfactory!dot-checker', 'parser/dot'], function (dotCheckerFactory, dot)
           {pos: 13, type: "attribute", string: "sape"}
         ]
       };
-      parserSpy.parse.andCallFake(function () {
+      parserSpy.parse.and.callFake(function () {
         return expectation;
       });
       var result = dotChecker.lint(
         "dgraph {node[sape=box]}"
       );
       expect(result).toEqual(expectation);
-      expect(parserSpy.parse.calls.length).toEqual(1);
-      expect(parserSpy.parse.mostRecentCall.args[1]).toEqual({pegace: {mode: 'lint'}});
+      expect(parserSpy.parse.calls.count()).toEqual(1);
+      expect(parserSpy.parse.calls.mostRecent().args[1]).toEqual({pegace: {mode: 'lint'}});
     });
 
 
     it("should provide proper options when dot source is parsed", function () {
-      parserSpy.parse.andCallFake(function (source, options) {
+      parserSpy.parse.and.callFake(function (source, options) {
         throw new Error();
       });
       expect(function () {
@@ -38,8 +38,8 @@ define(['rfactory!dot-checker', 'parser/dot'], function (dotCheckerFactory, dot)
           "dgraph {node[sape=box]}"
         );
       }).toThrow();
-      expect(parserSpy.parse.calls.length).toEqual(1);
-      expect(parserSpy.parse.mostRecentCall.args[1]).toEqual({pegace: {mode: 'strict'}});
+      expect(parserSpy.parse.calls.count()).toEqual(1);
+      expect(parserSpy.parse.calls.mostRecent().args[1]).toEqual({pegace: {mode: 'strict'}});
     });
 
     it("should enrich parser exception with standard result flags when dot source is linted", function () {
@@ -54,7 +54,7 @@ define(['rfactory!dot-checker', 'parser/dot'], function (dotCheckerFactory, dot)
         column: 1,
         name: 'SyntaxError'
       };
-      parserSpy.parse.andCallFake(function (source, options) {
+      parserSpy.parse.and.callFake(function (source, options) {
         throw provided;
       });
       var result = dotChecker.lint(

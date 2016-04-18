@@ -54,8 +54,8 @@ define(
     'text!spec/dots/directed/try.gv',
     'text!spec/dots/directed/unix.gv',
     'text!spec/dots/directed/unix2.gv',
-    'text!spec/dots/directed/viewfile.gv',
+    'text!spec/dots/directed/viewfile.gv'
     //'text!spec/dots/directed/world.gv'
   ], function () {
-    return [].slice.call(arguments);
+    return [].slice.call(arguments,0,-1);
   });

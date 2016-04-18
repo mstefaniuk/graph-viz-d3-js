@@ -10,7 +10,7 @@
   "devDependencies": {
     "rfactory": "1.1.0",
     "requirejs-text": "2.0.13",
-    "js-imagediff": "karma"
+    "js-imagediff": "HumbleSoftware/js-imagediff#b7398e1"
   },
   "exportsOverride": {
     "requirejs": {
@@ -21,6 +21,9 @@
     },
     "requirejs-web-workers": {
       "": "src/*"
+    },
+    "js-imagediff": {
+      "": "js/imagediff.js"
     }
   },
   "authors": [

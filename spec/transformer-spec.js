@@ -24,8 +24,8 @@ define(['rfactory!transformer', 'spec/asts/directed/clust4', 'spec/shapes/direct
     });
 
     it("should call viz.js with xdot option and call xdot parser with AST", function() {
-      vizSpy.andReturn(xdot_clust4);
-      xdotSpy.parse.andReturn(ast_clust4);
+      vizSpy.and.returnValue(xdot_clust4);
+      xdotSpy.parse.and.returnValue(ast_clust4);
       var input = 'source';
 
       var result = transformer.generate(input);
@@ -36,7 +36,7 @@ define(['rfactory!transformer', 'spec/asts/directed/clust4', 'spec/shapes/direct
 
     it("should pass error from viz.js", function() {
       var error = "Error: Syntax error from viz.js";
-      vizSpy.andCallFake(function(){
+      vizSpy.and.callFake(function(){
         throw error;
       });
 
@@ -49,8 +49,8 @@ define(['rfactory!transformer', 'spec/asts/directed/clust4', 'spec/shapes/direct
 
     it("should return error when xdot source parsing failed", function() {
       var error = "Parsing of xdot output failed";
-      vizSpy.andReturn({invalid: true});
-      xdotSpy.parse.andCallFake(function() {
+      vizSpy.and.returnValue({invalid: true});
+      xdotSpy.parse.and.callFake(function() {
         throw new Error();
       });
 

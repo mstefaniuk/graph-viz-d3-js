@@ -118,7 +118,7 @@ module.exports = function (grunt) {
         force: true
       },
       firefox: {
-        src: "coverage/Firefox*/lcov.info"
+        src: "karma/coverage/Firefox*/lcov.info"
       }
     }
   });

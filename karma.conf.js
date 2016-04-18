@@ -5,9 +5,11 @@ module.exports = function (config) {
     files: [
       'spec/test-main.js',
       {pattern: 'lib/**/*.js', included: false},
-      {pattern: 'spec/*-helper.js', included: true},
+      {pattern: 'spec/jasmine/data-helpers.js', included: true},
+      {pattern: 'spec/jasmine/image-matchers.js', included: false},
       {pattern: 'spec/*-spec.js', included: false},
       {pattern: 'spec/*/**/*.+(js|gv|xdot)', included: false},
+      {pattern: 'spec/img/*.png', included: false},
       {pattern: 'src/**/*.js', included: false},
       {pattern: 'parser/*.js', included: false}
     ],
@@ -16,9 +18,14 @@ module.exports = function (config) {
       'src/js/*.js': ['coverage'],
       'parser/*.js': ['coverage']
     },
-    reporters: ['progress', 'coverage'],
+    reporters: ['jasmine-diff', 'progress', 'coverage', 'html'],
     coverageReporter: {
-      type: 'lcov'
+      type: 'lcov',
+      dir: 'karma/coverage'
+    },
+    htmlReporter: {
+      outputDir: 'karma/html',
+      templatePath: 'spec/karma/html-reporter-template.html'
     },
     port: 9876,
     browserNoActivityTimeout: 30000,
