@@ -52,13 +52,12 @@ define(["stage", 'transformer', 'spec/shapes/graph-label', 'spec/shapes/courier-
       });
     });
 
-    xdescribe("export of PNG image when zoom available", function() {
+    describe("export of PNG image when zoom available", function() {
       beforeEach(function() {
-        //stage.init({
-        //  element: "#graph",
-        //  zoom: true
-        //});
-        stage.init("#graph");
+        stage.init({
+          element: "#graph",
+          zoom: true
+        });
         jasmine.addMatchers(imageMatchers);
       });
 
@@ -69,11 +68,12 @@ define(["stage", 'transformer', 'spec/shapes/graph-label', 'spec/shapes/courier-
         var expected = new Image();
         expected.src = "/base/spec/img/diagram.png";
 
-        setTimeout(function() {
-          expect(actual.complete && expected.complete).toEqual(true);
-          expect(actual).toImageDiffEqual(expected);
-          done();
-        }, 200);
+        expected.onload = function() {
+          actual.onload = function() {
+            expect(actual).toImageDiffEqual(expected);
+            done();
+          };
+        };
       });
 
       xit("should return part of diagram when zoom is set", function() {
@@ -85,15 +85,14 @@ define(["stage", 'transformer', 'spec/shapes/graph-label', 'spec/shapes/courier-
         });
         var actual = stage.getImage();
         var expected = new Image();
-        expected.src = "/base/spec/img/A-B-C.png";
+        expected.src = "/base/spec/img/diagram.png";
 
-        waitsFor(function () {
-          return actual.complete & expected.complete;
-        }, 'image not loaded.', 2000);
-
-        runs(function () {
-          expect(actual).toImageDiffEqual(expected);
-        });
+        expected.onload = function() {
+          actual.onload = function() {
+            expect(actual).toImageDiffEqual(expected);
+            done();
+          };
+        };
       });
     });
   });
