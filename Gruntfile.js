@@ -118,7 +118,22 @@ module.exports = function (grunt) {
         force: true
       },
       firefox: {
-        src: "karma/coverage/Firefox*/lcov.info"
+        src: "karma/lcov.info"
+      }
+    },
+    'gh-pages': {
+      'gh-pages': {
+        options: {
+          add: true,
+          silent: true,
+          user: {
+            name: 'Marcin Stefaniuk',
+            email: 'marcin@stefaniuk.info'
+          },
+          repo: 'https://' + process.env.GH_TOKEN + '@github.com/mstefaniuk/graph-viz-d3-js.git',
+          message: 'Publish karma tests results (auto)',
+        },
+        src: ['karma/**']
       }
     }
   });
@@ -133,6 +148,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-peg');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-gh-pages');
   grunt.loadNpmTasks('grunt-coveralls');
 
   // Macro tasks

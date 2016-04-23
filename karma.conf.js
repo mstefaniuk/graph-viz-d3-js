@@ -20,12 +20,15 @@ module.exports = function (config) {
     },
     reporters: ['jasmine-diff', 'progress', 'coverage', 'html'],
     coverageReporter: {
-      type: 'lcov',
-      dir: 'karma/coverage'
+      type: 'lcovonly',
+      dir: 'karma',
+      subdir: '.'
     },
     htmlReporter: {
-      outputDir: 'karma/html',
-      templatePath: 'spec/karma/html-reporter-template.html'
+      outputDir: 'karma',
+      templatePath: 'spec/karma/html-reporter-template.html',
+      namedFiles: true,
+      reportName: 'report'
     },
     port: 9876,
     browserNoActivityTimeout: 30000,

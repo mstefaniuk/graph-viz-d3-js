@@ -1,4 +1,5 @@
 .idea
+.grunt
 /node_modules
 /lib
 /parser
