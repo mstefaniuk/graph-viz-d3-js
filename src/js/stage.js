@@ -218,12 +218,6 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         var svgXml = this.svg(reset);
         var scaleFactor = 1;
 
-        if ("devicePixelRatio" in window) {
-          if (window.devicePixelRatio > 1) {
-            scaleFactor = window.devicePixelRatio;
-          }
-        }
-
         var svgImage = new Image();
         svgImage.src = "data:image/svg+xml;utf8," + svgXml;
 

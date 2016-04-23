@@ -66,7 +66,7 @@ define(["stage", 'transformer', 'spec/shapes/graph-label', 'spec/shapes/courier-
         stage.draw(shapes);
         var actual = stage.getImage(false);
         var expected = new Image();
-        expected.src = "/base/spec/img/diagram.png";
+        expected.src = "/base/spec/img/A-B-C.png";
 
         expected.onload = function() {
           actual.onload = function() {
