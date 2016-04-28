@@ -10,19 +10,7 @@ define(["imagediff"], function(imagediff) {
     return canvas;
   }
 
-  function imageDiffEqualMessage (actual, expected) {
-    var
-      diff    = imagediff.diff(actual, expected),
-      canvas  = imagediff.createCanvas(),
-      context;
-
-    canvas.height = diff.height;
-    canvas.width  = diff.width;
-
-    context = canvas.getContext('2d');
-    context.putImageData(diff, 0, 0);
-    var diffImage = canvas.toDataURL();
-
+  function imageDiffEqualMessage (actual, expected, diffImage) {
     var actualImage = toCanvas(actual).toDataURL();
     var expectedImage = toCanvas(expected).toDataURL();
 
@@ -32,25 +20,15 @@ define(["imagediff"], function(imagediff) {
 
   return {
 
-    toBeImageData : function () {
+    toImageEqual: function () {
       return {
-        compare: function (actual) {
-          return {
-            pass: imagediff.isImageData(actual)
-          };
-        }
-      };
-    },
-
-    toImageDiffEqual: function () {
-      return {
-        compare: function (actual, expected, tolerance) {
+        compare: function (actual, expected, differences, tolerance) {
           var
             result = {};
 
-          result.pass = imagediff.equal(actual, expected, tolerance);
+          result.pass = differences.rawMisMatchPercentage < tolerance;
           if (typeof (document) !== 'undefined') {
-            result.message = imageDiffEqualMessage(actual, expected);
+            result.message = imageDiffEqualMessage(actual, expected, differences.getImageDataUrl());
           }
           return result;
         },

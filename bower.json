@@ -10,7 +10,8 @@
   "devDependencies": {
     "rfactory": "1.1.0",
     "requirejs-text": "2.0.13",
-    "js-imagediff": "HumbleSoftware/js-imagediff#b7398e1"
+    "js-imagediff": "HumbleSoftware/js-imagediff#b7398e1",
+    "resemblejs": "^2.2.0"
   },
   "exportsOverride": {
     "requirejs": {

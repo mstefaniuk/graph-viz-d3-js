@@ -18,7 +18,8 @@ requirejs.config({
     parser: '../../parser',
     rfactory: '../../lib/rfactory/rfactory',
     worker: '../../lib/requirejs-web-workers/worker',
-    imagediff: '../../lib/js-imagediff/imagediff'
+    imagediff: '../../lib/js-imagediff/imagediff',
+    resemble: '../../lib/resemblejs/resemble'
   },
 
   shim: {

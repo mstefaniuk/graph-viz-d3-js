@@ -1,5 +1,5 @@
-define(["stage", 'transformer', 'spec/shapes/graph-label', 'spec/shapes/courier-fonts', 'spec/jasmine/image-matchers'
-  ], function (stage, transformer, graphLabelShapes, courierFontsShapes, imageMatchers) {
+define(["stage", 'transformer', 'spec/shapes/graph-label', 'spec/shapes/courier-fonts', 'spec/jasmine/image-matchers', 'resemble',
+  ], function (stage, transformer, graphLabelShapes, courierFontsShapes, imageMatchers, resemble) {
 
   function shortcircut(selection, attributes) {
     selection.call(attributes);
@@ -61,38 +61,48 @@ define(["stage", 'transformer', 'spec/shapes/graph-label', 'spec/shapes/courier-
         jasmine.addMatchers(imageMatchers);
       });
 
-      it("should return whole diagram when no zoom set", function(done) {
+      xit("should return whole diagram when no zoom set", function(done) {
         var shapes = transformer.generate("digraph { A -> B -> C }");
         stage.draw(shapes);
+
         var actual = stage.getImage(false);
         var expected = new Image();
         expected.src = "/base/spec/img/A-B-C.png";
 
-        expected.onload = function() {
-          actual.onload = function() {
-            expect(actual).toImageDiffEqual(expected);
-            done();
-          };
+        actual.onload = function() {
+          resemble(actual.src)
+            .compareTo("/base/spec/img/A-B-C.png")
+            .ignoreAntialiasing()
+            .onComplete(function(data) {
+              expect(actual).toImageEqual(expected, data, 1);
+              done();
+            });
         };
       });
 
-      xit("should return part of diagram when zoom is set", function() {
-        var shapes = transformer.generate("digraph { A -> B -> B -> C }");
+      xit("should return part of diagram when zoom is set", function(done) {
+        var shapes = transformer.generate("digraph { A -> B -> B -> C -> D -> A }");
         stage.draw(shapes);
         stage.setZoom({
           scale: 3,
           translate: [12, 15]
         });
-        var actual = stage.getImage();
-        var expected = new Image();
-        expected.src = "/base/spec/img/diagram.png";
 
-        expected.onload = function() {
+        setTimeout(function() {
+          var actual = stage.getImage();
+          var expected = new Image();
+          expected.src = "/base/spec/img/diagram.png";
+
           actual.onload = function() {
-            expect(actual).toImageDiffEqual(expected);
-            done();
+            resemble(actual.src)
+              .compareTo("/base/spec/img/diagram.png")
+              .ignoreAntialiasing()
+              .onComplete(function(data) {
+                expect(actual).toImageEqual(expected, data, 1);
+                done();
+              });
           };
-        };
+        }, 500);
       });
     });
   });
