@@ -61,7 +61,7 @@ define(["stage", 'transformer', 'spec/shapes/graph-label', 'spec/shapes/courier-
         jasmine.addMatchers(imageMatchers);
       });
 
-      xit("should return whole diagram when no zoom set", function(done) {
+      it("should return whole diagram when no zoom set", function(done) {
         var shapes = transformer.generate("digraph { A -> B -> C }");
         stage.draw(shapes);
 
