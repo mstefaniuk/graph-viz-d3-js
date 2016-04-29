@@ -131,7 +131,7 @@ module.exports = function (grunt) {
             email: 'marcin@stefaniuk.info'
           },
           repo: 'https://' + process.env.GH_TOKEN + '@github.com/mstefaniuk/graph-viz-d3-js.git',
-          message: 'Publish karma tests results (auto)',
+          message: 'Publish karma tests results (auto)'
         },
         src: ['karma/**']
       }
