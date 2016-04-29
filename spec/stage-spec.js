@@ -174,7 +174,7 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
 
     d3Spy.behavior = jasmine.createSpyObj("behavior", ["zoom"]);
     d3Spy.behavior.zoom.and.callFake(function() {
-      var operators = ['on', 'scaleExtent', 'scale', 'translate'];
+      var operators = ['on', 'scaleExtent', 'scale', 'translate', 'event'];
       var zoomSpy = jasmine.createSpyObj("zoom", operators);
       operators.map(function (key) {
         zoomSpy[key].and.returnValue(zoomSpy);

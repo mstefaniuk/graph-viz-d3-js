@@ -80,29 +80,27 @@ define(["stage", 'transformer', 'spec/shapes/graph-label', 'spec/shapes/courier-
         };
       });
 
-      xit("should return part of diagram when zoom is set", function(done) {
-        var shapes = transformer.generate("digraph { A -> B -> B -> C -> D -> A }");
+      it("should return part of diagram when zoom is set", function(done) {
+        var shapes = transformer.generate("digraph { A -> B -> C }");
         stage.draw(shapes);
         stage.setZoom({
-          scale: 3,
-          translate: [12, 15]
+          scale: 1.5,
+          translate: [-10, 230]
         });
 
-        setTimeout(function() {
-          var actual = stage.getImage();
-          var expected = new Image();
-          expected.src = "/base/spec/img/diagram.png";
+        var actual = stage.getImage();
+        var expected = new Image();
+        expected.src = "/base/spec/img/B-zoomed.png";
 
-          actual.onload = function() {
-            resemble(actual.src)
-              .compareTo("/base/spec/img/diagram.png")
-              .ignoreAntialiasing()
-              .onComplete(function(data) {
-                expect(actual).toImageEqual(expected, data, 1);
-                done();
-              });
-          };
-        }, 500);
+        actual.onload = function() {
+          resemble(actual.src)
+            .compareTo("/base/spec/img/B-zoomed.png")
+            .ignoreAntialiasing()
+            .onComplete(function(data) {
+              expect(actual).toImageEqual(expected, data, 5);
+              done();
+            });
+        };
       });
     });
   });

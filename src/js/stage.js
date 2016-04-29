@@ -110,6 +110,7 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
       setZoom: function(zoomParams) {
         zoomParams.scale && zoom.scale(zoomParams.scale);
         zoomParams.translate && zoom.translate(zoomParams.translate);
+        zoom.event(svg);
       },
       transitions: function (custom) {
         if (custom) {
