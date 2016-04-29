@@ -15,8 +15,7 @@ module.exports = function (config) {
     ],
     exclude: [],
     preprocessors: {
-      'src/js/*.js': ['coverage'],
-      'parser/*.js': ['coverage']
+      'src/js/*.js': ['coverage']
     },
     reporters: ['jasmine-diff', 'progress', 'coverage', 'html'],
     coverageReporter: {
