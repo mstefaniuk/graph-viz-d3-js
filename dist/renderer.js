@@ -220,6 +220,7 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
       setZoom: function(zoomParams) {
         zoomParams.scale && zoom.scale(zoomParams.scale);
         zoomParams.translate && zoom.translate(zoomParams.translate);
+        zoom.event(svg);
       },
       transitions: function (custom) {
         if (custom) {
@@ -328,12 +329,6 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
         var svgXml = this.svg(reset);
         var scaleFactor = 1;
 
-        if ("devicePixelRatio" in window) {
-          if (window.devicePixelRatio > 1) {
-            scaleFactor = window.devicePixelRatio;
-          }
-        }
-
         var svgImage = new Image();
         svgImage.src = "data:image/svg+xml;utf8," + svgXml;
 
@@ -348,8 +343,8 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
           context.drawImage(svgImage, 0, 0, canvas.width, canvas.height);
 
           pngImage.src = canvas.toDataURL("image/png");
-          pngImage.width = svgImage.width * scaleFactor;
-          pngImage.height = svgImage.height * scaleFactor;
+          pngImage.width = svgImage.width;
+          pngImage.height = svgImage.height;
         };
 
         return pngImage;
