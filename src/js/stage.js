@@ -23,6 +23,9 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
       var width = boundingWidth * ratio;
 
       return {
+        boundingWidth: boundingWidth,
+        boundingHeight: boundingHeight,
+        margin: margin,
         width: width,
         height: height,
         htranslate: htranslate,
@@ -80,8 +83,8 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
             'text {text-anchor: middle; font-family:"Times-Roman",serif; font-size: 10pt}',
             '.overlay {fill: none; pointer-events: all}'
           ].join(' '));
-        svg.append("polygon").attr("stroke", "none");
         main = svg.append("g").append("g");
+        main.append("polygon").attr("stroke", "none");
 
         if (definition.zoom) {
           var extent = definition.zoom && definition.zoom.extent || [0.1, 10];
@@ -129,15 +132,20 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
             .attr("height", sizes.height + "pt")
             .attr("viewBox", area.join(' '))
             .select("g")
+            .select("g")
             .attr("transform", "scale(" + sizes.scaleWidth + " " + sizes.scaleHeight + ")" +
               " " + "translate(" + sizes.vtranslate + "," + sizes.htranslate + ")");
         });
 
-        var polygon = svg.select("polygon");
+        var polygon = main.select("polygon");
         transitions.canvas(polygon, function () {
           this
             .attr("points", function () {
-              return [[0, 0], [0, sizes.height], [sizes.width, sizes.height], [sizes.width, 0]]
+              return [
+                [-sizes.margin, sizes.margin],
+                [-sizes.margin, -sizes.boundingHeight],
+                [sizes.boundingWidth, -sizes.boundingHeight],
+                [sizes.boundingWidth, sizes.margin]]
                 .map(function (e) {
                   return e.join(",");
                 }).join(" ");

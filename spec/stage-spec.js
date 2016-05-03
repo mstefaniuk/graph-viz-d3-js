@@ -35,9 +35,9 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
         stage.init(element);
         expect(d3Spy.select).toHaveBeenCalledWith(element);
         expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
-        expect(d3Spy.element.svg.append).toHaveBeenCalledWith("polygon");
         expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
         expect(d3Spy.element.svg.g.append).toHaveBeenCalledWith("g");
+        expect(d3Spy.element.svg.g.g.append).toHaveBeenCalledWith("polygon");
       });
 
       it("should init graph without zoom when object with element only is provided", function () {
@@ -48,8 +48,8 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
         expect(d3Spy.select).toHaveBeenCalledWith(definition.element);
         expect(d3Spy.behavior.zoom).not.toHaveBeenCalled();
         expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
-        expect(d3Spy.element.svg.append).toHaveBeenCalledWith("polygon");
         expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
+        expect(d3Spy.element.svg.g.g.append).toHaveBeenCalledWith("polygon");
       });
 
       it("should init graph with default zoom when object with zoom true key is provided", function () {
@@ -62,8 +62,8 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
         expect(d3Spy.behavior.zoom.scaleExtent).toHaveBeenCalledWith([0.1, 10]);
         expect(d3Spy.behavior.zoom.on).toHaveBeenCalledWith("zoom", jasmine.any(Function));
         expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
-        expect(d3Spy.element.svg.append).toHaveBeenCalledWith("polygon");
         expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
+        expect(d3Spy.element.svg.g.g.append).toHaveBeenCalledWith("polygon");
       });
 
       it("should init graph with defined extent when object with zoom extent key is provided", function () {
@@ -79,8 +79,8 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
         expect(d3Spy.behavior.zoom.scaleExtent).toHaveBeenCalledWith(expected);
         expect(d3Spy.behavior.zoom.on).toHaveBeenCalledWith("zoom", jasmine.any(Function));
         expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
-        expect(d3Spy.element.svg.append).toHaveBeenCalledWith("polygon");
         expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
+        expect(d3Spy.element.svg.g.g.append).toHaveBeenCalledWith("polygon");
       });
     });
 
@@ -150,7 +150,7 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
 
       var svg = d3Spy.root.svg;
       expect(transitionsSpy.document).toHaveBeenCalledWith(svg, jasmine.any(Function));
-      expect(transitionsSpy.canvas).toHaveBeenCalledWith(svg.polygon, jasmine.any(Function));
+      expect(transitionsSpy.canvas).toHaveBeenCalledWith(svg.g.g.polygon, jasmine.any(Function));
       expect(svg.g.g.all$g.data.calls.mostRecent().args[0]).toEqual(shapes.groups);
 
       var groups = svg.g.g.all$g;
