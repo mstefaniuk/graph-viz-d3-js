@@ -13,7 +13,7 @@
     var counter;
 }
 
-dot = prolog? t:"digraph" i:(_ identifier)? _ b:body {return {type:t, id: i==null ? null : i[1], commands:b}}
+dot = prolog? t:("digraph" / "graph") i:(_ identifier)? _ b:body {return {type:t, id: i==null ? null : i[1], commands:b}}
 prolog = ("#" [^\n]* CR)+ CR
 body = "{" c:statement+ "}" WS* {return c}
 statement= WS* cc:(skip /graph / node / relation / subgraph / struct) {return cc}
@@ -21,7 +21,7 @@ skip = n:"node" a:attributes ";" WS+ {return {type:"skip", attributes:a}}
 struct = b:body {return {type:"struct", commands:b}}
 graph = n:"graph" a:attributes ";" WS+ {return {type:n, attributes:a}}
 subgraph = t:"subgraph" _ i:identifier _ b:body {return {type:t, id:i, commands:b}}
-relation = f:identifier _ "->" _ t:identifier a:attributes? ";" WS+
+relation = f:identifier _ ("->" / "--") _ t:identifier a:attributes? ";" WS+
     {return {type:"relation", id: [f,t].join('-'), from:f, to:t, attributes:a}}
 node = i:identifier a:attributes? ";" WS+ {return {type:"node",id:i,attributes:a}}
 
@@ -30,9 +30,13 @@ attribute =
  draw
  / size
  / image
+ / URL
+ / tooltip
  / a:(anyattribute) {a.type="skip"; return a}
 
 image = "image" "=" q url:nq q {return {type: 'image', value: url.join('')}}
+URL = "URL" "=" q url:nq q {return {type: 'url', value: url.join('')}}
+tooltip = "tooltip" "=" q tt:nq q {return {type: 'tooltip', value: tt.join('')}}
 size = "size" "=" q w:decimal "," h:decimal q {return {type: "size", value: [w,h]}}
 anyattribute = nn:identifier "=" nqs {return {name: nn}}
 
