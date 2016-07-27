@@ -2235,7 +2235,7 @@ var parser = (function() {
         peg$c3 = { type: "literal", value: "digraph", description: "\"digraph\"" },
         peg$c4 = "graph",
         peg$c5 = { type: "literal", value: "graph", description: "\"graph\"" },
-        peg$c6 = function(t, i, b) {return {type:t, id: i==null ? null : i[1], commands:b}},
+        peg$c6 = function(t, i, b) {return {type:"digraph", id: i==null ? null : i[1], commands:b}},
         peg$c7 = [],
         peg$c8 = "#",
         peg$c9 = { type: "literal", value: "#", description: "\"#\"" },
@@ -5161,14 +5161,14 @@ define('transformer',['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser
 
       function visitSubnodes(propertyName) {
         return function (node) {
-          node[propertyName].forEach(visit);
+          node[propertyName] && node[propertyName].forEach(visit);
         };
       }
 
       function startGroup(propertyName) {
         return function (node) {
           result.push({id: node.id, class: node.type, shapes: [], labels: []});
-          node[propertyName]==null || node[propertyName].forEach(visit);
+          node[propertyName] && node[propertyName].forEach(visit);
         };
       }
 

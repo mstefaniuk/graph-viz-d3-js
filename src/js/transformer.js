@@ -18,14 +18,14 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
 
       function visitSubnodes(propertyName) {
         return function (node) {
-          node[propertyName].forEach(visit);
+          node[propertyName] && node[propertyName].forEach(visit);
         };
       }
 
       function startGroup(propertyName) {
         return function (node) {
           result.push({id: node.id, class: node.type, shapes: [], labels: []});
-          node[propertyName]==null || node[propertyName].forEach(visit);
+          node[propertyName] && node[propertyName].forEach(visit);
         };
       }
 

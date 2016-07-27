@@ -1,5 +1,5 @@
 define({
-  "type": "graph",
+  "type": "digraph",
   "id": "Adept",
   "commands": [
     {
