@@ -1,6 +1,6 @@
 define(["stage", "worker!layout-worker.js"], function(stage, worker) {
 
-  var initialized = false, pending, callback;
+  var initialized = false, pending, errorCallback, renderCallback;
 
   worker.onmessage = function (event) {
     switch (event.data.type) {
@@ -12,10 +12,11 @@ define(["stage", "worker!layout-worker.js"], function(stage, worker) {
         break;
       case "stage":
         stage.draw(event.data.body);
+        renderCallback && renderCallback();
         break;
       case "error":
-        if (callback) {
-          callback(event.data.body);
+        if (errorCallback) {
+          errorCallback(event.data.body);
         }
     }
   };
@@ -33,7 +34,10 @@ define(["stage", "worker!layout-worker.js"], function(stage, worker) {
     },
     stage: stage,
     errorHandler: function(handler) {
-      callback = handler;
+      errorCallback = handler;
+    },
+    renderHandler: function(handler) {
+      renderCallback = handler;
     }
   };
 

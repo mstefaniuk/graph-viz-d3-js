@@ -42,12 +42,14 @@ define(["rfactory!renderer"], function(rendererFactory) {
     });
 
     it("should draw stage with output of worker", function() {
+      renderer.renderHandler(callbackSpy);
       workerSpy.onmessage({
         data: {
           type: "stage",
           body: {}
         }
       });
+      expect(callbackSpy).toHaveBeenCalled();
       expect(stageSpy.draw).toHaveBeenCalledWith({});
     });
 
