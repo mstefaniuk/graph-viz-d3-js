@@ -1,0 +1,56 @@
+graph Adept {
+  labelloc="t";
+  label="The Apprentice Adept";
+  fontname="times new roman";
+  fontcolor="#000000";
+  fontsize="20";
+  splines=ortho;
+  ranksep=".1";
+  bgcolor="transparent";
+
+  node [shape="box", style="filled", fontname="arial", fontsize="14"];
+
+  node [fillcolor="#ccccff"];
+  Stile;
+  BAdept [label="Blue Adept"];
+  Chip;
+  Bane;
+  Mach;
+
+  node [fillcolor="#ffcccc"];
+  LBlue [label="Lady Blue"];
+  Sheen [label="Sheen\n(robot)"];
+  Neysa [label="Neysa\n(unicorn)"];
+  Agape [label="Agape\n(alien)"];
+  Fleta;
+  Nepe;
+  Flach;
+
+  node [shape="point"];
+  sUni [fillcolor="#00ff00", color="#ccffcc", label="Unicorn siblings"];
+
+  node [fillcolor="#ff0000", color="#ffcccc"]
+  mBlue [label="Marriage of Lady Blue and the Blue Adept"];
+  mLBSt [label="Marriage of Lady Blue and Stile"];
+  mShBl [label="Marriage of Sheen and the Blue Adept"];
+  mAgBa [label="Marriage of Agape and Bane"];
+  mFlMa [label="Marriage of Fleta and Mach"];
+
+  { rank=same; Stile; mLBSt; LBlue; mBlue; BAdept; mShBl; Sheen; Neysa; Chip; }
+  { rank=same; Bane; Agape; Mach; Fleta; mAgBa; mFlMa; }
+  { rank=same; Nepe; Flach; }
+
+  edge [style="bold", color="#ff0000"];
+  Stile -- mLBSt -- LBlue -- mBlue -- BAdept -- mShBl -- Sheen;
+  Bane -- mAgBa -- Agape;
+  Mach -- mFlMa -- Fleta;
+
+  edge [style="solid", color="#000000"];
+  sUni -- { Neysa Chip };
+
+  Neysa -- Fleta;
+  mLBSt -- Bane;
+  mShBl -- Mach;
+  mAgBa -- Nepe;
+  mFlMa -- Flach;
+}

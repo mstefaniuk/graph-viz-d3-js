@@ -1,11 +1,11 @@
 define({
-    main: {
-      id: 'G',
-      class: 'digraph',
-      shapes: [
+    "main": {
+      "id": "G",
+      "class": "digraph",
+      "shapes": [
         {
-          shape: 'polygon',
-          points: [
+          "shape": "polygon",
+          "points": [
             [
               0,
               0
@@ -23,610 +23,610 @@ define({
               0
             ]
           ],
-          style: [
+          "style": [
             {
-              key: 'stroke',
-              value: 'rgba(255,255,254,1)'
+              "key": "stroke",
+              "value": "rgba(255,255,254,1)"
             },
             {
-              key: 'fill',
-              value: 'rgba(128,128,128,1)'
+              "key": "fill",
+              "value": "rgba(128,128,128,1)"
             }
           ]
         }
       ],
-      labels: []
+      "labels": []
     },
-    groups: [
+    "groups": [
       {
-        id: 'edge',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "edge",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '1',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "1",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '2',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "2",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '3',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "3",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '4',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "4",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '5',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "5",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '6',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "6",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '7',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "7",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '8',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "8",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '10',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "10",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '20',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "20",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '30',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "30",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '40',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "40",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '50',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "50",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '60',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "60",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '70',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "70",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '80',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "80",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'a',
-        class: 'node',
-        shapes: [
+        "id": "a",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 69,
-            cy: 291,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 69,
+            "cy": 291,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'b',
-        class: 'node',
-        shapes: [
+        "id": "b",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 69,
-            cy: 251,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 69,
+            "cy": 251,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'c',
-        class: 'node',
-        shapes: [
+        "id": "c",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 69,
-            cy: 211,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 69,
+            "cy": 211,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'd',
-        class: 'node',
-        shapes: [
+        "id": "d",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 69,
-            cy: 171,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 69,
+            "cy": 171,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'e',
-        class: 'node',
-        shapes: [
+        "id": "e",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 69,
-            cy: 131,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 69,
+            "cy": 131,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'f',
-        class: 'node',
-        shapes: [
+        "id": "f",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 69,
-            cy: 91,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 69,
+            "cy": 91,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'g',
-        class: 'node',
-        shapes: [
+        "id": "g",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 69,
-            cy: 51,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 69,
+            "cy": 51,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'h',
-        class: 'node',
-        shapes: [
+        "id": "h",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 69,
-            cy: 11,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 69,
+            "cy": 11,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'i',
-        class: 'node',
-        shapes: [
+        "id": "i",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 185,
-            cy: 291,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 185,
+            "cy": 291,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'j',
-        class: 'node',
-        shapes: [
+        "id": "j",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 185,
-            cy: 131,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 185,
+            "cy": 131,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'k',
-        class: 'node',
-        shapes: [
+        "id": "k",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 185,
-            cy: 251,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 185,
+            "cy": 251,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'l',
-        class: 'node',
-        shapes: [
+        "id": "l",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 185,
-            cy: 91,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 185,
+            "cy": 91,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'm',
-        class: 'node',
-        shapes: [
+        "id": "m",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 185,
-            cy: 211,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 185,
+            "cy": 211,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'n',
-        class: 'node',
-        shapes: [
+        "id": "n",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 185,
-            cy: 51,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 185,
+            "cy": 51,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'o',
-        class: 'node',
-        shapes: [
+        "id": "o",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 185,
-            cy: 171,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 185,
+            "cy": 171,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'p',
-        class: 'node',
-        shapes: [
+        "id": "p",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 185,
-            cy: 11,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 185,
+            "cy": 11,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'q',
-        class: 'node',
-        shapes: [
+        "id": "q",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 301,
-            cy: 291,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 301,
+            "cy": 291,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'r',
-        class: 'node',
-        shapes: [
+        "id": "r",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 301,
-            cy: 131,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 301,
+            "cy": 131,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 's',
-        class: 'node',
-        shapes: [
+        "id": "s",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 301,
-            cy: 211,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 301,
+            "cy": 211,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 't',
-        class: 'node',
-        shapes: [
+        "id": "t",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 301,
-            cy: 51,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 301,
+            "cy": 51,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'u',
-        class: 'node',
-        shapes: [
+        "id": "u",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 301,
-            cy: 251,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 301,
+            "cy": 251,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'v',
-        class: 'node',
-        shapes: [
+        "id": "v",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 301,
-            cy: 91,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 301,
+            "cy": 91,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'w',
-        class: 'node',
-        shapes: [
+        "id": "w",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 301,
-            cy: 171,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 301,
+            "cy": 171,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'x',
-        class: 'node',
-        shapes: [
+        "id": "x",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'ellipse',
-            cx: 301,
-            cy: 11,
-            rx: 11,
-            ry: 11,
-            style: [
+            "shape": "ellipse",
+            "cx": 301,
+            "cy": 11,
+            "rx": 11,
+            "ry": 11,
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'A',
-        class: 'node',
-        shapes: [
+        "id": "A",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 127,
                 302
@@ -644,23 +644,23 @@ define({
                 291
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'B',
-        class: 'node',
-        shapes: [
+        "id": "B",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 127,
                 262
@@ -678,23 +678,23 @@ define({
                 251
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'C',
-        class: 'node',
-        shapes: [
+        "id": "C",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 127,
                 222
@@ -712,23 +712,23 @@ define({
                 211
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'D',
-        class: 'node',
-        shapes: [
+        "id": "D",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 127,
                 182
@@ -746,23 +746,23 @@ define({
                 171
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'E',
-        class: 'node',
-        shapes: [
+        "id": "E",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 127,
                 142
@@ -780,23 +780,23 @@ define({
                 131
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'F',
-        class: 'node',
-        shapes: [
+        "id": "F",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 127,
                 102
@@ -814,23 +814,23 @@ define({
                 91
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'G',
-        class: 'node',
-        shapes: [
+        "id": "G",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 127,
                 62
@@ -848,23 +848,23 @@ define({
                 51
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'H',
-        class: 'node',
-        shapes: [
+        "id": "H",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 127,
                 22
@@ -882,23 +882,23 @@ define({
                 11
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'I',
-        class: 'node',
-        shapes: [
+        "id": "I",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 243,
                 302
@@ -916,23 +916,23 @@ define({
                 291
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'J',
-        class: 'node',
-        shapes: [
+        "id": "J",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 243,
                 142
@@ -950,23 +950,23 @@ define({
                 131
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'K',
-        class: 'node',
-        shapes: [
+        "id": "K",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 243,
                 262
@@ -984,23 +984,23 @@ define({
                 251
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'L',
-        class: 'node',
-        shapes: [
+        "id": "L",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 243,
                 102
@@ -1018,23 +1018,23 @@ define({
                 91
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'M',
-        class: 'node',
-        shapes: [
+        "id": "M",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 243,
                 222
@@ -1052,23 +1052,23 @@ define({
                 211
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'N',
-        class: 'node',
-        shapes: [
+        "id": "N",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 243,
                 62
@@ -1086,23 +1086,23 @@ define({
                 51
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'O',
-        class: 'node',
-        shapes: [
+        "id": "O",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 243,
                 182
@@ -1120,23 +1120,23 @@ define({
                 171
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'P',
-        class: 'node',
-        shapes: [
+        "id": "P",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 243,
                 22
@@ -1154,23 +1154,23 @@ define({
                 11
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'Q',
-        class: 'node',
-        shapes: [
+        "id": "Q",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 359,
                 302
@@ -1188,23 +1188,23 @@ define({
                 291
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'R',
-        class: 'node',
-        shapes: [
+        "id": "R",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 359,
                 142
@@ -1222,23 +1222,23 @@ define({
                 131
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'S',
-        class: 'node',
-        shapes: [
+        "id": "S",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 359,
                 222
@@ -1256,23 +1256,23 @@ define({
                 211
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'T',
-        class: 'node',
-        shapes: [
+        "id": "T",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 359,
                 62
@@ -1290,23 +1290,23 @@ define({
                 51
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'U',
-        class: 'node',
-        shapes: [
+        "id": "U",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 359,
                 262
@@ -1324,23 +1324,23 @@ define({
                 251
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'V',
-        class: 'node',
-        shapes: [
+        "id": "V",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 359,
                 102
@@ -1358,23 +1358,23 @@ define({
                 91
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'W',
-        class: 'node',
-        shapes: [
+        "id": "W",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 359,
                 182
@@ -1392,23 +1392,23 @@ define({
                 171
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'X',
-        class: 'node',
-        shapes: [
+        "id": "X",
+        "class": "node",
+        "shapes": [
           {
-            shape: 'polygon',
-            points: [
+            "shape": "polygon",
+            "points": [
               [
                 359,
                 22
@@ -1426,137 +1426,137 @@ define({
                 11
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'A',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "A",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'B',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "B",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'A',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "A",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'B',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "B",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'C',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "C",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'D',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "D",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'C',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "C",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'D',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "D",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'E',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "E",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'F',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "F",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'E',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "E",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'F',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "F",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'G',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "G",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'H',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "H",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'G',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "G",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'H',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "H",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'edge',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "edge",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'i',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "i",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'I',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "I",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'i-I',
-        class: 'relation',
-        shapes: [
+        "id": "i-I",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 196.01,
                 290
@@ -1574,16 +1574,16 @@ define({
                 290
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 196.01,
                 292
@@ -1601,29 +1601,29 @@ define({
                 292
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'K',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "K",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'i-K',
-        class: 'relation',
-        shapes: [
+        "id": "i-K",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 194.17,
                 283.94
@@ -1641,16 +1641,16 @@ define({
                 254.54
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 195.33,
                 285.56
@@ -1668,35 +1668,35 @@ define({
                 256.17
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'j',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "j",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'J',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "J",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'j-J',
-        class: 'relation',
-        shapes: [
+        "id": "j-J",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 196.01,
                 130
@@ -1714,16 +1714,16 @@ define({
                 130
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 196.01,
                 132
@@ -1741,29 +1741,29 @@ define({
                 132
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'L',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "L",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'j-L',
-        class: 'relation',
-        shapes: [
+        "id": "j-L",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 194.17,
                 123.94
@@ -1781,16 +1781,16 @@ define({
                 94.54
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 195.33,
                 125.56
@@ -1808,29 +1808,29 @@ define({
                 96.17
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'A',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "A",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'A-i',
-        class: 'relation',
-        shapes: [
+        "id": "A-i",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 138.01,
                 290
@@ -1848,16 +1848,16 @@ define({
                 290
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 138.01,
                 292
@@ -1875,29 +1875,29 @@ define({
                 292
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'B',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "B",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'B-j',
-        class: 'relation',
-        shapes: [
+        "id": "B-j",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 130.51,
                 243.91
@@ -1939,16 +1939,16 @@ define({
                 140.28
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 132.29,
                 244.82
@@ -1990,41 +1990,41 @@ define({
                 141.18
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'edge',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "edge",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'k',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "k",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'I',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "I",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'k-I',
-        class: 'relation',
-        shapes: [
+        "id": "k-I",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 195.33,
                 256.44
@@ -2042,16 +2042,16 @@ define({
                 285.83
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 194.17,
                 258.06
@@ -2069,29 +2069,29 @@ define({
                 287.46
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'K',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "K",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'k-K',
-        class: 'relation',
-        shapes: [
+        "id": "k-K",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 196.01,
                 250
@@ -2109,16 +2109,16 @@ define({
                 250
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 196.01,
                 252
@@ -2136,35 +2136,35 @@ define({
                 252
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'l',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "l",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'J',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "J",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'l-J',
-        class: 'relation',
-        shapes: [
+        "id": "l-J",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 195.33,
                 96.44
@@ -2182,16 +2182,16 @@ define({
                 125.83
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 194.17,
                 98.06
@@ -2209,29 +2209,29 @@ define({
                 127.46
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'L',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "L",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'l-L',
-        class: 'relation',
-        shapes: [
+        "id": "l-L",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 196.01,
                 90
@@ -2249,16 +2249,16 @@ define({
                 90
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 196.01,
                 92
@@ -2276,29 +2276,29 @@ define({
                 92
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'C',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "C",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'C-k',
-        class: 'relation',
-        shapes: [
+        "id": "C-k",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 134.57,
                 214.47
@@ -2316,16 +2316,16 @@ define({
                 244.26
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 133.41,
                 216.09
@@ -2343,29 +2343,29 @@ define({
                 245.88
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'D',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "D",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'D-l',
-        class: 'relation',
-        shapes: [
+        "id": "D-l",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 131.39,
                 164.41
@@ -2383,16 +2383,16 @@ define({
                 99.37
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 133.03,
                 165.56
@@ -2410,41 +2410,41 @@ define({
                 100.52
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'edge',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "edge",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'm',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "m",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'M',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "M",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'm-M',
-        class: 'relation',
-        shapes: [
+        "id": "m-M",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 196.01,
                 210
@@ -2462,16 +2462,16 @@ define({
                 210
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 196.01,
                 212
@@ -2489,29 +2489,29 @@ define({
                 212
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'O',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "O",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'm-O',
-        class: 'relation',
-        shapes: [
+        "id": "m-O",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 194.17,
                 203.94
@@ -2529,16 +2529,16 @@ define({
                 174.54
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 195.33,
                 205.56
@@ -2556,35 +2556,35 @@ define({
                 176.17
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'n',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "n",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'N',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "N",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'n-N',
-        class: 'relation',
-        shapes: [
+        "id": "n-N",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 196.01,
                 50
@@ -2602,16 +2602,16 @@ define({
                 50
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 196.01,
                 52
@@ -2629,29 +2629,29 @@ define({
                 52
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'P',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "P",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'n-P',
-        class: 'relation',
-        shapes: [
+        "id": "n-P",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 194.17,
                 43.94
@@ -2669,16 +2669,16 @@ define({
                 14.54
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 195.33,
                 45.56
@@ -2696,29 +2696,29 @@ define({
                 16.17
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'E',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "E",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'E-m',
-        class: 'relation',
-        shapes: [
+        "id": "E-m",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 133.03,
                 136.44
@@ -2736,16 +2736,16 @@ define({
                 201.48
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 131.39,
                 137.59
@@ -2763,29 +2763,29 @@ define({
                 202.63
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'F',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "F",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'F-n',
-        class: 'relation',
-        shapes: [
+        "id": "F-n",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 133.41,
                 85.91
@@ -2803,16 +2803,16 @@ define({
                 56.12
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 134.57,
                 87.53
@@ -2830,41 +2830,41 @@ define({
                 57.74
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'edge',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "edge",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'o',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "o",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'M',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "M",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'o-M',
-        class: 'relation',
-        shapes: [
+        "id": "o-M",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 195.33,
                 176.44
@@ -2882,16 +2882,16 @@ define({
                 205.83
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 194.17,
                 178.06
@@ -2909,29 +2909,29 @@ define({
                 207.46
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'O',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "O",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'o-O',
-        class: 'relation',
-        shapes: [
+        "id": "o-O",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 196.01,
                 170
@@ -2949,16 +2949,16 @@ define({
                 170
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 196.01,
                 172
@@ -2976,35 +2976,35 @@ define({
                 172
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'p',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "p",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'N',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "N",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'p-N',
-        class: 'relation',
-        shapes: [
+        "id": "p-N",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 195.33,
                 16.44
@@ -3022,16 +3022,16 @@ define({
                 45.83
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 194.17,
                 18.06
@@ -3049,29 +3049,29 @@ define({
                 47.46
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'P',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "P",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'p-P',
-        class: 'relation',
-        shapes: [
+        "id": "p-P",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 196.01,
                 10
@@ -3089,16 +3089,16 @@ define({
                 10
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 196.01,
                 12
@@ -3116,29 +3116,29 @@ define({
                 12
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'G',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "G",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'G-o',
-        class: 'relation',
-        shapes: [
+        "id": "G-o",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 132.29,
                 57.18
@@ -3180,16 +3180,16 @@ define({
                 160.82
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 130.51,
                 58.09
@@ -3231,29 +3231,29 @@ define({
                 161.72
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'H',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "H",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'H-p',
-        class: 'relation',
-        shapes: [
+        "id": "H-p",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 138.01,
                 10
@@ -3271,16 +3271,16 @@ define({
                 10
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 138.01,
                 12
@@ -3298,41 +3298,41 @@ define({
                 12
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'edge',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "edge",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'q',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "q",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'Q',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "Q",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'q-Q',
-        class: 'relation',
-        shapes: [
+        "id": "q-Q",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 288
@@ -3350,16 +3350,16 @@ define({
                 288
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 290
@@ -3377,16 +3377,16 @@ define({
                 290
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 292
@@ -3404,16 +3404,16 @@ define({
                 292
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 294
@@ -3431,29 +3431,29 @@ define({
                 294
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'U',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "U",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'q-U',
-        class: 'relation',
-        shapes: [
+        "id": "q-U",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 309.01,
                 282.31
@@ -3471,16 +3471,16 @@ define({
                 252.92
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 310.17,
                 283.94
@@ -3498,16 +3498,16 @@ define({
                 254.54
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 311.33,
                 285.56
@@ -3525,16 +3525,16 @@ define({
                 256.17
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.49,
                 287.19
@@ -3552,35 +3552,35 @@ define({
                 257.8
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'r',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "r",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'R',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "R",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'r-R',
-        class: 'relation',
-        shapes: [
+        "id": "r-R",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 128
@@ -3598,16 +3598,16 @@ define({
                 128
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 130
@@ -3625,16 +3625,16 @@ define({
                 130
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 132
@@ -3652,16 +3652,16 @@ define({
                 132
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 134
@@ -3679,29 +3679,29 @@ define({
                 134
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'V',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "V",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'r-V',
-        class: 'relation',
-        shapes: [
+        "id": "r-V",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 309.01,
                 122.31
@@ -3719,16 +3719,16 @@ define({
                 92.92
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 310.17,
                 123.94
@@ -3746,16 +3746,16 @@ define({
                 94.54
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 311.33,
                 125.56
@@ -3773,16 +3773,16 @@ define({
                 96.17
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.49,
                 127.19
@@ -3800,35 +3800,35 @@ define({
                 97.8
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 's',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "s",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'S',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "S",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 's-S',
-        class: 'relation',
-        shapes: [
+        "id": "s-S",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 208
@@ -3846,16 +3846,16 @@ define({
                 208
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 210
@@ -3873,16 +3873,16 @@ define({
                 210
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 212
@@ -3900,16 +3900,16 @@ define({
                 212
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 214
@@ -3927,29 +3927,29 @@ define({
                 214
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'W',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "W",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 's-W',
-        class: 'relation',
-        shapes: [
+        "id": "s-W",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 309.01,
                 202.31
@@ -3967,16 +3967,16 @@ define({
                 172.92
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 310.17,
                 203.94
@@ -3994,16 +3994,16 @@ define({
                 174.54
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 311.33,
                 205.56
@@ -4021,16 +4021,16 @@ define({
                 176.17
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.49,
                 207.19
@@ -4048,35 +4048,35 @@ define({
                 177.8
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 't',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "t",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'T',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "T",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 't-T',
-        class: 'relation',
-        shapes: [
+        "id": "t-T",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 48
@@ -4094,16 +4094,16 @@ define({
                 48
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 50
@@ -4121,16 +4121,16 @@ define({
                 50
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 52
@@ -4148,16 +4148,16 @@ define({
                 52
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 54
@@ -4175,29 +4175,29 @@ define({
                 54
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'X',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "X",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 't-X',
-        class: 'relation',
-        shapes: [
+        "id": "t-X",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 309.01,
                 42.31
@@ -4215,16 +4215,16 @@ define({
                 12.92
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 310.17,
                 43.94
@@ -4242,16 +4242,16 @@ define({
                 14.54
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 311.33,
                 45.56
@@ -4269,16 +4269,16 @@ define({
                 16.17
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.49,
                 47.19
@@ -4296,29 +4296,29 @@ define({
                 17.8
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'I',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "I",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'I-q',
-        class: 'relation',
-        shapes: [
+        "id": "I-q",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 254.01,
                 288
@@ -4336,16 +4336,16 @@ define({
                 288
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 254.01,
                 290
@@ -4363,16 +4363,16 @@ define({
                 290
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 254.01,
                 292
@@ -4390,16 +4390,16 @@ define({
                 292
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 254.01,
                 294
@@ -4417,29 +4417,29 @@ define({
                 294
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'J',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "J",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'J-r',
-        class: 'relation',
-        shapes: [
+        "id": "J-r",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 254.01,
                 128
@@ -4457,16 +4457,16 @@ define({
                 128
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 254.01,
                 130
@@ -4484,16 +4484,16 @@ define({
                 130
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 254.01,
                 132
@@ -4511,16 +4511,16 @@ define({
                 132
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 254.01,
                 134
@@ -4538,29 +4538,29 @@ define({
                 134
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'K',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "K",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'K-s',
-        class: 'relation',
-        shapes: [
+        "id": "K-s",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 248.25,
                 244.28
@@ -4578,16 +4578,16 @@ define({
                 214.49
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 249.41,
                 245.91
@@ -4605,16 +4605,16 @@ define({
                 216.12
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 250.57,
                 247.53
@@ -4632,16 +4632,16 @@ define({
                 217.74
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 251.74,
                 249.16
@@ -4659,29 +4659,29 @@ define({
                 219.37
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'L',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "L",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'L-t',
-        class: 'relation',
-        shapes: [
+        "id": "L-t",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 248.25,
                 84.28
@@ -4699,16 +4699,16 @@ define({
                 54.49
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 249.41,
                 85.91
@@ -4726,16 +4726,16 @@ define({
                 56.12
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 250.57,
                 87.53
@@ -4753,16 +4753,16 @@ define({
                 57.74
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 251.74,
                 89.16
@@ -4780,41 +4780,41 @@ define({
                 59.37
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'edge',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "edge",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'u',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "u",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'Q',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "Q",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'u-Q',
-        class: 'relation',
-        shapes: [
+        "id": "u-Q",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.49,
                 254.81
@@ -4832,16 +4832,16 @@ define({
                 284.2
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 311.33,
                 256.44
@@ -4859,16 +4859,16 @@ define({
                 285.83
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 310.17,
                 258.06
@@ -4886,16 +4886,16 @@ define({
                 287.46
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 309.01,
                 259.69
@@ -4913,29 +4913,29 @@ define({
                 289.08
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'U',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "U",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'u-U',
-        class: 'relation',
-        shapes: [
+        "id": "u-U",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 248
@@ -4953,16 +4953,16 @@ define({
                 248
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 250
@@ -4980,16 +4980,16 @@ define({
                 250
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 252
@@ -5007,16 +5007,16 @@ define({
                 252
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 254
@@ -5034,35 +5034,35 @@ define({
                 254
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'v',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "v",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'R',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "R",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'v-R',
-        class: 'relation',
-        shapes: [
+        "id": "v-R",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.49,
                 94.81
@@ -5080,16 +5080,16 @@ define({
                 124.2
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 311.33,
                 96.44
@@ -5107,16 +5107,16 @@ define({
                 125.83
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 310.17,
                 98.06
@@ -5134,16 +5134,16 @@ define({
                 127.46
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 309.01,
                 99.69
@@ -5161,29 +5161,29 @@ define({
                 129.08
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'V',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "V",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'v-V',
-        class: 'relation',
-        shapes: [
+        "id": "v-V",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 88
@@ -5201,16 +5201,16 @@ define({
                 88
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 90
@@ -5228,16 +5228,16 @@ define({
                 90
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 92
@@ -5255,16 +5255,16 @@ define({
                 92
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 94
@@ -5282,35 +5282,35 @@ define({
                 94
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'w',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "w",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'S',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "S",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'w-S',
-        class: 'relation',
-        shapes: [
+        "id": "w-S",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.49,
                 174.81
@@ -5328,16 +5328,16 @@ define({
                 204.2
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 311.33,
                 176.44
@@ -5355,16 +5355,16 @@ define({
                 205.83
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 310.17,
                 178.06
@@ -5382,16 +5382,16 @@ define({
                 207.46
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 309.01,
                 179.69
@@ -5409,29 +5409,29 @@ define({
                 209.08
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'W',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "W",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'w-W',
-        class: 'relation',
-        shapes: [
+        "id": "w-W",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 168
@@ -5449,16 +5449,16 @@ define({
                 168
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 170
@@ -5476,16 +5476,16 @@ define({
                 170
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 172
@@ -5503,16 +5503,16 @@ define({
                 172
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 174
@@ -5530,35 +5530,35 @@ define({
                 174
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'x',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "x",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'T',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "T",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'x-T',
-        class: 'relation',
-        shapes: [
+        "id": "x-T",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.49,
                 14.81
@@ -5576,16 +5576,16 @@ define({
                 44.2
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 311.33,
                 16.44
@@ -5603,16 +5603,16 @@ define({
                 45.83
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 310.17,
                 18.06
@@ -5630,16 +5630,16 @@ define({
                 47.46
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 309.01,
                 19.69
@@ -5657,29 +5657,29 @@ define({
                 49.08
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'X',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "X",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'x-X',
-        class: 'relation',
-        shapes: [
+        "id": "x-X",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 8
@@ -5697,16 +5697,16 @@ define({
                 8
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 10
@@ -5724,16 +5724,16 @@ define({
                 10
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 12
@@ -5751,16 +5751,16 @@ define({
                 12
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 312.01,
                 14
@@ -5778,29 +5778,29 @@ define({
                 14
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'M',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "M",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'M-u',
-        class: 'relation',
-        shapes: [
+        "id": "M-u",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 251.74,
                 212.84
@@ -5818,16 +5818,16 @@ define({
                 242.63
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 250.57,
                 214.47
@@ -5845,16 +5845,16 @@ define({
                 244.26
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 249.41,
                 216.09
@@ -5872,16 +5872,16 @@ define({
                 245.88
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 248.25,
                 217.72
@@ -5899,29 +5899,29 @@ define({
                 247.51
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'N',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "N",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'N-v',
-        class: 'relation',
-        shapes: [
+        "id": "N-v",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 251.74,
                 52.84
@@ -5939,16 +5939,16 @@ define({
                 82.63
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 250.57,
                 54.47
@@ -5966,16 +5966,16 @@ define({
                 84.26
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 249.41,
                 56.09
@@ -5993,16 +5993,16 @@ define({
                 85.88
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 248.25,
                 57.72
@@ -6020,29 +6020,29 @@ define({
                 87.51
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'O',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "O",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'O-w',
-        class: 'relation',
-        shapes: [
+        "id": "O-w",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 254.01,
                 168
@@ -6060,16 +6060,16 @@ define({
                 168
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 254.01,
                 170
@@ -6087,16 +6087,16 @@ define({
                 170
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 254.01,
                 172
@@ -6114,16 +6114,16 @@ define({
                 172
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 254.01,
                 174
@@ -6141,29 +6141,29 @@ define({
                 174
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'P',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "P",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'P-x',
-        class: 'relation',
-        shapes: [
+        "id": "P-x",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 254.01,
                 8
@@ -6181,16 +6181,16 @@ define({
                 8
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 254.01,
                 10
@@ -6208,16 +6208,16 @@ define({
                 10
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 254.01,
                 12
@@ -6235,16 +6235,16 @@ define({
                 12
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 254.01,
                 14
@@ -6262,83 +6262,83 @@ define({
                 14
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'edge',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "edge",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '10',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "10",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '20',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "20",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '30',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "30",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '40',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "40",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '50',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "50",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '60',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "60",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '70',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "70",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: '80',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "80",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'Q',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "Q",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'Q-10',
-        class: 'relation',
-        shapes: [
+        "id": "Q-10",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 284
@@ -6356,16 +6356,16 @@ define({
                 284
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 286
@@ -6383,16 +6383,16 @@ define({
                 286
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 288
@@ -6410,16 +6410,16 @@ define({
                 288
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 290
@@ -6437,16 +6437,16 @@ define({
                 290
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 292
@@ -6464,16 +6464,16 @@ define({
                 292
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 294
@@ -6491,16 +6491,16 @@ define({
                 294
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 296
@@ -6518,16 +6518,16 @@ define({
                 296
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 298
@@ -6545,29 +6545,29 @@ define({
                 298
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'R',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "R",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'R-20',
-        class: 'relation',
-        shapes: [
+        "id": "R-20",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 124
@@ -6585,16 +6585,16 @@ define({
                 124
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 126
@@ -6612,16 +6612,16 @@ define({
                 126
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 128
@@ -6639,16 +6639,16 @@ define({
                 128
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 130
@@ -6666,16 +6666,16 @@ define({
                 130
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 132
@@ -6693,16 +6693,16 @@ define({
                 132
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 134
@@ -6720,16 +6720,16 @@ define({
                 134
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 136
@@ -6747,16 +6747,16 @@ define({
                 136
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 138
@@ -6774,29 +6774,29 @@ define({
                 138
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'S',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "S",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'S-30',
-        class: 'relation',
-        shapes: [
+        "id": "S-30",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 204
@@ -6814,16 +6814,16 @@ define({
                 204
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 206
@@ -6841,16 +6841,16 @@ define({
                 206
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 208
@@ -6868,16 +6868,16 @@ define({
                 208
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 210
@@ -6895,16 +6895,16 @@ define({
                 210
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 212
@@ -6922,16 +6922,16 @@ define({
                 212
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 214
@@ -6949,16 +6949,16 @@ define({
                 214
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 216
@@ -6976,16 +6976,16 @@ define({
                 216
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 218
@@ -7003,29 +7003,29 @@ define({
                 218
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'T',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "T",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'T-40',
-        class: 'relation',
-        shapes: [
+        "id": "T-40",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 44
@@ -7043,16 +7043,16 @@ define({
                 44
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 46
@@ -7070,16 +7070,16 @@ define({
                 46
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 48
@@ -7097,16 +7097,16 @@ define({
                 48
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 50
@@ -7124,16 +7124,16 @@ define({
                 50
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 52
@@ -7151,16 +7151,16 @@ define({
                 52
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 54
@@ -7178,16 +7178,16 @@ define({
                 54
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 56
@@ -7205,16 +7205,16 @@ define({
                 56
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 58
@@ -7232,29 +7232,29 @@ define({
                 58
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'U',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "U",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'U-50',
-        class: 'relation',
-        shapes: [
+        "id": "U-50",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 244
@@ -7272,16 +7272,16 @@ define({
                 244
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 246
@@ -7299,16 +7299,16 @@ define({
                 246
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 248
@@ -7326,16 +7326,16 @@ define({
                 248
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 250
@@ -7353,16 +7353,16 @@ define({
                 250
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 252
@@ -7380,16 +7380,16 @@ define({
                 252
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 254
@@ -7407,16 +7407,16 @@ define({
                 254
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 256
@@ -7434,16 +7434,16 @@ define({
                 256
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 258
@@ -7461,29 +7461,29 @@ define({
                 258
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'V',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "V",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'V-60',
-        class: 'relation',
-        shapes: [
+        "id": "V-60",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 84
@@ -7501,16 +7501,16 @@ define({
                 84
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 86
@@ -7528,16 +7528,16 @@ define({
                 86
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 88
@@ -7555,16 +7555,16 @@ define({
                 88
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 90
@@ -7582,16 +7582,16 @@ define({
                 90
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 92
@@ -7609,16 +7609,16 @@ define({
                 92
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 94
@@ -7636,16 +7636,16 @@ define({
                 94
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 96
@@ -7663,16 +7663,16 @@ define({
                 96
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 98
@@ -7690,29 +7690,29 @@ define({
                 98
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'W',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "W",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'W-70',
-        class: 'relation',
-        shapes: [
+        "id": "W-70",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 164
@@ -7730,16 +7730,16 @@ define({
                 164
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 166
@@ -7757,16 +7757,16 @@ define({
                 166
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 168
@@ -7784,16 +7784,16 @@ define({
                 168
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 170
@@ -7811,16 +7811,16 @@ define({
                 170
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 172
@@ -7838,16 +7838,16 @@ define({
                 172
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 174
@@ -7865,16 +7865,16 @@ define({
                 174
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 176
@@ -7892,16 +7892,16 @@ define({
                 176
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 178
@@ -7919,29 +7919,29 @@ define({
                 178
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'X',
-        class: 'node',
-        shapes: [],
-        labels: []
+        "id": "X",
+        "class": "node",
+        "shapes": [],
+        "labels": []
       },
       {
-        id: 'X-80',
-        class: 'relation',
-        shapes: [
+        "id": "X-80",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 4
@@ -7959,16 +7959,16 @@ define({
                 4
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 6
@@ -7986,16 +7986,16 @@ define({
                 6
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 8
@@ -8013,16 +8013,16 @@ define({
                 8
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 10
@@ -8040,16 +8040,16 @@ define({
                 10
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 12
@@ -8067,16 +8067,16 @@ define({
                 12
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 14
@@ -8094,16 +8094,16 @@ define({
                 14
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 16
@@ -8121,16 +8121,16 @@ define({
                 16
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           },
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 370.01,
                 18
@@ -8148,57 +8148,57 @@ define({
                 18
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: '1-a',
-        class: 'relation',
-        shapes: [
+        "id": "1-a",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
-                38.03,
+                22.01,
                 291
               ],
               [
-                45.12,
+                32.08,
                 291
               ],
               [
-                52.37,
+                47.53,
                 291
               ],
               [
-                57.96,
+                57.7,
                 291
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: '2-b',
-        class: 'relation',
-        shapes: [
+        "id": "2-b",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 22.01,
                 251
@@ -8216,23 +8216,23 @@ define({
                 251
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: '3-c',
-        class: 'relation',
-        shapes: [
+        "id": "3-c",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 22.01,
                 211
@@ -8250,23 +8250,23 @@ define({
                 211
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: '4-d',
-        class: 'relation',
-        shapes: [
+        "id": "4-d",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 22.01,
                 171
@@ -8284,23 +8284,23 @@ define({
                 171
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: '5-e',
-        class: 'relation',
-        shapes: [
+        "id": "5-e",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 22.01,
                 131
@@ -8318,23 +8318,23 @@ define({
                 131
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: '6-f',
-        class: 'relation',
-        shapes: [
+        "id": "6-f",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 22.01,
                 91
@@ -8352,23 +8352,23 @@ define({
                 91
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: '7-g',
-        class: 'relation',
-        shapes: [
+        "id": "7-g",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 22.01,
                 51
@@ -8386,23 +8386,23 @@ define({
                 51
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: '8-h',
-        class: 'relation',
-        shapes: [
+        "id": "8-h",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 22.01,
                 11
@@ -8420,23 +8420,23 @@ define({
                 11
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'a-A',
-        class: 'relation',
-        shapes: [
+        "id": "a-A",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 80.01,
                 291
@@ -8454,23 +8454,23 @@ define({
                 291
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'a-B',
-        class: 'relation',
-        shapes: [
+        "id": "a-B",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 78.75,
                 284.75
@@ -8488,23 +8488,23 @@ define({
                 255.36
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'b-A',
-        class: 'relation',
-        shapes: [
+        "id": "b-A",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 78.75,
                 257.25
@@ -8522,23 +8522,23 @@ define({
                 286.64
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'b-B',
-        class: 'relation',
-        shapes: [
+        "id": "b-B",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 80.01,
                 251
@@ -8556,23 +8556,23 @@ define({
                 251
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'c-C',
-        class: 'relation',
-        shapes: [
+        "id": "c-C",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 80.01,
                 211
@@ -8590,23 +8590,23 @@ define({
                 211
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'c-D',
-        class: 'relation',
-        shapes: [
+        "id": "c-D",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 78.75,
                 204.75
@@ -8624,23 +8624,23 @@ define({
                 175.36
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'd-C',
-        class: 'relation',
-        shapes: [
+        "id": "d-C",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 78.75,
                 177.25
@@ -8658,23 +8658,23 @@ define({
                 206.64
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'd-D',
-        class: 'relation',
-        shapes: [
+        "id": "d-D",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 80.01,
                 171
@@ -8692,23 +8692,23 @@ define({
                 171
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'e-E',
-        class: 'relation',
-        shapes: [
+        "id": "e-E",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 80.01,
                 131
@@ -8726,23 +8726,23 @@ define({
                 131
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'e-F',
-        class: 'relation',
-        shapes: [
+        "id": "e-F",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 78.75,
                 124.75
@@ -8760,23 +8760,23 @@ define({
                 95.36
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,0,0,1)'
+                "key": "stroke",
+                "value": "rgba(0,0,0,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'f-E',
-        class: 'relation',
-        shapes: [
+        "id": "f-E",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 78.75,
                 97.25
@@ -8794,23 +8794,23 @@ define({
                 126.64
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'f-F',
-        class: 'relation',
-        shapes: [
+        "id": "f-F",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 80.01,
                 91
@@ -8828,23 +8828,23 @@ define({
                 91
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(0,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(0,255,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'g-G',
-        class: 'relation',
-        shapes: [
+        "id": "g-G",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 80.01,
                 51
@@ -8862,23 +8862,23 @@ define({
                 51
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'g-H',
-        class: 'relation',
-        shapes: [
+        "id": "g-H",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 78.75,
                 44.75
@@ -8896,23 +8896,23 @@ define({
                 15.36
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,255,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,255,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'h-G',
-        class: 'relation',
-        shapes: [
+        "id": "h-G",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 78.75,
                 17.25
@@ -8930,23 +8930,23 @@ define({
                 46.64
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       },
       {
-        id: 'h-H',
-        class: 'relation',
-        shapes: [
+        "id": "h-H",
+        "class": "relation",
+        "shapes": [
           {
-            shape: 'bspline',
-            points: [
+            "shape": "bspline",
+            "points": [
               [
                 80.01,
                 11
@@ -8964,15 +8964,15 @@ define({
                 11
               ]
             ],
-            style: [
+            "style": [
               {
-                key: 'stroke',
-                value: 'rgba(255,0,255,1)'
+                "key": "stroke",
+                "value": "rgba(255,0,255,1)"
               }
             ]
           }
         ],
-        labels: []
+        "labels": []
       }
     ]
   }
