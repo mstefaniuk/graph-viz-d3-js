@@ -102,7 +102,7 @@ body { background-color: #eeeeee; padding: 0; margin: 5px; overflow-y: scroll; }
 
   
   <span class="passingAlert bar"><span class="fold-buttons"><a href="#" onclick="fold();">Fold</a> | 
-  <a href="#" onclick="unfold();">Unfold</a></span>240 specs, 0 failed, 2 pending</span>
+  <a href="#" onclick="unfold();">Unfold</a></span>240 specs, 0 failed, 7 pending</span>
   
 
 
@@ -160,6 +160,65 @@ body { background-color: #eeeeee; padding: 0; margin: 5px; overflow-y: scroll; }
     
       <div class="specSummary passed">
       <span class="description">should enrich parser exception with standard result flags when dot source is linted</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Stage object</span>
+    
+      <div class="specSummary passed">
+      <span class="description">should provide current transitions</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should allow to replace default transitions</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should init graph when element name is provided</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should init graph without zoom when object with element only is provided</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should init graph with default zoom when object with zoom true key is provided</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should init graph with defined extent when object with zoom extent key is provided</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Stage zoom</span>
+    
+      <div class="specSummary passed">
+      <span class="description">should set zoom scale when only scale is provided</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should set zoom translate when only translate is provided</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should set zoom translate when only translate is provided</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Stage</span>
+    
+      <div class="specSummary passed">
+      <span class="description">should return contents of parent when svg source is requested</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should draw svg and delegate transitions</span>
       </div>
     
     </div>
@@ -3417,90 +3476,6 @@ viewlines -&gt; viewline [color=blue];
     
       <div class="specSummary passed">
       <span class="description">should report unknown attribute for node</span>
-      </div>
-    
-    </div>
-  
-    <div class="suite passed">
-      <span class="description">Stage object</span>
-    
-      <div class="specSummary passed">
-      <span class="description">should provide current transitions</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should allow to replace default transitions</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should init graph when element name is provided</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should init graph without zoom when object with element only is provided</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should init graph with default zoom when object with zoom true key is provided</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should init graph with defined extent when object with zoom extent key is provided</span>
-      </div>
-    
-    </div>
-  
-    <div class="suite passed">
-      <span class="description">Stage zoom</span>
-    
-      <div class="specSummary passed">
-      <span class="description">should set zoom scale when only scale is provided</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should set zoom translate when only translate is provided</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should set zoom translate when only translate is provided</span>
-      </div>
-    
-    </div>
-  
-    <div class="suite passed">
-      <span class="description">Stage</span>
-    
-      <div class="specSummary passed">
-      <span class="description">should return contents of parent when svg source is requested</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should draw svg and delegate transitions</span>
-      </div>
-    
-    </div>
-  
-    <div class="suite passed">
-      <span class="description">Dot source renderer</span>
-    
-      <div class="specSummary passed">
-      <span class="description">should init stage with provided element</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should buffer source to be rendered until worker is initialized</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should send source directly when worker is already initialized</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should draw stage with output of worker</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should return error when rendering failed</span>
       </div>
     
     </div>
@@ -21051,10 +21026,3083 @@ F 16 11 -Times-Roman c 7 -#000000 T 529.25 31.7 0 4 1 -  F 16 11 -Times-Roman c 
     </div>
   
     <div class="suite passed">
+      <span class="description">Dot source renderer</span>
+    
+      <div class="specSummary passed">
+      <span class="description">should init stage with provided element</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should buffer source to be rendered until worker is initialized</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should send source directly when worker is already initialized</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should draw stage with output of worker</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should return error when rendering failed</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
       <span class="description">Viz.js</span>
     
       <div class="specSummary skipped">
       <span class="description">should recover after unclosed quotes error</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #0 &lt;&quot;digraph Alf {
+size = &quot;6,9&quot;;
+node [ shape = record ];
+Decl [ label = &quot;\n\nDecl|{name|access|decl_flags|extern_c_linkage}&quot;];
+Nontype_decl [ label = &quot;Nontype_decl|{type}&quot;];
+Defined_decl [ label = &quot;Defined_decl|{linkage}&quot;];
+Data_decl [ label = &quot;Data_decl|{storage_class}&quot;];
+Function_decl [ label = &quot;Function_decl|{formals|defaults}&quot;];
+Data [ label = &quot;Data|{initializer}&quot;];
+Function [ label = &quot;Function|{body}&quot;];
+Constructor [ label = &quot;Constructor|{member_initializers}&quot;];
+Aggregate -&gt;  Type_decl ;
+Class -&gt; Aggregate;
+Union -&gt; Aggregate;
+Data -&gt; Data_decl;
+Data -&gt; Defn;
+Data_decl -&gt; Defined_decl;
+Data_member -&gt;  Nontype_decl ;
+Defined_decl -&gt; Nontype_decl;
+Defn -&gt; Defined_decl;
+Enum -&gt;  Type_decl ;
+Enumerator -&gt;  Nontype_decl ;
+Function -&gt; Defn;
+Function -&gt; Function_decl;
+Constructor -&gt; Function;
+Destructor -&gt; Function;
+Function_decl -&gt; Defined_decl;
+Nontype_decl -&gt;  Decl ;
+Template_type_arg -&gt;  Type_decl ;
+Type_decl -&gt;  Decl ;
+Typedef -&gt;  Type_decl ;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #1 &lt;&quot;digraph {
+	node [shape=point label=none]
+	a-&gt;b[arrowhead=&quot;nonenonenonenone&quot;]
+	c-&gt;d[arrowhead=&quot;teenonenonenone&quot;]
+	e-&gt;f[arrowhead=&quot;noneteenonenone&quot;]
+	g-&gt;h[arrowhead=&quot;teeteenonenone&quot;]
+	i-&gt;j[arrowhead=&quot;nonenoneteenone&quot;]
+	k-&gt;l[arrowhead=&quot;teenoneteenone&quot;]
+	m-&gt;n[arrowhead=&quot;noneteeteenone&quot;]
+	o-&gt;p[arrowhead=&quot;teeteeteenone&quot;]
+	q-&gt;r[arrowhead=&quot;nonenonenoneteenone&quot;]
+	s-&gt;t[arrowhead=&quot;teenonenonetee&quot;]
+	u-&gt;v[arrowhead=&quot;noneteenonetee&quot;]
+	w-&gt;y[arrowhead=&quot;teeteenonetee&quot;]
+	x-&gt;z[arrowhead=&quot;nonenoneteetee&quot;]
+	A-&gt;B[arrowhead=&quot;teenoneteetee&quot;]
+	C-&gt;D[arrowhead=&quot;noneteeteetee&quot;]
+	E-&gt;F[arrowhead=&quot;teeteeteetee&quot;]
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #2 &lt;&quot;digraph G {
+	graph [rankdir=LR nodesep=0]
+	node [shape=point label=&quot;&quot;]
+	edge [fontsize=10]
+	_box -&gt; box [arrowhead=box label=box]
+	box -&gt; boxbox [arrowhead=boxbox label=boxbox]
+	_box -&gt; lbox [arrowhead=lbox label=lbox]
+	lbox -&gt; lboxlbox [arrowhead=lboxlbox label=lboxlbox]
+	_box -&gt; rbox [arrowhead=rbox label=rbox]
+	rbox -&gt; rboxrbox [arrowhead=rboxrbox label=rboxrbox]
+	_box -&gt; olbox [arrowhead=olbox label=olbox]
+	olbox -&gt; olboxolbox [arrowhead=olboxolbox label=olboxolbox]
+	_box -&gt; orbox [arrowhead=orbox label=orbox]
+	orbox -&gt; orboxorbox [arrowhead=orboxorbox label=orboxorbox]
+	_box -&gt; obox [arrowhead=obox label=obox]
+	obox -&gt; oboxobox [arrowhead=oboxobox label=oboxobox]
+	_crow -&gt; crow [arrowhead=crow label=crow]
+	crow -&gt; crowcrow [arrowhead=crowcrow label=crowcrow]
+	_crow -&gt; lcrow [arrowhead=lcrow label=lcrow]
+	lcrow -&gt; lcrowlcrow [arrowhead=lcrowlcrow label=lcrowlcrow]
+	_crow -&gt; rcrow [arrowhead=rcrow label=rcrow]
+	rcrow -&gt; rcrowrcrow [arrowhead=rcrowrcrow label=rcrowrcrow]
+	_diamond -&gt; diamond [arrowhead=diamond label=diamond]
+	diamond -&gt; diamonddiamond [arrowhead=diamonddiamond label=diamonddiamond]
+	_diamond -&gt; ldiamond [arrowhead=ldiamond label=ldiamond]
+	ldiamond -&gt; ldiamondldiamond [arrowhead=ldiamondldiamond label=ldiamondldiamond]
+	_diamond -&gt; rdiamond [arrowhead=rdiamond label=rdiamond]
+	rdiamond -&gt; rdiamondrdiamond [arrowhead=rdiamondrdiamond label=rdiamondrdiamond]
+	_diamond -&gt; oldiamond [arrowhead=oldiamond label=oldiamond]
+	oldiamond -&gt; oldiamondoldiamond [arrowhead=oldiamondoldiamond label=oldiamondoldiamond]
+	_diamond -&gt; ordiamond [arrowhead=ordiamond label=ordiamond]
+	ordiamond -&gt; ordiamondordiamond [arrowhead=ordiamondordiamond label=ordiamondordiamond]
+	_diamond -&gt; odiamond [arrowhead=odiamond label=odiamond]
+	odiamond -&gt; odiamondodiamond [arrowhead=odiamondodiamond label=odiamondodiamond]
+	_dot -&gt; dot [arrowhead=dot label=dot]
+	dot -&gt; dotdot [arrowhead=dotdot label=dotdot]
+	_dot -&gt; odot [arrowhead=odot label=odot]
+	odot -&gt; odotodot [arrowhead=odotodot label=odotodot]
+	_inv -&gt; inv [arrowhead=inv label=inv]
+	inv -&gt; invinv [arrowhead=invinv label=invinv]
+	_inv -&gt; linv [arrowhead=linv label=linv]
+	linv -&gt; linvlinv [arrowhead=linvlinv label=linvlinv]
+	_inv -&gt; rinv [arrowhead=rinv label=rinv]
+	rinv -&gt; rinvrinv [arrowhead=rinvrinv label=rinvrinv]
+	_inv -&gt; olinv [arrowhead=olinv label=olinv]
+	olinv -&gt; olinvolinv [arrowhead=olinvolinv label=olinvolinv]
+	_inv -&gt; orinv [arrowhead=orinv label=orinv]
+	orinv -&gt; orinvorinv [arrowhead=orinvorinv label=orinvorinv]
+	_inv -&gt; oinv [arrowhead=oinv label=oinv]
+	oinv -&gt; oinvoinv [arrowhead=oinvoinv label=oinvoinv]
+	_none -&gt; none [arrowhead=none label=none]
+	none -&gt; nonenone [arrowhead=nonenone label=nonenone]
+	_normal -&gt; normal [arrowhead=normal label=normal]
+	normal -&gt; normalnormal [arrowhead=normalnormal label=normalnormal]
+	_normal -&gt; lnormal [arrowhead=lnormal label=lnormal]
+	lnormal -&gt; lnormallnormal [arrowhead=lnormallnormal label=lnormallnormal]
+	_normal -&gt; rnormal [arrowhead=rnormal label=rnormal]
+	rnormal -&gt; rnormalrnormal [arrowhead=rnormalrnormal label=rnormalrnormal]
+	_normal -&gt; olnormal [arrowhead=olnormal label=olnormal]
+	olnormal -&gt; olnormalolnormal [arrowhead=olnormalolnormal label=olnormalolnormal]
+	_normal -&gt; ornormal [arrowhead=ornormal label=ornormal]
+	ornormal -&gt; ornormalornormal [arrowhead=ornormalornormal label=ornormalornormal]
+	_normal -&gt; onormal [arrowhead=onormal label=onormal]
+	onormal -&gt; onormalonormal [arrowhead=onormalonormal label=onormalonormal]
+	_tee -&gt; tee [arrowhead=tee label=tee]
+	tee -&gt; teetee [arrowhead=teetee label=teetee]
+	_tee -&gt; ltee [arrowhead=ltee label=ltee]
+	ltee -&gt; lteeltee [arrowhead=lteeltee label=lteeltee]
+	_tee -&gt; rtee [arrowhead=rtee label=rtee]
+	rtee -&gt; rteertee [arrowhead=rteertee label=rteertee]
+	_vee -&gt; vee [arrowhead=vee label=vee]
+	vee -&gt; veevee [arrowhead=veevee label=veevee]
+	_vee -&gt; lvee [arrowhead=lvee label=lvee]
+	lvee -&gt; lveelvee [arrowhead=lveelvee label=lveelvee]
+	_vee -&gt; rvee [arrowhead=rvee label=rvee]
+	rvee -&gt; rveervee [arrowhead=rveervee label=rveervee]
+	_curve -&gt; curve [arrowhead=curve label=curve]
+	curve -&gt; curvecurve [arrowhead=curvecurve label=curvecurve]
+	_curve -&gt; lcurve [arrowhead=lcurve label=lcurve]
+	lcurve -&gt; lcurvelcurve [arrowhead=lcurvelcurve label=lcurvelcurve]
+	_curve -&gt; rcurve [arrowhead=rcurve label=rcurve]
+	rcurve -&gt; rcurvercurve [arrowhead=rcurvercurve label=rcurvercurve]
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #3 &lt;&quot;digraph pvn {
+	ordering=out;
+
+	node_1 -&gt; node_2;
+	node_1 [label=&quot;ID: 1\ntype: 48\nnbr out: 0\nnbr chi: 11&quot;];
+	node_2 [label=&quot;ID: 2\ntype: 8\nnbr out: 0\nnbr chi: 0&quot;];
+	node_1 -&gt; node_3;
+	node_3 [label=&quot;ID: 3\ntype: 1\nnbr out: 0\nnbr chi: 0&quot;];
+	node_1 -&gt; node_4;
+	node_4 [label=&quot;ID: 4\ntype: 6\nnbr out: 0\nnbr chi: 0&quot;];
+	node_1 -&gt; node_5;
+	node_5 [label=&quot;ID: 5\ntype: 14\nnbr out: 0\nnbr chi: 0&quot;];
+	node_1 -&gt; node_6;
+	node_6 [label=&quot;ID: 6\ntype: 14\nnbr out: 0\nnbr chi: 0&quot;];
+	node_1 -&gt; node_7;
+	node_7 [label=&quot;ID: 7\ntype: 49\nnbr out: 0\nnbr chi: 0&quot;];
+	node_7 -&gt; node_8;
+	node_8 [label=&quot;ID: 8\ntype: 45\nnbr out: 2\nnbr chi: 0&quot;];
+	node_8 -&gt; node_9;
+	node_9 [label=&quot;ID: 9\ntype: 48\nnbr out: 0\nnbr chi: 4&quot;];
+	node_9 -&gt; node_10;
+	node_10 [label=&quot;ID: 10\ntype: 8\nnbr out: 0\nnbr chi: 0&quot;];
+	node_9 -&gt; node_11;
+	node_11 [label=&quot;ID: 11\ntype: 1\nnbr out: 0\nnbr chi: 0&quot;];
+	node_9 -&gt; node_12;
+	node_12 [label=&quot;ID: 12\ntype: 5\nnbr out: 0\nnbr chi: 0&quot;];
+	node_9 -&gt; node_13;
+	node_13 [label=&quot;ID: 13\ntype: 16\nnbr out: 0\nnbr chi: 0&quot;];
+	node_8 -&gt; node_14;
+	node_14 [label=&quot;ID: 14\ntype: 39\nnbr out: 1\nnbr chi: 0&quot;];
+	node_14 -&gt; node_15;
+	node_15 [label=&quot;ID: 15\ntype: 55\nnbr out: 0\nnbr chi: 0&quot;];
+	node_15 -&gt; node_16;
+	node_16 [label=&quot;ID: 16\ntype: 48\nnbr out: 0\nnbr chi: 3&quot;];
+	node_16 -&gt; node_17;
+	node_17 [label=&quot;ID: 17\ntype: 1\nnbr out: 0\nnbr chi: 0&quot;];
+	node_16 -&gt; node_18;
+	node_18 [label=&quot;ID: 18\ntype: 6\nnbr out: 0\nnbr chi: 0&quot;];
+	node_16 -&gt; node_19;
+	node_19 [label=&quot;ID: 19\ntype: 45\nnbr out: 1\nnbr chi: 0&quot;];
+	node_19 -&gt; node_20;
+	node_20 [label=&quot;ID: 20\ntype: 48\nnbr out: 0\nnbr chi: 5&quot;];
+	node_20 -&gt; node_21;
+	node_21 [label=&quot;ID: 21\ntype: 38\nnbr out: 0\nnbr chi: 0&quot;];
+	node_20 -&gt; node_22;
+	node_22 [label=&quot;ID: 22\ntype: 8\nnbr out: 0\nnbr chi: 0&quot;];
+	node_20 -&gt; node_23;
+	node_23 [label=&quot;ID: 23\ntype: 1\nnbr out: 0\nnbr chi: 0&quot;];
+	node_20 -&gt; node_24;
+	node_24 [label=&quot;ID: 24\ntype: 5\nnbr out: 0\nnbr chi: 0&quot;];
+	node_20 -&gt; node_25;
+	node_25 [label=&quot;ID: 25\ntype: 16\nnbr out: 0\nnbr chi: 0&quot;];
+	node_19 -&gt; node_26;
+	node_26 [label=&quot;ID: 26\ntype: 41\nnbr out: 12\nnbr chi: 0&quot;];
+	node_26 -&gt; node_27;
+	node_27 [label=&quot;ID: 27\ntype: 48\nnbr out: 0\nnbr chi: 5&quot;];
+	node_27 -&gt; node_28;
+	node_28 [label=&quot;ID: 28\ntype: 38\nnbr out: 0\nnbr chi: 0&quot;];
+	node_27 -&gt; node_29;
+	node_29 [label=&quot;ID: 29\ntype: 8\nnbr out: 0\nnbr chi: 0&quot;];
+	node_27 -&gt; node_30;
+	node_30 [label=&quot;ID: 30\ntype: 1\nnbr out: 0\nnbr chi: 0&quot;];
+	node_27 -&gt; node_31;
+	node_31 [label=&quot;ID: 31\ntype: 5\nnbr out: 0\nnbr chi: 0&quot;];
+	node_27 -&gt; node_32;
+	node_32 [label=&quot;ID: 32\ntype: 16\nnbr out: 0\nnbr chi: 0&quot;];
+	node_26 -&gt; node_27;
+	node_26 -&gt; node_27;
+	node_26 -&gt; node_27;
+	node_26 -&gt; node_27;
+	node_26 -&gt; node_27;
+	node_26 -&gt; node_27;
+	node_26 -&gt; node_27;
+	node_26 -&gt; node_27;
+	node_26 -&gt; node_27;
+	node_26 -&gt; node_27;
+	node_26 -&gt; node_27;
+	node_26 -&gt; node_33;
+	node_33 [label=&quot;ID: 33\ntype: 48\nnbr out: 0\nnbr chi: 5&quot;];
+	node_33 -&gt; node_34;
+	node_34 [label=&quot;ID: 34\ntype: 38\nnbr out: 0\nnbr chi: 0&quot;];
+	node_33 -&gt; node_35;
+	node_35 [label=&quot;ID: 35\ntype: 14\nnbr out: 0\nnbr chi: 0&quot;];
+	node_33 -&gt; node_36;
+	node_36 [label=&quot;ID: 36\ntype: 14\nnbr out: 0\nnbr chi: 0&quot;];
+	node_33 -&gt; node_37;
+	node_37 [label=&quot;ID: 37\ntype: 20\nnbr out: 0\nnbr chi: 0&quot;];
+	node_33 -&gt; node_38;
+	node_38 [label=&quot;ID: 38\ntype: 16\nnbr out: 0\nnbr chi: 0&quot;];
+	node_15 -&gt; node_39;
+	node_39 [label=&quot;ID: 39\ntype: 45\nnbr out: 1\nnbr chi: 0&quot;];
+	node_39 -&gt; node_40;
+	node_40 [label=&quot;ID: 40\ntype: 16\nnbr out: 0\nnbr chi: 0&quot;];
+	node_39 -&gt; node_41;
+	node_41 [label=&quot;ID: 41\ntype: 48\nnbr out: 0\nnbr chi: 3&quot;];
+	node_41 -&gt; node_42;
+	node_42 [label=&quot;ID: 42\ntype: 14\nnbr out: 0\nnbr chi: 0&quot;];
+	node_41 -&gt; node_43;
+	node_43 [label=&quot;ID: 43\ntype: 1\nnbr out: 0\nnbr chi: 0&quot;];
+	node_41 -&gt; node_44;
+	node_44 [label=&quot;ID: 44\ntype: 6\nnbr out: 0\nnbr chi: 0&quot;];
+	node_15 -&gt; node_45;
+	node_45 [label=&quot;ID: 45\ntype: 48\nnbr out: 0\nnbr chi: 4&quot;];
+	node_45 -&gt; node_46;
+	node_46 [label=&quot;ID: 46\ntype: 14\nnbr out: 0\nnbr chi: 0&quot;];
+	node_45 -&gt; node_47;
+	node_47 [label=&quot;ID: 47\ntype: 45\nnbr out: 1\nnbr chi: 0&quot;];
+	node_47 -&gt; node_48;
+	node_48 [label=&quot;ID: 48\ntype: 14\nnbr out: 0\nnbr chi: 0&quot;];
+	node_47 -&gt; node_49;
+	node_49 [label=&quot;ID: 49\ntype: 14\nnbr out: 0\nnbr chi: 0&quot;];
+	node_45 -&gt; node_50;
+	node_50 [label=&quot;ID: 50\ntype: 14\nnbr out: 0\nnbr chi: 0&quot;];
+	node_45 -&gt; node_51;
+	node_51 [label=&quot;ID: 51\ntype: 45\nnbr out: 1\nnbr chi: 0&quot;];
+	node_51 -&gt; node_52;
+	node_52 [label=&quot;ID: 52\ntype: 45\nnbr out: 1\nnbr chi: 0&quot;];
+	node_52 -&gt; node_53;
+	node_53 [label=&quot;ID: 53\ntype: 54\nnbr out: 0\nnbr chi: 0&quot;];
+	node_52 -&gt; node_54;
+	node_54 [label=&quot;ID: 54\ntype: 16\nnbr out: 0\nnbr chi: 0&quot;];
+	node_51 -&gt; node_55;
+	node_55 [label=&quot;ID: 55\ntype: 48\nnbr out: 0\nnbr chi: 3&quot;];
+	node_55 -&gt; node_56;
+	node_56 [label=&quot;ID: 56\ntype: 14\nnbr out: 0\nnbr chi: 0&quot;];
+	node_55 -&gt; node_57;
+	node_57 [label=&quot;ID: 57\ntype: 1\nnbr out: 0\nnbr chi: 0&quot;];
+	node_55 -&gt; node_58;
+	node_58 [label=&quot;ID: 58\ntype: 6\nnbr out: 0\nnbr chi: 0&quot;];
+	node_15 -&gt; node_59;
+	node_59 [label=&quot;ID: 59\ntype: 48\nnbr out: 0\nnbr chi: 5&quot;];
+	node_59 -&gt; node_60;
+	node_60 [label=&quot;ID: 60\ntype: 38\nnbr out: 0\nnbr chi: 0&quot;];
+	node_59 -&gt; node_61;
+	node_61 [label=&quot;ID: 61\ntype: 8\nnbr out: 0\nnbr chi: 0&quot;];
+	node_59 -&gt; node_62;
+	node_62 [label=&quot;ID: 62\ntype: 1\nnbr out: 0\nnbr chi: 0&quot;];
+	node_59 -&gt; node_63;
+	node_63 [label=&quot;ID: 63\ntype: 5\nnbr out: 0\nnbr chi: 0&quot;];
+	node_59 -&gt; node_64;
+	node_64 [label=&quot;ID: 64\ntype: 16\nnbr out: 0\nnbr chi: 0&quot;];
+	node_15 -&gt; node_65;
+	node_65 [label=&quot;ID: 65\ntype: 48\nnbr out: 0\nnbr chi: 5&quot;];
+	node_65 -&gt; node_66;
+	node_66 [label=&quot;ID: 66\ntype: 38\nnbr out: 0\nnbr chi: 0&quot;];
+	node_65 -&gt; node_67;
+	node_67 [label=&quot;ID: 67\ntype: 14\nnbr out: 0\nnbr chi: 0&quot;];
+	node_65 -&gt; node_68;
+	node_68 [label=&quot;ID: 68\ntype: 14\nnbr out: 0\nnbr chi: 0&quot;];
+	node_65 -&gt; node_69;
+	node_69 [label=&quot;ID: 69\ntype: 20\nnbr out: 0\nnbr chi: 0&quot;];
+	node_65 -&gt; node_70;
+	node_70 [label=&quot;ID: 70\ntype: 16\nnbr out: 0\nnbr chi: 0&quot;];
+	node_14 -&gt; node_71;
+	node_71 [label=&quot;ID: 71\ntype: 45\nnbr out: 1\nnbr chi: 0&quot;];
+	node_71 -&gt; node_72;
+	node_72 [label=&quot;ID: 72\ntype: 16\nnbr out: 0\nnbr chi: 0&quot;];
+	node_71 -&gt; node_73;
+	node_73 [label=&quot;ID: 73\ntype: 48\nnbr out: 0\nnbr chi: 3&quot;];
+	node_73 -&gt; node_74;
+	node_74 [label=&quot;ID: 74\ntype: 14\nnbr out: 0\nnbr chi: 0&quot;];
+	node_73 -&gt; node_75;
+	node_75 [label=&quot;ID: 75\ntype: 1\nnbr out: 0\nnbr chi: 0&quot;];
+	node_73 -&gt; node_76;
+	node_76 [label=&quot;ID: 76\ntype: 6\nnbr out: 0\nnbr chi: 0&quot;];
+	node_8 -&gt; node_77;
+	node_77 [label=&quot;ID: 77\ntype: 45\nnbr out: 1\nnbr chi: 0&quot;];
+	node_77 -&gt; node_78;
+	node_78 [label=&quot;ID: 78\ntype: 16\nnbr out: 0\nnbr chi: 0&quot;];
+	node_77 -&gt; node_79;
+	node_79 [label=&quot;ID: 79\ntype: 48\nnbr out: 0\nnbr chi: 3&quot;];
+	node_79 -&gt; node_80;
+	node_80 [label=&quot;ID: 80\ntype: 14\nnbr out: 0\nnbr chi: 0&quot;];
+	node_79 -&gt; node_81;
+	node_81 [label=&quot;ID: 81\ntype: 1\nnbr out: 0\nnbr chi: 0&quot;];
+	node_79 -&gt; node_82;
+	node_82 [label=&quot;ID: 82\ntype: 6\nnbr out: 0\nnbr chi: 0&quot;];
+	node_1 -&gt; node_83;
+	node_83 [label=&quot;ID: 83\ntype: 38\nnbr out: 0\nnbr chi: 0&quot;];
+	node_1 -&gt; node_84;
+	node_84 [label=&quot;ID: 84\ntype: 8\nnbr out: 0\nnbr chi: 0&quot;];
+	node_1 -&gt; node_85;
+	node_85 [label=&quot;ID: 85\ntype: 1\nnbr out: 0\nnbr chi: 0&quot;];
+	node_1 -&gt; node_86;
+	node_86 [label=&quot;ID: 86\ntype: 5\nnbr out: 0\nnbr chi: 0&quot;];
+	node_1 -&gt; node_87;
+	node_87 [label=&quot;ID: 87\ntype: 16\nnbr out: 0\nnbr chi: 0&quot;];
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #4 &lt;&quot;digraph g {
+	rankdir=LR;
+
+	node [shape=rpromoter colorscheme=rdbu5 color=1 style=filled fontcolor=3]; Hef1a; TRE; UAS; Hef1aLacOid;
+	Hef1aLacOid [label=&quot;Hef1a-LacOid&quot;];
+	node [shape=rarrow colorscheme=rdbu5 color=5 style=filled fontcolor=3]; Gal4VP16; LacI; rtTA3; DeltamCherry;
+	Gal4VP16 [label=&quot;Gal4-VP16&quot;];	
+	product [shape=oval style=filled colorscheme=rdbu5 color=2 label=&quot;&quot;];
+	repression [shape=oval label=&quot;LacI repression&quot; fontcolor=black style=dotted];
+	node [shape=oval style=filled colorscheme=rdbu5 color=4 fontcolor=5];
+	combination [label=&quot;rtTA3 + Doxycycline&quot;];
+	LacIprotein [label=&quot;LacI&quot;];
+	rtTA3protein [label=&quot;rtTA3&quot;];
+	Gal4VP16protein [label=&quot;Gal4-VP16&quot;];
+	
+
+	subgraph cluster_0 {
+		colorscheme=rdbu5;
+		color=3;
+		node [colorscheme=rdbu5 fontcolor=3];
+		Hef1a -&gt; Gal4VP16 [arrowhead=none];
+		Gal4VP16 -&gt; UAS [arrowhead=none];
+		UAS -&gt; LacI [arrowhead=none];
+		LacI -&gt; Hef1aLacOid [arrowhead=none];
+		Hef1aLacOid -&gt; rtTA3 [arrowhead=none];
+		rtTA3 -&gt; TRE [arrowhead=none];
+		TRE -&gt; DeltamCherry [arrowhead=none]
+	}
+	
+	Gal4VP16 -&gt; Gal4VP16protein;
+	Gal4VP16protein -&gt; UAS;
+	LacI -&gt; LacIprotein;
+	LacIprotein -&gt; repression;
+	repression -&gt; Hef1aLacOid [arrowhead=tee];
+	IPTG -&gt; repression [arrowhead=tee];
+	rtTA3 -&gt; rtTA3protein;
+	rtTA3protein -&gt; combination;
+	combination -&gt; TRE;
+	Doxycycline -&gt; combination;
+	DeltamCherry -&gt; product;
+	
+	
+		
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #5 &lt;&quot;digraph G {
+	subgraph cluster_0 {
+		label = &quot;hello world&quot;;
+		a -&gt; b;
+		a -&gt; c;
+		color = hotpink;
+	}
+
+	subgraph cluster_1 {
+		label = &quot;MSDOT&quot;;
+		style= &quot;dashed&quot;;
+		color=purple;
+		x -&gt; y;
+		x -&gt; z;
+		y -&gt; z;
+		y -&gt; q;
+	}
+
+	top -&gt; a;
+	top -&gt; y;
+	y -&gt; b;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #6 &lt;&quot;digraph G {
+	subgraph cluster_c0 {a0 -&gt; a1 -&gt; a2 -&gt; a3;}
+	subgraph cluster_c1 {b0 -&gt; b1 -&gt; b2 -&gt; b3;}
+	x -&gt; a0;
+	x -&gt; b0;
+	a1 -&gt; a3;
+	a3 -&gt; a0;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #7 &lt;&quot;digraph G {
+	subgraph cluster_c0 {a0 -&gt; a1 -&gt; a2 -&gt; a3;}
+	subgraph cluster_c1 {b0 -&gt; b1 -&gt; b2 -&gt; b3;}
+	x -&gt; a0;
+	x -&gt; b0;
+	a1 -&gt; b3;
+	b3 -&gt; a1;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #8 &lt;&quot;digraph G {
+	subgraph cluster_c0 {a0 -&gt; a1 -&gt; a2 -&gt; a3;}
+	subgraph cluster_c1 {b0 -&gt; b1 -&gt; b2 -&gt; b3;}
+	x -&gt; a0;
+	x -&gt; b0;
+	a1 -&gt; b3;
+	b1 -&gt; a3;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #9 &lt;&quot;digraph G {
+
+	subgraph cluster_0 {
+		style=filled;
+		color=lightgrey;
+		node [style=filled,color=white];
+		a0 -&gt; a1 -&gt; a2 -&gt; a3;
+		label = &quot;process #1&quot;;
+	}
+
+	subgraph cluster_1 {
+		node [style=filled];
+		b0 -&gt; b1 -&gt; b2 -&gt; b3;
+		label = &quot;process #2&quot;;
+		color=blue
+	}
+	start -&gt; a0;
+	start -&gt; b0;
+	a1 -&gt; b3;
+	b2 -&gt; a3;
+	a3 -&gt; a0;
+	a3 -&gt; end;
+	b3 -&gt; end;
+
+	start [shape=Mdiamond];
+	end [shape=Msquare];
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #10 &lt;&quot;digraph G {
+size=&quot;6,6&quot;;
+	a -&gt; b -&gt; c;
+
+	subgraph cluster0 {
+		x0 -&gt; y0;
+		x0 -&gt; z0;
+	}
+
+	subgraph cluster1 {
+		x1 -&gt; y1;
+		x1 -&gt; z1;
+	}
+
+	subgraph cluster2 {
+		x2 -&gt; y2;
+		x2 -&gt; z2;
+	}
+
+	a -&gt; x0;
+	b -&gt; x1;
+	b -&gt; x2;
+	a -&gt; z2;
+	c -&gt; z1;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #11 &lt;&quot;digraph &quot;unix&quot; {
+	graph [	fontname = &quot;Helvetica-Oblique&quot;,
+		fontsize = 36,
+		label = &quot;\n\n\n\nObject Oriented Graphs\nStephen North, 3/19/93&quot;,
+		size = &quot;6,6&quot; ];
+	node [	shape = polygon,
+		sides = 4,
+		distortion = &quot;0.0&quot;,
+		orientation = &quot;0.0&quot;,
+		skew = &quot;0.0&quot;,
+		color = white,
+		style = filled,
+		fontname = &quot;Helvetica-Outline&quot; ];
+	&quot;5th Edition&quot; [sides=9, distortion=&quot;0.936354&quot;, orientation=28, skew=&quot;-0.126818&quot;, color=salmon2];
+	&quot;6th Edition&quot; [sides=5, distortion=&quot;0.238792&quot;, orientation=11, skew=&quot;0.995935&quot;, color=deepskyblue];
+	&quot;PWB 1.0&quot; [sides=8, distortion=&quot;0.019636&quot;, orientation=79, skew=&quot;-0.440424&quot;, color=goldenrod2];
+	LSX [sides=9, distortion=&quot;-0.698271&quot;, orientation=22, skew=&quot;-0.195492&quot;, color=burlywood2];
+	&quot;1 BSD&quot; [sides=7, distortion=&quot;0.265084&quot;, orientation=26, skew=&quot;0.403659&quot;, color=gold1];
+	&quot;Mini Unix&quot; [distortion=&quot;0.039386&quot;, orientation=2, skew=&quot;-0.461120&quot;, color=greenyellow];
+	Wollongong [sides=5, distortion=&quot;0.228564&quot;, orientation=63, skew=&quot;-0.062846&quot;, color=darkseagreen];
+	Interdata [distortion=&quot;0.624013&quot;, orientation=56, skew=&quot;0.101396&quot;, color=dodgerblue1];
+	&quot;Unix/TS 3.0&quot; [sides=8, distortion=&quot;0.731383&quot;, orientation=43, skew=&quot;-0.824612&quot;, color=thistle2];
+	&quot;PWB 2.0&quot; [sides=6, distortion=&quot;0.592100&quot;, orientation=34, skew=&quot;-0.719269&quot;, color=darkolivegreen3];
+	&quot;7th Edition&quot; [sides=10, distortion=&quot;0.298417&quot;, orientation=65, skew=&quot;0.310367&quot;, color=chocolate];
+	&quot;8th Edition&quot; [distortion=&quot;-0.997093&quot;, orientation=50, skew=&quot;-0.061117&quot;, color=turquoise3];
+	&quot;32V&quot; [sides=7, distortion=&quot;0.878516&quot;, orientation=19, skew=&quot;0.592905&quot;, color=steelblue3];
+	V7M [sides=10, distortion=&quot;-0.960249&quot;, orientation=32, skew=&quot;0.460424&quot;, color=navy];
+	&quot;Ultrix-11&quot; [sides=10, distortion=&quot;-0.633186&quot;, orientation=10, skew=&quot;0.333125&quot;, color=darkseagreen4];
+	Xenix [sides=8, distortion=&quot;-0.337997&quot;, orientation=52, skew=&quot;-0.760726&quot;, color=coral];
+	&quot;UniPlus+&quot; [sides=7, distortion=&quot;0.788483&quot;, orientation=39, skew=&quot;-0.526284&quot;, color=darkolivegreen3];
+	&quot;9th Edition&quot; [sides=7, distortion=&quot;0.138690&quot;, orientation=55, skew=&quot;0.554049&quot;, color=coral3];
+	&quot;2 BSD&quot; [sides=7, distortion=&quot;-0.010661&quot;, orientation=84, skew=&quot;0.179249&quot;, color=blanchedalmond];
+	&quot;2.8 BSD&quot; [distortion=&quot;-0.239422&quot;, orientation=44, skew=&quot;0.053841&quot;, color=lightskyblue1];
+	&quot;2.9 BSD&quot; [distortion=&quot;-0.843381&quot;, orientation=70, skew=&quot;-0.601395&quot;, color=aquamarine2];
+	&quot;3 BSD&quot; [sides=10, distortion=&quot;0.251820&quot;, orientation=18, skew=&quot;-0.530618&quot;, color=lemonchiffon];
+	&quot;4 BSD&quot; [sides=5, distortion=&quot;-0.772300&quot;, orientation=24, skew=&quot;-0.028475&quot;, color=darkorange1];
+	&quot;4.1 BSD&quot; [distortion=&quot;-0.226170&quot;, orientation=38, skew=&quot;0.504053&quot;, color=lightyellow1];
+	&quot;4.2 BSD&quot; [sides=10, distortion=&quot;-0.807349&quot;, orientation=50, skew=&quot;-0.908842&quot;, color=darkorchid4];
+	&quot;4.3 BSD&quot; [sides=10, distortion=&quot;-0.030619&quot;, orientation=76, skew=&quot;0.985021&quot;, color=lemonchiffon2];
+	&quot;Ultrix-32&quot; [distortion=&quot;-0.644209&quot;, orientation=21, skew=&quot;0.307836&quot;, color=goldenrod3];
+	&quot;PWB 1.2&quot; [sides=7, distortion=&quot;0.640971&quot;, orientation=84, skew=&quot;-0.768455&quot;, color=cyan];
+	&quot;USG 1.0&quot; [distortion=&quot;0.758942&quot;, orientation=42, skew=&quot;0.039886&quot;, color=blue];
+	&quot;CB Unix 1&quot; [sides=9, distortion=&quot;-0.348692&quot;, orientation=42, skew=&quot;0.767058&quot;, color=firebrick];
+	&quot;USG 2.0&quot; [distortion=&quot;0.748625&quot;, orientation=74, skew=&quot;-0.647656&quot;, color=chartreuse4];
+	&quot;CB Unix 2&quot; [sides=10, distortion=&quot;0.851818&quot;, orientation=32, skew=&quot;-0.020120&quot;, color=greenyellow];
+	&quot;CB Unix 3&quot; [sides=10, distortion=&quot;0.992237&quot;, orientation=29, skew=&quot;0.256102&quot;, color=bisque4];
+	&quot;Unix/TS++&quot; [sides=6, distortion=&quot;0.545461&quot;, orientation=16, skew=&quot;0.313589&quot;, color=mistyrose2];
+	&quot;PDP-11 Sys V&quot; [sides=9, distortion=&quot;-0.267769&quot;, orientation=40, skew=&quot;0.271226&quot;, color=cadetblue1];
+	&quot;USG 3.0&quot; [distortion=&quot;-0.848455&quot;, orientation=44, skew=&quot;0.267152&quot;, color=bisque2];
+	&quot;Unix/TS 1.0&quot; [distortion=&quot;0.305594&quot;, orientation=75, skew=&quot;0.070516&quot;, color=orangered];
+	&quot;TS 4.0&quot; [sides=10, distortion=&quot;-0.641701&quot;, orientation=50, skew=&quot;-0.952502&quot;, color=crimson];
+	&quot;System V.0&quot; [sides=9, distortion=&quot;0.021556&quot;, orientation=26, skew=&quot;-0.729938&quot;, color=darkorange1];
+	&quot;System V.2&quot; [sides=6, distortion=&quot;0.985153&quot;, orientation=33, skew=&quot;-0.399752&quot;, color=darkolivegreen4];
+	&quot;System V.3&quot; [sides=7, distortion=&quot;-0.687574&quot;, orientation=58, skew=&quot;-0.180116&quot;, color=lightsteelblue1];
+	&quot;5th Edition&quot; -&gt; &quot;6th Edition&quot;;
+	&quot;5th Edition&quot; -&gt; &quot;PWB 1.0&quot;;
+	&quot;6th Edition&quot; -&gt; LSX;
+	&quot;6th Edition&quot; -&gt; &quot;1 BSD&quot;;
+	&quot;6th Edition&quot; -&gt; &quot;Mini Unix&quot;;
+	&quot;6th Edition&quot; -&gt; Wollongong;
+	&quot;6th Edition&quot; -&gt; Interdata;
+	Interdata -&gt; &quot;Unix/TS 3.0&quot;;
+	Interdata -&gt; &quot;PWB 2.0&quot;;
+	Interdata -&gt; &quot;7th Edition&quot;;
+	&quot;7th Edition&quot; -&gt; &quot;8th Edition&quot;;
+	&quot;7th Edition&quot; -&gt; &quot;32V&quot;;
+	&quot;7th Edition&quot; -&gt; V7M;
+	&quot;7th Edition&quot; -&gt; &quot;Ultrix-11&quot;;
+	&quot;7th Edition&quot; -&gt; Xenix;
+	&quot;7th Edition&quot; -&gt; &quot;UniPlus+&quot;;
+	V7M -&gt; &quot;Ultrix-11&quot;;
+	&quot;8th Edition&quot; -&gt; &quot;9th Edition&quot;;
+	&quot;1 BSD&quot; -&gt; &quot;2 BSD&quot;;
+	&quot;2 BSD&quot; -&gt; &quot;2.8 BSD&quot;;
+	&quot;2.8 BSD&quot; -&gt; &quot;Ultrix-11&quot;;
+	&quot;2.8 BSD&quot; -&gt; &quot;2.9 BSD&quot;;
+	&quot;32V&quot; -&gt; &quot;3 BSD&quot;;
+	&quot;3 BSD&quot; -&gt; &quot;4 BSD&quot;;
+	&quot;4 BSD&quot; -&gt; &quot;4.1 BSD&quot;;
+	&quot;4.1 BSD&quot; -&gt; &quot;4.2 BSD&quot;;
+	&quot;4.1 BSD&quot; -&gt; &quot;2.8 BSD&quot;;
+	&quot;4.1 BSD&quot; -&gt; &quot;8th Edition&quot;;
+	&quot;4.2 BSD&quot; -&gt; &quot;4.3 BSD&quot;;
+	&quot;4.2 BSD&quot; -&gt; &quot;Ultrix-32&quot;;
+	&quot;PWB 1.0&quot; -&gt; &quot;PWB 1.2&quot;;
+	&quot;PWB 1.0&quot; -&gt; &quot;USG 1.0&quot;;
+	&quot;PWB 1.2&quot; -&gt; &quot;PWB 2.0&quot;;
+	&quot;USG 1.0&quot; -&gt; &quot;CB Unix 1&quot;;
+	&quot;USG 1.0&quot; -&gt; &quot;USG 2.0&quot;;
+	&quot;CB Unix 1&quot; -&gt; &quot;CB Unix 2&quot;;
+	&quot;CB Unix 2&quot; -&gt; &quot;CB Unix 3&quot;;
+	&quot;CB Unix 3&quot; -&gt; &quot;Unix/TS++&quot;;
+	&quot;CB Unix 3&quot; -&gt; &quot;PDP-11 Sys V&quot;;
+	&quot;USG 2.0&quot; -&gt; &quot;USG 3.0&quot;;
+	&quot;USG 3.0&quot; -&gt; &quot;Unix/TS 3.0&quot;;
+	&quot;PWB 2.0&quot; -&gt; &quot;Unix/TS 3.0&quot;;
+	&quot;Unix/TS 1.0&quot; -&gt; &quot;Unix/TS 3.0&quot;;
+	&quot;Unix/TS 3.0&quot; -&gt; &quot;TS 4.0&quot;;
+	&quot;Unix/TS++&quot; -&gt; &quot;TS 4.0&quot;;
+	&quot;CB Unix 3&quot; -&gt; &quot;TS 4.0&quot;;
+	&quot;TS 4.0&quot; -&gt; &quot;System V.0&quot;;
+	&quot;System V.0&quot; -&gt; &quot;System V.2&quot;;
+	&quot;System V.2&quot; -&gt; &quot;System V.3&quot;;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #12 &lt;&quot;digraph G {
+	xyz [label = &quot;hello\nworld&quot;,color=&quot;slateblue&quot;,fontsize=24,fontname=&quot;Palatino-Italic&quot;,style=filled,fontcolor=&quot;hotpink&quot;];
+	node [style=filled];
+	red [color=red];
+	green [color=green];
+	blue [color=blue,fontcolor=black];
+	cyan [color=cyan];
+	magenta [color=magenta];
+	yellow [color=yellow];
+	orange [color=orange];
+	red -&gt; green;
+	red -&gt; blue;
+	blue -&gt; cyan;
+	blue -&gt; magenta;
+	green -&gt; yellow;
+	green -&gt; orange;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #13 &lt;&quot;digraph g {
+&quot;start&quot; [ label = &quot;MWGC-&quot; ];
+&quot;n1&quot; [ label = &quot;WC-MG&quot; ];
+&quot;n2&quot; [ label = &quot;MWC-G&quot; ];
+&quot;n3&quot; [ label = &quot;C-MWG&quot; ];
+&quot;n4&quot; [ label = &quot;W-MGC&quot; ];
+&quot;n5&quot; [ label = &quot;MGC-W&quot; ];
+&quot;n6&quot; [ label = &quot;MWG-C&quot; ];
+&quot;n7&quot; [ label = &quot;G-MWC&quot; ];
+&quot;n8&quot; [ label = &quot;MG-WC&quot; ];
+&quot;n9&quot; [ label = &quot;-MWGC&quot; ];
+&quot;start&quot; -&gt; &quot;n1&quot; [ label = &quot;g&quot; ];
+&quot;n1&quot; -&gt; &quot;start&quot; [ label = &quot;g&quot; ];
+subgraph l { rank = same; &quot;n3&quot; &quot;n4&quot; }
+subgraph r { rank = same; &quot;n5&quot; &quot;n6&quot; }
+&quot;n1&quot; -&gt; &quot;n2&quot; [ label = &quot;m&quot; ];
+&quot;n2&quot; -&gt; &quot;n1&quot; [ label = &quot;m&quot; ];
+&quot;n2&quot; -&gt; &quot;n3&quot; [ label = &quot;w&quot; ];
+&quot;n3&quot; -&gt; &quot;n2&quot; [ label = &quot;w&quot; ];
+&quot;n2&quot; -&gt; &quot;n4&quot; [ label = &quot;c&quot; ];
+&quot;n4&quot; -&gt; &quot;n2&quot; [ label = &quot;c&quot; ];
+&quot;n3&quot; -&gt; &quot;n5&quot; [ label = &quot;g&quot; ];
+&quot;n5&quot; -&gt; &quot;n3&quot; [ label = &quot;g&quot; ];
+&quot;n4&quot; -&gt; &quot;n6&quot; [ label = &quot;g&quot; ];
+&quot;n6&quot; -&gt; &quot;n4&quot; [ label = &quot;g&quot; ];
+&quot;n5&quot; -&gt; &quot;n7&quot; [ label = &quot;c&quot; ];
+&quot;n7&quot; -&gt; &quot;n5&quot; [ label = &quot;c&quot; ];
+&quot;n6&quot; -&gt; &quot;n7&quot; [ label = &quot;w&quot; ];
+&quot;n7&quot; -&gt; &quot;n6&quot; [ label = &quot;w&quot; ];
+&quot;n7&quot; -&gt; &quot;n8&quot; [ label = &quot;m&quot; ];
+&quot;n8&quot; -&gt; &quot;n7&quot; [ label = &quot;m&quot; ];
+&quot;n8&quot; -&gt; &quot;n9&quot; [ label = &quot;g&quot; ];
+&quot;n9&quot; -&gt; &quot;n8&quot; [ label = &quot;g&quot; ];
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #14 &lt;&quot;digraph G {
+	size = &quot;8,8&quot;;
+	{rank=min S8 S24 S1 S35 S30}
+	{rank=max T8 T24 T1 T35 T30}
+	S8 -&gt; 9;
+	S24 -&gt; 27;
+	S24 -&gt; 25;
+	S1 -&gt; 10;
+	S1 -&gt; 2;
+	S35 -&gt; 36;
+	S35 -&gt; 43;
+	S30 -&gt; 31;
+	S30 -&gt; 33;
+	9 -&gt; 42;
+	9 -&gt; T1;
+	25 -&gt; T1;
+	25 -&gt; 26;
+	27 -&gt; T24;
+	2 -&gt; 3;
+	2 -&gt; 16;
+	2 -&gt; 17;
+	2 -&gt; T1;
+	2 -&gt; 18;
+	10 -&gt; 11;
+	10 -&gt; 14;
+	10 -&gt; T1;
+	10 -&gt; 13;
+	10 -&gt; 12;
+	31 -&gt; T1;
+	31 -&gt; 32;
+	33 -&gt; T30;
+	33 -&gt; 34;
+	42 -&gt; 4;
+	26 -&gt; 4;
+	3 -&gt; 4;
+	16 -&gt; 15;
+	17 -&gt; 19;
+	18 -&gt; 29;
+	11 -&gt; 4;
+	14 -&gt; 15;
+	37 -&gt; 39;
+	37 -&gt; 41;
+	37 -&gt; 38;
+	37 -&gt; 40;
+	13 -&gt; 19;
+	12 -&gt; 29;
+	43 -&gt; 38;
+	43 -&gt; 40;
+	36 -&gt; 19;
+	32 -&gt; 23;
+	34 -&gt; 29;
+	39 -&gt; 15;
+	41 -&gt; 29;
+	38 -&gt; 4;
+	40 -&gt; 19;
+	4 -&gt; 5;
+	19 -&gt; 21;
+	19 -&gt; 20;
+	19 -&gt; 28;
+	5 -&gt; 6;
+	5 -&gt; T35;
+	5 -&gt; 23;
+	21 -&gt; 22;
+	20 -&gt; 15;
+	28 -&gt; 29;
+	6 -&gt; 7;
+	15 -&gt; T1;
+	22 -&gt; 23;
+	22 -&gt; T35;
+	29 -&gt; T30;
+	7 -&gt; T8;
+	23 -&gt; T24;
+	23 -&gt; T1;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #15 &lt;&quot;digraph finite_state_machine {
+
+	node [shape = doublecircle]; LR_0 LR_3 LR_4 LR_8;
+	node [shape = circle];
+	rankdir=LR;
+	LR_0 -&gt; LR_2 [ label = &quot;SS(B)&quot; ];
+	LR_0 -&gt; LR_1 [ label = &quot;SS(S)&quot; ];
+	LR_1 -&gt; LR_3 [ label = &quot;S($end)&quot; ];
+	LR_2 -&gt; LR_6 [ label = &quot;SS(b)&quot; ];
+	LR_2 -&gt; LR_5 [ label = &quot;SS(a)&quot; ];
+	LR_2 -&gt; LR_4 [ label = &quot;S(A)&quot; ];
+	LR_5 -&gt; LR_7 [ label = &quot;S(b)&quot; ];
+	LR_5 -&gt; LR_5 [ label = &quot;S(a)&quot; ];
+	LR_6 -&gt; LR_6 [ label = &quot;S(b)&quot; ];
+	LR_6 -&gt; LR_5 [ label = &quot;S(a)&quot; ];
+	LR_7 -&gt; LR_8 [ label = &quot;S(b)&quot; ];
+	LR_7 -&gt; LR_5 [ label = &quot;S(a)&quot; ];
+	LR_8 -&gt; LR_6 [ label = &quot;S(b)&quot; ];
+	LR_8 -&gt; LR_5 [ label = &quot;S(a)&quot; ];
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #16 &lt;&quot;digraph L0 {
+	size = &quot;8,8&quot;;
+	ordering=out;
+	node [shape = box];
+
+	n0 [label=&quot;E&quot;];
+	n1 [label=&quot;T&quot;];
+	n2 [label=&quot;F&quot;];
+	n3 [label=&quot;IDENT : a &quot;];
+	n4 [label=&quot;+&quot;];
+	n5 [label=&quot;T&quot;];
+	n6 [label=&quot;F&quot;];
+	n7 [label=&quot;(&quot;];
+	n8 [label=&quot;E&quot;];
+	n9 [label=&quot;T&quot;];
+	n10 [label=&quot;F&quot;];
+	n11 [label=&quot;IDENT : b &quot;];
+	n12 [label=&quot;*&quot;];
+	n13 [label=&quot;F&quot;];
+	n14 [label=&quot;IDENT : c &quot;];
+	n15 [label=&quot;)&quot;];
+	n16 [label=&quot;*&quot;];
+	n17 [label=&quot;F&quot;];
+	n18 [label=&quot;(&quot;];
+	n19 [label=&quot;E&quot;];
+	n20 [label=&quot;T&quot;];
+	n21 [label=&quot;F&quot;];
+	n22 [label=&quot;IDENT : d &quot;];
+	n23 [label=&quot;*&quot;];
+	n24 [label=&quot;F&quot;];
+	n25 [label=&quot;IDENT : e &quot;];
+	n26 [label=&quot;+&quot;];
+	n27 [label=&quot;T&quot;];
+	n28 [label=&quot;F&quot;];
+	n29 [label=&quot;(&quot;];
+	n30 [label=&quot;E&quot;];
+	n31 [label=&quot;T&quot;];
+	n32 [label=&quot;F&quot;];
+	n33 [label=&quot;IDENT : a &quot;];
+	n34 [label=&quot;*&quot;];
+	n35 [label=&quot;F&quot;];
+	n36 [label=&quot;IDENT : b &quot;];
+	n37 [label=&quot;)&quot;];
+	n38 [label=&quot;)&quot;];
+	n39 [label=&quot;+&quot;];
+	n40 [label=&quot;T&quot;];
+	n41 [label=&quot;F&quot;];
+	n42 [label=&quot;IDENT : q &quot;];
+	n0 -&gt;	{ n1 n4 n5 n39 n40 };
+	n1 -&gt;	n2 ;
+	n2 -&gt;	n3 ;
+	n5 -&gt;	{ n6 n16 n17 };
+	n6 -&gt;	{ n7 n8 n15 };
+	n8 -&gt;	n9 ;
+	n9 -&gt;	{ n10 n12 n13 };
+	n10 -&gt;	n11 ;
+	n13 -&gt;	n14 ;
+	n17 -&gt;	{ n18 n19 n38 };
+	n19 -&gt;	{ n20 n26 n27 };
+	n20 -&gt;	{ n21 n23 n24 };
+	n21 -&gt;	n22 ;
+	n24 -&gt;	n25 ;
+	n27 -&gt;	n28 ;
+	n28 -&gt;	{ n29 n30 n37 };
+	n30 -&gt;	n31 ;
+	n31 -&gt;	{ n32 n34 n35 };
+	n32 -&gt;	n33 ;
+	n35 -&gt;	n36 ;
+	n40 -&gt;	n41 ;
+	n41 -&gt;	n42 ;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #17 &lt;&quot;digraph G {
+	nodesep=.05;
+	rankdir=LR;
+	node [shape=record,width=.1,height=.1];
+
+	node0 [label = &quot;&lt;f0&gt; |&lt;f1&gt; |&lt;f2&gt; |&lt;f3&gt; |&lt;f4&gt; |&lt;f5&gt; |&lt;f6&gt; | &quot;,height=2.0];
+	node [width = 1.5];
+	node1 [label = &quot;{&lt;n&gt; n14 | 719 |&lt;p&gt; }&quot;];
+	node2 [label = &quot;{&lt;n&gt; a1  | 805 |&lt;p&gt; }&quot;];
+	node3 [label = &quot;{&lt;n&gt; i9  | 718 |&lt;p&gt; }&quot;];
+	node4 [label = &quot;{&lt;n&gt; e5  | 989 |&lt;p&gt; }&quot;];
+	node5 [label = &quot;{&lt;n&gt; t20 | 959 |&lt;p&gt; }&quot;] ;
+	node6 [label = &quot;{&lt;n&gt; o15 | 794 |&lt;p&gt; }&quot;] ;
+	node7 [label = &quot;{&lt;n&gt; s19 | 659 |&lt;p&gt; }&quot;] ;
+
+	node0:f0 -&gt; node1:n;
+	node0:f1 -&gt; node2:n;
+	node0:f2 -&gt; node3:n;
+	node0:f5 -&gt; node4:n;
+	node0:f6 -&gt; node5:n;
+	node2:p -&gt; node6:n;
+	node4:p -&gt; node7:n;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #18 &lt;&quot;digraph G {
+  graph [label=&quot;下駄配列の派生図&quot;]
+
+  getas [label = &quot;下駄配列&quot;];
+  new_getas  [label = &quot;新下駄配列&quot;];
+  getas_in_fine_weather [label = &quot;日和下駄配列&quot;];
+  black_lacquered_getas [label = &quot;黒塗り下駄配列&quot;];
+  black_lacquered_getas_made_of_paulownia [label = &quot;黒塗り桐下駄配列&quot;];
+  lacquered_getas [label = &quot;塗り下駄配列&quot;];
+  new_JIS_getas [label = &quot;新JIS下駄配列&quot;];
+
+  getas -&gt; {
+    getas_in_fine_weather
+    lacquered_getas
+    new_JIS_getas new_getas
+    lacquered_getas
+  };
+
+  lacquered_getas -&gt; black_lacquered_getas;
+  black_lacquered_getas -&gt; black_lacquered_getas_made_of_paulownia;
+  black_lacquered_getas_made_of_paulownia -&gt; black_lacquered_getas;
+
+  black_lacquered_getas -&gt; getas_in_fine_weather [style = dotted];
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #19 &lt;&quot;digraph &quot;tree&quot; {
+// The problem disappeared when I removed the &quot;ELEM3 -&gt; ID5;&quot; line!
+//size=&quot;4,5&quot;;
+ordering=out;
+node [shape=plaintext];
+SPEC -&gt; DEF2;
+SPEC -&gt; DEF1;
+DEF1 -&gt; ID1;
+DEF1 -&gt; SET1;
+DEF1 -&gt; SC1;
+DEF2 -&gt; ID2;
+DEF2 -&gt; SET2;
+DEF2 -&gt; SC2;
+SET1 -&gt; OPEN1;
+SET1 -&gt; ELEM1;
+SET1 -&gt; SC3;
+SET1 -&gt; ELEM2;
+SET1 -&gt; CLOSE1;
+ELEM1 -&gt; ID3;
+SET2 -&gt; OPEN2;
+SET2 -&gt; ELEM3;
+SET2 -&gt; CLOSE2;
+ELEM2 -&gt; ID4;
+ELEM3 -&gt; ID5;
+DEF1 [label=DEF];
+DEF2 [label=DEF];
+SET1 [label=SET];
+SC1 [label=&quot;;&quot;];
+SC3 [label=&quot;;&quot;];
+SET2 [label=SET];
+SC2 [label=&quot;;&quot;];
+OPEN1 [label=&quot;{&quot;];
+OPEN2 [label=&quot;{&quot;];
+CLOSE1 [label=&quot;}&quot;];
+CLOSE2 [label=&quot;}&quot;];
+ELEM1 [label=ELEMENT];
+ELEM2 [label=ELEMENT];
+ELEM3 [label=ELEMENT];
+ID1 [label=cities];
+ID2 [label=insects];
+ID3 [label=andover];
+ID4 [label=boston];
+ID5 [label=fly];
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #20 &lt;&quot;digraph prof {
+	size=&quot;6,4&quot;; ratio = fill;
+	node [style=filled];
+	start -&gt; main [color=&quot;0.002 0.999 0.999&quot;];
+	start -&gt; on_exit [color=&quot;0.649 0.701 0.701&quot;];
+	main -&gt; sort [color=&quot;0.348 0.839 0.839&quot;];
+	main -&gt; merge [color=&quot;0.515 0.762 0.762&quot;];
+	main -&gt; term [color=&quot;0.647 0.702 0.702&quot;];
+	main -&gt; signal [color=&quot;0.650 0.700 0.700&quot;];
+	main -&gt; sbrk [color=&quot;0.650 0.700 0.700&quot;];
+	main -&gt; unlink [color=&quot;0.650 0.700 0.700&quot;];
+	main -&gt; newfile [color=&quot;0.650 0.700 0.700&quot;];
+	main -&gt; fclose [color=&quot;0.650 0.700 0.700&quot;];
+	main -&gt; close [color=&quot;0.650 0.700 0.700&quot;];
+	main -&gt; brk [color=&quot;0.650 0.700 0.700&quot;];
+	main -&gt; setbuf [color=&quot;0.650 0.700 0.700&quot;];
+	main -&gt; copyproto [color=&quot;0.650 0.700 0.700&quot;];
+	main -&gt; initree [color=&quot;0.650 0.700 0.700&quot;];
+	main -&gt; safeoutfil [color=&quot;0.650 0.700 0.700&quot;];
+	main -&gt; getpid [color=&quot;0.650 0.700 0.700&quot;];
+	main -&gt; sprintf [color=&quot;0.650 0.700 0.700&quot;];
+	main -&gt; creat [color=&quot;0.650 0.700 0.700&quot;];
+	main -&gt; rem [color=&quot;0.650 0.700 0.700&quot;];
+	main -&gt; oldfile [color=&quot;0.650 0.700 0.700&quot;];
+	sort -&gt; msort [color=&quot;0.619 0.714 0.714&quot;];
+	sort -&gt; filbuf [color=&quot;0.650 0.700 0.700&quot;];
+	sort -&gt; newfile [color=&quot;0.650 0.700 0.700&quot;];
+	sort -&gt; fclose [color=&quot;0.650 0.700 0.700&quot;];
+	sort -&gt; setbuf [color=&quot;0.650 0.700 0.700&quot;];
+	sort -&gt; setfil [color=&quot;0.650 0.700 0.700&quot;];
+	msort -&gt; qsort [color=&quot;0.650 0.700 0.700&quot;];
+	msort -&gt; insert [color=&quot;0.650 0.700 0.700&quot;];
+	msort -&gt; wline [color=&quot;0.650 0.700 0.700&quot;];
+	msort -&gt; div [color=&quot;0.650 0.700 0.700&quot;];
+	msort -&gt; cmpsave [color=&quot;0.650 0.700 0.700&quot;];
+	merge -&gt; insert [color=&quot;0.650 0.700 0.700&quot;];
+	merge -&gt; rline [color=&quot;0.650 0.700 0.700&quot;];
+	merge -&gt; wline [color=&quot;0.650 0.700 0.700&quot;];
+	merge -&gt; unlink [color=&quot;0.650 0.700 0.700&quot;];
+	merge -&gt; fopen [color=&quot;0.650 0.700 0.700&quot;];
+	merge -&gt; fclose [color=&quot;0.650 0.700 0.700&quot;];
+	merge -&gt; setfil [color=&quot;0.650 0.700 0.700&quot;];
+	merge -&gt; mul [color=&quot;0.650 0.700 0.700&quot;];
+	merge -&gt; setbuf [color=&quot;0.650 0.700 0.700&quot;];
+	merge -&gt; cmpsave [color=&quot;0.650 0.700 0.700&quot;];
+	insert -&gt; cmpa [color=&quot;0.650 0.700 0.700&quot;];
+	wline -&gt; flsbuf [color=&quot;0.649 0.700 0.700&quot;];
+	qsort -&gt; cmpa [color=&quot;0.650 0.700 0.700&quot;];
+	rline -&gt; filbuf [color=&quot;0.649 0.700 0.700&quot;];
+	xflsbuf -&gt; write [color=&quot;0.650 0.700 0.700&quot;];
+	flsbuf -&gt; xflsbuf [color=&quot;0.649 0.700 0.700&quot;];
+	filbuf -&gt; read [color=&quot;0.650 0.700 0.700&quot;];
+	term -&gt; unlink [color=&quot;0.650 0.700 0.700&quot;];
+	term -&gt; signal [color=&quot;0.650 0.700 0.700&quot;];
+	term -&gt; setfil [color=&quot;0.650 0.700 0.700&quot;];
+	term -&gt; exit [color=&quot;0.650 0.700 0.700&quot;];
+	endopen -&gt; open [color=&quot;0.650 0.700 0.700&quot;];
+	fopen -&gt; endopen [color=&quot;0.639 0.705 0.705&quot;];
+	fopen -&gt; findiop [color=&quot;0.650 0.700 0.700&quot;];
+	newfile -&gt; fopen [color=&quot;0.634 0.707 0.707&quot;];
+	newfile -&gt; setfil [color=&quot;0.650 0.700 0.700&quot;];
+	fclose -&gt; fflush [color=&quot;0.642 0.704 0.704&quot;];
+	fclose -&gt; close [color=&quot;0.650 0.700 0.700&quot;];
+	fflush -&gt; xflsbuf [color=&quot;0.635 0.707 0.707&quot;];
+	malloc -&gt; morecore [color=&quot;0.325 0.850 0.850&quot;];
+	malloc -&gt; demote [color=&quot;0.650 0.700 0.700&quot;];
+	morecore -&gt; sbrk [color=&quot;0.650 0.700 0.700&quot;];
+	morecore -&gt; getfreehdr [color=&quot;0.650 0.700 0.700&quot;];
+	morecore -&gt; free [color=&quot;0.650 0.700 0.700&quot;];
+	morecore -&gt; getpagesize [color=&quot;0.650 0.700 0.700&quot;];
+	morecore -&gt; putfreehdr [color=&quot;0.650 0.700 0.700&quot;];
+	morecore -&gt; udiv [color=&quot;0.650 0.700 0.700&quot;];
+	morecore -&gt; umul [color=&quot;0.650 0.700 0.700&quot;];
+	on_exit -&gt; malloc [color=&quot;0.325 0.850 0.850&quot;];
+	signal -&gt; sigvec [color=&quot;0.650 0.700 0.700&quot;];
+	moncontrol -&gt; profil [color=&quot;0.650 0.700 0.700&quot;];
+	getfreehdr -&gt; sbrk [color=&quot;0.650 0.700 0.700&quot;];
+	free -&gt; insert [color=&quot;0.650 0.700 0.700&quot;];
+	insert -&gt; getfreehdr [color=&quot;0.650 0.700 0.700&quot;];
+	setfil -&gt; div [color=&quot;0.650 0.700 0.700&quot;];
+	setfil -&gt; rem [color=&quot;0.650 0.700 0.700&quot;];
+	sigvec -&gt; sigblock [color=&quot;0.650 0.700 0.700&quot;];
+	sigvec -&gt; sigsetmask [color=&quot;0.650 0.700 0.700&quot;];
+	doprnt -&gt; urem [color=&quot;0.650 0.700 0.700&quot;];
+	doprnt -&gt; udiv [color=&quot;0.650 0.700 0.700&quot;];
+	doprnt -&gt; strlen [color=&quot;0.650 0.700 0.700&quot;];
+	doprnt -&gt; localeconv [color=&quot;0.650 0.700 0.700&quot;];
+	sprintf -&gt; doprnt [color=&quot;0.650 0.700 0.700&quot;];
+cmpa [color=&quot;0.000 1.000 1.000&quot;];
+wline [color=&quot;0.201 0.753 1.000&quot;];
+insert [color=&quot;0.305 0.625 1.000&quot;];
+rline [color=&quot;0.355 0.563 1.000&quot;];
+sort [color=&quot;0.408 0.498 1.000&quot;];
+qsort [color=&quot;0.449 0.447 1.000&quot;];
+write [color=&quot;0.499 0.386 1.000&quot;];
+read [color=&quot;0.578 0.289 1.000&quot;];
+msort [color=&quot;0.590 0.273 1.000&quot;];
+merge [color=&quot;0.603 0.258 1.000&quot;];
+unlink [color=&quot;0.628 0.227 1.000&quot;];
+filbuf [color=&quot;0.641 0.212 1.000&quot;];
+open [color=&quot;0.641 0.212 1.000&quot;];
+sbrk [color=&quot;0.647 0.204 1.000&quot;];
+signal [color=&quot;0.647 0.204 1.000&quot;];
+moncontrol [color=&quot;0.647 0.204 1.000&quot;];
+xflsbuf [color=&quot;0.650 0.200 1.000&quot;];
+flsbuf [color=&quot;0.650 0.200 1.000&quot;];
+div [color=&quot;0.650 0.200 1.000&quot;];
+cmpsave [color=&quot;0.650 0.200 1.000&quot;];
+rem [color=&quot;0.650 0.200 1.000&quot;];
+setfil [color=&quot;0.650 0.200 1.000&quot;];
+close [color=&quot;0.650 0.200 1.000&quot;];
+fclose [color=&quot;0.650 0.200 1.000&quot;];
+fflush [color=&quot;0.650 0.200 1.000&quot;];
+setbuf [color=&quot;0.650 0.200 1.000&quot;];
+endopen [color=&quot;0.650 0.200 1.000&quot;];
+findiop [color=&quot;0.650 0.200 1.000&quot;];
+fopen [color=&quot;0.650 0.200 1.000&quot;];
+mul [color=&quot;0.650 0.200 1.000&quot;];
+newfile [color=&quot;0.650 0.200 1.000&quot;];
+sigblock [color=&quot;0.650 0.200 1.000&quot;];
+sigsetmask [color=&quot;0.650 0.200 1.000&quot;];
+sigvec [color=&quot;0.650 0.200 1.000&quot;];
+udiv [color=&quot;0.650 0.200 1.000&quot;];
+urem [color=&quot;0.650 0.200 1.000&quot;];
+brk [color=&quot;0.650 0.200 1.000&quot;];
+getfreehdr [color=&quot;0.650 0.200 1.000&quot;];
+strlen [color=&quot;0.650 0.200 1.000&quot;];
+umul [color=&quot;0.650 0.200 1.000&quot;];
+doprnt [color=&quot;0.650 0.200 1.000&quot;];
+copyproto [color=&quot;0.650 0.200 1.000&quot;];
+creat [color=&quot;0.650 0.200 1.000&quot;];
+demote [color=&quot;0.650 0.200 1.000&quot;];
+exit [color=&quot;0.650 0.200 1.000&quot;];
+free [color=&quot;0.650 0.200 1.000&quot;];
+getpagesize [color=&quot;0.650 0.200 1.000&quot;];
+getpid [color=&quot;0.650 0.200 1.000&quot;];
+initree [color=&quot;0.650 0.200 1.000&quot;];
+insert [color=&quot;0.650 0.200 1.000&quot;];
+localeconv [color=&quot;0.650 0.200 1.000&quot;];
+main [color=&quot;0.650 0.200 1.000&quot;];
+malloc [color=&quot;0.650 0.200 1.000&quot;];
+morecore [color=&quot;0.650 0.200 1.000&quot;];
+oldfile [color=&quot;0.650 0.200 1.000&quot;];
+on_exit [color=&quot;0.650 0.200 1.000&quot;];
+profil [color=&quot;0.650 0.200 1.000&quot;];
+putfreehdr [color=&quot;0.650 0.200 1.000&quot;];
+safeoutfil [color=&quot;0.650 0.200 1.000&quot;];
+sprintf [color=&quot;0.650 0.200 1.000&quot;];
+term [color=&quot;0.650 0.200 1.000&quot;];
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #21 &lt;&quot;digraph G {
+	style=bold;
+	subgraph cluster_outer {
+		Act_1 -&gt; Act_21;
+		Act_1 -&gt; Act_23;
+		Act_25 -&gt; Act_3;
+		subgraph cluster_inner {
+			label = &quot;                          Act_2&quot;;
+			{Act_21 -&gt; Act_22 [minlen=2]; rank=same;}
+			Act_22 -&gt; Act_23;
+			Act_22 -&gt; Act_24;
+			{Act_23 -&gt; Act_24 [minlen=2]; rank=same;}
+			Act_23 -&gt; Act_25;
+			Act_24 -&gt; Act_25;
+		}
+	}
+	Ext_1 -&gt; Act_1;
+	Act_3 -&gt; Ext_2;
+	Ext_3 -&gt; Act_24;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #22 &lt;&quot;digraph G {
+graph [charset=latin1]
+node [fontsize=10]
+a [label = &quot;���������������������������&quot;];
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #23 &lt;&quot;digraph g {
+graph [
+fontsize = &quot;14&quot;
+fontname = &quot;Times-Roman&quot;
+fontcolor = &quot;black&quot;
+color = &quot;black&quot;
+];
+node [
+fontsize = &quot;14&quot;
+fontname = &quot;Times-Roman&quot;
+fontcolor = &quot;black&quot;
+shape = &quot;box&quot;
+color = &quot;black&quot;
+width = &quot;0.5&quot;
+style = &quot;filled&quot;
+];
+edge [
+fontsize = &quot;14&quot;
+fontname = &quot;Times-Roman&quot;
+fontcolor = &quot;black&quot;
+color = &quot;black&quot;
+];
+&quot;n0&quot; [
+label = &quot;18519\n?&quot;
+color = &quot;lightblue&quot;
+];
+&quot;n1&quot; [
+label = &quot;4836&quot;
+shape = &quot;ellipse&quot;
+color = &quot;maroon1&quot;
+];
+&quot;n2&quot; [
+label = &quot;ttyqa&quot;
+shape = &quot;ellipse&quot;
+color = &quot;maroon1&quot;
+];
+&quot;n448&quot; [
+label = &quot;21079\nlefty&quot;
+color = &quot;lightblue&quot;
+];
+&quot;n449&quot; [
+label = &quot;tried.lefty&quot;
+shape = &quot;ellipse&quot;
+color = &quot;maroon1&quot;
+];
+&quot;n454&quot; [
+fontsize = &quot;7&quot;
+label = &quot;bunting\n6000&quot;
+shape = &quot;doublecircle&quot;
+color = &quot;green&quot;
+];
+&quot;n460&quot; [
+label = &quot;&quot;
+shape = &quot;doublecircle&quot;
+color = &quot;yellow&quot;
+];
+&quot;n461&quot; [
+label = &quot;&quot;
+shape = &quot;doublecircle&quot;
+color = &quot;yellow&quot;
+];
+&quot;n462&quot; [
+label = &quot;21084\ntried&quot;
+color = &quot;lightblue&quot;
+];
+&quot;n464&quot; [
+label = &quot;21086\nldbx&quot;
+color = &quot;lightblue&quot;
+];
+&quot;n466&quot; [
+label = &quot;ldbx&quot;
+shape = &quot;ellipse&quot;
+color = &quot;maroon1&quot;
+];
+&quot;n468&quot; [
+label = &quot;21087\nlefty&quot;
+color = &quot;lightblue&quot;
+];
+&quot;n469&quot; [
+label = &quot;sh21086.1&quot;
+shape = &quot;ellipse&quot;
+color = &quot;maroon1&quot;
+];
+&quot;n474&quot; [
+fontsize = &quot;7&quot;
+label = &quot;bunting\n6000&quot;
+shape = &quot;doublecircle&quot;
+color = &quot;green&quot;
+];
+&quot;n479&quot; [
+label = &quot;ldbx.lefty&quot;
+shape = &quot;ellipse&quot;
+color = &quot;maroon1&quot;
+];
+&quot;n482&quot; [
+label = &quot;&quot;
+shape = &quot;doublecircle&quot;
+color = &quot;yellow&quot;
+];
+&quot;n483&quot; [
+label = &quot;&quot;
+shape = &quot;doublecircle&quot;
+color = &quot;yellow&quot;
+];
+&quot;n484&quot; [
+label = &quot;21088\ndot&quot;
+color = &quot;lightblue&quot;
+];
+&quot;n486&quot; [
+label = &quot;&quot;
+shape = &quot;doublecircle&quot;
+color = &quot;yellow&quot;
+];
+&quot;n487&quot; [
+label = &quot;&quot;
+shape = &quot;doublecircle&quot;
+color = &quot;yellow&quot;
+];
+&quot;n488&quot; [
+label = &quot;21089\nxterm&quot;
+color = &quot;lightblue&quot;
+];
+&quot;n496&quot; [
+fontsize = &quot;7&quot;
+label = &quot;bunting\n6000&quot;
+shape = &quot;doublecircle&quot;
+color = &quot;green&quot;
+];
+&quot;n500&quot; [
+label = &quot;ptyq2&quot;
+shape = &quot;ellipse&quot;
+color = &quot;maroon1&quot;
+];
+&quot;n503&quot; [
+label = &quot;21090\nldbxmp&quot;
+color = &quot;lightblue&quot;
+];
+&quot;n505&quot; [
+label = &quot;ttyq2&quot;
+shape = &quot;ellipse&quot;
+color = &quot;maroon1&quot;
+];
+&quot;n512&quot; [
+label = &quot;ptyq5&quot;
+shape = &quot;ellipse&quot;
+color = &quot;maroon1&quot;
+];
+&quot;n513&quot; [
+label = &quot;ttyq5&quot;
+shape = &quot;ellipse&quot;
+color = &quot;maroon1&quot;
+];
+&quot;n514&quot; [
+label = &quot;21091\ndbx&quot;
+color = &quot;lightblue&quot;
+];
+&quot;n518&quot; [
+label = &quot;tty&quot;
+shape = &quot;ellipse&quot;
+color = &quot;maroon1&quot;
+];
+&quot;n526&quot; [
+label = &quot;delaunay.c&quot;
+shape = &quot;ellipse&quot;
+color = &quot;maroon1&quot;
+];
+subgraph &quot;cluster0&quot; {
+graph [
+fontsize = &quot;14&quot;
+fontname = &quot;Times-Roman&quot;
+fontcolor = &quot;black&quot;
+label = &quot;toucan&quot;
+color = &quot;black&quot;
+];
+node [
+fontsize = &quot;14&quot;
+fontname = &quot;Times-Roman&quot;
+fontcolor = &quot;black&quot;
+shape = &quot;box&quot;
+color = &quot;black&quot;
+width = &quot;0.5&quot;
+style = &quot;filled&quot;
+];
+edge [
+fontsize = &quot;14&quot;
+fontname = &quot;Times-Roman&quot;
+fontcolor = &quot;black&quot;
+color = &quot;black&quot;
+];
+&quot;n0&quot;
+&quot;n468&quot;
+&quot;n486&quot;
+&quot;n460&quot;
+&quot;n487&quot;
+&quot;n514&quot;
+&quot;n461&quot;
+&quot;n488&quot;
+&quot;n462&quot;
+&quot;n464&quot;
+&quot;n482&quot;
+&quot;n483&quot;
+&quot;n448&quot;
+&quot;n484&quot;
+&quot;n503&quot;
+}
+&quot;n0&quot; -&gt; &quot;n1&quot; [
+dir = &quot;both&quot;
+];
+&quot;n0&quot; -&gt; &quot;n2&quot; [
+dir = &quot;both&quot;
+];
+&quot;n0&quot; -&gt; &quot;n2&quot; [
+dir = &quot;both&quot;
+];
+&quot;n0&quot; -&gt; &quot;n2&quot; [
+dir = &quot;both&quot;
+];
+&quot;n0&quot; -&gt; &quot;n448&quot; [
+style = &quot;dotted&quot;
+];
+&quot;n448&quot; -&gt; &quot;n2&quot; [
+dir = &quot;both&quot;
+];
+&quot;n448&quot; -&gt; &quot;n2&quot; [
+dir = &quot;both&quot;
+];
+&quot;n448&quot; -&gt; &quot;n2&quot; [
+dir = &quot;both&quot;
+];
+&quot;n448&quot; -&gt; &quot;n449&quot; [
+dir = &quot;back&quot;
+];
+&quot;n448&quot; -&gt; &quot;n454&quot; [
+dir = &quot;both&quot;
+];
+&quot;n448&quot; -&gt; &quot;n460&quot; [
+dir = &quot;back&quot;
+];
+&quot;n448&quot; -&gt; &quot;n461&quot; [
+dir = &quot;forward&quot;
+];
+&quot;n448&quot; -&gt; &quot;n462&quot; [
+style = &quot;dotted&quot;
+];
+&quot;n462&quot; -&gt; &quot;n2&quot; [
+dir = &quot;both&quot;
+];
+&quot;n462&quot; -&gt; &quot;n2&quot; [
+dir = &quot;both&quot;
+];
+&quot;n462&quot; -&gt; &quot;n2&quot; [
+dir = &quot;both&quot;
+];
+&quot;n462&quot; -&gt; &quot;n449&quot; [
+dir = &quot;back&quot;
+];
+&quot;n462&quot; -&gt; &quot;n460&quot; [
+dir = &quot;forward&quot;
+];
+&quot;n462&quot; -&gt; &quot;n461&quot; [
+dir = &quot;back&quot;
+];
+&quot;n462&quot; -&gt; &quot;n460&quot; [
+dir = &quot;forward&quot;
+];
+&quot;n462&quot; -&gt; &quot;n461&quot; [
+dir = &quot;back&quot;
+];
+&quot;n0&quot; -&gt; &quot;n464&quot; [
+style = &quot;dotted&quot;
+];
+&quot;n464&quot; -&gt; &quot;n2&quot; [
+dir = &quot;both&quot;
+];
+&quot;n464&quot; -&gt; &quot;n2&quot; [
+dir = &quot;both&quot;
+];
+&quot;n464&quot; -&gt; &quot;n2&quot; [
+dir = &quot;both&quot;
+];
+&quot;n464&quot; -&gt; &quot;n466&quot; [
+dir = &quot;back&quot;
+];
+&quot;n464&quot; -&gt; &quot;n468&quot; [
+style = &quot;dotted&quot;
+];
+&quot;n468&quot; -&gt; &quot;n2&quot; [
+dir = &quot;both&quot;
+];
+&quot;n468&quot; -&gt; &quot;n2&quot; [
+dir = &quot;both&quot;
+];
+&quot;n468&quot; -&gt; &quot;n469&quot; [
+dir = &quot;back&quot;
+];
+&quot;n468&quot; -&gt; &quot;n474&quot; [
+dir = &quot;both&quot;
+];
+&quot;n468&quot; -&gt; &quot;n479&quot; [
+dir = &quot;back&quot;
+];
+&quot;n468&quot; -&gt; &quot;n482&quot; [
+dir = &quot;back&quot;
+];
+&quot;n468&quot; -&gt; &quot;n483&quot; [
+dir = &quot;forward&quot;
+];
+&quot;n468&quot; -&gt; &quot;n484&quot; [
+style = &quot;dotted&quot;
+];
+&quot;n484&quot; -&gt; &quot;n2&quot; [
+dir = &quot;both&quot;
+];
+&quot;n484&quot; -&gt; &quot;n483&quot; [
+dir = &quot;back&quot;
+];
+&quot;n484&quot; -&gt; &quot;n479&quot; [
+dir = &quot;back&quot;
+];
+&quot;n484&quot; -&gt; &quot;n482&quot; [
+dir = &quot;forward&quot;
+];
+&quot;n468&quot; -&gt; &quot;n486&quot; [
+dir = &quot;back&quot;
+];
+&quot;n468&quot; -&gt; &quot;n487&quot; [
+dir = &quot;forward&quot;
+];
+&quot;n468&quot; -&gt; &quot;n488&quot; [
+style = &quot;dotted&quot;
+];
+&quot;n488&quot; -&gt; &quot;n486&quot; [
+dir = &quot;forward&quot;
+];
+&quot;n488&quot; -&gt; &quot;n2&quot; [
+dir = &quot;both&quot;
+];
+&quot;n488&quot; -&gt; &quot;n487&quot; [
+dir = &quot;back&quot;
+];
+&quot;n488&quot; -&gt; &quot;n469&quot; [
+dir = &quot;back&quot;
+];
+&quot;n488&quot; -&gt; &quot;n2&quot; [
+dir = &quot;both&quot;
+];
+&quot;n488&quot; -&gt; &quot;n479&quot; [
+dir = &quot;back&quot;
+];
+&quot;n488&quot; -&gt; &quot;n496&quot; [
+dir = &quot;both&quot;
+];
+&quot;n488&quot; -&gt; &quot;n500&quot; [
+dir = &quot;both&quot;
+];
+&quot;n488&quot; -&gt; &quot;n503&quot; [
+style = &quot;dotted&quot;
+];
+&quot;n503&quot; -&gt; &quot;n479&quot; [
+dir = &quot;back&quot;
+];
+&quot;n503&quot; -&gt; &quot;n486&quot; [
+dir = &quot;forward&quot;
+];
+&quot;n503&quot; -&gt; &quot;n487&quot; [
+dir = &quot;back&quot;
+];
+&quot;n503&quot; -&gt; &quot;n505&quot; [
+dir = &quot;both&quot;
+];
+&quot;n503&quot; -&gt; &quot;n505&quot; [
+dir = &quot;both&quot;
+];
+&quot;n503&quot; -&gt; &quot;n505&quot; [
+dir = &quot;forward&quot;
+];
+&quot;n503&quot; -&gt; &quot;n512&quot; [
+dir = &quot;both&quot;
+];
+&quot;n503&quot; -&gt; &quot;n514&quot; [
+style = &quot;dotted&quot;
+];
+&quot;n514&quot; -&gt; &quot;n487&quot; [
+dir = &quot;back&quot;
+];
+&quot;n514&quot; -&gt; &quot;n486&quot; [
+dir = &quot;forward&quot;
+];
+&quot;n514&quot; -&gt; &quot;n479&quot; [
+dir = &quot;back&quot;
+];
+&quot;n514&quot; -&gt; &quot;n505&quot; [
+dir = &quot;forward&quot;
+];
+&quot;n503&quot; -&gt; &quot;n486&quot; [
+dir = &quot;forward&quot;
+];
+&quot;n514&quot; -&gt; &quot;n518&quot; [
+dir = &quot;back&quot;
+];
+&quot;n514&quot; -&gt; &quot;n513&quot; [
+dir = &quot;both&quot;
+];
+&quot;n514&quot; -&gt; &quot;n513&quot; [
+dir = &quot;both&quot;
+];
+&quot;n514&quot; -&gt; &quot;n518&quot; [
+dir = &quot;back&quot;
+];
+&quot;n514&quot; -&gt; &quot;n526&quot; [
+dir = &quot;back&quot;
+];
+&quot;n503&quot; -&gt; &quot;n487&quot; [
+dir = &quot;back&quot;
+];
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #24 &lt;&quot;digraph if
+{
+rankdir=LR;
+  {rank=same;b;c;}
+  a-&gt;b;
+  c-&gt;b[label=&quot;long long long&quot;];
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #25 &lt;&quot;digraph mike{
+size = &quot;8,8&quot;;
+	a -&gt; A;
+	a -&gt; m;
+	a -&gt; E;
+	t -&gt; O;
+	r -&gt; V;
+	r -&gt; Q;
+	p -&gt; B;
+	m -&gt; R;
+	l -&gt; C;
+	c -&gt; C;
+	W -&gt; X;
+	W -&gt; D;
+	V -&gt; W;
+	T -&gt; U;
+	Q -&gt; T;
+	Q -&gt; H;
+	Q -&gt; A;
+	O -&gt; K;
+	L -&gt; U;
+	K -&gt; L;
+	K -&gt; J;
+	K -&gt; E;
+	J -&gt; I;
+	R -&gt; B;
+	P -&gt; F;
+	H -&gt; R;
+	H -&gt; P;
+	U -&gt; H;
+	G -&gt; U;
+	E -&gt; G;
+	C -&gt; Z;
+	C -&gt; D;
+	S -&gt; D;
+	B -&gt; N;
+	B -&gt; D;
+	B -&gt; S;
+	M -&gt; B;
+	A -&gt; M;
+	N -&gt; Y;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #26 &lt;&quot;digraph xyz {
+orientation=landscape;
+ratio=compress;
+size=&quot;16,10&quot;;
+AbstractMemory -&gt; Memory;
+AliasedMemory -&gt; AliasedMemory;
+AliasedMemory -&gt; Memory;
+Architecture -&gt; ROOT;
+Assembly -&gt; ROOT;
+AtomProperties -&gt; NRAtom;
+AtomWr -&gt; Wr;
+Break -&gt; Break;
+Break -&gt; Target;
+Breakpoint -&gt; Breakpoint;
+Breakpoint -&gt; Event;
+Breakpoint -&gt; ROOT;
+CDB -&gt; Target;
+CDB -&gt; Thread;
+CommonFrame -&gt; Target;
+ControlOps -&gt; InterpF;
+Displayed -&gt; Displayed;
+Displayed -&gt; InterpTypes;
+ETimer -&gt; RTHeapRep;
+Event -&gt; Event;
+Event -&gt; ROOT;
+Event -&gt; Target;
+EventHandler -&gt; ROOT;
+EventHandler -&gt; StandardEvents;
+Expression -&gt; ROOT;
+ExpressionServer -&gt; Expression;
+FollowBreakpoint -&gt; Breakpoint;
+Formatter -&gt; ROOT;
+Formatter -&gt; Thread;
+Frame -&gt; Frame;
+Frame -&gt; Memory;
+Frame -&gt; Target;
+FrameClass -&gt; Frame;
+IntIntTbl -&gt; IntIntTbl;
+IntIntTbl -&gt; ROOT;
+Interp -&gt; InterpF;
+Interp -&gt; ROOT;
+InterpF -&gt; Interp;
+InterpF -&gt; InterpF;
+InterpF -&gt; ROOT;
+InterpScan -&gt; TokenStream;
+InterpTypes -&gt; InterpTypes;
+InterpTypes -&gt; ROOT;
+List -&gt; Thread;
+LoadState -&gt; LoadState;
+LoadState -&gt; LoadStateRep;
+LoadState -&gt; ROOT;
+LoadStateRep -&gt; LoadState;
+LocationRep -&gt; Memory;
+MC68Frame -&gt; CommonFrame;
+MC68GCommonFrame -&gt; EventHandler;
+MUTEX  -&gt; ROOT;
+Memory -&gt; Displayed;
+Memory -&gt; InterpTypes;
+MipsFrame -&gt; CommonFrame;
+MipsFrame -&gt; InterpTypes;
+MipsGCommonFrame -&gt; EventHandler;
+NRAtom -&gt; AtomProperties;
+NRAtom -&gt; ROOT;
+NopBreakpoint -&gt; Breakpoint;
+PSFormatter -&gt; InterpTypes;
+PSInterp -&gt; InterpTypes;
+PSLoadState -&gt; InterpTypes;
+PSMemory -&gt; InterpTypes;
+ProtectedWire -&gt; ProtectedWire;
+ProtectedWire -&gt; Wire;
+RTHeap -&gt; RTHeapRep;
+RTHeapRep -&gt; ROOT;
+Rd -&gt; RdClass;
+RdClass -&gt; MUTEX;
+RegisterMemory -&gt; Memory;
+Scope -&gt; ROOT;
+Scope -&gt; Scope;
+Scope -&gt; Target;
+SourceLoc -&gt; Target;
+SourceMap -&gt; ROOT;
+SparcFrame -&gt; CommonFrame;
+SparcGCommonFrame -&gt; EventHandler;
+StandardEvents -&gt; StandardEvents;
+StandardEvents -&gt; Target;
+StreamWire -&gt; Wire;
+Symbol -&gt; Displayed;
+Symbol -&gt; Symbol;
+TThread -&gt; ROOT;
+TThread -&gt; Target;
+Target -&gt; Displayed;
+Target -&gt; Event;
+Target -&gt; FrameClass;
+Target -&gt; ROOT;
+Target -&gt; TThread;
+Target -&gt; Target;
+Target -&gt; TargetF;
+Target -&gt; Thread;
+TargetF -&gt; Target;
+TargetState -&gt; Assembly;
+TextRd -&gt; Rd;
+TextWr -&gt; Wr;
+Thread -&gt; ROOT;
+Thread -&gt; Thread;
+TokenStream -&gt; ROOT;
+TokenStream -&gt; TokenStream;
+Trap -&gt; ROOT;
+TrapMemory -&gt; Memory;
+UFileRd -&gt; Rd;
+UFileRd -&gt; UFileRd;
+UFileWr -&gt; UFileWr;
+UFileWr -&gt; Wr;
+UnixHandler -&gt; Event;
+UnixHandler -&gt; UnixHandler;
+UserBreak -&gt; Break;
+UserBreak -&gt; Breakpoint;
+UserBreak -&gt; Event;
+UserBreak -&gt; Trap;
+UserBreak -&gt; UserBreak;
+VaxFrame -&gt; CommonFrame;
+VaxGCommonFrame -&gt; EventHandler;
+Wire -&gt; ROOT;
+Wire -&gt; TrapMemory;
+Wire -&gt; Wire;
+Wr -&gt; WrClass;
+WrClass -&gt; MUTEX;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #27 &lt;&quot;digraph automata_0 {
+	size =&quot;8.5, 11&quot;;
+	node [shape = circle];
+	0 [ style = filled, color=lightgrey ];
+	2 [ shape = doublecircle ];
+	0 -&gt; 2 [ label = &quot;a &quot; ];
+	0 -&gt; 1 [ label = &quot;other &quot; ];
+	1 -&gt; 2 [ label = &quot;a &quot; ];
+	1 -&gt; 1 [ label = &quot;other &quot; ];
+	2 -&gt; 2 [ label = &quot;a &quot; ];
+	2 -&gt; 1 [ label = &quot;other &quot; ];
+	&quot;Machine: a&quot; [ shape = plaintext ];
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #28 &lt;&quot;digraph test {
+
+    size=&quot;7,9.5&quot;;
+    page=&quot;8,10.5&quot;;
+    ratio=fill;
+    rankdir=LR;
+
+    { rank=same;
+      node [shape=house];
+      A;C;E;G;I;K;M;O;Q;S;U;W;Y;
+      node [shape=invhouse];
+      B;D;F;H;J;L;N;P;R;T;V;X;Z;
+    }
+
+    { rank=same;
+      node [shape=parallelogram];
+      &quot;Parallelogram&quot; [label=&quot;This is a test\nof a multiline\nlabel in an\nparallelogram with approx\nsquare aspect&quot;];
+      &quot;a ----- long thin parallelogram&quot;;
+      &quot;xx&quot; [label=&quot;m&quot;];
+      &quot;yy&quot; [label=&quot;a\nb\nc\nd\ne\nf&quot;];
+      node [shape=octagon];
+      &quot;Octagon&quot; [label=&quot;This is a test\nof a multiline\nlabel in an\noctagon with approx\nsquare aspect&quot;];
+      node [shape=parallelogram];
+      &quot;Parallelogram&quot; [label=&quot;This is a test\nof a multiline\nlabel in an\nparallelogram with approx\nsquare aspect&quot;];
+      &quot;a ----- long thin parallelogram&quot;;
+      &quot;zz&quot; [label=&quot;m&quot;];
+      &quot;qq&quot; [label=&quot;a\nb\nc\nd\ne\nf&quot;];
+      ordering=out;
+    }
+
+    Parallelogram -&gt; A;
+    Parallelogram -&gt; B;
+    Parallelogram -&gt; C;
+    Parallelogram -&gt; D;
+    Parallelogram -&gt; E;
+    Parallelogram -&gt; F;
+    Parallelogram -&gt; G;
+    Parallelogram -&gt; H;
+    Parallelogram -&gt; I;
+    Parallelogram -&gt; J;
+    Parallelogram -&gt; K;
+    Parallelogram -&gt; L;
+    Parallelogram -&gt; M;
+    Parallelogram -&gt; N;
+    Parallelogram -&gt; O;
+    Parallelogram -&gt; P;
+    Parallelogram -&gt; Q;
+    Parallelogram -&gt; R;
+    Parallelogram -&gt; S;
+    Parallelogram -&gt; T;
+    Parallelogram -&gt; U;
+    Parallelogram -&gt; V;
+    Parallelogram -&gt; W;
+    Parallelogram -&gt; X;
+    Parallelogram -&gt; Y;
+    Parallelogram -&gt; Z;
+
+    { rank=same;
+      node [shape=triangle];
+      a;c;e;g;i;k;m;o;q;s;u;w;y;
+      node [shape=tripleoctagon];
+      b;d;f;h;j;l;n;p;r;t;v;x;z;
+    }
+
+    a -&gt; Parallelogram -&gt; Octagon;
+    b -&gt; Parallelogram -&gt; Octagon;
+    c -&gt; Parallelogram -&gt; Octagon;
+    d -&gt; Parallelogram -&gt; Octagon;
+    e -&gt; Parallelogram -&gt; Octagon;
+    f -&gt; Parallelogram -&gt; Octagon;
+    g -&gt; Parallelogram -&gt; Octagon;
+    h -&gt; Parallelogram -&gt; Octagon;
+    i -&gt; Parallelogram -&gt; Octagon;
+    j -&gt; Parallelogram -&gt; Octagon;
+    k -&gt; Parallelogram -&gt; Octagon;
+    l -&gt; Parallelogram -&gt; Octagon;
+    m -&gt; Parallelogram -&gt; Octagon;
+    n -&gt; Parallelogram -&gt; Octagon;
+    o -&gt; Parallelogram -&gt; Octagon;
+    p -&gt; Parallelogram -&gt; Octagon;
+    q -&gt; Parallelogram -&gt; Octagon;
+    r -&gt; Parallelogram -&gt; Octagon;
+    s -&gt; Parallelogram -&gt; Octagon;
+    t -&gt; Parallelogram -&gt; Octagon;
+    u -&gt; Parallelogram -&gt; Octagon;
+    v -&gt; Parallelogram -&gt; Octagon;
+    w -&gt; Parallelogram -&gt; Octagon;
+    x -&gt; Parallelogram -&gt; Octagon;
+    y -&gt; Parallelogram -&gt; Octagon;
+    z -&gt; Parallelogram -&gt; Octagon;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #29 &lt;&quot;digraph polypoly {
+	
+    size=&quot;7,9.5&quot;;
+    page=&quot;8.5,11&quot;;
+    ratio=fill;
+    node [shape=polygon];
+
+    { rank=same;
+      node [sides=0];
+      node [peripheries=1];
+      0000 [label=&quot;M&quot;];
+      0001 [label=&quot;MMMMMMMMMM&quot;];
+      0002 [label=&quot;M\nM\nM\nM\nM\nM&quot;];
+      0003 [label=&quot;MMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM&quot;];
+      node [peripheries=2];
+      0010 [label=&quot;M&quot;];
+      0011 [label=&quot;MMMMMMMMMM&quot;];
+      0012 [label=&quot;M\nM\nM\nM\nM\nM&quot;];
+      0013 [label=&quot;MMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM&quot;];
+      node [distortion=-.3];
+      0110 [label=&quot;M&quot;];
+      0111 [label=&quot;MMMMMMMMMM&quot;];
+      0112 [label=&quot;M\nM\nM\nM\nM\nM&quot;];
+      0113 [label=&quot;MMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM&quot;];
+    }
+    { rank=same;
+      node [sides=3];
+      node [peripheries=1];
+      node [orientation=0];
+      3000 [label=&quot;M&quot;];
+      3001 [label=&quot;MMMMMMMMMM&quot;];
+      3002 [label=&quot;M\nM\nM\nM\nM\nM&quot;];
+      3003 [label=&quot;MMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM&quot;];
+      node [peripheries=2];
+      node [orientation=60];
+      3110 [label=&quot;M&quot;];
+      3111 [label=&quot;MMMMMMMMMM&quot;];
+      3112 [label=&quot;M\nM\nM\nM\nM\nM&quot;];
+      3113 [label=&quot;MMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM&quot;];
+    }
+    3000-&gt;0000;
+    { rank=same;
+      node [sides=4];
+      node [peripheries=1];
+      node [orientation=0];
+      4000 [label=&quot;M&quot;];
+      4001 [label=&quot;MMMMMMMMMM&quot;];
+      4002 [label=&quot;M\nM\nM\nM\nM\nM&quot;];
+      4003 [label=&quot;MMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM&quot;];
+      node [peripheries=2];
+      node [orientation=45];
+      4110 [label=&quot;M&quot;];
+      4111 [label=&quot;MMMMMMMMMM&quot;];
+      4112 [label=&quot;M\nM\nM\nM\nM\nM&quot;];
+      4113 [label=&quot;MMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM&quot;];
+    }
+    4000-&gt;3000;
+    { rank=same;
+      node [sides=5];
+      node [peripheries=1];
+      node [orientation=0];
+      5000 [label=&quot;M&quot;];
+      5001 [label=&quot;MMMMMMMMMM&quot;];
+      5002 [label=&quot;M\nM\nM\nM\nM\nM&quot;];
+      5003 [label=&quot;MMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM&quot;];
+      node [peripheries=2];
+      node [orientation=36];
+      5110 [label=&quot;M&quot;];
+      5111 [label=&quot;MMMMMMMMMM&quot;];
+      5112 [label=&quot;M\nM\nM\nM\nM\nM&quot;];
+      5113 [label=&quot;MMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM&quot;];
+    }
+    5000-&gt;4000;
+    { rank=same;
+      node [sides=6];
+      node [peripheries=1];
+      node [orientation=0];
+      6000 [label=&quot;M&quot;];
+      6001 [label=&quot;MMMMMMMMMM&quot;];
+      6002 [label=&quot;M\nM\nM\nM\nM\nM&quot;];
+      6003 [label=&quot;MMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM&quot;];
+      node [peripheries=2];
+      node [orientation=30];
+      6110 [label=&quot;M&quot;];
+      6111 [label=&quot;MMMMMMMMMM&quot;];
+      6112 [label=&quot;M\nM\nM\nM\nM\nM&quot;];
+      6113 [label=&quot;MMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM&quot;];
+    }
+    6000-&gt;5000;
+    { rank=same;
+      node [sides=7];
+      node [peripheries=1];
+      node [orientation=0];
+      7000 [label=&quot;M&quot;];
+      7001 [label=&quot;MMMMMMMMMM&quot;];
+      7002 [label=&quot;M\nM\nM\nM\nM\nM&quot;];
+      7003 [label=&quot;MMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM&quot;];
+      node [peripheries=2];
+      node [orientation=25.7];
+      7110 [label=&quot;M&quot;];
+      7111 [label=&quot;MMMMMMMMMM&quot;];
+      7112 [label=&quot;M\nM\nM\nM\nM\nM&quot;];
+      7113 [label=&quot;MMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM&quot;];
+    }
+    7000-&gt;6000;
+    { rank=same;
+      node [sides=8];
+      node [peripheries=1];
+      node [orientation=0];
+      8000 [label=&quot;M&quot;];
+      8001 [label=&quot;MMMMMMMMMM&quot;];
+      8002 [label=&quot;M\nM\nM\nM\nM\nM&quot;];
+      8003 [label=&quot;MMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM&quot;];
+      node [peripheries=2];
+      node [orientation=22.5];
+      8110 [label=&quot;M&quot;];
+      8111 [label=&quot;MMMMMMMMMM&quot;];
+      8112 [label=&quot;M\nM\nM\nM\nM\nM&quot;];
+      8113 [label=&quot;MMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM\nMMMMMMMMMM&quot;];
+    }
+    8000-&gt;7000;
+    { rank=same;
+      node [sides=4];
+      node [peripheries=1];
+      node [regular=1];
+      node [distortion=.5];
+      node [orientation=0];
+      9000 [label=&quot;M&quot;];
+      node [orientation=45.];
+      9001 [label=&quot;M&quot;];
+      node [orientation=90.];
+      9002 [label=&quot;M&quot;];
+      node [orientation=135.];
+      9003 [label=&quot;M&quot;];
+      node [orientation=180.];
+      9004 [label=&quot;M&quot;];
+      node [orientation=225.];
+      9005 [label=&quot;M&quot;];
+      node [orientation=270.];
+      9006 [label=&quot;M&quot;];
+      node [orientation=315.];
+      9007 [label=&quot;M&quot;];
+      node [peripheries=2];
+      node [orientation=0];
+      9010 [label=&quot;M&quot;];
+      node [orientation=45.];
+      9011 [label=&quot;M&quot;];
+      node [orientation=90.];
+      9012 [label=&quot;M&quot;];
+      node [orientation=135.];
+      9013 [label=&quot;M&quot;];
+      node [orientation=180.];
+      9014 [label=&quot;M&quot;];
+      node [orientation=225.];
+      9015 [label=&quot;M&quot;];
+      node [orientation=270.];
+      9016 [label=&quot;M&quot;];
+      node [orientation=315.];
+      9017 [label=&quot;M&quot;];
+    }
+    9000-&gt;8000;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #30 &lt;&quot;digraph G {
+rankdir=LR
+nodesep=0
+node [shape=none margin=0]
+edge [color=white]
+&quot;AvantGarde-Book&quot; [fontname=&quot;AvantGarde-Book&quot;]
+&quot;AvantGarde-Demi&quot; [fontname=&quot;AvantGarde-Demi&quot;]
+&quot;AvantGarde-BookOblique&quot; [fontname=&quot;AvantGarde-BookOblique&quot;]
+&quot;AvantGarde-DemiOblique&quot; [fontname=&quot;AvantGarde-DemiOblique&quot;]
+
+&quot;AvantGarde-Book&quot; -&gt; &quot;AvantGarde-Demi&quot; -&gt;  &quot;AvantGarde-BookOblique&quot; -&gt; &quot;AvantGarde-DemiOblique&quot;
+
+&quot;Bookman-Light&quot; [fontname=&quot;Bookman-Light&quot;]
+&quot;Bookman-Demi&quot; [fontname=&quot;Bookman-Demi&quot;]
+&quot;Bookman-LightItalic&quot; [fontname=&quot;Bookman-LightItalic&quot;]
+&quot;Bookman-DemiItalic&quot; [fontname=&quot;Bookman-DemiItalic&quot;]
+
+&quot;Bookman-Light&quot; -&gt; &quot;Bookman-Demi&quot; -&gt; &quot;Bookman-LightItalic&quot; -&gt; &quot;Bookman-DemiItalic&quot; 
+
+&quot;Courier&quot; [fontname=&quot;Courier&quot;]
+&quot;Courier-Bold&quot; [fontname=&quot;Courier-Bold&quot;]
+&quot;Courier-Oblique&quot; [fontname=&quot;Courier-Oblique&quot;]
+&quot;Courier-BoldOblique&quot; [fontname=&quot;Courier-BoldOblique&quot;]
+
+&quot;Courier&quot; -&gt; &quot;Courier-Bold&quot; -&gt; &quot;Courier-Oblique&quot; -&gt; &quot;Courier-BoldOblique&quot;
+
+&quot;Helvetica&quot; [fontname=&quot;Helvetica&quot;]
+&quot;Helvetica-Bold&quot; [fontname=&quot;Helvetica-Bold&quot;]
+&quot;Helvetica-Oblique&quot; [fontname=&quot;Helvetica-Oblique&quot;]
+&quot;Helvetica-BoldOblique&quot; [fontname=&quot;Helvetica-BoldOblique&quot;]
+
+&quot;Helvetica-Narrow&quot; [fontname=&quot;Helvetica-Narrow&quot;]
+&quot;Helvetica-Narrow-Bold&quot; [fontname=&quot;Helvetica-Narrow-Bold&quot;]
+&quot;Helvetica-Narrow-Oblique&quot; [fontname=&quot;Helvetica-Narrow-Oblique&quot;]
+&quot;Helvetica-Narrow-BoldOblique&quot; [fontname=&quot;Helvetica-Narrow-BoldOblique&quot;]
+
+&quot;Helvetica&quot; -&gt; &quot;Helvetica-Bold&quot; -&gt; &quot;Helvetica-Oblique&quot; -&gt; &quot;Helvetica-BoldOblique&quot;
+
+&quot;Helvetica-Narrow&quot; -&gt; &quot;Helvetica-Narrow-Bold&quot; -&gt; &quot;Helvetica-Narrow-Oblique&quot; -&gt; &quot;Helvetica-Narrow-BoldOblique&quot;
+
+&quot;NewCenturySchlbk-Roman&quot; [fontname=&quot;NewCenturySchlbk-Roman&quot;]
+&quot;NewCenturySchlbk-Bold&quot; [fontname=&quot;NewCenturySchlbk-Bold&quot;]
+&quot;NewCenturySchlbk-Italic&quot; [fontname=&quot;NewCenturySchlbk-Italic&quot;]
+&quot;NewCenturySchlbk-BoldItalic&quot; [fontname=&quot;NewCenturySchlbk-BoldItalic&quot;]
+
+&quot;NewCenturySchlbk-Roman&quot; -&gt; &quot;NewCenturySchlbk-Bold&quot; -&gt; &quot;NewCenturySchlbk-Italic&quot; -&gt; &quot;NewCenturySchlbk-BoldItalic&quot; 
+
+&quot;Palatino-Roman&quot; [fontname=&quot;Palatino-Roman&quot;]
+&quot;Palatino-Bold&quot; [fontname=&quot;Palatino-Bold&quot;]
+&quot;Palatino-Italic&quot; [fontname=&quot;Palatino-Italic&quot;]
+&quot;Palatino-BoldItalic&quot; [fontname=&quot;Palatino-BoldItalic&quot;]
+
+&quot;Palatino-Roman&quot; -&gt; &quot;Palatino-Bold&quot; -&gt; &quot;Palatino-Italic&quot; -&gt; &quot;Palatino-BoldItalic&quot;
+
+&quot;Times-Roman&quot; [fontname=&quot;Times-Roman&quot;]
+&quot;Times-Bold&quot; [fontname=&quot;Times-Bold&quot;]
+&quot;Times-Italic&quot; [fontname=&quot;Times-Italic&quot;]
+&quot;Times-BoldItalic&quot; [fontname=&quot;Times-BoldItalic&quot;]
+
+&quot;Times-Roman&quot; -&gt; &quot;Times-Bold&quot; -&gt; &quot;Times-Italic&quot; -&gt; &quot;Times-BoldItalic&quot;
+
+&quot;ZapfChancery-MediumItalic&quot; [fontname=&quot;ZapfChancery-MediumItalic&quot;]
+&quot;ZapfDingbats&quot; [fontname=&quot;ZapfDingbats&quot;]
+&quot;Symbol&quot; [fontname=&quot;Symbol&quot;]
+
+&quot;Symbol&quot; -&gt; &quot;ZapfDingbats&quot; -&gt; &quot;ZapfChancery-MediumItalic&quot;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #31 &lt;&quot;digraph G {
+    node [shape=record];
+    a [label = &quot;&lt;f0&gt; foo | x | &lt;f1&gt; bar&quot;];
+    b [label = &quot;a | { &lt;f0&gt; foo | x | &lt;f1&gt; bar } | b&quot;];
+    a:f0 -&gt; b:f1 
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #32 &lt;&quot;digraph G {
+	rankdir=LR;
+	node [shape=record];
+	a [ label =&quot;&lt;bala&gt; Graphs can\lbe fun\l|&lt;f1&gt; mid|&lt;f2&gt; right\r&quot;];
+	b [ label =&quot;&lt;left&gt;   |&lt;mid&gt; b |   &quot; ];
+	c [ label =&quot;&lt;p1&gt;   | c |&lt;p2&gt;   &quot; ];
+	x [ label =&quot;&lt;p1&gt;   | x |&lt;p2&gt;   &quot; ];
+	y [ label =&quot;&lt;p1&gt;   | y |&lt;p2&gt;   &quot; ];
+	z [ label =&quot;   | z |&lt;p2&gt;   &quot; ];
+	a:bala -&gt; b:left;
+	a:f1 -&gt; d;
+	a:f2 -&gt; y:&quot;p1&quot;;
+	c:&quot;p1&quot; -&gt; d;
+	b:mid -&gt; x:&quot;p1&quot;;
+	c:&quot;p2&quot; -&gt; y:&quot;p2&quot;;
+	b:left -&gt; z:&quot;p2&quot;;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #33 &lt;&quot;digraph rowe {
+	node [shape  = box];
+	size = &quot;6,6&quot;;
+	1 -&gt; 2;
+	1 -&gt; 10;
+	10 -&gt; 14;
+	10 -&gt; 12;
+	10 -&gt; 13;
+	10 -&gt; 11;
+	2 -&gt; 18;
+	2 -&gt; 17;
+	2 -&gt; 16;
+	2 -&gt; 3;
+	11 -&gt; 4;
+	16 -&gt; 4;
+	3 -&gt; 4;
+	4 -&gt; 5;
+	13 -&gt; 19;
+	17 -&gt; 19;
+	5 -&gt; 23;
+	5 -&gt; 35;
+	5 -&gt; 6;
+	37 -&gt; 39;
+	37 -&gt; 41;
+	37 -&gt; 40;
+	37 -&gt; 38;
+	19 -&gt; 20;
+	19 -&gt; 28;
+	19 -&gt; 21;
+	12 -&gt; 29;
+	18 -&gt; 29;
+	41 -&gt; 29;
+	28 -&gt; 29;
+	29 -&gt; 30;
+	30 -&gt; 31;
+	30 -&gt; 33;
+	31 -&gt; 32;
+	21 -&gt; 22;
+	32 -&gt; 23;
+	22 -&gt; 23;
+	6 -&gt; 7;
+	23 -&gt; 24;
+	7 -&gt; 8;
+	24 -&gt; 25;
+	24 -&gt; 27;
+	35 -&gt; 43;
+	35 -&gt; 36;
+	8 -&gt; 9;
+	14 -&gt; 15;
+	39 -&gt; 15;
+	20 -&gt; 15;
+	33 -&gt; 34;
+	43 -&gt; 40;
+	43 -&gt; 38;
+	25 -&gt; 26;
+	9 -&gt; 42;
+	10 -&gt; 1;
+	15 -&gt; 1;
+	23 -&gt; 1;
+	31 -&gt; 1;
+	2 -&gt; 1;
+	25 -&gt; 1;
+	9 -&gt; 1;
+	38 -&gt; 4;
+	26 -&gt; 4;
+	42 -&gt; 4;
+	40 -&gt; 19;
+	36 -&gt; 19;
+	34 -&gt; 29;
+	33 -&gt; 30;
+	27 -&gt; 24;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #34 &lt;&quot;   digraph G {
+Контрагенты -&gt; БанковскиеСчета;
+Организации -&gt; БанковскиеСчета;
+ВопросыДляАнкетирования -&gt; ВариантыОтветовОпросов;
+Контрагенты -&gt; ДоговорыВзаиморасчетов;
+Номенклатура -&gt; ЕдиницыИзмерения;
+НоменклатурныеГруппы -&gt; ЕдиницыИзмерения;
+СвойстваОбектов -&gt; ЗначенияСвойствОбектов;
+}&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #35 &lt;&quot;digraph shells {
+	size=&quot;7,8&quot;;
+	node [fontsize=24, shape = plaintext];
+
+	1972 -&gt; 1976;
+	1976 -&gt; 1978;
+	1978 -&gt; 1980;
+	1980 -&gt; 1982;
+	1982 -&gt; 1984;
+	1984 -&gt; 1986;
+	1986 -&gt; 1988;
+	1988 -&gt; 1990;
+	1990 -&gt; future;
+
+	node [fontsize=20, shape = box];
+	{ rank=same;  1976 Mashey Bourne; }
+	{ rank=same;  1978 Formshell csh; }
+	{ rank=same;  1980 esh vsh; }
+	{ rank=same;  1982 ksh &quot;System-V&quot;; }
+	{ rank=same;  1984 v9sh tcsh; }
+	{ rank=same;  1986 &quot;ksh-i&quot;; }
+	{ rank=same;  1988 KornShell Perl rc; }
+	{ rank=same;  1990 tcl Bash; }
+	{ rank=same;  &quot;future&quot; POSIX &quot;ksh-POSIX&quot;; }
+
+	Thompson -&gt; Mashey;
+	Thompson -&gt; Bourne;
+	Thompson -&gt; csh;
+	csh -&gt; tcsh;
+	Bourne -&gt; ksh;
+	Bourne -&gt; esh;
+	Bourne -&gt; vsh;
+	Bourne -&gt; &quot;System-V&quot;;
+	Bourne -&gt; v9sh;
+	v9sh -&gt; rc;
+	Bourne -&gt; Bash;
+	&quot;ksh-i&quot; -&gt; Bash;
+	KornShell -&gt; Bash;
+	esh -&gt; ksh;
+	vsh -&gt; ksh;
+	Formshell -&gt; ksh;
+	csh -&gt; ksh;
+	KornShell -&gt; POSIX;
+	&quot;System-V&quot; -&gt; POSIX;
+	ksh -&gt; &quot;ksh-i&quot;;
+	&quot;ksh-i&quot; -&gt; KornShell;
+	KornShell -&gt; &quot;ksh-POSIX&quot;;
+	Bourne -&gt; Formshell;
+
+	edge [style=invis];
+	1984 -&gt; v9sh -&gt; tcsh ;
+	1988 -&gt; rc -&gt; KornShell;
+	Formshell -&gt; csh;
+	KornShell -&gt; Perl;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #36 &lt;&quot;digraph structs {
+node [shape=record];
+    struct1 [shape=record,label=&quot;&lt;f0&gt; left|&lt;f1&gt; middle|&lt;f2&gt; right&quot;];
+    struct2 [shape=record,label=&quot;&lt;f0&gt; one|&lt;f1&gt; two&quot;];
+    struct3 [shape=record,label=&quot;hello\nworld |{ b |{c|&lt;here&gt; d|e}| f}| g | h&quot;];
+    struct1:f1 -&gt; struct2:f0;
+    struct1:f2 -&gt; struct3:here;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #37 &lt;&quot;digraph structs {
+    node [shape=plaintext];
+
+    struct1 [label=&lt;&lt;TABLE CELLPADDING=&quot;10&quot; BORDER=&quot;0&quot;&gt;
+	&lt;TR&gt;
+	    &lt;TD HEIGHT=&quot;30&quot; WIDTH=&quot;90&quot;&gt;a&lt;/TD&gt;
+	    &lt;TD&gt;b&lt;/TD&gt;
+	    &lt;TD&gt;c&lt;/TD&gt;
+	&lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;];
+
+    struct2 [label=&lt;&lt;TABLE&gt;
+	&lt;TR&gt;
+	    &lt;TD COLSPAN=&quot;3&quot;&gt;elefantel&lt;/TD&gt;
+	    &lt;TD ROWSPAN=&quot;2&quot; VALIGN=&quot;bottom&quot; ALIGN=&quot;right&quot;&gt;two&lt;/TD&gt;
+	&lt;/TR&gt;&lt;TR&gt;
+	    &lt;TD COLSPAN=&quot;2&quot; ROWSPAN=&quot;2&quot;&gt;&lt;TABLE BGCOLOR=&quot;grey&quot;&gt;
+		&lt;TR&gt;
+		    &lt;TD&gt;buca&lt;/TD&gt;
+		&lt;/TR&gt;&lt;TR&gt;
+		    &lt;TD BGCOLOR=&quot;yellow&quot;&gt;c&lt;/TD&gt;
+		&lt;/TR&gt;&lt;TR&gt;
+		    &lt;TD&gt;f&lt;/TD&gt;
+		&lt;/TR&gt;
+	    &lt;/TABLE&gt;&lt;/TD&gt;
+	    &lt;TD&gt;patratos&lt;/TD&gt;
+	&lt;/TR&gt;&lt;TR&gt;
+	    &lt;TD COLSPAN=&quot;2&quot; ALIGN=&quot;right&quot;&gt;4&lt;/TD&gt;
+	&lt;/TR&gt;
+	&lt;/TABLE&gt;&gt;];
+
+    struct3 [label=&lt;&lt;TABLE CELLPADDING=&quot;5&quot;&gt;
+	&lt;TR&gt;
+	    &lt;TD ROWSPAN=&quot;3&quot;&gt;Hello&lt;/TD&gt;
+	    &lt;TD ROWSPAN=&quot;2&quot; COLSPAN=&quot;3&quot;&gt;&lt;TABLE BORDER=&quot;4&quot;&gt;
+		&lt;TR&gt;
+		    &lt;TD COLSPAN=&quot;3&quot;&gt;b&lt;/TD&gt;
+		&lt;/TR&gt;&lt;TR&gt;
+		    &lt;TD&gt;a&lt;/TD&gt;
+		    &lt;TD&gt;dino&lt;/TD&gt;
+		    &lt;TD&gt;y&lt;/TD&gt;
+		&lt;/TR&gt;&lt;TR&gt;
+		    &lt;TD COLSPAN=&quot;3&quot;&gt;rhino&lt;/TD&gt;
+		&lt;/TR&gt;
+	    &lt;/TABLE&gt;&lt;/TD&gt;
+	&lt;/TR&gt;&lt;TR&gt;
+	    &lt;TD COLSPAN=&quot;2&quot;&gt;climb&lt;/TD&gt;
+	    &lt;TD ROWSPAN=&quot;2&quot;&gt;Up&lt;/TD&gt;
+	&lt;/TR&gt;&lt;TR&gt;
+	    &lt;TD COLSPAN=&quot;3&quot;&gt;low&lt;/TD&gt;
+	&lt;/TR&gt;
+    &lt;/TABLE&gt;&gt;];
+
+    struct1 -&gt; struct3;
+    struct1 -&gt; struct2;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #38 &lt;&quot;digraph G {
+	size=&quot;6,6&quot;;
+	node [shape=circle,fontsize=8];
+	rankdir=LR;
+	st9 -&gt; st9 [label=&quot;11/1&quot;];
+	st9 -&gt; st10 [label=&quot;10/1&quot;];
+	st8 -&gt; st8 [label=&quot;10/1&quot;];
+	st8 -&gt; st0 [label=&quot;00/-&quot;];
+	st7 -&gt; st8 [label=&quot;10/1&quot;];
+	st7 -&gt; st7 [label=&quot;00/1&quot;];
+	st6 -&gt; st6 [label=&quot;01/1&quot;];
+	st6 -&gt; st0 [label=&quot;00/-&quot;];
+	st5 -&gt; st6 [label=&quot;01/1&quot;];
+	st5 -&gt; st5 [label=&quot;11/1&quot;];
+	st4 -&gt; st4 [label=&quot;01/1&quot;];
+	st4 -&gt; st0 [label=&quot;00/-&quot;];
+	st3 -&gt; st4 [label=&quot;01/1&quot;];
+	st3 -&gt; st3 [label=&quot;00/1&quot;];
+	st2 -&gt; st9 [label=&quot;11/1&quot;];
+	st2 -&gt; st7 [label=&quot;00/1&quot;];
+	st2 -&gt; st2 [label=&quot;01/1&quot;];
+	st10 -&gt; st10 [label=&quot;10/1&quot;];
+	st10 -&gt; st0 [label=&quot;00/-&quot;];
+	st1 -&gt; st5 [label=&quot;11/1&quot;];
+	st1 -&gt; st3 [label=&quot;00/1&quot;];
+	st1 -&gt; st1 [label=&quot;10/1&quot;];
+	st0 -&gt; st2 [label=&quot;01/-&quot;];
+	st0 -&gt; st1 [label=&quot;10/-&quot;];
+	st0 -&gt; st0 [label=&quot;00/0&quot;];
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #39 &lt;&quot;digraph test {
+
+    size=&quot;7,9.5&quot;;
+    page=&quot;8,10.5&quot;;
+    ratio=fill;
+    rankdir=LR;
+
+    { rank=same;
+      node [shape=house];
+      A;C;E;G;I;K;M;O;Q;S;U;W;Y;
+      node [shape=invhouse];
+      B;D;F;H;J;L;N;P;R;T;V;X;Z;
+    }
+
+    { rank=same;
+      node [shape=trapezium];
+      &quot;Trapezium&quot;;
+      ordering=out;
+    }
+
+    Trapezium -&gt; A;
+    Trapezium -&gt; B;
+    Trapezium -&gt; C;
+    Trapezium -&gt; D;
+    Trapezium -&gt; E;
+    Trapezium -&gt; F;
+    Trapezium -&gt; G;
+    Trapezium -&gt; H;
+    Trapezium -&gt; I;
+    Trapezium -&gt; J;
+    Trapezium -&gt; K;
+    Trapezium -&gt; L;
+    Trapezium -&gt; M;
+    Trapezium -&gt; N;
+    Trapezium -&gt; O;
+    Trapezium -&gt; P;
+    Trapezium -&gt; Q;
+    Trapezium -&gt; R;
+    Trapezium -&gt; S;
+    Trapezium -&gt; T;
+    Trapezium -&gt; U;
+    Trapezium -&gt; V;
+    Trapezium -&gt; W;
+    Trapezium -&gt; X;
+    Trapezium -&gt; Y;
+    Trapezium -&gt; Z;
+
+    { rank=same;
+      node [shape=parallelogram];
+      a;b;c;d;e;f;g;h;i;j;k;l;m;n;o;p;q;r;s;t;u;v;w;x;y;z;
+    }
+
+    a -&gt; Trapezium;
+    b -&gt; Trapezium;
+    c -&gt; Trapezium;
+    d -&gt; Trapezium;
+    e -&gt; Trapezium;
+    f -&gt; Trapezium;
+    g -&gt; Trapezium;
+    h -&gt; Trapezium;
+    i -&gt; Trapezium;
+    j -&gt; Trapezium;
+    k -&gt; Trapezium;
+    l -&gt; Trapezium;
+    m -&gt; Trapezium;
+    n -&gt; Trapezium;
+    o -&gt; Trapezium;
+    p -&gt; Trapezium;
+    q -&gt; Trapezium;
+    r -&gt; Trapezium;
+    s -&gt; Trapezium;
+    t -&gt; Trapezium;
+    u -&gt; Trapezium;
+    v -&gt; Trapezium;
+    w -&gt; Trapezium;
+    x -&gt; Trapezium;
+    y -&gt; Trapezium;
+    z -&gt; Trapezium;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #40 &lt;&quot;digraph g {
+node [shape = record,height=.1];
+node0[label = &quot;&lt;f0&gt; |&lt;f1&gt; G|&lt;f2&gt; &quot;];
+node1[label = &quot;&lt;f0&gt; |&lt;f1&gt; E|&lt;f2&gt; &quot;];
+node2[label = &quot;&lt;f0&gt; |&lt;f1&gt; B|&lt;f2&gt; &quot;];
+node3[label = &quot;&lt;f0&gt; |&lt;f1&gt; F|&lt;f2&gt; &quot;];
+node4[label = &quot;&lt;f0&gt; |&lt;f1&gt; R|&lt;f2&gt; &quot;];
+node5[label = &quot;&lt;f0&gt; |&lt;f1&gt; H|&lt;f2&gt; &quot;];
+node6[label = &quot;&lt;f0&gt; |&lt;f1&gt; Y|&lt;f2&gt; &quot;];
+node7[label = &quot;&lt;f0&gt; |&lt;f1&gt; A|&lt;f2&gt; &quot;];
+node8[label = &quot;&lt;f0&gt; |&lt;f1&gt; C|&lt;f2&gt; &quot;];
+&quot;node0&quot;:f2 -&gt; &quot;node4&quot;:f1;
+&quot;node0&quot;:f0 -&gt; &quot;node1&quot;:f1;
+&quot;node1&quot;:f0 -&gt; &quot;node2&quot;:f1;
+&quot;node1&quot;:f2 -&gt; &quot;node3&quot;:f1;
+&quot;node2&quot;:f2 -&gt; &quot;node8&quot;:f1;
+&quot;node2&quot;:f0 -&gt; &quot;node7&quot;:f1;
+&quot;node4&quot;:f2 -&gt; &quot;node6&quot;:f1;
+&quot;node4&quot;:f0 -&gt; &quot;node5&quot;:f1;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #41 &lt;&quot;digraph g {
+graph [
+rankdir = &quot;LR&quot;
+];
+node [
+fontsize = &quot;16&quot;
+shape = &quot;ellipse&quot;
+];
+edge [
+];
+&quot;node0&quot; [
+label = &quot;&lt;f0&gt; 0x10ba8| &lt;f1&gt;&quot;
+shape = &quot;record&quot;
+];
+&quot;node1&quot; [
+label = &quot;&lt;f0&gt; 0xf7fc4380| &lt;f1&gt; | &lt;f2&gt; |-1&quot;
+shape = &quot;record&quot;
+];
+&quot;node2&quot; [
+label = &quot;&lt;f0&gt; 0xf7fc44b8| | |2&quot;
+shape = &quot;record&quot;
+];
+&quot;node3&quot; [
+label = &quot;&lt;f0&gt; 3.43322790286038071e-06|44.79998779296875|0&quot;
+shape = &quot;record&quot;
+];
+&quot;node4&quot; [
+label = &quot;&lt;f0&gt; 0xf7fc4380| &lt;f1&gt; | &lt;f2&gt; |2&quot;
+shape = &quot;record&quot;
+];
+&quot;node5&quot; [
+label = &quot;&lt;f0&gt; (nil)| | |-1&quot;
+shape = &quot;record&quot;
+];
+&quot;node6&quot; [
+label = &quot;&lt;f0&gt; 0xf7fc4380| &lt;f1&gt; | &lt;f2&gt; |1&quot;
+shape = &quot;record&quot;
+];
+&quot;node7&quot; [
+label = &quot;&lt;f0&gt; 0xf7fc4380| &lt;f1&gt; | &lt;f2&gt; |2&quot;
+shape = &quot;record&quot;
+];
+&quot;node8&quot; [
+label = &quot;&lt;f0&gt; (nil)| | |-1&quot;
+shape = &quot;record&quot;
+];
+&quot;node9&quot; [
+label = &quot;&lt;f0&gt; (nil)| | |-1&quot;
+shape = &quot;record&quot;
+];
+&quot;node10&quot; [
+label = &quot;&lt;f0&gt; (nil)| &lt;f1&gt; | &lt;f2&gt; |-1&quot;
+shape = &quot;record&quot;
+];
+&quot;node11&quot; [
+label = &quot;&lt;f0&gt; (nil)| &lt;f1&gt; | &lt;f2&gt; |-1&quot;
+shape = &quot;record&quot;
+];
+&quot;node12&quot; [
+label = &quot;&lt;f0&gt; 0xf7fc43e0| | |1&quot;
+shape = &quot;record&quot;
+];
+&quot;node0&quot;:f0 -&gt; &quot;node1&quot;:f0 [
+id = 0
+];
+&quot;node0&quot;:f1 -&gt; &quot;node2&quot;:f0 [
+id = 1
+];
+&quot;node1&quot;:f0 -&gt; &quot;node3&quot;:f0 [
+id = 2
+];
+&quot;node1&quot;:f1 -&gt; &quot;node4&quot;:f0 [
+id = 3
+];
+&quot;node1&quot;:f2 -&gt; &quot;node5&quot;:f0 [
+id = 4
+];
+&quot;node4&quot;:f0 -&gt; &quot;node3&quot;:f0 [
+id = 5
+];
+&quot;node4&quot;:f1 -&gt; &quot;node6&quot;:f0 [
+id = 6
+];
+&quot;node4&quot;:f2 -&gt; &quot;node10&quot;:f0 [
+id = 7
+];
+&quot;node6&quot;:f0 -&gt; &quot;node3&quot;:f0 [
+id = 8
+];
+&quot;node6&quot;:f1 -&gt; &quot;node7&quot;:f0 [
+id = 9
+];
+&quot;node6&quot;:f2 -&gt; &quot;node9&quot;:f0 [
+id = 10
+];
+&quot;node7&quot;:f0 -&gt; &quot;node3&quot;:f0 [
+id = 11
+];
+&quot;node7&quot;:f1 -&gt; &quot;node1&quot;:f0 [
+id = 12
+];
+&quot;node7&quot;:f2 -&gt; &quot;node8&quot;:f0 [
+id = 13
+];
+&quot;node10&quot;:f1 -&gt; &quot;node11&quot;:f0 [
+id = 14
+];
+&quot;node10&quot;:f2 -&gt; &quot;node12&quot;:f0 [
+id = 15
+];
+&quot;node11&quot;:f2 -&gt; &quot;node1&quot;:f0 [
+id = 16
+];
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #42 &lt;&quot;digraph G {
+	subgraph cluster_small {
+		a -&gt; b;
+		label=small;
+	}
+
+	subgraph cluster_big {
+		p -&gt; q -&gt; r -&gt; s -&gt; t;
+		label=big;
+		t -&gt; p;
+	}
+
+	t -&gt; a;
+	b -&gt; q;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #43 &lt;&quot;/* courtesy Ian Darwin and Geoff Collyer, Softquad Inc. */
+digraph unix {
+size=&quot;6,6&quot;;
+	&quot;5th Edition&quot; -&gt; &quot;6th Edition&quot;;
+	&quot;5th Edition&quot; -&gt; &quot;PWB 1.0&quot;;
+	&quot;6th Edition&quot; -&gt; &quot;LSX&quot;;
+	&quot;6th Edition&quot; -&gt; &quot;1 BSD&quot;;
+	&quot;6th Edition&quot; -&gt; &quot;Mini Unix&quot;;
+	&quot;6th Edition&quot; -&gt; &quot;Wollongong&quot;;
+	&quot;6th Edition&quot; -&gt; &quot;Interdata&quot;;
+	&quot;Interdata&quot; -&gt; &quot;Unix/TS 3.0&quot;;
+	&quot;Interdata&quot; -&gt; &quot;PWB 2.0&quot;;
+	&quot;Interdata&quot; -&gt; &quot;7th Edition&quot;;
+	&quot;7th Edition&quot; -&gt; &quot;8th Edition&quot;;
+	&quot;7th Edition&quot; -&gt; &quot;32V&quot;;
+	&quot;7th Edition&quot; -&gt; &quot;V7M&quot;;
+	&quot;7th Edition&quot; -&gt; &quot;Ultrix-11&quot;;
+	&quot;7th Edition&quot; -&gt; &quot;Xenix&quot;;
+	&quot;7th Edition&quot; -&gt; &quot;UniPlus+&quot;;
+	&quot;V7M&quot; -&gt; &quot;Ultrix-11&quot;;
+	&quot;8th Edition&quot; -&gt; &quot;9th Edition&quot;;
+	&quot;1 BSD&quot; -&gt; &quot;2 BSD&quot;;
+	&quot;2 BSD&quot; -&gt; &quot;2.8 BSD&quot;;
+	&quot;2.8 BSD&quot; -&gt; &quot;Ultrix-11&quot;;
+	&quot;2.8 BSD&quot; -&gt; &quot;2.9 BSD&quot;;
+	&quot;32V&quot; -&gt; &quot;3 BSD&quot;;
+	&quot;3 BSD&quot; -&gt; &quot;4 BSD&quot;;
+	&quot;4 BSD&quot; -&gt; &quot;4.1 BSD&quot;;
+	&quot;4.1 BSD&quot; -&gt; &quot;4.2 BSD&quot;;
+	&quot;4.1 BSD&quot; -&gt; &quot;2.8 BSD&quot;;
+	&quot;4.1 BSD&quot; -&gt; &quot;8th Edition&quot;;
+	&quot;4.2 BSD&quot; -&gt; &quot;4.3 BSD&quot;;
+	&quot;4.2 BSD&quot; -&gt; &quot;Ultrix-32&quot;;
+	&quot;PWB 1.0&quot; -&gt; &quot;PWB 1.2&quot;;
+	&quot;PWB 1.0&quot; -&gt; &quot;USG 1.0&quot;;
+	&quot;PWB 1.2&quot; -&gt; &quot;PWB 2.0&quot;;
+	&quot;USG 1.0&quot; -&gt; &quot;CB Unix 1&quot;;
+	&quot;USG 1.0&quot; -&gt; &quot;USG 2.0&quot;;
+	&quot;CB Unix 1&quot; -&gt; &quot;CB Unix 2&quot;;
+	&quot;CB Unix 2&quot; -&gt; &quot;CB Unix 3&quot;;
+	&quot;CB Unix 3&quot; -&gt; &quot;Unix/TS++&quot;;
+	&quot;CB Unix 3&quot; -&gt; &quot;PDP-11 Sys V&quot;;
+	&quot;USG 2.0&quot; -&gt; &quot;USG 3.0&quot;;
+	&quot;USG 3.0&quot; -&gt; &quot;Unix/TS 3.0&quot;;
+	&quot;PWB 2.0&quot; -&gt; &quot;Unix/TS 3.0&quot;;
+	&quot;Unix/TS 1.0&quot; -&gt; &quot;Unix/TS 3.0&quot;;
+	&quot;Unix/TS 3.0&quot; -&gt; &quot;TS 4.0&quot;;
+	&quot;Unix/TS++&quot; -&gt; &quot;TS 4.0&quot;;
+	&quot;CB Unix 3&quot; -&gt; &quot;TS 4.0&quot;;
+	&quot;TS 4.0&quot; -&gt; &quot;System V.0&quot;;
+	&quot;System V.0&quot; -&gt; &quot;System V.2&quot;;
+	&quot;System V.2&quot; -&gt; &quot;System V.3&quot;;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #44 &lt;&quot;/* Courtesy of Ian Darwin &lt;ian@darwinsys.com&gt;
+ * and Geoff Collyer &lt;geoff@plan9.bell-labs.com&gt;
+ * Mildly updated by Ian Darwin in 2000.
+ */
+digraph unix {
+	size=&quot;6,6&quot;;
+	node [color=lightblue2, style=filled];
+	&quot;5th Edition&quot; -&gt; &quot;6th Edition&quot;;
+	&quot;5th Edition&quot; -&gt; &quot;PWB 1.0&quot;;
+	&quot;6th Edition&quot; -&gt; &quot;LSX&quot;;
+	&quot;6th Edition&quot; -&gt; &quot;1 BSD&quot;;
+	&quot;6th Edition&quot; -&gt; &quot;Mini Unix&quot;;
+	&quot;6th Edition&quot; -&gt; &quot;Wollongong&quot;;
+	&quot;6th Edition&quot; -&gt; &quot;Interdata&quot;;
+	&quot;Interdata&quot; -&gt; &quot;Unix/TS 3.0&quot;;
+	&quot;Interdata&quot; -&gt; &quot;PWB 2.0&quot;;
+	&quot;Interdata&quot; -&gt; &quot;7th Edition&quot;;
+	&quot;7th Edition&quot; -&gt; &quot;8th Edition&quot;;
+	&quot;7th Edition&quot; -&gt; &quot;32V&quot;;
+	&quot;7th Edition&quot; -&gt; &quot;V7M&quot;;
+	&quot;7th Edition&quot; -&gt; &quot;Ultrix-11&quot;;
+	&quot;7th Edition&quot; -&gt; &quot;Xenix&quot;;
+	&quot;7th Edition&quot; -&gt; &quot;UniPlus+&quot;;
+	&quot;V7M&quot; -&gt; &quot;Ultrix-11&quot;;
+	&quot;8th Edition&quot; -&gt; &quot;9th Edition&quot;;
+	&quot;9th Edition&quot; -&gt; &quot;10th Edition&quot;;
+	&quot;1 BSD&quot; -&gt; &quot;2 BSD&quot;;
+	&quot;2 BSD&quot; -&gt; &quot;2.8 BSD&quot;;
+	&quot;2.8 BSD&quot; -&gt; &quot;Ultrix-11&quot;;
+	&quot;2.8 BSD&quot; -&gt; &quot;2.9 BSD&quot;;
+	&quot;32V&quot; -&gt; &quot;3 BSD&quot;;
+	&quot;3 BSD&quot; -&gt; &quot;4 BSD&quot;;
+	&quot;4 BSD&quot; -&gt; &quot;4.1 BSD&quot;;
+	&quot;4.1 BSD&quot; -&gt; &quot;4.2 BSD&quot;;
+	&quot;4.1 BSD&quot; -&gt; &quot;2.8 BSD&quot;;
+	&quot;4.1 BSD&quot; -&gt; &quot;8th Edition&quot;;
+	&quot;4.2 BSD&quot; -&gt; &quot;4.3 BSD&quot;;
+	&quot;4.2 BSD&quot; -&gt; &quot;Ultrix-32&quot;;
+	&quot;4.3 BSD&quot; -&gt; &quot;4.4 BSD&quot;;
+	&quot;4.4 BSD&quot; -&gt; &quot;FreeBSD&quot;;
+	&quot;4.4 BSD&quot; -&gt; &quot;NetBSD&quot;;
+	&quot;4.4 BSD&quot; -&gt; &quot;OpenBSD&quot;;
+	&quot;PWB 1.0&quot; -&gt; &quot;PWB 1.2&quot;;
+	&quot;PWB 1.0&quot; -&gt; &quot;USG 1.0&quot;;
+	&quot;PWB 1.2&quot; -&gt; &quot;PWB 2.0&quot;;
+	&quot;USG 1.0&quot; -&gt; &quot;CB Unix 1&quot;;
+	&quot;USG 1.0&quot; -&gt; &quot;USG 2.0&quot;;
+	&quot;CB Unix 1&quot; -&gt; &quot;CB Unix 2&quot;;
+	&quot;CB Unix 2&quot; -&gt; &quot;CB Unix 3&quot;;
+	&quot;CB Unix 3&quot; -&gt; &quot;Unix/TS++&quot;;
+	&quot;CB Unix 3&quot; -&gt; &quot;PDP-11 Sys V&quot;;
+	&quot;USG 2.0&quot; -&gt; &quot;USG 3.0&quot;;
+	&quot;USG 3.0&quot; -&gt; &quot;Unix/TS 3.0&quot;;
+	&quot;PWB 2.0&quot; -&gt; &quot;Unix/TS 3.0&quot;;
+	&quot;Unix/TS 1.0&quot; -&gt; &quot;Unix/TS 3.0&quot;;
+	&quot;Unix/TS 3.0&quot; -&gt; &quot;TS 4.0&quot;;
+	&quot;Unix/TS++&quot; -&gt; &quot;TS 4.0&quot;;
+	&quot;CB Unix 3&quot; -&gt; &quot;TS 4.0&quot;;
+	&quot;TS 4.0&quot; -&gt; &quot;System V.0&quot;;
+	&quot;System V.0&quot; -&gt; &quot;System V.2&quot;;
+	&quot;System V.2&quot; -&gt; &quot;System V.3&quot;;
+	&quot;System V.3&quot; -&gt; &quot;System V.4&quot;;
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer provided gallery graphs provided gallery graphs (Variant #45 &lt;&quot;digraph Viewfile {
+node [ style = filled ];
+atoi [color=green];
+chkmalloc [color=green];
+close [color=green];
+error [color=blue];
+exit [color=blue];
+fclose [color=green];
+fgets [color=red];
+fopen [color=green];
+fprintf [color=blue];
+free [color=blue];
+free_list [color=blue];
+fstat [color=green];
+getopt [color=green];
+init_list [color=green];
+insert_list [color=green];
+main [color=green];
+makeargs [color=blue];
+makepairs [color=green];
+malloc [color=green];
+open [color=green];
+printf [color=red];
+read [color=green];
+rewind [color=green];
+viewline [color=green];
+viewlines [color=green];
+walk_list [color=green];
+write [color=green];
+fclose -&gt; close [color=green];
+fgets -&gt; fstat [color=green];
+fgets -&gt; read [color=green];
+fopen -&gt; open [color=green];
+printf -&gt; write [color=green];
+main -&gt; fgets [color=blue];
+main -&gt; getopt [color=green];
+main -&gt; makeargs [color=blue];
+main -&gt; makepairs [color=green];
+main -&gt; chkmalloc [color=green];
+main -&gt; error [color=blue];
+main -&gt; viewlines [color=green];
+makeargs -&gt; chkmalloc [color=blue];
+makepairs -&gt; atoi [color=green];
+makepairs -&gt; init_list [color=green];
+makepairs -&gt; insert_list [color=green];
+makepairs -&gt; chkmalloc [color=green];
+free_list -&gt; free [color=blue];
+init_list -&gt; chkmalloc [color=green];
+insert_list -&gt; chkmalloc [color=green];
+walk_list -&gt; error [color=blue];
+walk_list -&gt; viewline [color=green];
+chkmalloc -&gt; malloc [color=green];
+chkmalloc -&gt; error [color=blue];
+error -&gt; exit [color=blue];
+error -&gt; fprintf [color=blue];
+error -&gt; error [color=blue];
+viewline -&gt; fgets [color=red];
+viewline -&gt; printf [color=red];
+viewline -&gt; rewind [color=green];
+viewlines -&gt; fclose [color=green];
+viewlines -&gt; fopen [color=green];
+viewlines -&gt; walk_list [color=green];
+viewlines -&gt; viewline [color=blue];
+}
+&quot;&gt;)</span>
+    
+      <div class="specSummary passed">
+      <span class="description">returned stageshould have shapes to draw canvas and shapes with diagram itself</span>
       </div>
     
     </div>
@@ -21068,6 +24116,65 @@ F 16 11 -Times-Roman c 7 -#000000 T 529.25 31.7 0 4 1 -  F 16 11 -Times-Roman c 
     
       <div class="specSummary passed">
       <span class="description">should render non default fonts properly</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Stage export of PNG image when zoom available</span>
+    
+      <div class="specSummary skipped">
+      <span class="description">should return whole diagram when no zoom set</span>
+      </div>
+    
+      <div class="specSummary skipped">
+      <span class="description">should return part of diagram when zoom is set</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer</span>
+    
+      <div class="specSummary passed">
+      <span class="description">should extract node shapes correctly when labels are longer than 4 chars</span>
+      </div>
+    
+      <div class="specSummary skipped">
+      <span class="description">should handle struct with multiple edges</span>
+      </div>
+    
+      <div class="specSummary skipped">
+      <span class="description">should handle diagrams with html tables</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should handle undirected diagrams</span>
+      </div>
+    
+      <div class="specSummary skipped">
+      <span class="description">should handle diagrams with html tables</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Transformer of xdot format</span>
+    
+      <div class="specSummary passed">
+      <span class="description">should provide stage size property in points</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should call viz.js with xdot option and call xdot parser with AST</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should pass error from viz.js</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should return error when xdot source parsing failed</span>
       </div>
     
     </div>
