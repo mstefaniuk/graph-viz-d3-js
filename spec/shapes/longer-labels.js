@@ -26,11 +26,11 @@ define({
         style: [
           {
             key: 'stroke',
-            value: 'rgba(255,255,254,1)'
+            value: {red:255, green:255, blue:254, opacity:1}
           },
           {
             key: 'fill',
-            value: 'rgba(255,255,255,1)'
+            value: {red:255, green:255, blue:255, opacity:1}
           }
         ]
       }
@@ -51,7 +51,7 @@ define({
           style: [
             {
               key: 'stroke',
-              value: 'rgba(0,0,0,1)'
+              value: {red:0, green:0, blue:0, opacity:1}
             }
           ]
         }
@@ -72,7 +72,7 @@ define({
             },
             {
               key: 'stroke',
-              value: 'rgba(0,0,0,1)'
+              value: {red:0, green:0, blue:0, opacity:1}
             }
           ]
         }
@@ -91,7 +91,7 @@ define({
           style: [
             {
               key: 'stroke',
-              value: 'rgba(0,0,0,1)'
+              value: {red:0, green:0, blue:0, opacity:1}
             }
           ]
         }
@@ -112,7 +112,7 @@ define({
             },
             {
               key: 'stroke',
-              value: 'rgba(0,0,0,1)'
+              value: {red:0, green:0, blue:0, opacity:1}
             }
           ]
         }
@@ -145,7 +145,7 @@ define({
           style: [
             {
               key: 'stroke',
-              value: 'rgba(0,0,0,1)'
+              value: {red:0, green:0, blue:0, opacity:1}
             }
           ]
         },
@@ -172,11 +172,11 @@ define({
             },
             {
               key: 'stroke',
-              value: 'rgba(0,0,0,1)'
+              value: {red:0, green:0, blue:0, opacity:1}
             },
             {
               key: 'fill',
-              value: 'rgba(0,0,0,1)'
+              value: {red:0, green:0, blue:0, opacity:1}
             }
           ]
         }
@@ -196,7 +196,7 @@ define({
           style: [
             {
               key: 'stroke',
-              value: 'rgba(0,0,0,1)'
+              value: {red:0, green:0, blue:0, opacity:1}
             }
           ]
         }
@@ -217,7 +217,7 @@ define({
             },
             {
               key: 'stroke',
-              value: 'rgba(0,0,0,1)'
+              value: {red:0, green:0, blue:0, opacity:1}
             }
           ]
         }
@@ -250,7 +250,7 @@ define({
           style: [
             {
               key: 'stroke',
-              value: 'rgba(0,0,0,1)'
+              value: {red:0, green:0, blue:0, opacity:1}
             }
           ]
         },
@@ -277,11 +277,11 @@ define({
             },
             {
               key: 'stroke',
-              value: 'rgba(0,0,0,1)'
+              value: {red:0, green:0, blue:0, opacity:1}
             },
             {
               key: 'fill',
-              value: 'rgba(0,0,0,1)'
+              value: {red:0, green:0, blue:0, opacity:1}
             }
           ]
         }

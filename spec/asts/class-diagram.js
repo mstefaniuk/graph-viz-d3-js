@@ -31,11 +31,11 @@ define({
             "style": [
               {
                 "key": "stroke",
-                "value": "rgba(255,255,254,1)"
+                "value": {red:255, green:255, blue:254, opacity:1}
               },
               {
                 "key": "fill",
-                "value": "rgba(255,255,221,1)"
+                "value": {red:255, green:255, blue:221, opacity:1}
               }
             ]
           }
@@ -59,7 +59,7 @@ define({
               },
               {
                 "key": "stroke",
-                "value": "rgba(0,0,0,1)"
+                "value": {red:0, green:0, blue:0, opacity:1}
               }
             ]
           },
@@ -78,7 +78,7 @@ define({
               },
               {
                 "key": "stroke",
-                "value": "rgba(0,0,0,1)"
+                "value": {red:0, green:0, blue:0, opacity:1}
               }
             ]
           }
@@ -224,11 +224,11 @@ define({
                 "style": [
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   },
                   {
                     "key": "fill",
-                    "value": "rgba(251,180,174,1)"
+                    "value": {red:251, green:180, blue:174, opacity:1}
                   }
                 ]
               },
@@ -247,7 +247,7 @@ define({
                 "style": [
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               },
@@ -266,7 +266,7 @@ define({
                 "style": [
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               }
@@ -290,7 +290,7 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               },
@@ -309,7 +309,7 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               },
@@ -328,7 +328,7 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               },
@@ -347,7 +347,7 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               }
@@ -409,11 +409,11 @@ define({
                 "style": [
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   },
                   {
                     "key": "fill",
-                    "value": "rgba(179,205,227,1)"
+                    "value": {red:179, green:205, blue:227, opacity:1}
                   }
                 ]
               }
@@ -437,7 +437,7 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               }
@@ -501,7 +501,7 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               }
@@ -533,7 +533,7 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               }
@@ -583,11 +583,11 @@ define({
                 "style": [
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   },
                   {
                     "key": "fill",
-                    "value": "rgba(204,235,197,1)"
+                    "value": {red:204, green:235, blue:197, opacity:1}
                   }
                 ]
               }
@@ -611,7 +611,7 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               }
@@ -671,7 +671,7 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               }
@@ -703,7 +703,7 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               }
@@ -773,11 +773,11 @@ define({
                 "style": [
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   },
                   {
                     "key": "fill",
-                    "value": "rgba(204,235,197,1)"
+                    "value": {red:204, green:235, blue:197, opacity:1}
                   }
                 ]
               }
@@ -801,7 +801,7 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               }
@@ -857,7 +857,7 @@ define({
                 "style": [
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               }
@@ -889,7 +889,7 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               }
@@ -959,11 +959,11 @@ define({
                 "style": [
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   },
                   {
                     "key": "fill",
-                    "value": "rgba(204,235,197,1)"
+                    "value": {red:204, green:235, blue:197, opacity:1}
                   }
                 ]
               }
@@ -987,7 +987,7 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               }
@@ -1043,7 +1043,7 @@ define({
                 "style": [
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               }
@@ -1098,11 +1098,11 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   },
                   {
                     "key": "fill",
-                    "value": "rgba(255,255,221,1)"
+                    "value": {red:255, green:255, blue:221, opacity:1}
                   }
                 ]
               }
@@ -1126,7 +1126,7 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               }
@@ -1204,11 +1204,11 @@ define({
                 "style": [
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   },
                   {
                     "key": "fill",
-                    "value": "rgba(204,235,197,1)"
+                    "value": {red:204, green:235, blue:197, opacity:1}
                   }
                 ]
               }
@@ -1232,7 +1232,7 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               }
@@ -1290,11 +1290,11 @@ define({
                 "style": [
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   },
                   {
                     "key": "fill",
-                    "value": "rgba(179,205,227,1)"
+                    "value": {red:179, green:205, blue:227, opacity:1}
                   }
                 ]
               }
@@ -1318,7 +1318,7 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               }
@@ -1396,11 +1396,11 @@ define({
                 "style": [
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   },
                   {
                     "key": "fill",
-                    "value": "rgba(251,180,174,1)"
+                    "value": {red:251, green:180, blue:174, opacity:1}
                   }
                 ]
               }
@@ -1424,7 +1424,7 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               }
@@ -1511,11 +1511,11 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   },
                   {
                     "key": "fill",
-                    "value": "rgba(255,255,255,1)"
+                    "value": {red:255, green:255, blue:255, opacity:1}
                   }
                 ]
               }
@@ -1539,7 +1539,7 @@ define({
                   },
                   {
                     "key": "stroke",
-                    "value": "rgba(0,0,0,1)"
+                    "value": {red:0, green:0, blue:0, opacity:1}
                   }
                 ]
               }

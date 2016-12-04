@@ -54,9 +54,13 @@ bspline = [bB] _ integer c:coordinates+ {return {shape: 'bspline', points: c}}
 text = [T] c:coordinates _ decimal
            _ decimal _ t:vardata {return {x:c[0], y:c[1], text:t}}
 pen = p:[Cc] _ c:vardata
-    {var colors = [parseInt(c.substr(1,2),16),parseInt(c.substr(3,2),16),parseInt(c.substr(5,2),16),c.length==8 ? parseInt(c.substr(7,2),16)/255 : '1'];
-    var color = "rgba("+colors.join(',')+")";
-    return p=='C' ? {key: "fill", value: color} : {key: "stroke", value: color}}
+    {var colors = {
+        red: parseInt(c.substr(1,2),16),
+        green: parseInt(c.substr(3,2),16),
+        blue: parseInt(c.substr(5,2),16),
+        opacity: c.length==8 ? parseInt(c.substr(7,2),16)/255 : 1
+    };
+    return p=='C' ? {key: "fill", value: colors} : {key: "stroke", value: colors}}
 font = f:[F] _ s:decimal _ t:vardata {return [{key:'font-family', value: "'" + t + "',serif"}, {key:'font-size', value: s}]}
 fontdecoration = [t] _ v:integer {return {key:"text-decoration", value: v}}
 style = [S] _ s:vardata {return {key:'style', value: s}}

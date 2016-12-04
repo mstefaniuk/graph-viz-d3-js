@@ -1,8 +1,10 @@
-define(["stage", 'transformer', 'spec/shapes/graph-label', 'spec/shapes/courier-fonts', 'spec/jasmine/image-matchers', 'resemble',
-  ], function (stage, transformer, graphLabelShapes, courierFontsShapes, imageMatchers, resemble) {
+define(["stage", 'transformer', 'styliseur', 'spec/shapes/graph-label', 'spec/shapes/courier-fonts', 'spec/jasmine/image-matchers', 'resemble',
+  ], function (stage, transformer, styliseur, graphLabelShapes, courierFontsShapes, imageMatchers, resemble) {
 
-  function shortcircut(selection, attributes) {
-    selection.call(attributes);
+  function shortcircut(selection, attributer) {
+    selection
+      .call(attributer)
+      .call(styliseur);
   }
 
   var immediate = {
@@ -46,8 +48,8 @@ define(["stage", 'transformer', 'spec/shapes/graph-label', 'spec/shapes/courier-
         expect(document.querySelector('#graph svg text[style*="Courier-Bold"]').textContent).toEqual("Courier-Bold");
         expect(document.querySelector('#graph svg text[style*="Courier-Oblique"]').textContent).toEqual("Courier-Oblique");
         expect(document.querySelector('#graph svg text[style*="Courier-BoldOblique"]').textContent).toEqual("Courier-BoldOblique");
-        expect(document.querySelectorAll('#graph svg text[style*="stroke:"]').length).toEqual(0);
-        expect(document.querySelectorAll('#graph svg text[style*="color:"]').length).toEqual(4);
+        expect(document.querySelectorAll('#graph svg text[stroke]').length).toEqual(0);
+        expect(document.querySelectorAll('#graph svg text[color]').length).toEqual(4);
         expect(document.querySelectorAll('#graph svg text[style*="font-size: 14px"]').length).toEqual(4);
       });
     });

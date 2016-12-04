@@ -1,4 +1,4 @@
-define([], function() {
+define(["styliseur"], function(styliseur) {
   return {
     document: function(selection, attributer) {
       selection
@@ -20,7 +20,8 @@ define([], function() {
         .transition()
         .delay(150)
         .duration(900)
-        .call(attributer);
+        .call(attributer)
+        .call(styliseur);
     },
     relations: function (selection, attributer) {
       selection
@@ -42,14 +43,16 @@ define([], function() {
         .transition()
         .delay(150)
         .duration(900)
-        .call(attributer);
+        .call(attributer)
+        .call(styliseur);
     },
     labels: function (labels, attributer) {
       labels
         .transition()
         .delay(150)
         .duration(900)
-        .call(attributer);
+        .call(attributer)
+        .call(styliseur);
     }
   };
 });

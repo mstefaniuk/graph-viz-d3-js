@@ -36,6 +36,32 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
       };
     }
 
+    var styliseur = function (selection, fill) {
+      fill = fill || false;
+      this.each(function (d) {
+        var self = d3.select(this);
+        d.style.forEach(function (e) {
+          switch (e.key) {
+            case "stroke":
+            case "fill":
+              var color = d3.rgb(e.value.red, e.value.green, e.value.blue);
+              color.opacity = e.value.opacity;
+              self.attr(e.key, color);
+              break;
+            case "font-size":
+              self.style(e.key, e.value);
+              break;
+            case "style":
+              if (e.value.indexOf('setline') === 0) {
+                self.attr('stroke-width', 2);
+              } else {
+                self.attr('class', e.value);
+              }
+          }
+        });
+      });
+    };
+
     var labelAttributer = function () {
       this
         .attr("x", function (d) {
@@ -81,6 +107,8 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
           .text([
             'path {fill: transparent}',
             'text {text-anchor: middle; font-family:"Times-Roman",serif; font-size: 10pt}',
+            '.dashed {stroke-dasharray: 5,5}',
+            '.dotted {stroke-dasharray: 1,5}',
             '.overlay {fill: none; pointer-events: all}'
           ].join(' '));
         main = svg.append("g").append("g");
@@ -110,7 +138,7 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         }
         return svg.node().parentNode.innerHTML;
       },
-      setZoom: function(zoomParams) {
+      setZoom: function (zoomParams) {
         zoomParams.scale && zoom.scale(zoomParams.scale);
         zoomParams.translate && zoom.translate(zoomParams.translate);
         zoom.event(svg);
@@ -151,6 +179,7 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
                 }).join(" ");
             });
           var self = this;
+
           sizes.style.forEach(function (e) {
             self.style(e.key, e.value);
           });
@@ -208,11 +237,6 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
             .attr("d", function (d) {
               var shape = d.shape;
               return palette[shape](d);
-            })
-            .attr("style", function (d) {
-              return d.style.map(function (e) {
-                return [e.key, e.value].join(':');
-              }).join(';');
             });
         });
 
@@ -222,8 +246,8 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         labels.enter().append("text");
         transitions.labels(labels, labelAttributer);
       },
-      getImage: function(reset) {
-        reset = reset===undefined ? true : reset;
+      getImage: function (reset) {
+        reset = reset === undefined ? true : reset;
         var svgXml = this.svg(reset);
         var scaleFactor = 1;
 
@@ -232,7 +256,7 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
 
         var pngImage = new Image();
 
-        svgImage.onload = function() {
+        svgImage.onload = function () {
           var canvas = document.createElement("canvas");
           canvas.width = svgImage.width * scaleFactor;
           canvas.height = svgImage.height * scaleFactor;

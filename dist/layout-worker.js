@@ -3482,9 +3482,13 @@ var parser = (function() {
         peg$c92 = function(c, t) {return {x:c[0], y:c[1], text:t}},
         peg$c93 = /^[Cc]/,
         peg$c94 = { type: "class", value: "[Cc]", description: "[Cc]" },
-        peg$c95 = function(p, c) {var colors = [parseInt(c.substr(1,2),16),parseInt(c.substr(3,2),16),parseInt(c.substr(5,2),16),c.length==8 ? parseInt(c.substr(7,2),16)/255 : '1'];
-            var color = "rgba("+colors.join(',')+")";
-            return p=='C' ? {key: "fill", value: color} : {key: "stroke", value: color}},
+        peg$c95 = function(p, c) {var colors = {
+                red: parseInt(c.substr(1,2),16),
+                green: parseInt(c.substr(3,2),16),
+                blue: parseInt(c.substr(5,2),16),
+                opacity: c.length==8 ? parseInt(c.substr(7,2),16)/255 : 1
+            };
+            return p=='C' ? {key: "fill", value: colors} : {key: "stroke", value: colors}},
         peg$c96 = /^[F]/,
         peg$c97 = { type: "class", value: "[F]", description: "[F]" },
         peg$c98 = function(f, s, t) {return [{key:'font-family', value: "'" + t + "',serif"}, {key:'font-size', value: s}]},

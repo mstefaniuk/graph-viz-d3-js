@@ -5,8 +5,8 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
     [ 217, 400 ],
     [ 217, 1 ]
   ], style: [
-    { key: 'stroke', value: 'rgba(255,255,255,1)' },
-    { key: 'fill', value: 'rgba(255,255,255,1)' }
+    { key: 'stroke', value: {red:255, green:255, blue:255, opacity:1} },
+    { key: 'fill', value: {red:255, green:255, blue:255, opacity:1} }
   ] }
 ], labels: [  ] }, groups: [
   { id: 'cluster_0', class: 'subgraph', shapes: [
@@ -16,63 +16,63 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 98, 356 ],
       [ 98, 64 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(211,211,211,1)' },
-      { key: 'fill', value: 'rgba(211,211,211,1)' }
+      { key: 'stroke', value: {red:211, green:211, blue:211, opacity:1} },
+      { key: 'fill', value: {red:211, green:211, blue:211, opacity:1} }
     ] }
   ], labels: [
     { x: 53, y: 338, text: 'process #1', style: [
       { key: 'font-family', value: "'Times-Roman',serif" },
       { key: 'font-size', value: 14 },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ] },
   { id: 'a0', class: 'node', shapes: [
     { shape: 'ellipse', cx: 63, cy: 306, rx: 27, ry: 18, style: [
-      { key: 'stroke', value: 'rgba(255,255,255,1)' },
-      { key: 'fill', value: 'rgba(255,255,255,1)' }
+      { key: 'stroke', value: {red:255, green:255, blue:255, opacity:1} },
+      { key: 'fill', value: {red:255, green:255, blue:255, opacity:1} }
     ] }
   ], labels: [
     { x: 63, y: 300, text: 'a0', style: [
       { key: 'font-family', value: "'Times-Roman',serif" },
       { key: 'font-size', value: 14 },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ] },
   { id: 'a1', class: 'node', shapes: [
     { shape: 'ellipse', cx: 63, cy: 234, rx: 27, ry: 18, style: [
-      { key: 'stroke', value: 'rgba(255,255,255,1)' },
+      { key: 'stroke', value: {red:255, green:255, blue:255, opacity:1} },
       { key: 'fill',
-        value: 'rgba(255,255,255,1)' }
+        value: {red:255, green:255, blue:255, opacity:1} }
     ] }
   ], labels: [
     { x: 63, y: 228, text: 'a1', style: [
       { key: 'font-family', value: "'Times-Roman',serif" },
       { key: 'font-size', value: 14 },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ] },
   { id: 'a2', class: 'node', shapes: [
     { shape: 'ellipse', cx: 63, cy: 162, rx: 27, ry: 18, style: [
-      { key: 'stroke', value: 'rgba(255,255,255,1)' },
-      { key: 'fill', value: 'rgba(255,255,255,1)' }
+      { key: 'stroke', value: {red:255, green:255, blue:255, opacity:1} },
+      { key: 'fill', value: {red:255, green:255, blue:255, opacity:1} }
     ] }
   ], labels: [
     { x: 63, y: 156, text: 'a2', style: [
       { key: 'font-family', value: "'Times-Roman',serif" },
       { key: 'font-size', value: 14 },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ] },
   { id: 'a3', class: 'node', shapes: [
     { shape: 'ellipse', cx: 63, cy: 90, rx: 27, ry: 18, style: [
-      { key: 'stroke', value: 'rgba(255,255,255,1)' },
-      { key: 'fill', value: 'rgba(255,255,255,1)' }
+      { key: 'stroke', value: {red:255, green:255, blue:255, opacity:1} },
+      { key: 'fill', value: {red:255, green:255, blue:255, opacity:1} }
     ] }
   ], labels: [
     { x: 63, y: 84, text: 'a3', style: [
       { key: 'font-family', value: "'Times-Roman',serif" },
       { key: 'font-size', value: 14 },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ] },
   { id: 'a0-a1', class: 'relation', shapes: [
@@ -82,7 +82,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 63, 271 ],
       [ 63, 262 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polygon', points: [
       [ 67, 262 ],
@@ -90,8 +90,8 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 60, 262 ]
     ], style: [
       { key: 'style', value: 'solid' },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' },
-      { key: 'fill', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} },
+      { key: 'fill', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ], labels: [  ] },
   { id: 'a1-a2', class: 'relation', shapes: [
@@ -101,7 +101,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 63, 199 ],
       [ 63, 190 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polygon', points: [
       [ 67, 190 ],
@@ -109,8 +109,8 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 60, 190 ]
     ], style: [
       { key: 'style', value: 'solid' },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' },
-      { key: 'fill', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} },
+      { key: 'fill', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ], labels: [  ] },
   { id: 'a2-a3', class: 'relation', shapes: [
@@ -120,7 +120,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 63, 127 ],
       [ 63, 118 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polygon', points: [
       [ 67, 118 ],
@@ -128,8 +128,8 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 60, 118 ]
     ], style: [
       { key: 'style', value: 'solid' },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' },
-      { key: 'fill', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} },
+      { key: 'fill', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ], labels: [  ] },
   { id: 'a3-a0', class: 'relation', shapes: [
@@ -145,7 +145,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 37, 273 ],
       [ 43, 282 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polygon', points: [
       [ 40, 284 ],
@@ -153,8 +153,8 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 46, 280 ]
     ], style: [
       { key: 'style', value: 'solid' },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' },
-      { key: 'fill', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} },
+      { key: 'fill', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ], labels: [  ] },
   { id: 'cluster_1', class: 'subgraph', shapes: [
@@ -164,61 +164,61 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 208, 356 ],
       [ 208, 64 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,255,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:255, opacity:1} }
     ] }
   ], labels: [
     { x: 171, y: 338, text: 'process #2', style: [
       { key: 'font-family', value: "'Times-Roman',serif" },
       { key: 'font-size', value: 14 },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ] },
   { id: 'b0', class: 'node', shapes: [
     { shape: 'ellipse', cx: 170, cy: 306, rx: 27, ry: 18, style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' },
-      { key: 'fill', value: 'rgba(211,211,211,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} },
+      { key: 'fill', value: {red:211, green:211, blue:211, opacity:1} }
     ] }
   ], labels: [
     { x: 170, y: 300, text: 'b0', style: [
       { key: 'font-family', value: "'Times-Roman',serif" },
       { key: 'font-size', value: 14 },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ] },
   { id: 'b1', class: 'node', shapes: [
     { shape: 'ellipse', cx: 171, cy: 234, rx: 27, ry: 18, style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' },
-      { key: 'fill', value: 'rgba(211,211,211,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} },
+      { key: 'fill', value: {red:211, green:211, blue:211, opacity:1} }
     ] }
   ], labels: [
     { x: 171, y: 228, text: 'b1', style: [
       { key: 'font-family', value: "'Times-Roman',serif" },
       { key: 'font-size', value: 14 },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ] },
   { id: 'b2', class: 'node', shapes: [
     { shape: 'ellipse', cx: 173, cy: 162, rx: 27, ry: 18, style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' },
-      { key: 'fill', value: 'rgba(211,211,211,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} },
+      { key: 'fill', value: {red:211, green:211, blue:211, opacity:1} }
     ] }
   ], labels: [
     { x: 173, y: 156, text: 'b2', style: [
       { key: 'font-family', value: "'Times-Roman',serif" },
       { key: 'font-size', value: 14 },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ] },
   { id: 'b3', class: 'node', shapes: [
     { shape: 'ellipse', cx: 168, cy: 90, rx: 27, ry: 18, style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' },
-      { key: 'fill', value: 'rgba(211,211,211,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} },
+      { key: 'fill', value: {red:211, green:211, blue:211, opacity:1} }
     ] }
   ], labels: [
     { x: 168, y: 84, text: 'b3', style: [
       { key: 'font-family', value: "'Times-Roman',serif" },
       { key: 'font-size', value: 14 },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ] },
   { id: 'b0-b1', class: 'relation', shapes: [
@@ -228,7 +228,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 170, 271 ],
       [ 171, 262 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polygon', points: [
       [ 174, 262 ],
@@ -237,8 +237,8 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
     ], style: [
       { key: 'style', value: 'solid'
       },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' },
-      { key: 'fill', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} },
+      { key: 'fill', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ], labels: [  ] },
   { id: 'b1-b2', class: 'relation', shapes: [
@@ -248,7 +248,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 172, 199 ],
       [ 172, 190 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polygon', points: [
       [ 176, 190 ],
@@ -256,8 +256,8 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 169, 190 ]
     ], style: [
       { key: 'style', value: 'solid' },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' },
-      { key: 'fill', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} },
+      { key: 'fill', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ], labels: [  ] },
   { id: 'b2-b3', class: 'relation', shapes: [
@@ -267,7 +267,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 171, 127 ],
       [ 170, 118 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polygon', points: [
       [ 173, 118 ],
@@ -275,8 +275,8 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 166, 118 ]
     ], style: [
       { key: 'style', value: 'solid' },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' },
-      { key: 'fill', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} },
+      { key: 'fill', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ], labels: [  ] },
   { id: 'start', class: 'node', shapes: [
@@ -286,37 +286,37 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 116, 364 ],
       [ 155, 382 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polyline', points: [
       [ 88, 387 ],
       [ 88, 377 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polyline', points: [
       [ 105, 369 ],
       [ 127, 369 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polyline', points: [
       [ 144, 377 ],
       [ 144, 387 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polyline', points: [
       [ 127, 395 ],
       [ 105, 395 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ], labels: [
     { x: 116, y: 376, text: 'start', style: [
       { key: 'font-family', value: "'Times-Roman',serif" },
       { key: 'font-size', value: 14 },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ] },
   { id: 'end', class: 'node', shapes: [
@@ -326,37 +326,37 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 97, 0 ],
       [ 133, 0 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polyline', points: [
       [ 109, 36 ],
       [ 97, 24 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polyline', points: [
       [ 97, 12 ],
       [ 109, 0 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polyline', points: [
       [ 121, 0 ],
       [ 133, 12 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polyline', points: [
       [ 133, 24 ],
       [ 121, 36 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ], labels: [
     { x: 115, y: 12, text: 'end', style: [
       { key: 'font-family', value: "'Times-Roman',serif" },
       { key: 'font-size', value: 14 },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ] },
   { id: 'start-a0', class: 'relation', shapes: [
@@ -366,7 +366,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 89, 343 ],
       [ 80, 331 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polygon', points: [
       [ 83, 329 ],
@@ -375,8 +375,8 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
     ],
       style: [
         { key: 'style', value: 'solid' },
-        { key: 'stroke', value: 'rgba(0,0,0,1)' },
-        { key: 'fill', value: 'rgba(0,0,0,1)' }
+        { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} },
+        { key: 'fill', value: {red:0, green:0, blue:0, opacity:1} }
       ] }
   ], labels: [  ] },
   { id: 'start-b0',
@@ -387,7 +387,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 144, 343 ],
       [ 153, 331 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polygon', points: [
       [ 156, 333 ],
@@ -395,8 +395,8 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 150, 329 ]
     ], style: [
       { key: 'style', value: 'solid' },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' },
-      { key: 'fill', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} },
+      { key: 'fill', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ], labels: [  ] },
   { id: 'a1-b3', class: 'relation', shapes: [
@@ -407,7 +407,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 129, 144 ],
       [ 150, 115 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polygon', points: [
       [ 153, 117 ],
@@ -416,8 +416,8 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 148, 112 ]
     ], style: [
       { key: 'style', value: 'solid' },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' },
-      { key: 'fill', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} },
+      { key: 'fill', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ], labels: [  ] },
   { id: 'b2-a3', class: 'relation', shapes: [
@@ -427,7 +427,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 110, 121 ],
       [ 91, 109 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polygon', points: [
       [ 92, 105 ],
@@ -435,8 +435,8 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 88, 111 ]
     ], style: [
       { key: 'style', value: 'solid' },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' },
-      { key: 'fill', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} },
+      { key: 'fill', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ], labels: [  ] },
   { id: 'a3-end', class: 'relation', shapes: [
@@ -446,7 +446,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 89, 54 ],
       [ 96, 45 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polygon', points: [
       [ 99, 47 ],
@@ -454,8 +454,8 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 93, 42 ]
     ], style: [
       { key: 'style', value: 'solid' },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' },
-      { key: 'fill', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} },
+      { key: 'fill', value: {red:0, green:0, blue:0, opacity:1} }
     ]
     }
   ], labels: [  ] },
@@ -466,7 +466,7 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 142, 54 ],
       [ 134, 45 ]
     ], style: [
-      { key: 'stroke', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} }
     ] },
     { shape: 'polygon', points: [
       [ 137, 42 ],
@@ -474,8 +474,8 @@ define({ main: { id: 'G', class: 'digraph', shapes: [
       [ 131, 47 ]
     ], style: [
       { key: 'style', value: 'solid' },
-      { key: 'stroke', value: 'rgba(0,0,0,1)' },
-      { key: 'fill', value: 'rgba(0,0,0,1)' }
+      { key: 'stroke', value: {red:0, green:0, blue:0, opacity:1} },
+      { key: 'fill', value: {red:0, green:0, blue:0, opacity:1} }
     ] }
   ], labels: [  ] }
 ] });
