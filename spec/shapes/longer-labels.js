@@ -1,11 +1,11 @@
 define({
-  main: {
-    id: null,
-    class: 'digraph',
-    shapes: [
+  "main": {
+    "id": null,
+    "class": "digraph",
+    "shapes": [
       {
-        shape: 'polygon',
-        points: [
+        "shape": "polygon",
+        "points": [
           [
             0,
             0
@@ -23,108 +23,154 @@ define({
             0
           ]
         ],
-        style: [
+        "style": [
           {
-            key: 'stroke',
-            value: {red:255, green:255, blue:254, opacity:1}
+            "key": "stroke",
+            "value": {
+              "red": 255,
+              "green": 255,
+              "blue": 254,
+              "opacity": 1
+            }
           },
           {
-            key: 'fill',
-            value: {red:255, green:255, blue:255, opacity:1}
+            "key": "fill",
+            "value": {
+              "red": 255,
+              "green": 255,
+              "blue": 255,
+              "opacity": 1
+            }
           }
         ]
       }
     ],
-    labels: []
+    "labels": []
   },
-  groups: [
+  "groups": [
     {
-      id: 'longer',
-      class: 'node',
-      shapes: [
+      "id": "longer",
+      "class": "node",
+      "shapes": [
         {
-          shape: 'ellipse',
-          cx: 35.71,
-          cy: 162,
-          rx: 35.92,
-          ry: 18,
-          style: [
+          "shape": "ellipse",
+          "cx": 35.71,
+          "cy": 162,
+          "rx": 35.92,
+          "ry": 18,
+          "style": [
             {
-              key: 'stroke',
-              value: {red:0, green:0, blue:0, opacity:1}
+              "key": "stroke",
+              "value": {
+                "red": 0,
+                "green": 0,
+                "blue": 0,
+                "opacity": 1
+              }
+            },
+            {
+              "key": "fill",
+              "value": "none"
             }
           ]
         }
       ],
-      labels: [
+      "labels": [
         {
-          x: 35.71,
-          y: 157.8,
-          text: 'longer',
-          style: [
+          "x": 35.71,
+          "y": 157.8,
+          "text": "longer",
+          "style": [
             {
-              key: 'font-family',
-              value: "'Times-Roman',serif"
+              "key": "font-family",
+              "value": "'Times-Roman',serif"
             },
             {
-              key: 'font-size',
-              value: 14
+              "key": "font-size",
+              "value": 14
             },
             {
-              key: 'stroke',
-              value: {red:0, green:0, blue:0, opacity:1}
+              "key": "stroke",
+              "value": {
+                "red": 0,
+                "green": 0,
+                "blue": 0,
+                "opacity": 1
+              }
+            },
+            {
+              "key": "text-anchor",
+              "value": "middle"
             }
           ]
         }
       ]
     },
     {
-      id: 'labels',
-      class: 'node',
-      shapes: [
+      "id": "labels",
+      "class": "node",
+      "shapes": [
         {
-          shape: 'ellipse',
-          cx: 35.71,
-          cy: 90,
-          rx: 33.62,
-          ry: 18,
-          style: [
+          "shape": "ellipse",
+          "cx": 35.71,
+          "cy": 90,
+          "rx": 33.62,
+          "ry": 18,
+          "style": [
             {
-              key: 'stroke',
-              value: {red:0, green:0, blue:0, opacity:1}
+              "key": "stroke",
+              "value": {
+                "red": 0,
+                "green": 0,
+                "blue": 0,
+                "opacity": 1
+              }
+            },
+            {
+              "key": "fill",
+              "value": "none"
             }
           ]
         }
       ],
-      labels: [
+      "labels": [
         {
-          x: 35.71,
-          y: 85.8,
-          text: 'labels',
-          style: [
+          "x": 35.71,
+          "y": 85.8,
+          "text": "labels",
+          "style": [
             {
-              key: 'font-family',
-              value: "'Times-Roman',serif"
+              "key": "font-family",
+              "value": "'Times-Roman',serif"
             },
             {
-              key: 'font-size',
-              value: 14
+              "key": "font-size",
+              "value": 14
             },
             {
-              key: 'stroke',
-              value: {red:0, green:0, blue:0, opacity:1}
+              "key": "stroke",
+              "value": {
+                "red": 0,
+                "green": 0,
+                "blue": 0,
+                "opacity": 1
+              }
+            },
+            {
+              "key": "text-anchor",
+              "value": "middle"
             }
           ]
         }
       ]
     },
     {
-      id: 'longer-labels',
-      class: 'relation',
-      shapes: [
+      "id": "longer-labels",
+      "class": "relation",
+      "shapes": [
         {
-          shape: 'bspline',
-          points: [
+          "shape": "bspline",
+          "points": [
             [
               35.71,
               143.7
@@ -142,16 +188,25 @@ define({
               118.11
             ]
           ],
-          style: [
+          "style": [
             {
-              key: 'stroke',
-              value: {red:0, green:0, blue:0, opacity:1}
+              "key": "stroke",
+              "value": {
+                "red": 0,
+                "green": 0,
+                "blue": 0,
+                "opacity": 1
+              }
+            },
+            {
+              "key": "fill",
+              "value": "none"
             }
           ]
         },
         {
-          shape: 'polygon',
-          points: [
+          "shape": "polygon",
+          "points": [
             [
               39.21,
               118.1
@@ -165,71 +220,99 @@ define({
               118.1
             ]
           ],
-          style: [
+          "style": [
             {
-              key: 'style',
-              value: 'solid'
+              "key": "style",
+              "value": "solid"
             },
             {
-              key: 'stroke',
-              value: {red:0, green:0, blue:0, opacity:1}
+              "key": "stroke",
+              "value": {
+                "red": 0,
+                "green": 0,
+                "blue": 0,
+                "opacity": 1
+              }
             },
             {
-              key: 'fill',
-              value: {red:0, green:0, blue:0, opacity:1}
+              "key": "fill",
+              "value": {
+                "red": 0,
+                "green": 0,
+                "blue": 0,
+                "opacity": 1
+              }
             }
           ]
         }
       ],
-      labels: []
+      "labels": []
     },
     {
-      id: 'ok',
-      class: 'node',
-      shapes: [
+      "id": "ok",
+      "class": "node",
+      "shapes": [
         {
-          shape: 'ellipse',
-          cx: 35.71,
-          cy: 18,
-          rx: 27,
-          ry: 18,
-          style: [
+          "shape": "ellipse",
+          "cx": 35.71,
+          "cy": 18,
+          "rx": 27,
+          "ry": 18,
+          "style": [
             {
-              key: 'stroke',
-              value: {red:0, green:0, blue:0, opacity:1}
+              "key": "stroke",
+              "value": {
+                "red": 0,
+                "green": 0,
+                "blue": 0,
+                "opacity": 1
+              }
+            },
+            {
+              "key": "fill",
+              "value": "none"
             }
           ]
         }
       ],
-      labels: [
+      "labels": [
         {
-          x: 35.71,
-          y: 13.8,
-          text: 'ok',
-          style: [
+          "x": 35.71,
+          "y": 13.8,
+          "text": "ok",
+          "style": [
             {
-              key: 'font-family',
-              value: "'Times-Roman',serif"
+              "key": "font-family",
+              "value": "'Times-Roman',serif"
             },
             {
-              key: 'font-size',
-              value: 14
+              "key": "font-size",
+              "value": 14
             },
             {
-              key: 'stroke',
-              value: {red:0, green:0, blue:0, opacity:1}
+              "key": "stroke",
+              "value": {
+                "red": 0,
+                "green": 0,
+                "blue": 0,
+                "opacity": 1
+              }
+            },
+            {
+              "key": "text-anchor",
+              "value": "middle"
             }
           ]
         }
       ]
     },
     {
-      id: 'labels-ok',
-      class: 'relation',
-      shapes: [
+      "id": "labels-ok",
+      "class": "relation",
+      "shapes": [
         {
-          shape: 'bspline',
-          points: [
+          "shape": "bspline",
+          "points": [
             [
               35.71,
               71.7
@@ -247,16 +330,25 @@ define({
               46.11
             ]
           ],
-          style: [
+          "style": [
             {
-              key: 'stroke',
-              value: {red:0, green:0, blue:0, opacity:1}
+              "key": "stroke",
+              "value": {
+                "red": 0,
+                "green": 0,
+                "blue": 0,
+                "opacity": 1
+              }
+            },
+            {
+              "key": "fill",
+              "value": "none"
             }
           ]
         },
         {
-          shape: 'polygon',
-          points: [
+          "shape": "polygon",
+          "points": [
             [
               39.21,
               46.1
@@ -270,23 +362,33 @@ define({
               46.1
             ]
           ],
-          style: [
+          "style": [
             {
-              key: 'style',
-              value: 'solid'
+              "key": "style",
+              "value": "solid"
             },
             {
-              key: 'stroke',
-              value: {red:0, green:0, blue:0, opacity:1}
+              "key": "stroke",
+              "value": {
+                "red": 0,
+                "green": 0,
+                "blue": 0,
+                "opacity": 1
+              }
             },
             {
-              key: 'fill',
-              value: {red:0, green:0, blue:0, opacity:1}
+              "key": "fill",
+              "value": {
+                "red": 0,
+                "green": 0,
+                "blue": 0,
+                "opacity": 1
+              }
             }
           ]
         }
       ],
-      labels: []
+      "labels": []
     }
   ]
 });
