@@ -36,32 +36,6 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
       };
     }
 
-    var styliseur = function (selection, fill) {
-      fill = fill || false;
-      this.each(function (d) {
-        var self = d3.select(this);
-        d.style.forEach(function (e) {
-          switch (e.key) {
-            case "stroke":
-            case "fill":
-              var color = d3.rgb(e.value.red, e.value.green, e.value.blue);
-              color.opacity = e.value.opacity;
-              self.attr(e.key, color);
-              break;
-            case "font-size":
-              self.style(e.key, e.value);
-              break;
-            case "style":
-              if (e.value.indexOf('setline') === 0) {
-                self.attr('stroke-width', 2);
-              } else {
-                self.attr('class', e.value);
-              }
-          }
-        });
-      });
-    };
-
     var labelAttributer = function () {
       this
         .attr("x", function (d) {
@@ -73,22 +47,6 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         .text(function (d) {
           return d.text;
         });
-
-      this.each(function (d) {
-        var self = d3.select(this);
-        d.style.map(function (e) {
-          switch (e.key) {
-            case "stroke":
-              return {key: "color", value: e.value};
-            case "font-size":
-              return {key: e.key, value: e.value + "px"};
-            default:
-              return e;
-          }
-        }).forEach(function (e) {
-          self.style(e.key, e.value);
-        });
-      });
     };
 
     function zoomed() {
@@ -178,11 +136,6 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
                   return e.join(",");
                 }).join(" ");
             });
-          var self = this;
-
-          sizes.style.forEach(function (e) {
-            self.style(e.key, e.value);
-          });
         });
 
         var overlay = svg.select("rect.overlay");

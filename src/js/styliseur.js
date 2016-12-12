@@ -1,5 +1,5 @@
 define(["d3"], function(d3) {
-  var styliseur = function (selection) {
+  var styliseur = function () {
     this.each(function (d) {
       var self = d3.select(this);
       var colorInsteadOfStroke = this instanceof SVGTextElement || false;
@@ -13,7 +13,8 @@ define(["d3"], function(d3) {
             self.attr(attribute, color);
             break;
           case "font-size":
-            self.style(e.key, e.value);
+          case "font-family":
+            self.attr(e.key, e.value);
             break;
           case "style":
             if (e.value.indexOf('setline') === 0) {

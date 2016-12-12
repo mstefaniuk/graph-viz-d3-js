@@ -12,7 +12,8 @@ define(["styliseur"], function(styliseur) {
         .transition()
         .delay(150)
         .duration(900)
-        .call(attributer);
+        .call(attributer)
+        .call(styliseur);
     },
     nodes: function (selection, attributer) {
       selection
@@ -29,7 +30,8 @@ define(["styliseur"], function(styliseur) {
         .transition()
         .delay(150)
         .duration(900)
-        .call(attributer);
+        .call(attributer)
+        .call(styliseur);
     },
     exits: function (selection, attributer) {
       selection

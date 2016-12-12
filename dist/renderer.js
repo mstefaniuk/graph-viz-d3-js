@@ -54,7 +54,7 @@ define('palette',[],function () {
   };
 });
 define('styliseur',["d3"], function(d3) {
-  var styliseur = function (selection) {
+  var styliseur = function () {
     this.each(function (d) {
       var self = d3.select(this);
       var colorInsteadOfStroke = this instanceof SVGTextElement || false;
@@ -68,7 +68,8 @@ define('styliseur',["d3"], function(d3) {
             self.attr(attribute, color);
             break;
           case "font-size":
-            self.style(e.key, e.value);
+          case "font-family":
+            self.attr(e.key, e.value);
             break;
           case "style":
             if (e.value.indexOf('setline') === 0) {
@@ -97,7 +98,8 @@ define('transitions/default',["styliseur"], function(styliseur) {
         .transition()
         .delay(150)
         .duration(900)
-        .call(attributer);
+        .call(attributer)
+        .call(styliseur);
     },
     nodes: function (selection, attributer) {
       selection
@@ -114,7 +116,8 @@ define('transitions/default',["styliseur"], function(styliseur) {
         .transition()
         .delay(150)
         .duration(900)
-        .call(attributer);
+        .call(attributer)
+        .call(styliseur);
     },
     exits: function (selection, attributer) {
       selection
@@ -179,32 +182,6 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
       };
     }
 
-    var styliseur = function (selection, fill) {
-      fill = fill || false;
-      this.each(function (d) {
-        var self = d3.select(this);
-        d.style.forEach(function (e) {
-          switch (e.key) {
-            case "stroke":
-            case "fill":
-              var color = d3.rgb(e.value.red, e.value.green, e.value.blue);
-              color.opacity = e.value.opacity;
-              self.attr(e.key, color);
-              break;
-            case "font-size":
-              self.style(e.key, e.value);
-              break;
-            case "style":
-              if (e.value.indexOf('setline') === 0) {
-                self.attr('stroke-width', 2);
-              } else {
-                self.attr('class', e.value);
-              }
-          }
-        });
-      });
-    };
-
     var labelAttributer = function () {
       this
         .attr("x", function (d) {
@@ -216,22 +193,6 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
         .text(function (d) {
           return d.text;
         });
-
-      this.each(function (d) {
-        var self = d3.select(this);
-        d.style.map(function (e) {
-          switch (e.key) {
-            case "stroke":
-              return {key: "color", value: e.value};
-            case "font-size":
-              return {key: e.key, value: e.value + "px"};
-            default:
-              return e;
-          }
-        }).forEach(function (e) {
-          self.style(e.key, e.value);
-        });
-      });
     };
 
     function zoomed() {
@@ -250,7 +211,7 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
           .text([
             'path {fill: transparent}',
             'text {text-anchor: middle; font-family:"Times-Roman",serif; font-size: 10pt}',
-            '.dashed {stroke-dasharray: 5,5;}',
+            '.dashed {stroke-dasharray: 5,5}',
             '.dotted {stroke-dasharray: 1,5}',
             '.overlay {fill: none; pointer-events: all}'
           ].join(' '));
@@ -321,11 +282,6 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
                   return e.join(",");
                 }).join(" ");
             });
-          var self = this;
-
-          sizes.style.forEach(function (e) {
-            self.style(e.key, e.value);
-          });
         });
 
         var overlay = svg.select("rect.overlay");
