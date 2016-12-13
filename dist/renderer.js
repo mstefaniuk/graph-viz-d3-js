@@ -69,6 +69,7 @@ define('styliseur',["d3"], function(d3) {
             break;
           case "font-size":
           case "font-family":
+          case "text-anchor":
             self.attr(e.key, e.value);
             break;
           case "style":

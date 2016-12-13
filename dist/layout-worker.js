@@ -6338,10 +6338,33 @@ define('transformer',['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser
         var cursor = result[result.length - 1];
         cursor.shapes = cursor.shapes.concat(node.elements.filter(function(e){
           return e.shape;
-        }));
+        })).map(fixShapeStyles);
         cursor.labels = cursor.labels.concat(node.elements.filter(function(e){
           return e.text;
-        }));
+        })).map(fixTextStyles);
+      }
+
+      function fixShapeStyles(element) {
+        if (element.style) {
+          var keys = styleKeys(element.style);
+          keys.indexOf("fill") < 0 && element.style.push({key: 'fill', value: 'none'});
+          keys.indexOf("stroke") < 0 && element.style.push({key: 'stroke', value: 'black'});
+        }
+        return element;
+      }
+
+      function fixTextStyles(element) {
+        if (element.style) {
+          var keys = styleKeys(element.style);
+          keys.indexOf("text-anchor") < 0 && element.style.push({key: 'text-anchor', value: 'middle'});
+        }
+        return element;
+      }
+
+      function styleKeys(styles) {
+        return styles.map(function(e) {
+          return e.key;
+        });
       }
 
       var visit = pegast.nodeVisitor({
