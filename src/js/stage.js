@@ -63,8 +63,6 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         svg.append("style")
           .attr("type", "text/css")
           .text([
-            'path {fill: transparent}',
-            'text {text-anchor: middle; font-family:"Times-Roman",serif; font-size: 10pt}',
             '.dashed {stroke-dasharray: 5,5}',
             '.dotted {stroke-dasharray: 1,5}',
             '.overlay {fill: none; pointer-events: all}'
@@ -123,7 +121,7 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
               " " + "translate(" + sizes.vtranslate + "," + sizes.htranslate + ")");
         });
 
-        var polygon = main.select("polygon");
+        var polygon = main.select("polygon").data(stage.main.shapes);
         transitions.canvas(polygon, function () {
           this
             .attr("points", function () {
