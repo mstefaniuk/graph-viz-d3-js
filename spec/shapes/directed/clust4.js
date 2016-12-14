@@ -413,7 +413,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -497,7 +497,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -581,7 +581,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -689,7 +689,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -773,7 +773,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         }
@@ -1097,7 +1097,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -1181,7 +1181,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -1265,7 +1265,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -1349,7 +1349,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -1377,7 +1377,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -1405,7 +1405,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -1433,7 +1433,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -1461,7 +1461,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         }
@@ -1533,7 +1533,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -1561,7 +1561,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -1589,7 +1589,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -1617,7 +1617,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -1645,7 +1645,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         }
@@ -1717,7 +1717,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -1801,7 +1801,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -1885,7 +1885,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -1969,7 +1969,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -2053,7 +2053,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },
@@ -2137,7 +2137,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "none"
+              "value": {red: 255, green: 255, blue: 255, opacity: 0}
             }
           ]
         },

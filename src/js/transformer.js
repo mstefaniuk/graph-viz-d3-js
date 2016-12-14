@@ -42,8 +42,8 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
       function fixShapeStyles(element) {
         if (element.style) {
           var keys = styleKeys(element.style);
-          keys.indexOf("fill") < 0 && element.style.push({key: 'fill', value: 'none'});
-          keys.indexOf("stroke") < 0 && element.style.push({key: 'stroke', value: 'black'});
+          keys.indexOf("fill") < 0 && element.style.push({key: 'fill', value: {red: 255, green: 255, blue: 255, opacity: 0}});
+          keys.indexOf("stroke") < 0 && element.style.push({key: 'stroke', value: {red:0, green:0, blue:0, opacity: 1}});
         }
         return element;
       }

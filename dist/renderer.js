@@ -215,7 +215,7 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
             '.overlay {fill: none; pointer-events: all}'
           ].join(' '));
         main = svg.append("g").append("g");
-        main.append("polygon").attr("stroke", "none");
+        main.append("polygon").attr("stroke", {red: 255, green: 255, blue: 255, opacity: 0});
 
         if (definition.zoom) {
           var extent = definition.zoom && definition.zoom.extent || [0.1, 10];
