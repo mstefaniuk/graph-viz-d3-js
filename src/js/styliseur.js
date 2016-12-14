@@ -8,9 +8,11 @@ define(["d3"], function(d3) {
           case "stroke":
           case "fill":
             var attribute = e.key==="stroke" && colorInsteadOfStroke ? "color" : e.key;
-            var color = d3.rgb(e.value.red, e.value.green, e.value.blue);
-            color.opacity = e.value.opacity;
+            var transparent = e.value.indexOf("#")===0 &&  e.value.length === 9;
+            var color = transparent ? e.value.substr(0,7) : e.value;
+            var opacity = transparent ? parseInt(e.value.substr(7,2),16)/255 : 1;
             self.attr(attribute, color);
+            opacity && self.attr(attribute + "-opacity", opacity);
             break;
           case "font-size":
           case "font-family":

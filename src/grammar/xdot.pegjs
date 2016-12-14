@@ -51,16 +51,8 @@ ellipse = [eE] c:coordinates _ rx:decimal _ ry:decimal {return {shape: 'ellipse'
 polygon = p:[pP] _ l:integer c:coordinates+ {return {shape: 'polygon', points:c}}
 polyline = [L] _ integer c:coordinates+ {return {shape: 'polyline', points:c}}
 bspline = [bB] _ integer c:coordinates+ {return {shape: 'bspline', points: c}}
-text = [T] c:coordinates _ decimal
-           _ decimal _ t:vardata {return {x:c[0], y:c[1], text:t}}
-pen = p:[Cc] _ c:vardata
-    {var colors = {
-        red: parseInt(c.substr(1,2),16),
-        green: parseInt(c.substr(3,2),16),
-        blue: parseInt(c.substr(5,2),16),
-        opacity: c.length==8 ? parseInt(c.substr(7,2),16)/255 : 1
-    };
-    return p=='C' ? {key: "fill", value: colors} : {key: "stroke", value: colors}}
+text = [T] c:coordinates _ decimal _ decimal _ t:vardata {return {x:c[0], y:c[1], text:t}}
+pen = p:[Cc] _ c:vardata {return p=='C' ? {key: "fill", value: c} : {key: "stroke", value: c}}
 font = f:[F] _ s:decimal _ t:vardata {return [{key:'font-family', value: "'" + t + "',serif"}, {key:'font-size', value: s}]}
 fontdecoration = [t] _ v:integer {return {key:"text-decoration", value: v}}
 style = [S] _ s:vardata {return {key:'style', value: s}}

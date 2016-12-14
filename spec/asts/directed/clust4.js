@@ -11,8 +11,8 @@ define({"type": "digraph", "id": "G", "commands": [
         [217, 400],
         [217, 1]
       ], "style": [
-        {"key": "stroke", "value": {red:255, green:255, blue:255, opacity:1}},
-        {"key": "fill", "value": {red:255, green:255, blue:255, opacity:1}}
+        {"key": "stroke", "value": "#ffffff"},
+        {"key": "fill", "value": "#ffffff"}
       ]}
     ]},
     {"name": "xdotversion", "type": "skip"}
@@ -30,15 +30,15 @@ define({"type": "digraph", "id": "G", "commands": [
           [98, 356],
           [98, 64]
         ], "style": [
-          {"key": "stroke", "value": {red:211, green:211, blue:211, opacity:1}},
-          {"key": "fill", "value": {red:211, green:211, blue:211, opacity:1}}
+          {"key": "stroke", "value": "#d3d3d3"},
+          {"key": "fill", "value": "#d3d3d3"}
         ]}
       ]},
       {"type": "ldraw", "elements": [
         {"x": 53, "y": 338, "text": "process #1", "style": [
           {"key": "font-family", "value": "'Times-Roman',serif"},
           {"key": "font-size", "value": 14},
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"}
         ]}
       ]},
       {"name": "xdotversion", "type": "skip"}
@@ -53,15 +53,15 @@ define({"type": "digraph", "id": "G", "commands": [
       {"name": "height", "type": "skip"},
       {"type": "draw", "elements": [
         {"shape": "ellipse", "cx": 63, "cy": 306, "rx": 27, "ry": 18, "style": [
-          {"key": "stroke", "value": {red:255, green:255, blue:255, opacity:1}},
-          {"key": "fill", "value": {red:255, green:255, blue:255, opacity:1}}
+          {"key": "stroke", "value": "#ffffff"},
+          {"key": "fill", "value": "#ffffff"}
         ]}
       ]},
       {"type": "ldraw", "elements": [
         {"x": 63, "y": 300, "text": "a0", "style": [
           {"key": "font-family", "value": "'Times-Roman',serif"},
           {"key": "font-size", "value": 14},
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"}
         ]}
       ]}
     ]},
@@ -71,15 +71,15 @@ define({"type": "digraph", "id": "G", "commands": [
       {"name": "height", "type": "skip"},
       {"type": "draw", "elements": [
         {"shape": "ellipse", "cx": 63, "cy": 234, "rx": 27, "ry": 18, "style": [
-          {"key": "stroke", "value": {red:255, green:255, blue:255, opacity:1}},
-          {"key": "fill", "value": {red:255, green:255, blue:255, opacity:1}}
+          {"key": "stroke", "value": "#ffffff"},
+          {"key": "fill", "value": "#ffffff"}
         ]}
       ]},
       {"type": "ldraw", "elements": [
         {"x": 63, "y": 228, "text": "a1", "style": [
           {"key": "font-family", "value": "'Times-Roman',serif"},
           {"key": "font-size", "value": 14},
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"}
         ]}
       ]}
     ]},
@@ -89,15 +89,15 @@ define({"type": "digraph", "id": "G", "commands": [
       {"name": "height", "type": "skip"},
       {"type": "draw", "elements": [
         {"shape": "ellipse", "cx": 63, "cy": 162, "rx": 27, "ry": 18, "style": [
-          {"key": "stroke", "value": {red:255, green:255, blue:255, opacity:1}},
-          {"key": "fill", "value": {red:255, green:255, blue:255, opacity:1}}
+          {"key": "stroke", "value": "#ffffff"},
+          {"key": "fill", "value": "#ffffff"}
         ]}
       ]},
       {"type": "ldraw", "elements": [
         {"x": 63, "y": 156, "text": "a2", "style": [
           {"key": "font-family", "value": "'Times-Roman',serif"},
           {"key": "font-size", "value": 14},
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"}
         ]}
       ]}
     ]},
@@ -107,15 +107,15 @@ define({"type": "digraph", "id": "G", "commands": [
       {"name": "height", "type": "skip"},
       {"type": "draw", "elements": [
         {"shape": "ellipse", "cx": 63, "cy": 90, "rx": 27, "ry": 18, "style": [
-          {"key": "stroke", "value": {red:255, green:255, blue:255, opacity:1}},
-          {"key": "fill", "value": {red:255, green:255, blue:255, opacity:1}}
+          {"key": "stroke", "value": "#ffffff"},
+          {"key": "fill", "value": "#ffffff"}
         ]}
       ]},
       {"type": "ldraw", "elements": [
         {"x": 63, "y": 84, "text": "a3", "style": [
           {"key": "font-family", "value": "'Times-Roman',serif"},
           {"key": "font-size", "value": 14},
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"}
         ]}
       ]}
     ]},
@@ -128,7 +128,7 @@ define({"type": "digraph", "id": "G", "commands": [
           [63, 271],
           [63, 262]
         ], "style": [
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"}
         ]}
       ]},
       {"type": "hdraw", "elements": [
@@ -138,8 +138,8 @@ define({"type": "digraph", "id": "G", "commands": [
           [60, 262]
         ], "style": [
           {"key": "style", "value": "solid"},
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}},
-          {"key": "fill", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"},
+          {"key": "fill", "value": "#000000"}
         ]}
       ]}
     ]},
@@ -152,7 +152,7 @@ define({"type": "digraph", "id": "G", "commands": [
           [63, 199],
           [63, 190]
         ], "style": [
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"}
         ]}
       ]},
       {"type": "hdraw", "elements": [
@@ -162,8 +162,8 @@ define({"type": "digraph", "id": "G", "commands": [
           [60, 190]
         ], "style": [
           {"key": "style", "value": "solid"},
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}},
-          {"key": "fill", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"},
+          {"key": "fill", "value": "#000000"}
         ]}
       ]}
     ]},
@@ -176,7 +176,7 @@ define({"type": "digraph", "id": "G", "commands": [
           [63, 127],
           [63, 118]
         ], "style": [
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"}
         ]}
       ]},
       {"type": "hdraw", "elements": [
@@ -186,8 +186,8 @@ define({"type": "digraph", "id": "G", "commands": [
           [60, 118]
         ], "style": [
           {"key": "style", "value": "solid"},
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}},
-          {"key": "fill", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"},
+          {"key": "fill", "value": "#000000"}
         ]}
       ]}
     ]},
@@ -206,7 +206,7 @@ define({"type": "digraph", "id": "G", "commands": [
           [37, 273],
           [43, 282]
         ], "style": [
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"}
         ]}
       ]},
       {"type": "hdraw", "elements": [
@@ -216,8 +216,8 @@ define({"type": "digraph", "id": "G", "commands": [
           [46, 280]
         ], "style": [
           {"key": "style", "value": "solid"},
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}},
-          {"key": "fill", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"},
+          {"key": "fill", "value": "#000000"}
         ]}
       ]}
     ]}
@@ -234,14 +234,14 @@ define({"type": "digraph", "id": "G", "commands": [
           [208, 356],
           [208, 64]
         ], "style": [
-          {"key": "stroke", "value": {red:0, green:0, blue:255, opacity:1}}
+          {"key": "stroke", "value": "#0000ff"}
         ]}
       ]},
       {"type": "ldraw", "elements": [
         {"x": 171, "y": 338, "text": "process #2", "style": [
           {"key": "font-family", "value": "'Times-Roman',serif"},
           {"key": "font-size", "value": 14},
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"}
         ]}
       ]},
       {"name": "xdotversion", "type": "skip"}
@@ -255,15 +255,15 @@ define({"type": "digraph", "id": "G", "commands": [
       {"name": "height", "type": "skip"},
       {"type": "draw", "elements": [
         {"shape": "ellipse", "cx": 170, "cy": 306, "rx": 27, "ry": 18, "style": [
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}},
-          {"key": "fill", "value": {red:211, green:211, blue:211, opacity:1}}
+          {"key": "stroke", "value": "#000000"},
+          {"key": "fill", "value": "#d3d3d3"}
         ]}
       ]},
       {"type": "ldraw", "elements": [
         {"x": 170, "y": 300, "text": "b0", "style": [
           {"key": "font-family", "value": "'Times-Roman',serif"},
           {"key": "font-size", "value": 14},
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"}
         ]}
       ]}
     ]},
@@ -273,15 +273,15 @@ define({"type": "digraph", "id": "G", "commands": [
       {"name": "height", "type": "skip"},
       {"type": "draw", "elements": [
         {"shape": "ellipse", "cx": 171, "cy": 234, "rx": 27, "ry": 18, "style": [
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}},
-          {"key": "fill", "value": {red:211, green:211, blue:211, opacity:1}}
+          {"key": "stroke", "value": "#000000"},
+          {"key": "fill", "value": "#d3d3d3"}
         ]}
       ]},
       {"type": "ldraw", "elements": [
         {"x": 171, "y": 228, "text": "b1", "style": [
           {"key": "font-family", "value": "'Times-Roman',serif"},
           {"key": "font-size", "value": 14},
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"}
         ]}
       ]}
     ]},
@@ -291,15 +291,15 @@ define({"type": "digraph", "id": "G", "commands": [
       {"name": "height", "type": "skip"},
       {"type": "draw", "elements": [
         {"shape": "ellipse", "cx": 173, "cy": 162, "rx": 27, "ry": 18, "style": [
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}},
-          {"key": "fill", "value": {red:211, green:211, blue:211, opacity:1}}
+          {"key": "stroke", "value": "#000000"},
+          {"key": "fill", "value": "#d3d3d3"}
         ]}
       ]},
       {"type": "ldraw", "elements": [
         {"x": 173, "y": 156, "text": "b2", "style": [
           {"key": "font-family", "value": "'Times-Roman',serif"},
           {"key": "font-size", "value": 14},
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"}
         ]}
       ]}
     ]},
@@ -309,15 +309,15 @@ define({"type": "digraph", "id": "G", "commands": [
       {"name": "height", "type": "skip"},
       {"type": "draw", "elements": [
         {"shape": "ellipse", "cx": 168, "cy": 90, "rx": 27, "ry": 18, "style": [
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}},
-          {"key": "fill", "value": {red:211, green:211, blue:211, opacity:1}}
+          {"key": "stroke", "value": "#000000"},
+          {"key": "fill", "value": "#d3d3d3"}
         ]}
       ]},
       {"type": "ldraw", "elements": [
         {"x": 168, "y": 84, "text": "b3", "style": [
           {"key": "font-family", "value": "'Times-Roman',serif"},
           {"key": "font-size", "value": 14},
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"}
         ]}
       ]}
     ]},
@@ -330,7 +330,7 @@ define({"type": "digraph", "id": "G", "commands": [
           [170, 271],
           [171, 262]
         ], "style": [
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"}
         ]}
       ]},
       {"type": "hdraw", "elements": [
@@ -340,8 +340,8 @@ define({"type": "digraph", "id": "G", "commands": [
           [167, 262]
         ], "style": [
           {"key": "style", "value": "solid"},
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}},
-          {"key": "fill", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"},
+          {"key": "fill", "value": "#000000"}
         ]}
       ]}
     ]},
@@ -354,7 +354,7 @@ define({"type": "digraph", "id": "G", "commands": [
           [172, 199],
           [172, 190]
         ], "style": [
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"}
         ]}
       ]},
       {"type": "hdraw", "elements": [
@@ -364,8 +364,8 @@ define({"type": "digraph", "id": "G", "commands": [
           [169, 190]
         ], "style": [
           {"key": "style", "value": "solid"},
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}},
-          {"key": "fill", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"},
+          {"key": "fill", "value": "#000000"}
         ]}
       ]}
     ]},
@@ -378,7 +378,7 @@ define({"type": "digraph", "id": "G", "commands": [
           [171, 127],
           [170, 118]
         ], "style": [
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"}
         ]}
       ]},
       {"type": "hdraw", "elements": [
@@ -388,8 +388,8 @@ define({"type": "digraph", "id": "G", "commands": [
           [166, 118]
         ], "style": [
           {"key": "style", "value": "solid"},
-          {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}},
-          {"key": "fill", "value": {red:0, green:0, blue:0, opacity:1}}
+          {"key": "stroke", "value": "#000000"},
+          {"key": "fill", "value": "#000000"}
         ]}
       ]}
     ]}
@@ -406,38 +406,38 @@ define({"type": "digraph", "id": "G", "commands": [
         [116, 364],
         [155, 382]
       ], "style": [
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"}
       ]},
       {"shape": "polyline", "points": [
         [88, 387],
         [88, 377]
       ], "style": [
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"}
       ]},
       {"shape": "polyline", "points": [
         [105, 369],
         [127, 369]
       ], "style": [
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"}
       ]},
       {"shape": "polyline", "points": [
         [144, 377],
         [144, 387]
       ], "style": [
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"}
       ]},
       {"shape": "polyline", "points": [
         [127, 395],
         [105, 395]
       ], "style": [
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"}
       ]}
     ]},
     {"type": "ldraw", "elements": [
       {"x": 116, "y": 376, "text": "start", "style": [
         {"key": "font-family", "value": "'Times-Roman',serif"},
         {"key": "font-size", "value": 14},
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"}
       ]}
     ]}
   ]},
@@ -453,38 +453,38 @@ define({"type": "digraph", "id": "G", "commands": [
         [97, 0],
         [133, 0]
       ], "style": [
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"}
       ]},
       {"shape": "polyline", "points": [
         [109, 36],
         [97, 24]
       ], "style": [
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"}
       ]},
       {"shape": "polyline", "points": [
         [97, 12],
         [109, 0]
       ], "style": [
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"}
       ]},
       {"shape": "polyline", "points": [
         [121, 0],
         [133, 12]
       ], "style": [
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"}
       ]},
       {"shape": "polyline", "points": [
         [133, 24],
         [121, 36]
       ], "style": [
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"}
       ]}
     ]},
     {"type": "ldraw", "elements": [
       {"x": 115, "y": 12, "text": "end", "style": [
         {"key": "font-family", "value": "'Times-Roman',serif"},
         {"key": "font-size", "value": 14},
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"}
       ]}
     ]}
   ]},
@@ -497,7 +497,7 @@ define({"type": "digraph", "id": "G", "commands": [
         [89, 343],
         [80, 331]
       ], "style": [
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"}
       ]}
     ]},
     {"type": "hdraw", "elements": [
@@ -507,8 +507,8 @@ define({"type": "digraph", "id": "G", "commands": [
         [77, 333]
       ], "style": [
         {"key": "style", "value": "solid"},
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}},
-        {"key": "fill", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"},
+        {"key": "fill", "value": "#000000"}
       ]}
     ]}
   ]},
@@ -521,7 +521,7 @@ define({"type": "digraph", "id": "G", "commands": [
         [144, 343],
         [153, 331]
       ], "style": [
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"}
       ]}
     ]},
     {"type": "hdraw", "elements": [
@@ -531,8 +531,8 @@ define({"type": "digraph", "id": "G", "commands": [
         [150, 329]
       ], "style": [
         {"key": "style", "value": "solid"},
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}},
-        {"key": "fill", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"},
+        {"key": "fill", "value": "#000000"}
       ]}
     ]}
   ]},
@@ -545,7 +545,7 @@ define({"type": "digraph", "id": "G", "commands": [
         [129, 144],
         [150, 115]
       ], "style": [
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"}
       ]}
     ]},
     {"type": "hdraw", "elements": [
@@ -555,8 +555,8 @@ define({"type": "digraph", "id": "G", "commands": [
         [148, 112]
       ], "style": [
         {"key": "style", "value": "solid"},
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}},
-        {"key": "fill", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"},
+        {"key": "fill", "value": "#000000"}
       ]}
     ]}
   ]},
@@ -569,7 +569,7 @@ define({"type": "digraph", "id": "G", "commands": [
         [110, 121],
         [91, 109]
       ], "style": [
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"}
       ]}
     ]},
     {"type": "hdraw", "elements": [
@@ -579,8 +579,8 @@ define({"type": "digraph", "id": "G", "commands": [
         [88, 111]
       ], "style": [
         {"key": "style", "value": "solid"},
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}},
-        {"key": "fill", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"},
+        {"key": "fill", "value": "#000000"}
       ]}
     ]}
   ]},
@@ -593,7 +593,7 @@ define({"type": "digraph", "id": "G", "commands": [
         [89, 54],
         [96, 45]
       ], "style": [
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"}
       ]}
     ]},
     {"type": "hdraw", "elements": [
@@ -603,8 +603,8 @@ define({"type": "digraph", "id": "G", "commands": [
         [93, 42]
       ], "style": [
         {"key": "style", "value": "solid"},
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}},
-        {"key": "fill", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"},
+        {"key": "fill", "value": "#000000"}
       ]}
     ]}
   ]},
@@ -617,7 +617,7 @@ define({"type": "digraph", "id": "G", "commands": [
         [142, 54],
         [134, 45]
       ], "style": [
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"}
       ]}
     ]},
     {"type": "hdraw", "elements": [
@@ -627,8 +627,8 @@ define({"type": "digraph", "id": "G", "commands": [
         [131, 47]
       ], "style": [
         {"key": "style", "value": "solid"},
-        {"key": "stroke", "value": {red:0, green:0, blue:0, opacity:1}},
-        {"key": "fill", "value": {red:0, green:0, blue:0, opacity:1}}
+        {"key": "stroke", "value": "#000000"},
+        {"key": "fill", "value": "#000000"}
       ]}
     ]}
   ]}

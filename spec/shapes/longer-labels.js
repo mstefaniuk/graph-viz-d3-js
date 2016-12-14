@@ -26,21 +26,11 @@ define({
         "style": [
           {
             "key": "stroke",
-            "value": {
-              "red": 255,
-              "green": 255,
-              "blue": 254,
-              "opacity": 1
-            }
+            "value": "#fffffe00"
           },
           {
             "key": "fill",
-            "value": {
-              "red": 255,
-              "green": 255,
-              "blue": 255,
-              "opacity": 1
-            }
+            "value": "#ffffff"
           }
         ]
       }
@@ -61,16 +51,11 @@ define({
           "style": [
             {
               "key": "stroke",
-              "value": {
-                "red": 0,
-                "green": 0,
-                "blue": 0,
-                "opacity": 1
-              }
+              "value": "#000000"
             },
             {
               "key": "fill",
-              "value": {red: 255, green: 255, blue: 255, opacity: 0}
+              "value": "black"
             }
           ]
         }
@@ -91,12 +76,7 @@ define({
             },
             {
               "key": "stroke",
-              "value": {
-                "red": 0,
-                "green": 0,
-                "blue": 0,
-                "opacity": 1
-              }
+              "value": "#000000"
             },
             {
               "key": "text-anchor",
@@ -119,16 +99,11 @@ define({
           "style": [
             {
               "key": "stroke",
-              "value": {
-                "red": 0,
-                "green": 0,
-                "blue": 0,
-                "opacity": 1
-              }
+              "value": "#000000"
             },
             {
               "key": "fill",
-              "value": {red: 255, green: 255, blue: 255, opacity: 0}
+              "value": "black"
             }
           ]
         }
@@ -149,12 +124,7 @@ define({
             },
             {
               "key": "stroke",
-              "value": {
-                "red": 0,
-                "green": 0,
-                "blue": 0,
-                "opacity": 1
-              }
+              "value": "#000000"
             },
             {
               "key": "text-anchor",
@@ -191,16 +161,11 @@ define({
           "style": [
             {
               "key": "stroke",
-              "value": {
-                "red": 0,
-                "green": 0,
-                "blue": 0,
-                "opacity": 1
-              }
+              "value": "#000000"
             },
             {
               "key": "fill",
-              "value": {red: 255, green: 255, blue: 255, opacity: 0}
+              "value": "black"
             }
           ]
         },
@@ -227,21 +192,11 @@ define({
             },
             {
               "key": "stroke",
-              "value": {
-                "red": 0,
-                "green": 0,
-                "blue": 0,
-                "opacity": 1
-              }
+              "value": "#000000"
             },
             {
               "key": "fill",
-              "value": {
-                "red": 0,
-                "green": 0,
-                "blue": 0,
-                "opacity": 1
-              }
+              "value": "#000000"
             }
           ]
         }
@@ -261,16 +216,11 @@ define({
           "style": [
             {
               "key": "stroke",
-              "value": {
-                "red": 0,
-                "green": 0,
-                "blue": 0,
-                "opacity": 1
-              }
+              "value": "#000000"
             },
             {
               "key": "fill",
-              "value": {red: 255, green: 255, blue: 255, opacity: 0}
+              "value": "black"
             }
           ]
         }
@@ -291,12 +241,7 @@ define({
             },
             {
               "key": "stroke",
-              "value": {
-                "red": 0,
-                "green": 0,
-                "blue": 0,
-                "opacity": 1
-              }
+              "value": "#000000"
             },
             {
               "key": "text-anchor",
@@ -333,16 +278,11 @@ define({
           "style": [
             {
               "key": "stroke",
-              "value": {
-                "red": 0,
-                "green": 0,
-                "blue": 0,
-                "opacity": 1
-              }
+              "value": "#000000"
             },
             {
               "key": "fill",
-              "value": {red: 255, green: 255, blue: 255, opacity: 0}
+              "value": "black"
             }
           ]
         },
@@ -369,21 +309,11 @@ define({
             },
             {
               "key": "stroke",
-              "value": {
-                "red": 0,
-                "green": 0,
-                "blue": 0,
-                "opacity": 1
-              }
+              "value": "#000000"
             },
             {
               "key": "fill",
-              "value": {
-                "red": 0,
-                "green": 0,
-                "blue": 0,
-                "opacity": 1
-              }
+              "value": "#000000"
             }
           ]
         }

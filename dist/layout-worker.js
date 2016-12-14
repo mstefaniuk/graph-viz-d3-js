@@ -3482,13 +3482,7 @@ var parser = (function() {
         peg$c92 = function(c, t) {return {x:c[0], y:c[1], text:t}},
         peg$c93 = /^[Cc]/,
         peg$c94 = { type: "class", value: "[Cc]", description: "[Cc]" },
-        peg$c95 = function(p, c) {var colors = {
-                red: parseInt(c.substr(1,2),16),
-                green: parseInt(c.substr(3,2),16),
-                blue: parseInt(c.substr(5,2),16),
-                opacity: c.length==8 ? parseInt(c.substr(7,2),16)/255 : 1
-            };
-            return p=='C' ? {key: "fill", value: colors} : {key: "stroke", value: colors}},
+        peg$c95 = function(p, c) {return p=='C' ? {key: "fill", value: c} : {key: "stroke", value: c}},
         peg$c96 = /^[F]/,
         peg$c97 = { type: "class", value: "[F]", description: "[F]" },
         peg$c98 = function(f, s, t) {return [{key:'font-family', value: "'" + t + "',serif"}, {key:'font-size', value: s}]},
@@ -6347,8 +6341,8 @@ define('transformer',['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser
       function fixShapeStyles(element) {
         if (element.style) {
           var keys = styleKeys(element.style);
-          keys.indexOf("fill") < 0 && element.style.push({key: 'fill', value: {red: 255, green: 255, blue: 255, opacity: 0}});
-          keys.indexOf("stroke") < 0 && element.style.push({key: 'stroke', value: {red:0, green:0, blue:0, opacity: 1}});
+          keys.indexOf("fill") < 0 && element.style.push({key: 'fill', value: "black"});
+          keys.indexOf("stroke") < 0 && element.style.push({key: 'stroke', value: "none"});
         }
         return element;
       }

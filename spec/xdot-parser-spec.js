@@ -1,5 +1,5 @@
-define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4', 'spec/shapes/unicode-labels',
-    'spec/shapes/image', 'text!spec/xdots/class-diagram.xdot', 'spec/asts/class-diagram',
+define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4', 'spec/asts/unicode-labels',
+    'spec/asts/image', 'text!spec/xdots/class-diagram.xdot', 'spec/asts/class-diagram',
     'text!spec/xdots/adept.xdot', 'spec/asts/adept'],
   function (xdot, array, clust4, unicodeLabels, image, classDiagramSource, classDiagramAst, adeptSource, adeptAst) {
 

@@ -31,11 +31,11 @@ define({
               "style": [
                 {
                   "key": "stroke",
-                  "value": {red:255, green:255, blue:254, opacity:1}
+                  "value": "#fffffe00"
                 },
                 {
                   "key": "fill",
-                  "value": {red:255, green:255, blue:255, opacity:1}
+                  "value": "#ffffff"
                 }
               ]
             }
@@ -59,7 +59,7 @@ define({
                 },
                 {
                   "key": "stroke",
-                  "value": {red:0, green:0, blue:0, opacity:1}
+                  "value": "#000000"
                 }
               ]
             }
@@ -208,11 +208,11 @@ define({
                   "style": [
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     },
                     {
                       "key": "fill",
-                      "value": {red:204, green:204, blue:255, opacity:1}
+                      "value": "#ccccff"
                     }
                   ]
                 }
@@ -236,7 +236,7 @@ define({
                     },
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     }
                   ]
                 }
@@ -298,11 +298,11 @@ define({
                   "style": [
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     },
                     {
                       "key": "fill",
-                      "value": {red:204, green:204, blue:255, opacity:1}
+                      "value": "#ccccff"
                     }
                   ]
                 }
@@ -326,7 +326,7 @@ define({
                     },
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     }
                   ]
                 }
@@ -392,11 +392,11 @@ define({
                   "style": [
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     },
                     {
                       "key": "fill",
-                      "value": {red:204, green:204, blue:255, opacity:1}
+                      "value": "#ccccff"
                     }
                   ]
                 }
@@ -420,7 +420,7 @@ define({
                     },
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     }
                   ]
                 }
@@ -482,11 +482,11 @@ define({
                   "style": [
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     },
                     {
                       "key": "fill",
-                      "value": {red:255, green:204, blue:204, opacity:1}
+                      "value": "#ffcccc"
                     }
                   ]
                 }
@@ -510,7 +510,7 @@ define({
                     },
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     }
                   ]
                 }
@@ -576,11 +576,11 @@ define({
                   "style": [
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     },
                     {
                       "key": "fill",
-                      "value": {red:255, green:204, blue:204, opacity:1}
+                      "value": "#ffcccc"
                     }
                   ]
                 }
@@ -604,7 +604,7 @@ define({
                     },
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     }
                   ]
                 },
@@ -623,7 +623,7 @@ define({
                     },
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     }
                   ]
                 }
@@ -689,11 +689,11 @@ define({
                   "style": [
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     },
                     {
                       "key": "fill",
-                      "value": {red:255, green:204, blue:204, opacity:1}
+                      "value": "#ffcccc"
                     }
                   ]
                 }
@@ -717,7 +717,7 @@ define({
                     },
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     }
                   ]
                 },
@@ -736,7 +736,7 @@ define({
                     },
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     }
                   ]
                 }
@@ -788,11 +788,11 @@ define({
                   "style": [
                     {
                       "key": "stroke",
-                      "value": {red:255, green:204, blue:204, opacity:1}
+                      "value": "#ffcccc"
                     },
                     {
                       "key": "fill",
-                      "value": {red:255, green:0, blue:0, opacity:1}
+                      "value": "#ff0000"
                     }
                   ]
                 }
@@ -832,11 +832,11 @@ define({
                   "style": [
                     {
                       "key": "stroke",
-                      "value": {red:255, green:204, blue:204, opacity:1}
+                      "value": "#ffcccc"
                     },
                     {
                       "key": "fill",
-                      "value": {red:255, green:0, blue:0, opacity:1}
+                      "value": "#ff0000"
                     }
                   ]
                 }
@@ -876,11 +876,11 @@ define({
                   "style": [
                     {
                       "key": "stroke",
-                      "value": {red:255, green:204, blue:204, opacity:1}
+                      "value": "#ffcccc"
                     },
                     {
                       "key": "fill",
-                      "value": {red:255, green:0, blue:0, opacity:1}
+                      "value": "#ff0000"
                     }
                   ]
                 }
@@ -948,11 +948,11 @@ define({
                   "style": [
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     },
                     {
                       "key": "fill",
-                      "value": {red:204, green:204, blue:255, opacity:1}
+                      "value": "#ccccff"
                     }
                   ]
                 }
@@ -976,7 +976,7 @@ define({
                     },
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     }
                   ]
                 }
@@ -1038,11 +1038,11 @@ define({
                   "style": [
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     },
                     {
                       "key": "fill",
-                      "value": {red:204, green:204, blue:255, opacity:1}
+                      "value": "#ccccff"
                     }
                   ]
                 }
@@ -1066,7 +1066,7 @@ define({
                     },
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     }
                   ]
                 }
@@ -1128,11 +1128,11 @@ define({
                   "style": [
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     },
                     {
                       "key": "fill",
-                      "value": {red:255, green:204, blue:204, opacity:1}
+                      "value": "#ffcccc"
                     }
                   ]
                 }
@@ -1156,7 +1156,7 @@ define({
                     },
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     }
                   ]
                 },
@@ -1175,7 +1175,7 @@ define({
                     },
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     }
                   ]
                 }
@@ -1241,11 +1241,11 @@ define({
                   "style": [
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     },
                     {
                       "key": "fill",
-                      "value": {red:255, green:204, blue:204, opacity:1}
+                      "value": "#ffcccc"
                     }
                   ]
                 }
@@ -1269,7 +1269,7 @@ define({
                     },
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     }
                   ]
                 }
@@ -1317,11 +1317,11 @@ define({
                   "style": [
                     {
                       "key": "stroke",
-                      "value": {red:255, green:204, blue:204, opacity:1}
+                      "value": "#ffcccc"
                     },
                     {
                       "key": "fill",
-                      "value": {red:255, green:0, blue:0, opacity:1}
+                      "value": "#ff0000"
                     }
                   ]
                 }
@@ -1361,11 +1361,11 @@ define({
                   "style": [
                     {
                       "key": "stroke",
-                      "value": {red:255, green:204, blue:204, opacity:1}
+                      "value": "#ffcccc"
                     },
                     {
                       "key": "fill",
-                      "value": {red:255, green:0, blue:0, opacity:1}
+                      "value": "#ff0000"
                     }
                   ]
                 }
@@ -1433,11 +1433,11 @@ define({
                   "style": [
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     },
                     {
                       "key": "fill",
-                      "value": {red:255, green:204, blue:204, opacity:1}
+                      "value": "#ffcccc"
                     }
                   ]
                 }
@@ -1461,7 +1461,7 @@ define({
                     },
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     }
                   ]
                 }
@@ -1523,11 +1523,11 @@ define({
                   "style": [
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     },
                     {
                       "key": "fill",
-                      "value": {red:255, green:204, blue:204, opacity:1}
+                      "value": "#ffcccc"
                     }
                   ]
                 }
@@ -1551,7 +1551,7 @@ define({
                     },
                     {
                       "key": "stroke",
-                      "value": {red:0, green:0, blue:0, opacity:1}
+                      "value": "#000000"
                     }
                   ]
                 }
@@ -1636,7 +1636,7 @@ define({
                 },
                 {
                   "key": "stroke",
-                  "value": {red:255, green:0, blue:0, opacity:1}
+                  "value": "#ff0000"
                 }
               ]
             }
@@ -1692,7 +1692,7 @@ define({
                 },
                 {
                   "key": "stroke",
-                  "value": {red:255, green:0, blue:0, opacity:1}
+                  "value": "#ff0000"
                 }
               ]
             }
@@ -1748,7 +1748,7 @@ define({
                 },
                 {
                   "key": "stroke",
-                  "value": {red:255, green:0, blue:0, opacity:1}
+                  "value": "#ff0000"
                 }
               ]
             }
@@ -1804,7 +1804,7 @@ define({
                 },
                 {
                   "key": "stroke",
-                  "value": {red:255, green:0, blue:0, opacity:1}
+                  "value": "#ff0000"
                 }
               ]
             }
@@ -1860,7 +1860,7 @@ define({
                 },
                 {
                   "key": "stroke",
-                  "value": {red:255, green:0, blue:0, opacity:1}
+                  "value": "#ff0000"
                 }
               ]
             }
@@ -1916,7 +1916,7 @@ define({
                 },
                 {
                   "key": "stroke",
-                  "value": {red:0, green:0, blue:0, opacity:1}
+                  "value": "#000000"
                 }
               ]
             }
@@ -1944,11 +1944,11 @@ define({
               "style": [
                 {
                   "key": "stroke",
-                  "value": {red:204, green:255, blue:204, opacity:1}
+                  "value": "#ccffcc"
                 },
                 {
                   "key": "fill",
-                  "value": {red:0, green:255, blue:0, opacity:1}
+                  "value": "#00ff00"
                 }
               ]
             }
@@ -2028,7 +2028,7 @@ define({
                 },
                 {
                   "key": "stroke",
-                  "value": {red:0, green:0, blue:0, opacity:1}
+                  "value": "#000000"
                 }
               ]
             }
@@ -2088,7 +2088,7 @@ define({
                 },
                 {
                   "key": "stroke",
-                  "value": {red:0, green:0, blue:0, opacity:1}
+                  "value": "#000000"
                 }
               ]
             }
@@ -2136,7 +2136,7 @@ define({
                 },
                 {
                   "key": "stroke",
-                  "value": {red:255, green:0, blue:0, opacity:1}
+                  "value": "#ff0000"
                 }
               ]
             }
@@ -2192,7 +2192,7 @@ define({
                 },
                 {
                   "key": "stroke",
-                  "value": {red:0, green:0, blue:0, opacity:1}
+                  "value": "#000000"
                 }
               ]
             }
@@ -2240,7 +2240,7 @@ define({
                 },
                 {
                   "key": "stroke",
-                  "value": {red:255, green:0, blue:0, opacity:1}
+                  "value": "#ff0000"
                 }
               ]
             }
@@ -2296,7 +2296,7 @@ define({
                 },
                 {
                   "key": "stroke",
-                  "value": {red:0, green:0, blue:0, opacity:1}
+                  "value": "#000000"
                 }
               ]
             }
@@ -2344,7 +2344,7 @@ define({
                 },
                 {
                   "key": "stroke",
-                  "value": {red:255, green:0, blue:0, opacity:1}
+                  "value": "#ff0000"
                 }
               ]
             }
@@ -2400,7 +2400,7 @@ define({
                 },
                 {
                   "key": "stroke",
-                  "value": {red:255, green:0, blue:0, opacity:1}
+                  "value": "#ff0000"
                 }
               ]
             }
@@ -2456,7 +2456,7 @@ define({
                 },
                 {
                   "key": "stroke",
-                  "value": {red:0, green:0, blue:0, opacity:1}
+                  "value": "#000000"
                 }
               ]
             }
@@ -2504,7 +2504,7 @@ define({
                 },
                 {
                   "key": "stroke",
-                  "value": {red:255, green:0, blue:0, opacity:1}
+                  "value": "#ff0000"
                 }
               ]
             }
@@ -2560,7 +2560,7 @@ define({
                 },
                 {
                   "key": "stroke",
-                  "value": {red:0, green:0, blue:0, opacity:1}
+                  "value": "#000000"
                 }
               ]
             }
