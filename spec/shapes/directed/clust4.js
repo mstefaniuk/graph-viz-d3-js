@@ -323,7 +323,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -392,7 +392,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -461,7 +461,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -554,7 +554,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -623,7 +623,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         }
@@ -877,7 +877,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -946,7 +946,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -1015,7 +1015,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -1084,7 +1084,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -1107,7 +1107,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -1130,7 +1130,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -1153,7 +1153,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -1176,7 +1176,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         }
@@ -1238,7 +1238,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -1261,7 +1261,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -1284,7 +1284,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -1307,7 +1307,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -1330,7 +1330,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         }
@@ -1392,7 +1392,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -1461,7 +1461,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -1530,7 +1530,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -1599,7 +1599,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -1668,7 +1668,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },
@@ -1737,7 +1737,7 @@ define({
             },
             {
               "key": "fill",
-              "value": "black"
+              "value": "none"
             }
           ]
         },

@@ -6341,8 +6341,8 @@ define('transformer',['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser
       function fixShapeStyles(element) {
         if (element.style) {
           var keys = styleKeys(element.style);
-          keys.indexOf("fill") < 0 && element.style.push({key: 'fill', value: "black"});
-          keys.indexOf("stroke") < 0 && element.style.push({key: 'stroke', value: "none"});
+          keys.indexOf("fill") < 0 && element.style.push({key: 'fill', value: "none"});
+          keys.indexOf("stroke") < 0 && element.style.push({key: 'stroke', value: "black"});
         }
         return element;
       }
