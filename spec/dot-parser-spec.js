@@ -14,10 +14,10 @@ define(['parser/dot', 'spec/dots/directed'], function (dot, array) {
       });
     });
 
-    xit("should parse escaped double quotes", function() {
+    it("should parse escaped double quotes", function() {
       var result = dot.parse([
         'digraph G {',
-        '  mynode [ label="Some \" quote" ];',
+        '  mynode [ label="Some\\\"quote" ];',
         '}'].join("\n"));
       expect(result.clean).toEqual(true);
     });

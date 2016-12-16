@@ -60,7 +60,7 @@ style = [S] _ s:vardata {return {key:'style', value: s}}
 vardata = s:varsize _ "-" v:varchar {return v}
 varsize = s:integer {counter=s}
 varchar = &{return counter==0} / a:anysign s:varchar {return a + (s||'')}
-anysign = LC? c:. {counter -= lengthInUtf8Bytes(c); return c}
+anysign = LC? c:. { if (c=="\\") {return ""} else {counter -= lengthInUtf8Bytes(c); return c}}
 
 coordinates = _ p1:decimal _ p2:decimal {return [p1,p2]}
 identifier = s:$CHAR+ port? {return s} / '"' s:$nq '"' {return s}
@@ -70,7 +70,7 @@ decimal = s:"-"? f:$[0-9]+ r:("." d:$[0-9]+ {return "." + d})? {return parseFloa
 
 ncs = [^,\]]+
 nqs = '"' nq '"' / "<<" ([^>] [^>]* ">")* ">" / ncs
-nq = [^"]*
+nq = ('\\"' / [^"])*
 c = [,]
 q = '"'
 

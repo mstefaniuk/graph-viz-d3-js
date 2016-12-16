@@ -1,8 +1,8 @@
 define(['transformer', 'spec/shapes/longer-labels',
     'text!spec/dots/directed/switch.gv', 'spec/shapes/directed/switch',
     'text!spec/dots/directed/table.gv', 'spec/shapes/directed/table',
-    'text!spec/dots/adept.gv', 'spec/shapes/adept'],
-  function (transformer, longerLabels, switchSource, switchShape, tableSource, tableShape, adeptSource, adeptShape) {
+    'text!spec/dots/adept.gv', 'spec/shapes/adept', 'spec/shapes/double-quotes'],
+  function (transformer, longerLabels, switchSource, switchShape, tableSource, tableShape, adeptSource, adeptShape, doubleQuotesShape) {
   describe('Transformer', function() {
     it("should extract node shapes correctly when labels are longer than 4 chars", function() {
       var stage = transformer.generate("digraph { longer -> labels -> ok}");
@@ -29,6 +29,11 @@ define(['transformer', 'spec/shapes/longer-labels',
         'digraph G { G[ label="google.com" shape=box URL="http://google.com" tooltip="Click me!" style="filled" fillcolor="#5cb85c" color="#5cb85c" fontcolor="#ffffff"];}'
       );
       expect(stage).toEqual(tableShape);
+    });
+
+    it("should handle diagrams with escaped quotes", function() {
+      var stage = transformer.generate('digraph G {mynode [ label="Some \\\" quote" ];}');
+      expect(stage).toEqual(doubleQuotesShape);
     });
   });
 });
