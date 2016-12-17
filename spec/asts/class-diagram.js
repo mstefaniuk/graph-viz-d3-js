@@ -48,6 +48,7 @@ define({
               "x": 165,
               "y": 426,
               "text": "Example ",
+              "anchor": "middle",
               "style": [
                 {
                   "key": "font-family",
@@ -67,6 +68,7 @@ define({
               "x": 165,
               "y": 409.2,
               "text": " Class Diagram",
+              "anchor": "middle",
               "style": [
                 {
                   "key": "font-family",
@@ -279,6 +281,7 @@ define({
                   "x": 167,
                   "y": 367.9,
                   "text": "interface»",
+                  "anchor": "middle",
                   "style": [
                     {
                       "key": "font-family",
@@ -298,6 +301,7 @@ define({
                   "x": 167,
                   "y": 351.1,
                   "text": "ExampleInterface",
+                  "anchor": "middle",
                   "style": [
                     {
                       "key": "font-family",
@@ -317,6 +321,7 @@ define({
                   "x": 167,
                   "y": 326.3,
                   "text": "properties",
+                  "anchor": "middle",
                   "style": [
                     {
                       "key": "font-family",
@@ -336,6 +341,7 @@ define({
                   "x": 167,
                   "y": 301.5,
                   "text": "methods",
+                  "anchor": "middle",
                   "style": [
                     {
                       "key": "font-family",
@@ -426,6 +432,7 @@ define({
                   "x": 167,
                   "y": 223.1,
                   "text": "AbstractExample",
+                  "anchor": "middle",
                   "style": [
                     {
                       "key": "font-family",
@@ -600,6 +607,7 @@ define({
                   "x": 153,
                   "y": 139.1,
                   "text": "ExampleFoo",
+                  "anchor": "middle",
                   "style": [
                     {
                       "key": "font-family",
@@ -790,6 +798,7 @@ define({
                   "x": 211,
                   "y": 55.1,
                   "text": "ExampleBar",
+                  "anchor": "middle",
                   "style": [
                     {
                       "key": "font-family",
@@ -976,6 +985,7 @@ define({
                   "x": 270,
                   "y": 139.1,
                   "text": "ExampleBaz",
+                  "anchor": "middle",
                   "style": [
                     {
                       "key": "font-family",
@@ -1115,6 +1125,7 @@ define({
                   "x": 49,
                   "y": 262,
                   "text": "Legend",
+                  "anchor": "middle",
                   "style": [
                     {
                       "key": "font-family",
@@ -1221,6 +1232,7 @@ define({
                   "x": 48.67,
                   "y": 55.1,
                   "text": "Class",
+                  "anchor": "middle",
                   "style": [
                     {
                       "key": "font-family",
@@ -1307,6 +1319,7 @@ define({
                   "x": 49,
                   "y": 139.1,
                   "text": "Abstract",
+                  "anchor": "middle",
                   "style": [
                     {
                       "key": "font-family",
@@ -1413,6 +1426,7 @@ define({
                   "x": 49,
                   "y": 223.1,
                   "text": "Interface",
+                  "anchor": "middle",
                   "style": [
                     {
                       "key": "font-family",
@@ -1528,6 +1542,7 @@ define({
                   "x": 211.5,
                   "y": 16.2,
                   "text": "Example Module",
+                  "anchor": "middle",
                   "style": [
                     {
                       "key": "font-family",

@@ -53,6 +53,7 @@ define({
           "x": 29.4,
           "y": 13.8,
           "text": "Courier",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -79,6 +80,7 @@ define({
           "x": 145.18,
           "y": 13.8,
           "text": "Courier-Bold",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -170,6 +172,7 @@ define({
           "x": 294.56,
           "y": 13.8,
           "text": "Courier-Oblique",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -261,6 +264,7 @@ define({
           "x": 473.34,
           "y": 13.8,
           "text": "Courier-BoldOblique",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",

@@ -65,6 +65,7 @@ define({
           "x": 35.71,
           "y": 157.8,
           "text": "longer",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -77,10 +78,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -113,6 +110,7 @@ define({
           "x": 35.71,
           "y": 85.8,
           "text": "labels",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -125,10 +123,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -230,6 +224,7 @@ define({
           "x": 35.71,
           "y": 13.8,
           "text": "ok",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -242,10 +237,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }

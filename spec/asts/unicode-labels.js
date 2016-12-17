@@ -89,6 +89,7 @@ define({
               "x": 61.44,
               "y": 13.8,
               "text": "已安装状态",
+              "anchor": "middle",
               "style": [
                 {
                   "key": "font-family",
@@ -153,6 +154,7 @@ define({
               "x": 272.44,
               "y": 13.8,
               "text": "Контрагенты",
+              "anchor": "middle",
               "style": [
                 {
                   "key": "font-family",

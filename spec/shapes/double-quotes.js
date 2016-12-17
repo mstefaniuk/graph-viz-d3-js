@@ -65,6 +65,7 @@ define({
         "x": 63.26,
         "y": 13.8,
         "text": "Some \" quote",
+        "anchor": "middle",
         "style": [
           {
             "key": "font-family",
@@ -77,10 +78,6 @@ define({
           {
             "key": "stroke",
             "value": "#000000"
-          },
-          {
-            "key": "text-anchor",
-            "value": "middle"
           }
         ]
       }

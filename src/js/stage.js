@@ -46,6 +46,9 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         })
         .text(function (d) {
           return d.text;
+        })
+        .attr("text-anchor", function(d){
+          return d.anchor;
         });
     };
 

@@ -51,7 +51,13 @@ ellipse = [eE] c:coordinates _ rx:decimal _ ry:decimal {return {shape: 'ellipse'
 polygon = p:[pP] _ l:integer c:coordinates+ {return {shape: 'polygon', points:c}}
 polyline = [L] _ integer c:coordinates+ {return {shape: 'polyline', points:c}}
 bspline = [bB] _ integer c:coordinates+ {return {shape: 'bspline', points: c}}
-text = [T] c:coordinates _ decimal _ decimal _ t:vardata {return {x:c[0], y:c[1], text:t}}
+text = [T] c:coordinates _ a:integer _ decimal _ t:vardata {
+    return {
+        x: c[0],
+        y: c[1],
+        text: t,
+        anchor: a==0 ? "middle" : (a<0 ? "start" : "end")
+    }}
 pen = p:[Cc] _ c:vardata {return p=='C' ? {key: "fill", value: c} : {key: "stroke", value: c}}
 font = f:[F] _ s:decimal _ t:vardata {return [{key:'font-family', value: "'" + t + "',serif"}, {key:'font-size', value: s}]}
 fontdecoration = [t] _ v:integer {return {key:"text-decoration", value: v}}

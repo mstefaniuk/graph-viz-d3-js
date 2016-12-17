@@ -40,6 +40,7 @@ define({
         "x": 277.3,
         "y": 156.8,
         "text": "The Apprentice Adept",
+        "anchor": "middle",
         "style": [
           {
             "key": "font-family",
@@ -52,10 +53,6 @@ define({
           {
             "key": "stroke",
             "value": "#000000"
-          },
-          {
-            "key": "text-anchor",
-            "value": "middle"
           }
         ]
       }
@@ -109,6 +106,7 @@ define({
           "x": 27,
           "y": 110.2,
           "text": "Stile",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -121,10 +119,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -171,6 +165,7 @@ define({
           "x": 254,
           "y": 110.2,
           "text": "Blue Adept",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -183,10 +178,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -233,6 +224,7 @@ define({
           "x": 438,
           "y": 110.2,
           "text": "Chip",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -245,10 +237,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -295,6 +283,7 @@ define({
           "x": 133,
           "y": 110.2,
           "text": "Lady Blue",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -307,10 +296,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -357,6 +342,7 @@ define({
           "x": 364,
           "y": 118.6,
           "text": "Sheen",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -369,10 +355,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         },
@@ -380,6 +362,7 @@ define({
           "x": 364,
           "y": 101.8,
           "text": "(robot)",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -392,10 +375,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -442,6 +421,7 @@ define({
           "x": 519,
           "y": 118.6,
           "text": "Neysa",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -454,10 +434,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         },
@@ -465,6 +441,7 @@ define({
           "x": 519,
           "y": 101.8,
           "text": "(unicorn)",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -477,10 +454,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -599,6 +572,7 @@ define({
           "x": 74,
           "y": 60.6,
           "text": "Bane",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -611,10 +585,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -661,6 +631,7 @@ define({
           "x": 330,
           "y": 60.6,
           "text": "Mach",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -673,10 +644,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -723,6 +690,7 @@ define({
           "x": 169,
           "y": 69,
           "text": "Agape",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -735,10 +703,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         },
@@ -746,6 +710,7 @@ define({
           "x": 169,
           "y": 52.2,
           "text": "(alien)",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -758,10 +723,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -808,6 +769,7 @@ define({
           "x": 505,
           "y": 60.6,
           "text": "Fleta",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -820,10 +782,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -918,6 +876,7 @@ define({
           "x": 121,
           "y": 13.8,
           "text": "Nepe",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -930,10 +889,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -980,6 +935,7 @@ define({
           "x": 431,
           "y": 13.8,
           "text": "Flach",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -992,10 +948,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }

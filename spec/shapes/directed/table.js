@@ -47,6 +47,7 @@ define({
           "x": 150.89,
           "y": 213.4,
           "text": "a",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -66,6 +67,7 @@ define({
           "x": 211,
           "y": 213.4,
           "text": "b",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -85,6 +87,7 @@ define({
           "x": 239.89,
           "y": 213.4,
           "text": "c",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -492,6 +495,7 @@ define({
           "x": 35.9,
           "y": 117.4,
           "text": "elefantel",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -510,6 +514,7 @@ define({
         {
           "x": 113.5,
           "y": 75.2,
+          "anchor": "middle",
           "text": "two",
           "style": [
             {
@@ -530,6 +535,7 @@ define({
           "x": 20.79,
           "y": 87.3,
           "text": "buca",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -549,6 +555,7 @@ define({
           "x": 30.89,
           "y": 62.3,
           "text": "c",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -568,6 +575,7 @@ define({
           "x": 31.67,
           "y": 37.4,
           "text": "f",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -587,6 +595,7 @@ define({
           "x": 61.84,
           "y": 84.3,
           "text": "patratos",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -606,6 +615,7 @@ define({
           "x": 127,
           "y": 41.3,
           "text": "4",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -1078,6 +1088,7 @@ define({
           "x": 182.95,
           "y": 74.8,
           "text": "Hello",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -1097,6 +1108,7 @@ define({
           "x": 271,
           "y": 120.3,
           "text": "b",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -1116,6 +1128,7 @@ define({
           "x": 240.89,
           "y": 89.3,
           "text": "a",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -1135,6 +1148,7 @@ define({
           "x": 262.05,
           "y": 89.3,
           "text": "dino",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -1154,6 +1168,7 @@ define({
           "x": 301.5,
           "y": 89.3,
           "text": "y",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -1173,6 +1188,7 @@ define({
           "x": 259.72,
           "y": 58.4,
           "text": "rhino",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -1192,6 +1208,7 @@ define({
           "x": 335.56,
           "y": 67.8,
           "text": "climb",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -1211,6 +1228,7 @@ define({
           "x": 381.95,
           "y": 52.8,
           "text": "Up",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",
@@ -1230,6 +1248,7 @@ define({
           "x": 264,
           "y": 16.4,
           "text": "low",
+          "anchor": "middle",
           "style": [
             {
               "key": "font-family",

@@ -91,10 +91,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -139,10 +135,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -187,10 +179,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -235,10 +223,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -283,10 +267,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -645,10 +625,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -693,10 +669,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -741,10 +713,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -789,10 +757,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -837,10 +801,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -1198,10 +1158,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }
@@ -1352,10 +1308,6 @@ define({
             {
               "key": "stroke",
               "value": "#000000"
-            },
-            {
-              "key": "text-anchor",
-              "value": "middle"
             }
           ]
         }

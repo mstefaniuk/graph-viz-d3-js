@@ -40,6 +40,7 @@ define({
       "x": 25.49,
       "y": 116.2,
       "text": "Graph",
+      "anchor": "middle",
       "style": [
         {
           "key": "font-family",
@@ -81,6 +82,7 @@ define({
         "x": 27,
         "y": 85.8,
         "text": "A",
+        "anchor": "middle",
         "style": [
           {
             "key": "font-family",
@@ -121,6 +123,7 @@ define({
         "x": 27,
         "y": 13.8,
         "text": "B",
+        "anchor": "middle",
         "style": [
           {
             "key": "font-family",
