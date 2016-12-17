@@ -52,8 +52,18 @@ define(["stage", 'transformer', 'styliseur', 'spec/shapes/graph-label', 'spec/sh
         expect(document.querySelectorAll('#graph svg text[color]').length).toEqual(4);
         expect(document.querySelectorAll('#graph svg text[font-size*="14"]').length).toEqual(4);
       });
+      
+      it("should handle different", function() {
+        var shapes = transformer.generate(
+          ['digraph models_diagram {',
+            '"Header" [shape=Mrecord, label="{PaidTimeOff|sick_days_earned :integer\\l}"]',
+            '}'].join("\n"));
+        stage.draw(shapes);
+        expect(document.querySelectorAll('#graph svg text[text-anchor="middle"]').length).toEqual(1);
+        expect(document.querySelectorAll('#graph svg text[text-anchor="start"]').length).toEqual(1);
+      });
     });
-
+    
     describe("export of PNG image when zoom available", function() {
       beforeEach(function() {
         stage.init({

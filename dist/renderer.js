@@ -71,7 +71,6 @@ define('styliseur',["d3"], function(d3) {
             break;
           case "font-size":
           case "font-family":
-          case "text-anchor":
             self.attr(e.key, e.value);
             break;
           case "style":
@@ -195,6 +194,9 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
         })
         .text(function (d) {
           return d.text;
+        })
+        .attr("text-anchor", function(d){
+          return d.anchor;
         });
     };
 

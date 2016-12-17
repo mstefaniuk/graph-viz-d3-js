@@ -3479,7 +3479,13 @@ var parser = (function() {
         peg$c89 = function(c) {return {shape: 'bspline', points: c}},
         peg$c90 = /^[T]/,
         peg$c91 = { type: "class", value: "[T]", description: "[T]" },
-        peg$c92 = function(c, t) {return {x:c[0], y:c[1], text:t}},
+        peg$c92 = function(c, a, t) {
+            return {
+                x: c[0],
+                y: c[1],
+                text: t,
+                anchor: a==0 ? "middle" : (a<0 ? "start" : "end")
+            }},
         peg$c93 = /^[Cc]/,
         peg$c94 = { type: "class", value: "[Cc]", description: "[Cc]" },
         peg$c95 = function(p, c) {return p=='C' ? {key: "fill", value: c} : {key: "stroke", value: c}},
@@ -5232,7 +5238,7 @@ var parser = (function() {
         if (s2 !== peg$FAILED) {
           s3 = peg$parse_();
           if (s3 !== peg$FAILED) {
-            s4 = peg$parsedecimal();
+            s4 = peg$parseinteger();
             if (s4 !== peg$FAILED) {
               s5 = peg$parse_();
               if (s5 !== peg$FAILED) {
@@ -5243,7 +5249,7 @@ var parser = (function() {
                     s8 = peg$parsevardata();
                     if (s8 !== peg$FAILED) {
                       peg$reportedPos = s0;
-                      s1 = peg$c92(s2, s8);
+                      s1 = peg$c92(s2, s4, s8);
                       s0 = s1;
                     } else {
                       peg$currPos = s0;
@@ -6355,7 +6361,7 @@ define('transformer',['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser
         })).map(fixShapeStyles);
         cursor.labels = cursor.labels.concat(node.elements.filter(function(e){
           return e.text;
-        })).map(fixTextStyles);
+        }));
       }
 
       function fixShapeStyles(element) {
@@ -6363,14 +6369,6 @@ define('transformer',['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser
           var keys = styleKeys(element.style);
           keys.indexOf("fill") < 0 && element.style.push({key: 'fill', value: "none"});
           keys.indexOf("stroke") < 0 && element.style.push({key: 'stroke', value: "black"});
-        }
-        return element;
-      }
-
-      function fixTextStyles(element) {
-        if (element.style) {
-          var keys = styleKeys(element.style);
-          keys.indexOf("text-anchor") < 0 && element.style.push({key: 'text-anchor', value: 'middle'});
         }
         return element;
       }
