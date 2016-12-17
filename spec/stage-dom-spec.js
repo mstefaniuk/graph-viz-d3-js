@@ -49,7 +49,7 @@ define(["stage", 'transformer', 'styliseur', 'spec/shapes/graph-label', 'spec/sh
         expect(document.querySelector('#graph svg text[font-family*="Courier-Oblique"]').textContent).toEqual("Courier-Oblique");
         expect(document.querySelector('#graph svg text[font-family*="Courier-BoldOblique"]').textContent).toEqual("Courier-BoldOblique");
         expect(document.querySelectorAll('#graph svg text[stroke]').length).toEqual(0);
-        expect(document.querySelectorAll('#graph svg text[color]').length).toEqual(4);
+        expect(document.querySelectorAll('#graph svg text[fill]').length).toEqual(4);
         expect(document.querySelectorAll('#graph svg text[font-size*="14"]').length).toEqual(4);
       });
       
