@@ -53,7 +53,7 @@ define(["stage", 'transformer', 'styliseur', 'spec/shapes/graph-label', 'spec/sh
         expect(document.querySelectorAll('#graph svg text[font-size*="14"]').length).toEqual(4);
       });
       
-      it("should handle different", function() {
+      it("should handle different font alignments", function() {
         var shapes = transformer.generate(
           ['digraph models_diagram {',
             '"Header" [shape=Mrecord, label="{PaidTimeOff|sick_days_earned :integer\\l}"]',
@@ -61,6 +61,15 @@ define(["stage", 'transformer', 'styliseur', 'spec/shapes/graph-label', 'spec/sh
         stage.draw(shapes);
         expect(document.querySelectorAll('#graph svg text[text-anchor="middle"]').length).toEqual(1);
         expect(document.querySelectorAll('#graph svg text[text-anchor="start"]').length).toEqual(1);
+      });
+
+      xit("should render links and tooltips", function() {
+        var shapes = transformer.generate(
+          'digraph G { G[ label="google.com" shape=box URL="http://google.com" tooltip="Click me!" style="filled" fillcolor="#5cb85c" color="#5cb85c" fontcolor="#ffffff"];}'
+        );
+        stage.draw(shapes);
+        expect(document.querySelectorAll('#graph svg g a[*|href="http://google.com"][*|title="Click me!"]').length).toEqual(1);
+        expect(document.querySelectorAll('#graph svg g a text[fill="#ffffff"]').length).toEqual(1);
       });
     });
     
