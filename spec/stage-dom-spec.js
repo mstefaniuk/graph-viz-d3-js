@@ -63,6 +63,12 @@ define(["stage", 'transformer', 'styliseur', 'spec/shapes/graph-label', 'spec/sh
         expect(document.querySelectorAll('#graph svg text[text-anchor="start"]').length).toEqual(1);
       });
 
+      it("should show head and tail arrows", function() {
+        var shapes = transformer.generate("digraph G {nodeA -> nodeB [dir=both]}");
+        stage.draw(shapes);
+        expect(document.querySelectorAll('#graph svg g.relation path.solid').length).toEqual(2);
+      });
+
       xit("should render links and tooltips", function() {
         var shapes = transformer.generate(
           'digraph G { G[ label="google.com" shape=box URL="http://google.com" tooltip="Click me!" style="filled" fillcolor="#5cb85c" color="#5cb85c" fontcolor="#ffffff"];}'

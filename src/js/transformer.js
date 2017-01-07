@@ -64,7 +64,10 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
         relation: startGroup('attributes'),
         draw: addShapesAndLabels,
         hdraw: addShapesAndLabels,
+        tdraw: addShapesAndLabels,
         ldraw: addShapesAndLabels,
+        hldraw: addShapesAndLabels,
+        tldraw: addShapesAndLabels,
         url: addNodeAttribute('url'),
         tooltip: addNodeAttribute('tooltip'),
         size: function(node) {
