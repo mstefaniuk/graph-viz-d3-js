@@ -69,7 +69,7 @@ varchar = &{return counter==0} / a:anysign s:varchar {return a + (s||'')}
 anysign = LC? c:. { if (c=="\\") {return ""} else {counter -= lengthInUtf8Bytes(c); return c}}
 
 coordinates = _ p1:decimal _ p2:decimal {return [p1,p2]}
-identifier = s:$CHAR+ port? {return s} / '"' s:$nq '"' {return s}
+identifier = s:$CHAR+ port? {return s} / '"' s:$nq '"' port? {return s}
 port = ':' identifier
 integer = s:"-"? i:$[0-9]+ {return parseInt((s||'') + i)}
 decimal = s:"-"? f:$[0-9]+ r:("." d:$[0-9]+ {return "." + d})? {return parseFloat((s||'') + f + (r||''))}
