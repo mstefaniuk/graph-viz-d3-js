@@ -206,8 +206,6 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         var scaleFactor = 1;
 
         var svgImage = new Image();
-        svgImage.src = "data:image/svg+xml;utf8," + svgXml;
-
         var pngImage = new Image();
 
         svgImage.onload = function () {
@@ -216,13 +214,16 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
           canvas.height = svgImage.height * scaleFactor;
 
           var context = canvas.getContext("2d");
-          context.drawImage(svgImage, 0, 0, canvas.width, canvas.height);
+          context
+            .drawImage(
+              svgImage, 0, 0, canvas.width, canvas.height);
 
           pngImage.src = canvas.toDataURL("image/png");
           pngImage.width = svgImage.width;
           pngImage.height = svgImage.height;
         };
 
+        svgImage.src = "data:image/svg+xml;base64," + btoa(svgXml);
         return pngImage;
       }
     };
