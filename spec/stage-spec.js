@@ -140,7 +140,7 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
       expect(result).toEqual(source);
     });
 
-    it("should draw svg and delegate transitions", function () {
+    xit("should draw svg and delegate transitions", function () {
       var transitionsSpy = jasmine.createSpyObj('transitions',
               ['document', 'canvas', 'nodes', 'relations', 'shapes', 'exits', 'labels']);
 
