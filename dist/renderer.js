@@ -313,7 +313,13 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
           return d.id;
         });
 
-        transitions.nodes(entering.filter(".node"), function () {
+        entering
+          .filter(function(d) { return d.url; })
+          .append("a")
+          .attr("xlink:href", function(d) {return d.url;})
+          .attr("xlink:title", function(d) {return d.tooltip;});
+
+        transitions.nodes(entering.filter(".node:empty,.node a"), function () {
           this.style("opacity", 1.0);
         });
         transitions.relations(entering.filter(".relation"), function () {
@@ -327,7 +333,15 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
           return order[a.class] - order[b.class];
         });
 
-        var shapes = groups.selectAll("path").data(function (d) {
+        var leaves = main
+          .selectAll("*")
+          .filter(function(d) {
+            return this instanceof SVGAElement ||
+              (this instanceof SVGGElement && !this.querySelector("a"));
+          });
+        var shapes = leaves
+          .selectAll("path")
+          .data(function (d) {
             return d.shapes;
           }, function (d, i) {
             return [d.shape, i].join('-');
@@ -342,9 +356,11 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
             });
         });
 
-        var labels = groups.selectAll("text").data(function (d) {
-          return d.labels;
-        });
+        var labels = leaves
+          .selectAll("text")
+          .data(function (d) {
+            return d.labels;
+          });
         labels.enter().append("text");
         transitions.labels(labels, labelAttributer);
       },
