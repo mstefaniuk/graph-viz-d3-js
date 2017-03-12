@@ -13,7 +13,7 @@
     var counter;
 }
 
-dot = prolog? t:("digraph" / "graph") i:(_ identifier)? _ b:body {return {type:"digraph", id: i==null ? null : i[1], commands:b}}
+dot = prolog? t:("digraph" / ("strict" _)? "graph") i:(_ identifier)? _ b:body {return {type:"digraph", id: i==null ? null : i[1], commands:b}}
 prolog = ("#" [^\n]* CR)+ CR
 body = "{" c:statement+ "}" WS* {return c}
 statement= WS* cc:(skip /graph / node / relation / subgraph / struct) {return cc}

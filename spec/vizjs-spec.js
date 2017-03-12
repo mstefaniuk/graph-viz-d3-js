@@ -1,6 +1,6 @@
 define(["viz"], function(viz) {
 
-  xdescribe("Viz.js", function() {
+  describe("Viz.js", function() {
 
     it("should recover after unclosed quotes error", function() {
       expect(function() {

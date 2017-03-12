@@ -6,15 +6,15 @@ define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4', 'spec
     describe('XDOT parser', function () {
 
       using("provided gallery graphs", array, function (graph) {
-          it("should parse xdot source into tree with commands and at least one graph", function () {
-            var ast = xdot.parse(graph);
-            expect(ast).toBeDefined();
-            expect(ast.commands.length).toBeGreaterThan(0);
-            expect(ast.commands.filter(function(e){
-              return e.type === 'graph';
-            }).length).toEqual(1);
-            expect(ast.type).toBeDefined();
-          });
+        it("should parse xdot source into tree with commands and at least one graph", function () {
+          var ast = xdot.parse(graph);
+          expect(ast).toBeDefined();
+          expect(ast.commands.length).toBeGreaterThan(0);
+          expect(ast.commands.filter(function (e) {
+            return e.type === 'graph';
+          }).length).toEqual(1);
+          expect(ast.type).toBeDefined();
+        });
       });
 
       xit("should return backward compatible AST", function () {
@@ -43,7 +43,7 @@ define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4', 'spec
           expect(ast).toEqual(image);
         });
 
-        it("to support Unicode labels", function() {
+        it("to support Unicode labels", function () {
           var ast = xdot.parse(
             'digraph G {' +
             ' graph [_draw_="c 9 -#fffffe00 C 7 -#ffffff P 4 0 0 0 36 404.19 36 404.19 0 ", bb="0,0,404.19,36", xdotversion=1.7 ];' +
@@ -54,14 +54,46 @@ define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4', 'spec
           expect(ast).toEqual(unicodeLabels);
         });
 
-        it("to parse class diagram", function() {
+        it("to parse class diagram", function () {
           var ast = xdot.parse(classDiagramSource);
           expect(ast).toEqual(classDiagramAst);
         });
 
-        it("to parse undirected graph", function() {
+        it("to parse undirected graph", function () {
           var ast = xdot.parse(adeptSource);
           expect(ast).toEqual(adeptAst);
+        });
+
+        it("to parse strict graph", function () {
+          var ast = xdot.parse(
+            'strict graph {' +
+            ' graph [_draw_="c 9 -#fffffe00 C 7 -#ffffff P 4 0 0 0 0 0 0 0 0 ", bb="0,0,0,0", xdotversion=1.7 ]; node [label="\N"]; ' +
+            '}'
+          );
+          expect(ast).toEqual({
+            type: 'digraph',
+            id: null,
+            commands: [{
+              type: 'graph',
+              attributes: [{
+                type: 'draw',
+                elements: [{
+                  shape: 'polygon',
+                  points: [[0, 0], [0, 0], [0, 0], [0, 0]],
+                  style: [{key: 'stroke', value: '#fffffe00'}, {key: 'fill', value: '#ffffff'}]
+                }]
+              }, {
+                name: 'bb', type: 'skip'
+              }, {
+                name: 'xdotversion', type: 'skip'
+              }]
+            }, {
+              type: 'skip',
+              attributes: [{
+                name: 'label', type: 'skip'
+              }]
+            }]
+          });
         });
       });
     });
