@@ -6414,6 +6414,7 @@ define('transformer',['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser
     },
     shapeast: function(ast) {
       var result = [];
+      var cursor;
 
       function visitSubnodes(propertyName) {
         return function (node) {
@@ -6423,13 +6424,19 @@ define('transformer',['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser
 
       function startGroup(propertyName) {
         return function (node) {
-          result.push({id: node.id, class: node.type, shapes: [], labels: []});
+          var groupById = result.filter(function(e) {
+            return e.id === node.id;
+          });
+          cursor =
+            groupById.length > 0
+            ? groupById[0]
+            : {id: node.id, class: node.type, shapes: [], labels: []};
+          groupById.length === 0 && result.push(cursor);
           node[propertyName] && node[propertyName].forEach(visit);
         };
       }
 
       function addShapesAndLabels(node) {
-        var cursor = result[result.length - 1];
         cursor.shapes = cursor.shapes.concat(node.elements.filter(function(e){
           return e.shape;
         })).map(fixShapeStyles);
@@ -6449,7 +6456,6 @@ define('transformer',['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser
 
       function addNodeAttribute(name) {
         return function(node) {
-          var cursor = result[result.length - 1];
           cursor[name] = node.value;
         };
       }
@@ -6470,7 +6476,6 @@ define('transformer',['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser
         url: addNodeAttribute('url'),
         tooltip: addNodeAttribute('tooltip'),
         size: function(node) {
-          var cursor = result[result.length - 1];
           cursor.size = node.value.map(function(e) {
             return e*72;
           });

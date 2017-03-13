@@ -954,18 +954,6 @@ define({
       ]
     },
     {
-      "id": "Chip",
-      "class": "node",
-      "shapes": [],
-      "labels": []
-    },
-    {
-      "id": "Neysa",
-      "class": "node",
-      "shapes": [],
-      "labels": []
-    },
-    {
       "id": "Stile-mLBSt",
       "class": "relation",
       "shapes": [
