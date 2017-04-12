@@ -141,7 +141,7 @@ define({
       ]
     },
     {
-      "id": "A-B",
+      "id": "A->B",
       "class": "relation",
       "shapes": [
         {
@@ -224,7 +224,7 @@ define({
       ]
     },
     {
-      "id": "B-C",
+      "id": "B->C",
       "class": "relation",
       "shapes": [
         {
@@ -324,7 +324,7 @@ define({
       "labels": []
     },
     {
-      "id": "C-A",
+      "id": "C->A",
       "class": "relation",
       "shapes": [
         {

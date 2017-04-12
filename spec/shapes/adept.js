@@ -954,7 +954,7 @@ define({
       ]
     },
     {
-      "id": "Stile-mLBSt",
+      "id": "Stile--mLBSt",
       "class": "relation",
       "shapes": [
         {
@@ -996,7 +996,7 @@ define({
       "labels": []
     },
     {
-      "id": "BAdept-mShBl",
+      "id": "BAdept--mShBl",
       "class": "relation",
       "shapes": [
         {
@@ -1038,7 +1038,7 @@ define({
       "labels": []
     },
     {
-      "id": "Bane-mAgBa",
+      "id": "Bane--mAgBa",
       "class": "relation",
       "shapes": [
         {
@@ -1080,7 +1080,7 @@ define({
       "labels": []
     },
     {
-      "id": "Mach-mFlMa",
+      "id": "Mach--mFlMa",
       "class": "relation",
       "shapes": [
         {
@@ -1122,7 +1122,7 @@ define({
       "labels": []
     },
     {
-      "id": "LBlue-mBlue",
+      "id": "LBlue--mBlue",
       "class": "relation",
       "shapes": [
         {
@@ -1164,7 +1164,7 @@ define({
       "labels": []
     },
     {
-      "id": "Neysa-Fleta",
+      "id": "Neysa--Fleta",
       "class": "relation",
       "shapes": [
         {
@@ -1230,7 +1230,7 @@ define({
       "labels": []
     },
     {
-      "id": "sUni-Chip",
+      "id": "sUni--Chip",
       "class": "relation",
       "shapes": [
         {
@@ -1284,7 +1284,7 @@ define({
       "labels": []
     },
     {
-      "id": "sUni-Neysa",
+      "id": "sUni--Neysa",
       "class": "relation",
       "shapes": [
         {
@@ -1338,7 +1338,7 @@ define({
       "labels": []
     },
     {
-      "id": "mBlue-BAdept",
+      "id": "mBlue--BAdept",
       "class": "relation",
       "shapes": [
         {
@@ -1380,7 +1380,7 @@ define({
       "labels": []
     },
     {
-      "id": "mLBSt-Bane",
+      "id": "mLBSt--Bane",
       "class": "relation",
       "shapes": [
         {
@@ -1422,7 +1422,7 @@ define({
       "labels": []
     },
     {
-      "id": "mLBSt-LBlue",
+      "id": "mLBSt--LBlue",
       "class": "relation",
       "shapes": [
         {
@@ -1464,7 +1464,7 @@ define({
       "labels": []
     },
     {
-      "id": "mShBl-Mach",
+      "id": "mShBl--Mach",
       "class": "relation",
       "shapes": [
         {
@@ -1506,7 +1506,7 @@ define({
       "labels": []
     },
     {
-      "id": "mShBl-Sheen",
+      "id": "mShBl--Sheen",
       "class": "relation",
       "shapes": [
         {
@@ -1548,7 +1548,7 @@ define({
       "labels": []
     },
     {
-      "id": "mAgBa-Agape",
+      "id": "mAgBa--Agape",
       "class": "relation",
       "shapes": [
         {
@@ -1590,7 +1590,7 @@ define({
       "labels": []
     },
     {
-      "id": "mAgBa-Nepe",
+      "id": "mAgBa--Nepe",
       "class": "relation",
       "shapes": [
         {
@@ -1632,7 +1632,7 @@ define({
       "labels": []
     },
     {
-      "id": "mFlMa-Fleta",
+      "id": "mFlMa--Fleta",
       "class": "relation",
       "shapes": [
         {
@@ -1674,7 +1674,7 @@ define({
       "labels": []
     },
     {
-      "id": "mFlMa-Flach",
+      "id": "mFlMa--Flach",
       "class": "relation",
       "shapes": [
         {

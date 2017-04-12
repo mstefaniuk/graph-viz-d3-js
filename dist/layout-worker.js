@@ -3447,7 +3447,7 @@ var parser = (function() {
         peg$c31 = { type: "literal", value: "->", description: "\"->\"" },
         peg$c32 = "--",
         peg$c33 = { type: "literal", value: "--", description: "\"--\"" },
-        peg$c34 = function(f, t, a) {return {type:"relation", id: [f,t].join('-'), from:f, to:t, attributes:a}},
+        peg$c34 = function(f, r, t, a) {return {type:"relation", id: [f,t].join(r), from:f, to:t, attributes:a}},
         peg$c35 = function(i, a) {return {type:"node",id:i,attributes:a}},
         peg$c36 = "[",
         peg$c37 = { type: "literal", value: "[", description: "\"[\"" },
@@ -4289,7 +4289,7 @@ var parser = (function() {
                     }
                     if (s8 !== peg$FAILED) {
                       peg$reportedPos = s0;
-                      s1 = peg$c34(s1, s5, s6);
+                      s1 = peg$c34(s1, s3, s5, s6);
                       s0 = s1;
                     } else {
                       peg$currPos = s0;
