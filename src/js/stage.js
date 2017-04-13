@@ -36,8 +36,8 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
       };
     }
 
-    var labelAttributer = function () {
-      this
+    var labelAttributer = function (selection) {
+      selection
         .attr("x", function (d) {
           return d.x;
         })
@@ -113,8 +113,8 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         var sizes = calculateSizes(stage.main);
         var area = [0, 0, sizes.width, sizes.height];
 
-        transitions.document(svg, function () {
-          this
+        transitions.document(svg, function (selection) {
+          selection
             .attr("width", sizes.width + "pt")
             .attr("height", sizes.height + "pt")
             .attr("viewBox", area.join(' '))
@@ -125,8 +125,8 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         });
 
         var polygon = main.select("polygon").data(stage.main.shapes);
-        transitions.canvas(polygon, function () {
-          this
+        transitions.canvas(polygon, function (selection) {
+          selection
             .attr("points", function () {
               return [
                 [-sizes.margin, sizes.margin],
@@ -141,8 +141,8 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
 
         var overlay = svg.select("rect.overlay");
         if (overlay[0]) {
-          transitions.canvas(overlay, function () {
-            this
+          transitions.canvas(overlay, function (selection) {
+            selection
               .attr('width', sizes.width / sizes.scaleWidth)
               .attr('height', sizes.height / sizes.scaleHeight)
               .attr('y', -sizes.height / sizes.scaleHeight);
@@ -171,14 +171,14 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
           .attr("xlink:href", function(d) {return d.url;})
           .attr("xlink:title", function(d) {return d.tooltip;});
 
-        transitions.nodes(entering.filter(".node:empty,.node a"), function () {
-          this.style("opacity", 1.0);
+        transitions.nodes(entering.filter(".node:empty,.node a"), function (selection) {
+          selection.style("opacity", 1.0);
         });
-        transitions.relations(entering.filter(".relation"), function () {
-          this.style("opacity", 1.0);
+        transitions.relations(entering.filter(".relation"), function (selection) {
+          selection.style("opacity", 1.0);
         });
-        transitions.exits(groups.exit(), function () {
-          this.remove();
+        transitions.exits(groups.exit(), function (selection) {
+          selection.remove();
         });
 
         groups.sort(function (a, b) {
@@ -200,8 +200,8 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
           }
         );
         shapes.enter().append("path");
-        transitions.shapes(shapes, function () {
-          this
+        transitions.shapes(shapes, function (selection) {
+          selection
             .attr("d", function (d) {
               var shape = d.shape;
               return palette[shape](d);
