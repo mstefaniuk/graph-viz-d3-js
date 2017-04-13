@@ -298,7 +298,8 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
         }
         var label = main.selectAll("text")
           .data(stage.main.labels);
-        label.enter().append("text");
+        label = label.enter().append("text")
+          .merge(label);
         transitions.labels(label, labelAttributer);
 
         var groups = main.selectAll("g")
