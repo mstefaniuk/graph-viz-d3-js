@@ -278,9 +278,9 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
             .attr("points", function () {
               return [
                 [-sizes.margin, sizes.margin],
-                [-sizes.margin, -sizes.boundingHeight],
-                [sizes.boundingWidth, -sizes.boundingHeight],
-                [sizes.boundingWidth, sizes.margin]]
+                [-sizes.margin, -sizes.boundingHeight + sizes.margin],
+                [sizes.boundingWidth - sizes.margin, -sizes.boundingHeight + sizes.margin],
+                [sizes.boundingWidth - sizes.margin, sizes.margin]]
                 .map(function (e) {
                   return e.join(",");
                 }).join(" ");

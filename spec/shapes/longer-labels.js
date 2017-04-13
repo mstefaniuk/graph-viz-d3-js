@@ -129,7 +129,7 @@ define({
       ]
     },
     {
-      "id": "longer-labels",
+      "id": "longer->labels",
       "class": "relation",
       "shapes": [
         {
@@ -243,7 +243,7 @@ define({
       ]
     },
     {
-      "id": "labels-ok",
+      "id": "labels->ok",
       "class": "relation",
       "shapes": [
         {

@@ -474,7 +474,7 @@ define({
         },
         {
           "type": "relation",
-          "id": "AbstractExample-ExampleInterface",
+          "id": "AbstractExample->ExampleInterface",
           "from": "AbstractExample",
           "to": "ExampleInterface",
           "attributes": [
@@ -645,7 +645,7 @@ define({
         },
         {
           "type": "relation",
-          "id": "ExampleFoo-AbstractExample",
+          "id": "ExampleFoo->AbstractExample",
           "from": "ExampleFoo",
           "to": "AbstractExample",
           "attributes": [
@@ -836,7 +836,7 @@ define({
         },
         {
           "type": "relation",
-          "id": "ExampleBar-ExampleFoo",
+          "id": "ExampleBar->ExampleFoo",
           "from": "ExampleBar",
           "to": "ExampleFoo",
           "attributes": [
@@ -1023,7 +1023,7 @@ define({
         },
         {
           "type": "relation",
-          "id": "ExampleBar-ExampleBaz",
+          "id": "ExampleBar->ExampleBaz",
           "from": "ExampleBar",
           "to": "ExampleBaz",
           "attributes": [
@@ -1365,7 +1365,7 @@ define({
         },
         {
           "type": "relation",
-          "id": "class-abstract",
+          "id": "class->abstract",
           "from": "class",
           "to": "abstract",
           "attributes": [
@@ -1472,7 +1472,7 @@ define({
         },
         {
           "type": "relation",
-          "id": "abstract-interface",
+          "id": "abstract->interface",
           "from": "abstract",
           "to": "interface",
           "attributes": [
@@ -1626,7 +1626,7 @@ define({
         },
         {
           "type": "relation",
-          "id": "AbstractExample-ExampleInterface",
+          "id": "AbstractExample->ExampleInterface",
           "from": "AbstractExample",
           "to": "ExampleInterface",
           "attributes": null
@@ -1638,7 +1638,7 @@ define({
         },
         {
           "type": "relation",
-          "id": "ExampleFoo-AbstractExample",
+          "id": "ExampleFoo->AbstractExample",
           "from": "ExampleFoo",
           "to": "AbstractExample",
           "attributes": null
@@ -1650,7 +1650,7 @@ define({
         },
         {
           "type": "relation",
-          "id": "ExampleBar-ExampleFoo",
+          "id": "ExampleBar->ExampleFoo",
           "from": "ExampleBar",
           "to": "ExampleFoo",
           "attributes": null
@@ -1662,7 +1662,7 @@ define({
         },
         {
           "type": "relation",
-          "id": "ExampleBar-ExampleBaz",
+          "id": "ExampleBar->ExampleBaz",
           "from": "ExampleBar",
           "to": "ExampleBaz",
           "attributes": null

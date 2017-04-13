@@ -1618,7 +1618,7 @@ define({
     },
     {
       "type": "relation",
-      "id": "Stile-mLBSt",
+      "id": "Stile--mLBSt",
       "from": "Stile",
       "to": "mLBSt",
       "attributes": [
@@ -1674,7 +1674,7 @@ define({
     },
     {
       "type": "relation",
-      "id": "BAdept-mShBl",
+      "id": "BAdept--mShBl",
       "from": "BAdept",
       "to": "mShBl",
       "attributes": [
@@ -1730,7 +1730,7 @@ define({
     },
     {
       "type": "relation",
-      "id": "Bane-mAgBa",
+      "id": "Bane--mAgBa",
       "from": "Bane",
       "to": "mAgBa",
       "attributes": [
@@ -1786,7 +1786,7 @@ define({
     },
     {
       "type": "relation",
-      "id": "Mach-mFlMa",
+      "id": "Mach--mFlMa",
       "from": "Mach",
       "to": "mFlMa",
       "attributes": [
@@ -1842,7 +1842,7 @@ define({
     },
     {
       "type": "relation",
-      "id": "LBlue-mBlue",
+      "id": "LBlue--mBlue",
       "from": "LBlue",
       "to": "mBlue",
       "attributes": [
@@ -1898,7 +1898,7 @@ define({
     },
     {
       "type": "relation",
-      "id": "Neysa-Fleta",
+      "id": "Neysa--Fleta",
       "from": "Neysa",
       "to": "Fleta",
       "attributes": [
@@ -1998,7 +1998,7 @@ define({
     },
     {
       "type": "relation",
-      "id": "sUni-Chip",
+      "id": "sUni--Chip",
       "from": "sUni",
       "to": "Chip",
       "attributes": [
@@ -2058,7 +2058,7 @@ define({
     },
     {
       "type": "relation",
-      "id": "sUni-Neysa",
+      "id": "sUni--Neysa",
       "from": "sUni",
       "to": "Neysa",
       "attributes": [
@@ -2118,7 +2118,7 @@ define({
     },
     {
       "type": "relation",
-      "id": "mBlue-BAdept",
+      "id": "mBlue--BAdept",
       "from": "mBlue",
       "to": "BAdept",
       "attributes": [
@@ -2174,7 +2174,7 @@ define({
     },
     {
       "type": "relation",
-      "id": "mLBSt-Bane",
+      "id": "mLBSt--Bane",
       "from": "mLBSt",
       "to": "Bane",
       "attributes": [
@@ -2222,7 +2222,7 @@ define({
     },
     {
       "type": "relation",
-      "id": "mLBSt-LBlue",
+      "id": "mLBSt--LBlue",
       "from": "mLBSt",
       "to": "LBlue",
       "attributes": [
@@ -2278,7 +2278,7 @@ define({
     },
     {
       "type": "relation",
-      "id": "mShBl-Mach",
+      "id": "mShBl--Mach",
       "from": "mShBl",
       "to": "Mach",
       "attributes": [
@@ -2326,7 +2326,7 @@ define({
     },
     {
       "type": "relation",
-      "id": "mShBl-Sheen",
+      "id": "mShBl--Sheen",
       "from": "mShBl",
       "to": "Sheen",
       "attributes": [
@@ -2382,7 +2382,7 @@ define({
     },
     {
       "type": "relation",
-      "id": "mAgBa-Agape",
+      "id": "mAgBa--Agape",
       "from": "mAgBa",
       "to": "Agape",
       "attributes": [
@@ -2438,7 +2438,7 @@ define({
     },
     {
       "type": "relation",
-      "id": "mAgBa-Nepe",
+      "id": "mAgBa--Nepe",
       "from": "mAgBa",
       "to": "Nepe",
       "attributes": [
@@ -2486,7 +2486,7 @@ define({
     },
     {
       "type": "relation",
-      "id": "mFlMa-Fleta",
+      "id": "mFlMa--Fleta",
       "from": "mFlMa",
       "to": "Fleta",
       "attributes": [
@@ -2542,7 +2542,7 @@ define({
     },
     {
       "type": "relation",
-      "id": "mFlMa-Flach",
+      "id": "mFlMa--Flach",
       "from": "mFlMa",
       "to": "Flach",
       "attributes": [

@@ -21,8 +21,8 @@ skip = n:"node" a:attributes ";" WS+ {return {type:"skip", attributes:a}}
 struct = b:body {return {type:"struct", commands:b}}
 graph = n:"graph" a:attributes ";" WS+ {return {type:n, attributes:a}}
 subgraph = t:"subgraph" _ i:identifier _ b:body {return {type:t, id:i, commands:b}}
-relation = f:identifier _ ("->" / "--") _ t:identifier a:attributes? ";" WS+
-    {return {type:"relation", id: [f,t].join('-'), from:f, to:t, attributes:a}}
+relation = f:identifier _ r:("->" / "--") _ t:identifier a:attributes? ";" WS+
+    {return {type:"relation", id: [f,t].join(r), from:f, to:t, attributes:a}}
 node = i:identifier a:attributes? ";" WS+ {return {type:"node",id:i,attributes:a}}
 
 attributes = _+ "[" a:attribute aa:("," WS+ a:attribute {return a})* _* "]" {return aa!=null ? [a].concat(aa) : [a];}
