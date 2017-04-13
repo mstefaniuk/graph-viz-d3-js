@@ -348,7 +348,8 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
             return [d.shape, i].join('-');
           }
         );
-        shapes.enter().append("path");
+        shapes = shapes.enter().append("path")
+          .merge(shapes);
         transitions.shapes(shapes, function (selection) {
           selection
             .attr("d", function (d) {
