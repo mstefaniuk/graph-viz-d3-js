@@ -3,7 +3,7 @@
   "version": "0.9.24",
   "dependencies": {
     "requirejs": "2.1.15",
-    "d3": "3.5.3",
+    "d3": "4.7.4",
     "requirejs-web-workers": "~1.0.1",
     "viz.js": "~1.5.1"
   },
