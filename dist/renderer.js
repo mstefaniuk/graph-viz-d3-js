@@ -362,7 +362,8 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
           .data(function (d) {
             return d.labels;
           });
-        labels.enter().append("text");
+        labels = labels.enter().append("text")
+          .merge(labels);
         transitions.labels(labels, labelAttributer);
       },
       getImage: function (reset) {
