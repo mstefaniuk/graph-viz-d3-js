@@ -46,7 +46,7 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
         };
         stage.init(definition);
         expect(d3Spy.select).toHaveBeenCalledWith(definition.element);
-        expect(d3Spy.behavior.zoom).not.toHaveBeenCalled();
+        expect(d3Spy.zoom).not.toHaveBeenCalled();
         expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
         expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
         expect(d3Spy.element.svg.g.g.append).toHaveBeenCalledWith("polygon");
@@ -59,8 +59,8 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
         };
         stage.init(definition);
         expect(d3Spy.select).toHaveBeenCalledWith(definition.element);
-        expect(d3Spy.behavior.zoom.scaleExtent).toHaveBeenCalledWith([0.1, 10]);
-        expect(d3Spy.behavior.zoom.on).toHaveBeenCalledWith("zoom", jasmine.any(Function));
+        expect(d3Spy.zoom.scaleExtent).toHaveBeenCalledWith([0.1, 10]);
+        expect(d3Spy.zoom.on).toHaveBeenCalledWith("zoom", jasmine.any(Function));
         expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
         expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
         expect(d3Spy.element.svg.g.g.append).toHaveBeenCalledWith("polygon");
@@ -76,8 +76,8 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
         };
         stage.init(definition);
         expect(d3Spy.select).toHaveBeenCalledWith(definition.element);
-        expect(d3Spy.behavior.zoom.scaleExtent).toHaveBeenCalledWith(expected);
-        expect(d3Spy.behavior.zoom.on).toHaveBeenCalledWith("zoom", jasmine.any(Function));
+        expect(d3Spy.zoom.scaleExtent).toHaveBeenCalledWith(expected);
+        expect(d3Spy.zoom.on).toHaveBeenCalledWith("zoom", jasmine.any(Function));
         expect(d3Spy.element.append).toHaveBeenCalledWith("svg");
         expect(d3Spy.element.svg.append).toHaveBeenCalledWith("g");
         expect(d3Spy.element.svg.g.g.append).toHaveBeenCalledWith("polygon");
@@ -98,8 +98,16 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
         var zoom = {
           scale: expected
         };
+        var expectedTranslate = [12, 15];
+        d3Spy.zoomTransform.and.returnValue({
+            k: expected,
+            x: expectedTranslate[0],
+            y: expectedTranslate[1]
+        });
         stage.setZoom(zoom);
-        expect(d3Spy.behavior.zoom.scale).toHaveBeenCalledWith(expected);
+        expect(d3Spy.zoomTransform).toHaveBeenCalled();
+        expect(d3Spy.zoomIdentity.scale).toHaveBeenCalledWith(expected);
+        expect(d3Spy.zoomIdentity.translate).toHaveBeenCalledWith(expectedTranslate[0], expectedTranslate[1]);
       });
 
       it("should set zoom translate when only translate is provided", function () {
@@ -107,8 +115,16 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
         var zoom = {
           translate: expected
         };
+        var expectedScale = 23;
+        d3Spy.zoomTransform.and.returnValue({
+            k: expectedScale,
+            x: expected[0],
+            y: expected[1]
+        });
         stage.setZoom(zoom);
-        expect(d3Spy.behavior.zoom.translate).toHaveBeenCalledWith(expected);
+        expect(d3Spy.zoomTransform).toHaveBeenCalled();
+        expect(d3Spy.zoomIdentity.translate).toHaveBeenCalledWith(expected[0], expected[1]);
+        expect(d3Spy.zoomIdentity.scale).toHaveBeenCalledWith(expectedScale);
       });
 
       it("should set zoom translate and scale when both are provided", function () {
@@ -118,9 +134,15 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
           scale: expectedScale,
           translate: expectedTranslate
         };
+        d3Spy.zoomTransform.and.returnValue({
+            k: expectedScale,
+            x: expectedTranslate[0],
+            y: expectedTranslate[1]
+        });
         stage.setZoom(zoom);
-        expect(d3Spy.behavior.zoom.scale).toHaveBeenCalledWith(expectedScale);
-        expect(d3Spy.behavior.zoom.translate).toHaveBeenCalledWith(expectedTranslate);
+        expect(d3Spy.zoomTransform).not.toHaveBeenCalled();
+        expect(d3Spy.zoomIdentity.scale).toHaveBeenCalledWith(expectedScale);
+        expect(d3Spy.zoomIdentity.translate).toHaveBeenCalledWith(expectedTranslate[0], expectedTranslate[1]);
       });
     });
 
@@ -172,16 +194,33 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
   function d3SpyFactory() {
     var  d3Spy = d3SelectionSpyGenerator(null, 'selection');
 
-    d3Spy.behavior = jasmine.createSpyObj("behavior", ["zoom"]);
-    d3Spy.behavior.zoom.and.callFake(function() {
+    d3Spy.zoom = jasmine.createSpyObj("d3", ["zoom"]).zoom;
+    d3Spy.zoom.and.callFake(function() {
       var operators = ['on', 'scaleExtent', 'scale', 'translate', 'event'];
       var zoomSpy = jasmine.createSpyObj("zoom", operators);
       operators.map(function (key) {
         zoomSpy[key].and.returnValue(zoomSpy);
-        d3Spy.behavior.zoom[key] = zoomSpy[key];
+        d3Spy.zoom[key] = zoomSpy[key];
       });
       return zoomSpy;
     });
+    d3Spy.zoomTransform = jasmine.createSpyObj("d3", ["zoomTransform"]).zoomTransform;
+    d3Spy.zoomTransform.and.callFake(function() {
+      var operators = ["translate", "scale"];
+      var zoomTransformSpy = jasmine.createSpyObj("zoomTransform", operators);
+      operators.map(function (key) {
+        zoomTransformSpy[key].and.returnValue(zoomTransformSpy);
+        d3Spy.zoom[key] = zoomTransformSpy[key];
+      });
+      return zoomTransformSpy;
+    });
+
+    d3Spy.zoomIdentity = jasmine.createSpyObj("zoomIdentity", ["translate", "scale"]);
+    d3Spy.zoomIdentity.translate.and.returnValue(d3Spy.zoomIdentity);
+    d3Spy.zoomIdentity.scale.and.returnValue(d3Spy.zoomIdentity);
+    d3Spy.zoomIdentity.x = 0;
+    d3Spy.zoomIdentity.y = 0;
+    d3Spy.zoomIdentity.k = 1;
     return d3Spy;
   }
 
@@ -190,7 +229,7 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
       return parent[name];
     }
 
-    var selectors = ['append', 'select', 'selectAll', 'filter'];
+    var selectors = ['append', 'select', 'selectAll', 'filter', 'node'];
     var operators = ['attr', 'enter', 'text', 'data', 'exit', 'sort', 'call'];
     var spy = jasmine.createSpyObj(name, selectors.concat(operators));
 
@@ -209,6 +248,9 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
     });
     spy.append.and.callFake(function (tag) {
       return d3SelectionSpyGenerator(this, tag);
+    });
+    spy.node.and.callFake(function () {
+      return d3SelectionSpyGenerator(this, null);
     });
 
     if (parent) {

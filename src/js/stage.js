@@ -54,7 +54,7 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
 
     function zoomed() {
       svg.select("g")
-        .attr('transform', 'translate(' + d3.event.translate + ') scale(' + d3.event.scale + ')');
+        .attr('transform', d3.event.transform);
     }
 
     return {
@@ -75,8 +75,7 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
 
         if (definition.zoom) {
           var extent = definition.zoom && definition.zoom.extent || [0.1, 10];
-          zoom = d3.behavior
-            .zoom()
+          zoom = d3.zoom()
             .scaleExtent(extent)
             .on("zoom", zoomed);
 
@@ -89,18 +88,17 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
       svg: function (reset) {
         if (reset) {
           var g = svg.select("g").select("g");
-          if (g[0]) {
-            zoom.scale(1);
-            zoom.translate([0, 0]);
+          if (g.node()) {
             g.attr("transform", "translate(0,0)scale(1)");
           }
         }
         return svg.node().parentNode.innerHTML;
       },
       setZoom: function (zoomParams) {
-        zoomParams.scale && zoom.scale(zoomParams.scale);
-        zoomParams.translate && zoom.translate(zoomParams.translate);
-        zoom.event(svg);
+        var g = svg.select("g");
+        var k = zoomParams.scale ? zoomParams.scale : d3.zoomTransform().k;
+        var [x, y] = zoomParams.translate ? zoomParams.translate : [d3.zoomTransform().x, d3.zoomTransform().y];
+        g.call(zoom.transform, d3.zoomIdentity.translate(x, y).scale(k));
       },
       transitions: function (custom) {
         if (custom) {
