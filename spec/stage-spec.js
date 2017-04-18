@@ -111,7 +111,7 @@ define(["rfactory!stage", 'spec/shapes/directed/table'], function (stageFactory,
         expect(d3Spy.behavior.zoom.translate).toHaveBeenCalledWith(expected);
       });
 
-      it("should set zoom translate when only translate is provided", function () {
+      it("should set zoom translate and scale when both are provided", function () {
         var expectedTranslate = [12, 15];
         var expectedScale = 15;
         var zoom = {
