@@ -1,4 +1,4 @@
-define(["d3", "palette", "transitions/default"], function (d3, palette, defaults) {
+define(["d3", "palette", "transitions/default", "styliseur"], function (d3, palette, defaults, styliseur) {
     var svg, main, zoom;
     var order = {
       digraph: 0,
@@ -213,9 +213,11 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
           .data(function (d) {
             return d.labels;
           });
-        labels = labels.enter().append("text")
-          .merge(labels);
         transitions.labels(labels, labelAttributer);
+        labels.enter()
+          .append("text")
+          .call(labelAttributer)
+          .call(styliseur);
       },
       getImage: function (reset) {
         reset = reset === undefined ? true : reset;
