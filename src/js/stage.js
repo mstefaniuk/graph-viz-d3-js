@@ -138,7 +138,7 @@ define(["d3", "palette", "transitions/default", "styliseur"], function (d3, pale
         });
 
         var overlay = svg.select("rect.overlay");
-        if (overlay[0]) {
+        if (overlay.node()) {
           transitions.canvas(overlay, function (selection) {
             selection
               .attr('width', sizes.width / sizes.scaleWidth)
