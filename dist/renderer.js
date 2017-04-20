@@ -146,7 +146,7 @@ define('transitions/default',["styliseur"], function(styliseur) {
     }
   };
 });
-define('stage',["d3", "palette", "transitions/default", "styliseur"], function (d3, palette, defaults, styliseur) {
+define('stage',["d3", "palette", "transitions/default"], function (d3, palette, defaults) {
     var svg, main, zoom;
     var order = {
       digraph: 0,
@@ -361,11 +361,10 @@ define('stage',["d3", "palette", "transitions/default", "styliseur"], function (
           .data(function (d) {
             return d.labels;
           });
-        transitions.labels(labels, labelAttributer);
-        labels.enter()
-          .append("text")
+        labels = labels.enter().append("text")
           .call(labelAttributer)
-          .call(styliseur);
+          .merge(labels);
+        transitions.labels(labels, labelAttributer);
       },
       getImage: function (reset) {
         reset = reset === undefined ? true : reset;
