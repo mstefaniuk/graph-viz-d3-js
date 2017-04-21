@@ -1,6 +1,6 @@
 define(["d3"], function(d3) {
-  var styliseur = function () {
-    this.each(function (d) {
+  var styliseur = function (selection) {
+    selection.each(function (d) {
       var self = d3.select(this);
       var fillInsteadOfStroke = this instanceof SVGTextElement || false;
       d && d.style && d.style.forEach(function (e) {

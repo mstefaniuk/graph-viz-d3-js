@@ -36,8 +36,8 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
       };
     }
 
-    var labelAttributer = function () {
-      this
+    var labelAttributer = function (selection) {
+      selection
         .attr("x", function (d) {
           return d.x;
         })
@@ -54,7 +54,7 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
 
     function zoomed() {
       svg.select("g")
-        .attr('transform', 'translate(' + d3.event.translate + ') scale(' + d3.event.scale + ')');
+        .attr('transform', d3.event.transform);
     }
 
     return {
@@ -75,8 +75,7 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
 
         if (definition.zoom) {
           var extent = definition.zoom && definition.zoom.extent || [0.1, 10];
-          zoom = d3.behavior
-            .zoom()
+          zoom = d3.zoom()
             .scaleExtent(extent)
             .on("zoom", zoomed);
 
@@ -89,18 +88,17 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
       svg: function (reset) {
         if (reset) {
           var g = svg.select("g").select("g");
-          if (g[0]) {
-            zoom.scale(1);
-            zoom.translate([0, 0]);
+          if (g.node()) {
             g.attr("transform", "translate(0,0)scale(1)");
           }
         }
         return svg.node().parentNode.innerHTML;
       },
       setZoom: function (zoomParams) {
-        zoomParams.scale && zoom.scale(zoomParams.scale);
-        zoomParams.translate && zoom.translate(zoomParams.translate);
-        zoom.event(svg);
+        var g = svg.select("g");
+        var k = zoomParams.scale ? zoomParams.scale : d3.zoomTransform().k;
+        var [x, y] = zoomParams.translate ? zoomParams.translate : [d3.zoomTransform().x, d3.zoomTransform().y];
+        g.call(zoom.transform, d3.zoomIdentity.translate(x, y).scale(k));
       },
       transitions: function (custom) {
         if (custom) {
@@ -113,8 +111,8 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         var sizes = calculateSizes(stage.main);
         var area = [0, 0, sizes.width, sizes.height];
 
-        transitions.document(svg, function () {
-          this
+        transitions.document(svg, function (selection) {
+          selection
             .attr("width", sizes.width + "pt")
             .attr("height", sizes.height + "pt")
             .attr("viewBox", area.join(' '))
@@ -125,8 +123,8 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         });
 
         var polygon = main.select("polygon").data(stage.main.shapes);
-        transitions.canvas(polygon, function () {
-          this
+        transitions.canvas(polygon, function (selection) {
+          selection
             .attr("points", function () {
               return [
                 [-sizes.margin, sizes.margin],
@@ -140,9 +138,9 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         });
 
         var overlay = svg.select("rect.overlay");
-        if (overlay[0]) {
-          transitions.canvas(overlay, function () {
-            this
+        if (overlay.node()) {
+          transitions.canvas(overlay, function (selection) {
+            selection
               .attr('width', sizes.width / sizes.scaleWidth)
               .attr('height', sizes.height / sizes.scaleHeight)
               .attr('y', -sizes.height / sizes.scaleHeight);
@@ -150,7 +148,8 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         }
         var label = main.selectAll("text")
           .data(stage.main.labels);
-        label.enter().append("text");
+        label = label.enter().append("text")
+          .merge(label);
         transitions.labels(label, labelAttributer);
 
         var groups = main.selectAll("g")
@@ -171,14 +170,14 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
           .attr("xlink:href", function(d) {return d.url;})
           .attr("xlink:title", function(d) {return d.tooltip;});
 
-        transitions.nodes(entering.filter(".node:empty,.node a"), function () {
-          this.style("opacity", 1.0);
+        transitions.nodes(entering.filter(".node:empty,.node a"), function (selection) {
+          selection.style("opacity", 1.0);
         });
-        transitions.relations(entering.filter(".relation"), function () {
-          this.style("opacity", 1.0);
+        transitions.relations(entering.filter(".relation"), function (selection) {
+          selection.style("opacity", 1.0);
         });
-        transitions.exits(groups.exit(), function () {
-          this.remove();
+        transitions.exits(groups.exit(), function (selection) {
+          selection.remove();
         });
 
         groups.sort(function (a, b) {
@@ -199,9 +198,10 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
             return [d.shape, i].join('-');
           }
         );
-        shapes.enter().append("path");
-        transitions.shapes(shapes, function () {
-          this
+        shapes = shapes.enter().append("path")
+          .merge(shapes);
+        transitions.shapes(shapes, function (selection) {
+          selection
             .attr("d", function (d) {
               var shape = d.shape;
               return palette[shape](d);
@@ -213,7 +213,9 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
           .data(function (d) {
             return d.labels;
           });
-        labels.enter().append("text");
+        labels = labels.enter().append("text")
+          .call(labelAttributer)
+          .merge(labels);
         transitions.labels(labels, labelAttributer);
       },
       getImage: function (reset) {
