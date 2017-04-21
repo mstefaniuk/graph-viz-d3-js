@@ -94,7 +94,7 @@ body { background-color: #eeeeee; padding: 0; margin: 5px; overflow-y: scroll; }
 </head>
 
 <body id="HTMLReporter" class="html-reporter">
-<h1>Tested in Firefox 52.0.0 (Linux 0.0.0) on Thu Apr 13 2017</h1>
+<h1>Tested in Firefox 53.0.0 (Linux 0.0.0) on Fri Apr 21 2017</h1>
 
 <div class="alert">
 
@@ -20980,10 +20980,132 @@ F 16 11 -Times-Roman c 7 -#000000 T 529.25 31.7 0 4 1 -  F 16 11 -Times-Roman c 
     </div>
   
     <div class="suite passed">
+      <span class="description">Stage object</span>
+    
+      <div class="specSummary passed">
+      <span class="description">should provide current transitions</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should allow to replace default transitions</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should init graph when element name is provided</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should init graph without zoom when object with element only is provided</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should init graph with default zoom when object with zoom true key is provided</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should init graph with defined extent when object with zoom extent key is provided</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Stage zoom</span>
+    
+      <div class="specSummary passed">
+      <span class="description">should set zoom scale when only scale is provided</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should set zoom translate when only translate is provided</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should set zoom translate and scale when both are provided</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Stage</span>
+    
+      <div class="specSummary passed">
+      <span class="description">should return contents of parent when svg source is requested</span>
+      </div>
+    
+      <div class="specSummary skipped">
+      <span class="description">should draw svg and delegate transitions</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Dot source renderer</span>
+    
+      <div class="specSummary passed">
+      <span class="description">should init stage with provided element</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should buffer source to be rendered until worker is initialized</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should send source directly when worker is already initialized</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should draw stage with output of worker</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should return error when rendering failed</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
       <span class="description">Viz.js</span>
     
       <div class="specSummary passed">
       <span class="description">should recover after unclosed quotes error</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Stage generated SVG</span>
+    
+      <div class="specSummary passed">
+      <span class="description">should contain label</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should render non default fonts properly</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should handle different font alignments</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should show head and tail arrows</span>
+      </div>
+    
+      <div class="specSummary skipped">
+      <span class="description">should render links and tooltips</span>
+      </div>
+    
+    </div>
+  
+    <div class="suite passed">
+      <span class="description">Stage export of PNG image when zoom available</span>
+    
+      <div class="specSummary passed">
+      <span class="description">should return whole diagram when no zoom set</span>
+      </div>
+    
+      <div class="specSummary passed">
+      <span class="description">should return part of diagram when zoom is set</span>
       </div>
     
     </div>
@@ -24086,128 +24208,6 @@ viewlines -&gt; viewline [color=blue];
     
       <div class="specSummary passed">
       <span class="description">should return error when xdot source parsing failed</span>
-      </div>
-    
-    </div>
-  
-    <div class="suite passed">
-      <span class="description">Stage object</span>
-    
-      <div class="specSummary passed">
-      <span class="description">should provide current transitions</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should allow to replace default transitions</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should init graph when element name is provided</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should init graph without zoom when object with element only is provided</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should init graph with default zoom when object with zoom true key is provided</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should init graph with defined extent when object with zoom extent key is provided</span>
-      </div>
-    
-    </div>
-  
-    <div class="suite passed">
-      <span class="description">Stage zoom</span>
-    
-      <div class="specSummary passed">
-      <span class="description">should set zoom scale when only scale is provided</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should set zoom translate when only translate is provided</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should set zoom translate when only translate is provided</span>
-      </div>
-    
-    </div>
-  
-    <div class="suite passed">
-      <span class="description">Stage</span>
-    
-      <div class="specSummary passed">
-      <span class="description">should return contents of parent when svg source is requested</span>
-      </div>
-    
-      <div class="specSummary skipped">
-      <span class="description">should draw svg and delegate transitions</span>
-      </div>
-    
-    </div>
-  
-    <div class="suite passed">
-      <span class="description">Dot source renderer</span>
-    
-      <div class="specSummary passed">
-      <span class="description">should init stage with provided element</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should buffer source to be rendered until worker is initialized</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should send source directly when worker is already initialized</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should draw stage with output of worker</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should return error when rendering failed</span>
-      </div>
-    
-    </div>
-  
-    <div class="suite passed">
-      <span class="description">Stage generated SVG</span>
-    
-      <div class="specSummary passed">
-      <span class="description">should contain label</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should render non default fonts properly</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should handle different font alignments</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should show head and tail arrows</span>
-      </div>
-    
-      <div class="specSummary skipped">
-      <span class="description">should render links and tooltips</span>
-      </div>
-    
-    </div>
-  
-    <div class="suite passed">
-      <span class="description">Stage export of PNG image when zoom available</span>
-    
-      <div class="specSummary passed">
-      <span class="description">should return whole diagram when no zoom set</span>
-      </div>
-    
-      <div class="specSummary passed">
-      <span class="description">should return part of diagram when zoom is set</span>
       </div>
     
     </div>
