@@ -227,10 +227,10 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
             .scaleExtent(extent)
             .on("zoom", zoomed);
 
-          svg.select("g")
-            .call(zoom)
+          svg
             .append("rect")
-            .attr("class", "overlay");
+            .attr("class", "overlay")
+            .call(zoom);
         }
       },
       svg: function (reset) {
@@ -290,8 +290,7 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
           transitions.canvas(overlay, function (selection) {
             selection
               .attr('width', sizes.width / sizes.scaleWidth)
-              .attr('height', sizes.height / sizes.scaleHeight)
-              .attr('y', -sizes.height / sizes.scaleHeight);
+              .attr('height', sizes.height / sizes.scaleHeight);
           });
         }
         var label = main.selectAll("text")
