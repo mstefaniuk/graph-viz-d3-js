@@ -37,6 +37,7 @@ define(
     'text!spec/dots/directed/polypoly.gv',
 //  'text!spec/dots/directed/proc3d.gv',
     'text!spec/dots/directed/psfonttest.gv',
+    'text!spec/dots/directed/quoted.gv',
     'text!spec/dots/directed/record2.gv',
     'text!spec/dots/directed/records.gv',
     'text!spec/dots/directed/rowe.gv',
