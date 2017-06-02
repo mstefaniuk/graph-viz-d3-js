@@ -360,6 +360,9 @@ define('stage',["d3", "palette", "transitions/default"], function (d3, palette, 
           .data(function (d) {
             return d.labels;
           });
+        transitions.exits(labels.exit(), function (selection) {
+          selection.remove();
+        });
         labels = labels.enter().append("text")
           .call(labelAttributer)
           .merge(labels);

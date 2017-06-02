@@ -212,6 +212,9 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
           .data(function (d) {
             return d.labels;
           });
+        transitions.exits(labels.exit(), function (selection) {
+          selection.remove();
+        });
         labels = labels.enter().append("text")
           .call(labelAttributer)
           .merge(labels);
