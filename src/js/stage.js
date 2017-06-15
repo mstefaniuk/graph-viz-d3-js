@@ -182,6 +182,7 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
         groups.sort(function (a, b) {
           return order[a.class] - order[b.class];
         });
+        groups.select("a"); // Propagate new data for update selection
 
         var leaves = main
           .selectAll("*")
