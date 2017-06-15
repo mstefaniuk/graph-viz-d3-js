@@ -197,6 +197,9 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
             return [d.shape, i].join('-');
           }
         );
+        transitions.exits(shapes.exit(), function (selection) {
+          selection.remove();
+        });
         shapes = shapes.enter().append("path")
           .merge(shapes);
         transitions.shapes(shapes, function (selection) {
