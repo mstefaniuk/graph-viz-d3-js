@@ -81,6 +81,12 @@ define(["stage", 'transformer', 'styliseur', 'spec/shapes/graph-label', 'spec/sh
         expect(document.querySelectorAll('#graph svg g a[*|title="Click me!"] path').length).toEqual(1);
         expect(document.querySelectorAll('#graph svg g a text[fill="#ffffff"]').length).toEqual(1);
       });
+
+      it("should include id attribute when defined for node", function() {
+        var shapes = transformer.generate("digraph G {foo_node [id=foo_node_id]; bar_node}");
+        stage.draw(shapes);
+        expect(document.querySelectorAll('#graph svg #foo_node_id').length).toEqual(1);
+      });
     });
     
     describe("export of PNG image when zoom available", function() {

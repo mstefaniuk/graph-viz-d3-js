@@ -156,8 +156,12 @@ define(["d3", "palette", "transitions/default"], function (d3, palette, defaults
             return d.id;
           });
         var entering = groups.enter()
-          .append("g").attr("class", function (d) {
+          .append("g")
+          .attr("class", function (d) {
             return d.class;
+          })
+          .attr("id", function (d) {
+            return d.identifier;
           });
         entering.append("title").text(function (d) {
           return d.id;
