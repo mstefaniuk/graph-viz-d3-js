@@ -1,7 +1,7 @@
 define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4', 'spec/asts/unicode-labels',
     'spec/asts/image', 'text!spec/xdots/class-diagram.xdot', 'spec/asts/class-diagram',
-    'text!spec/xdots/adept.xdot', 'spec/asts/adept'],
-  function (xdot, array, clust4, unicodeLabels, image, classDiagramSource, classDiagramAst, adeptSource, adeptAst) {
+    'text!spec/xdots/adept.xdot', 'spec/asts/adept', 'spec/asts/node-id'],
+  function (xdot, array, clust4, unicodeLabels, image, classDiagramSource, classDiagramAst, adeptSource, adeptAst, nodeId) {
 
     describe('XDOT parser', function () {
 
@@ -94,6 +94,23 @@ define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4', 'spec
               }]
             }]
           });
+        });
+
+        it("to handle id of nodes", function () {
+          var ast = xdot.parse(
+            'digraph G {' +
+            ' graph [_draw_="c 9 -#fffffe00 C 7 -#ffffff P 4 0 0 0 36 95.02 36 95.02 0 ", bb="0,0,95.018,36", xdotversion=1.7 ];' +
+            ' node [label="\N"];' +
+            ' foo_node [' +
+              '_draw_="c 7 -#000000 e 47.51 18 47.52 18 ", ' +
+              '_ldraw_="F 14 11 -Times-Roman c 7 -#000000 T 47.51 13.8 0 52.88 8 ' +
+              '-foo_node ", ' +
+              'height=0.5, ' +
+              'id=foo_node_id, ' +
+              'pos="47.509,18", ' +
+              'width=1.3197]; } '
+          );
+          expect(ast).toEqual(nodeId);
         });
       });
     });

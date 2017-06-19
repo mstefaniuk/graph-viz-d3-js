@@ -29,9 +29,8 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
             return e.id === node.id;
           });
           cursor =
-            groupById.length > 0
-            ? groupById[0]
-            : {id: node.id, class: node.type, shapes: [], labels: []};
+            groupById.length > 0 ?
+              groupById[0] : {id: node.id, class: node.type, shapes: [], labels: []};
           groupById.length === 0 && result.push(cursor);
           node[propertyName] && node[propertyName].forEach(visit);
         };
@@ -76,6 +75,7 @@ define(['viz', 'parser/xdot', 'pegast'], function (viz, xdotparser, pegast) {
         tldraw: addShapesAndLabels,
         url: addNodeAttribute('url'),
         tooltip: addNodeAttribute('tooltip'),
+        id: addNodeAttribute('identifier'),
         size: function(node) {
           cursor.size = node.value.map(function(e) {
             return e*72;

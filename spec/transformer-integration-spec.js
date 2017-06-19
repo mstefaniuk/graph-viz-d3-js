@@ -55,5 +55,12 @@ define(['transformer', 'spec/shapes/longer-labels',
       ].join("\n"));
       expect(stage).toEqual(multipleEdgesShape);
     });
+
+    it("should handle id of nodes", function() {
+      var stage = transformer.generate(
+        "digraph G {foo_node [id=foo_node_id]}"
+      );
+      expect(stage.groups[0].identifier).toEqual("foo_node_id");
+    });
   });
 });

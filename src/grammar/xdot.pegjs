@@ -32,12 +32,14 @@ attribute =
  / image
  / URL
  / tooltip
+ / id
  / a:(anyattribute) {a.type="skip"; return a}
 
 image = "image" "=" q url:nq q {return {type: 'image', value: url.join('')}}
 URL = "URL" "=" q url:nq q {return {type: 'url', value: url.join('')}}
 tooltip = "tooltip" "=" q tt:nq q {return {type: 'tooltip', value: tt.join('')}}
 size = "size" "=" q w:decimal "," h:decimal q {return {type: "size", value: [w,h]}}
+id = "id" "=" id:identifier {return {type: 'id', value: id}}
 anyattribute = nn:identifier "=" nqs {return {name: nn}}
 
 draw = "_" s:("draw" / "ldraw" / "hdraw" / "tdraw" / "hldraw" / "tldraw") "_=" q d:drawing+ q {return {type: s, elements: d}}
