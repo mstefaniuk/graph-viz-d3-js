@@ -64,9 +64,21 @@ fontdecoration = [t] _ v:integer {return {key:"text-decoration", value: v}}
 style = [S] _ s:vardata {return {key:'style', value: s}}
 
 vardata = s:varsize _ "-" v:varchar {return v}
-varsize = s:integer {counter=s}
+varsize = s:integer {counter=s; c0=""}
 varchar = &{return counter==0} / a:anysign s:varchar {return a + (s||'')}
-anysign = LC? c:. { if (c=="\\") {return ""} else {counter -= lengthInUtf8Bytes(c); return c}}
+anysign = LC? c:. {
+    c2="";
+    if (c != "\\" || c0 == "\\") {
+       counter -= lengthInUtf8Bytes(c);
+       if (c0 == "\\" && c != "\\" && c != '"') {
+          counter -=1;
+          c2=c0;
+       }
+       c2 += c;
+   }
+   c0=c;
+   return c2;
+}
 
 coordinates = _ p1:decimal _ p2:decimal {return [p1,p2]}
 identifier = s:$CHAR+ port? {return s} / '"' s:$nq '"' port? {return s}
