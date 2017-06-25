@@ -89,8 +89,9 @@ integer = s:"-"? i:$[0-9]+ {return parseInt((s||'') + i)}
 decimal = s:"-"? f:$[0-9]+ r:("." d:$[0-9]+ {return "." + d})? {return parseFloat((s||'') + f + (r||''))}
 
 ncs = [^,\]]+
-nqs = '"' nq '"' / "<<" ([^>] [^>]* ">")* ">" / ncs
+nqs = '"' nq '"' / "<" ts ">" / ncs
 nq = ('\\"' / [^"])*
+ts = ([^<>]+ / "<" [^<>]* ">")*
 c = [,]
 q = '"'
 
