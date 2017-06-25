@@ -1,7 +1,7 @@
 define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4', 'spec/asts/unicode-labels',
     'spec/asts/image', 'text!spec/xdots/class-diagram.xdot', 'spec/asts/class-diagram',
-    'text!spec/xdots/adept.xdot', 'spec/asts/adept', 'spec/asts/node-id'],
-  function (xdot, array, clust4, unicodeLabels, image, classDiagramSource, classDiagramAst, adeptSource, adeptAst, nodeId) {
+    'text!spec/xdots/adept.xdot', 'spec/asts/adept', 'spec/asts/node-id', 'spec/asts/backslash'],
+  function (xdot, array, clust4, unicodeLabels, image, classDiagramSource, classDiagramAst, adeptSource, adeptAst, nodeId, backslash) {
 
     describe('XDOT parser', function () {
 
@@ -111,6 +111,22 @@ define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4', 'spec
               'width=1.3197]; } '
           );
           expect(ast).toEqual(nodeId);
+        });
+
+        it("to parse node label transparently with backslash not followed by quote", function () {
+          var ast = xdot.parse(
+            'digraph G {' +
+            ' graph [_draw_="c 9 -#fffffe00 C 7 -#ffffff P 4 0 0 0 36 129.32 36 129.32 0 ", bb="0,0,129.32,36", xdotversion=1.7 ];' +
+            ' node [label="\\N"];' +
+            ' Test [' +
+              '_draw_="c 7 -#000000 e 64.66 18 64.82 18 ", ' +
+              '_ldraw_="F 14 11 -Times-Roman c 7 -#000000 T 64.66 13.8 0 77.74 31 -alpha\\beta\\\\gamma\\\\\\delta space ", ' +
+              'height=0.5, ' +
+              'label="alpha\\\\beta\\\\\\\\gamma\\\\\\\\\\\\delta space", ' +
+              'pos="64.661,18", ' +
+              'width=1.7961]; } '
+          );
+          expect(ast).toEqual(backslash);
         });
       });
     });
