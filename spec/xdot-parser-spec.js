@@ -1,7 +1,7 @@
 define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4', 'spec/asts/unicode-labels',
     'spec/asts/image', 'text!spec/xdots/class-diagram.xdot', 'spec/asts/class-diagram',
-    'text!spec/xdots/adept.xdot', 'spec/asts/adept', 'spec/asts/node-id', 'spec/asts/backslash', 'spec/asts/quote'],
-  function (xdot, array, clust4, unicodeLabels, image, classDiagramSource, classDiagramAst, adeptSource, adeptAst, nodeId, backslash, quote) {
+    'text!spec/xdots/adept.xdot', 'spec/asts/adept', 'spec/asts/node-id', 'spec/asts/backslash', 'spec/asts/quote', 'spec/asts/comma'],
+  function (xdot, array, clust4, unicodeLabels, image, classDiagramSource, classDiagramAst, adeptSource, adeptAst, nodeId, backslash, quote, comma) {
 
     describe('XDOT parser', function () {
 
@@ -143,6 +143,21 @@ define(['parser/xdot', 'spec/xdots/directed', 'spec/asts/directed/clust4', 'spec
               'width=1.7961]; } '
           );
           expect(ast).toEqual(quote);
+        });
+        it("to parse HTML-like node label with comma", function () {
+          var ast = xdot.parse(
+            'digraph G {' +
+            ' graph [_draw_="c 9 -#fffffe00 C 7 -#ffffff P 4 0 0 0 36 118 36 118 0 ", bb="0,0,118,36", xdotversion=1.7 ];' +
+            ' node [label="\N"];' +
+            ' Test [' +
+              '_draw_="c 7 -#000000 e 59 18 59.19 18 ", ' +
+              '_ldraw_="F 14 11 -Times-Roman c 7 -#000000 T 21 14.3 -1 76 12 -first,second ", ' +
+              'height=0.5, ' +
+              'label=<,<B>first,second</B/>>, ' +
+              'pos="59,18", ' +
+              'width=1.6499]; }'
+          );
+          expect(ast).toEqual(comma);
         });
       });
     });
