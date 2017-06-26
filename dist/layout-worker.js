@@ -3532,12 +3532,24 @@ var parser = (function() {
         peg$c110 = "-",
         peg$c111 = { type: "literal", value: "-", description: "\"-\"" },
         peg$c112 = function(s, v) {return v},
-        peg$c113 = function(s) {counter=s},
+        peg$c113 = function(s) {counter=s; c0=""},
         peg$c114 = function() {return counter==0},
         peg$c115 = void 0,
         peg$c116 = function(a, s) {return a + (s||'')},
         peg$c117 = { type: "any", description: "any character" },
-        peg$c118 = function(c) { if (c=="\\") {return ""} else {counter -= lengthInUtf8Bytes(c); return c}},
+        peg$c118 = function(c) {
+            c2="";
+            if (c != "\\" || c0 == "\\") {
+               counter -= lengthInUtf8Bytes(c);
+               if (c0 == "\\" && c != "\\" && c != '"') {
+                  counter -=1;
+                  c2=c0;
+               }
+               c2 += c;
+           }
+           c0=c;
+           return c2;
+        },
         peg$c119 = function(p1, p2) {return [p1,p2]},
         peg$c120 = "\"",
         peg$c121 = { type: "literal", value: "\"", description: "\"\\\"\"" },
